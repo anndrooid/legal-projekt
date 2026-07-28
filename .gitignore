@@ -1,0 +1,15 @@
+# Systemowe
+.DS_Store
+Thumbs.db
+
+# Zależności
+node_modules/
+
+# Sekrety — nigdy nie wysyłamy na GitHuba
+.env
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
