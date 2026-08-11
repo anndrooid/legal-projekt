@@ -11,7 +11,7 @@ Obecna strona klienta: https://blsklegal.com/
 ## Pliki projektowe
 
 - `context/brief.md` — kompletny brief projektu: cele, zakres, struktura podstron, inspiracje, ryzyka. Czytaj go jako pierwsze źródło prawdy o projekcie.
-- `context/brand.md` — fundament marki (do wypełnienia w późniejszym etapie).
+- `context/brand.md` — fundament marki: misja, wizja, positioning, archetyp, osobowość (MBTI + 12 osi), głos i ton, słowa zakazane, kierunek wizualny.
 - `assets/` — tu trafią materiały graficzne (logo, zdjęcia).
 
 ## Stack technologiczny
