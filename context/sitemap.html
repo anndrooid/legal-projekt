@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sitemap — BLSK Legal</title>
+<style>
+:root {
+  --bg:       #f8f7f5;
+  --white:    #ffffff;
+  --border:   #dedad4;
+  --line:     #c8c3bb;
+  --ink:      #1c1c1a;
+  --muted:    #7a7672;
+  --faint:    #b0aba4;
+  --badge-bg: #eeecea;
+  --badge-tx: #6b6762;
+  --group-bg: #f2f1ee;
+  --en-bg:    #f0efed;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 3rem 2rem 6rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: 1360px; margin: 0 auto; }
+
+/* ── HEADER ─────────────────────────────── */
+.header { margin-bottom: 3rem; }
+.header h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+.header p { color: var(--muted); font-size: 0.82rem; }
+
+/* ── SECTION LABEL ───────────────────────── */
+.section-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── CARDS ───────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.65rem 0.9rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.18rem;
+  min-width: 130px;
+  text-align: center;
+}
+
+.card.root {
+  min-width: 170px;
+  padding: 0.85rem 1.1rem;
+}
+
+.card .name {
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.card code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+/* Template card */
+.card.tmpl {
+  border-style: dashed;
+  background: var(--bg);
+}
+
+.badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--badge-tx);
+  background: var(--badge-bg);
+  border-radius: 3px;
+  padding: 0.1rem 0.4rem;
+}
+
+.count {
+  font-size: 0.68rem;
+  color: var(--faint);
+}
+
+/* ── TREE CONNECTORS ─────────────────────── */
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.v-line {
+  width: 1px;
+  height: 28px;
+  background: var(--line);
+  flex-shrink: 0;
+}
+
+/* Row of children */
+.children {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Each slot handles its own connector */
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  position: relative;
+  padding-top: 28px;
+}
+
+/* Vertical line: horizontal bar → card */
+.slot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 28px;
+  background: var(--line);
+}
+
+/* Horizontal bar across siblings */
+.slot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+}
+.slot:first-child::after  { left: 50%; }
+.slot:last-child::after   { right: 50%; }
+.slot:only-child::after   { display: none; }
+.slot:only-child::before  { height: 28px; }
+
+/* ── PRAKTYKI GROUP BOX ──────────────────── */
+.group-box {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: var(--group-bg);
+  padding: 1.1rem 0.9rem 0.9rem;
+  position: relative;
+}
+
+.group-tag {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--badge-tx);
+  background: var(--group-bg);
+  border: 1px dashed var(--border);
+  border-radius: 3px;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+
+.group-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ── EN SECTION ──────────────────────────── */
+.en-section { margin-top: 4rem; }
+
+.en-box {
+  background: var(--en-bg);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 1.4rem 1.8rem;
+}
+
+.en-box h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.url-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 0.35rem 2.5rem;
+}
+
+.url-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.url-row code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.arrow { color: var(--faint); }
+
+/* ── FOOTER PAGES ────────────────────────── */
+.footer-section { margin-top: 4rem; }
+.footer-cards   { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ── LEGEND ──────────────────────────────── */
+.legend {
+  margin-top: 4rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.swatch {
+  width: 38px;
+  height: 26px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  flex-shrink: 0;
+}
+.swatch.tmpl  { border-style: dashed; background: var(--bg); }
+.swatch.group { border-style: dashed; background: var(--group-bg); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>Sitemap — BLSK Legal</h1>
+    <p>Hierarchia podstron projektu. Szablony powtarzają się dla każdego wpisu. EN — lustrzana struktura pod <code>/en/</code>.</p>
+  </div>
+
+  <!-- ════════════════════ PL TREE ════════════════════ -->
+  <div class="section-label">PL — Główna struktura</div>
+
+  <div class="tree">
+
+    <!-- Root -->
+    <div class="card root">
+      <span class="name">Strona główna</span>
+      <code>/</code>
+    </div>
+    <div class="v-line"></div>
+
+    <!-- Level 1 -->
+    <div class="children">
+
+      <!-- Nasz Zespół -->
+      <div class="slot">
+        <div class="tree">
+          <div class="card">
+            <span class="name">Nasz Zespół</span>
+            <code>/nasz-zespol/</code>
+          </div>
+          <div class="v-line"></div>
+          <div class="children">
+            <div class="slot">
+              <div class="card tmpl">
+                <span class="badge">szablon</span>
+                <span class="name">Profil prawnika</span>
+                <code>/nasz-zespol/[imie-nazwisko]/</code>
+                <span class="count">× 29</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Praktyki group -->
+      <div class="slot">
+        <div class="group-box">
+          <span class="group-tag">Praktyki — tylko menu</span>
+          <div class="group-row">
+            <div class="card">
+              <span class="name">Rozwiązywanie Sporów</span>
+              <code>/rozwiazywanie-sporow/</code>
+            </div>
+            <div class="card">
+              <span class="name">Life Sciences</span>
+              <code>/life-sciences/</code>
+            </div>
+            <div class="card">
+              <span class="name">Dotacje, Granty i Zachęty</span>
+              <code>/dotacje-granty-zachety-rozwojowe/</code>
+            </div>
+            <div class="card">
+              <span class="name">Digital</span>
+              <code>/digital/</code>
+            </div>
+            <div class="card">
+              <span class="name">Spory Podatkowe</span>
+              <code>/spory-podatkowe/</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corpo Snap -->
+      <div class="slot">
+        <div class="tree">
+          <div class="card">
+            <span class="name">Corpo Snap</span>
+            <code>/corpo-snap/</code>
+          </div>
+          <div class="v-line"></div>
+          <div class="children">
+            <div class="slot">
+              <div class="card tmpl">
+                <span class="badge">szablon</span>
+                <span class="name">Odcinek</span>
+                <code>/corpo-snap/[tytul]/</code>
+                <span class="count">× 14+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aktualności -->
+      <div class="slot">
+        <div class="tree">
+          <div class="card">
+            <span class="name">Aktualności</span>
+            <code>/aktualnosci/</code>
+          </div>
+          <div class="v-line"></div>
+          <div class="children">
+            <div class="slot">
+              <div class="card tmpl">
+                <span class="badge">szablon</span>
+                <span class="name">Artykuł</span>
+                <code>/aktualnosci/[tytul]/</code>
+                <span class="count">× 48</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="slot">
+        <div class="card">
+          <span class="name">FAQ</span>
+          <code>/faq/</code>
+        </div>
+      </div>
+
+      <!-- Kontakt -->
+      <div class="slot">
+        <div class="card">
+          <span class="name">Kontakt</span>
+          <code>/kontakt/</code>
+        </div>
+      </div>
+
+    </div><!-- /children level 1 -->
+  </div><!-- /tree -->
+
+  <!-- ════════════════════ EN ════════════════════ -->
+  <div class="en-section">
+    <div class="section-label">EN — Lustrzana struktura pod /en/</div>
+    <div class="en-box">
+      <h3>Odpowiedniki adresów URL</h3>
+      <div class="url-map">
+        <div class="url-row"><code>/</code><span class="arrow">→</span><code>/en/</code></div>
+        <div class="url-row"><code>/nasz-zespol/</code><span class="arrow">→</span><code>/en/our-team/</code></div>
+        <div class="url-row"><code>/nasz-zespol/[imie-nazwisko]/</code><span class="arrow">→</span><code>/en/our-team/[name]/</code></div>
+        <div class="url-row"><code>/rozwiazywanie-sporow/</code><span class="arrow">→</span><code>/en/dispute-resolution/</code></div>
+        <div class="url-row"><code>/life-sciences/</code><span class="arrow">→</span><code>/en/life-sciences/</code></div>
+        <div class="url-row"><code>/dotacje-granty-zachety-rozwojowe/</code><span class="arrow">→</span><code>/en/grants/</code></div>
+        <div class="url-row"><code>/digital/</code><span class="arrow">→</span><code>/en/digital/</code></div>
+        <div class="url-row"><code>/spory-podatkowe/</code><span class="arrow">→</span><code>/en/tax-litigation/</code></div>
+        <div class="url-row"><code>/corpo-snap/</code><span class="arrow">→</span><code>/en/corpo-snap/</code></div>
+        <div class="url-row"><code>/corpo-snap/[tytul]/</code><span class="arrow">→</span><code>/en/corpo-snap/[title]/</code></div>
+        <div class="url-row"><code>/aktualnosci/</code><span class="arrow">→</span><code>/en/news/</code></div>
+        <div class="url-row"><code>/aktualnosci/[tytul]/</code><span class="arrow">→</span><code>/en/news/[title]/</code></div>
+        <div class="url-row"><code>/faq/</code><span class="arrow">→</span><code>/en/faq/</code></div>
+        <div class="url-row"><code>/kontakt/</code><span class="arrow">→</span><code>/en/contact/</code></div>
+        <div class="url-row"><code>/polityka-prywatnosci/</code><span class="arrow">→</span><code>/en/privacy-policy/</code></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ FOOTER PAGES ════════════════════ -->
+  <div class="footer-section">
+    <div class="section-label">Strony poza hierarchią</div>
+    <div class="footer-cards">
+      <div class="card">
+        <span class="name">Polityka prywatności</span>
+        <code>/polityka-prywatnosci/</code>
+      </div>
+      <div class="card">
+        <span class="name">Privacy Policy</span>
+        <code>/en/privacy-policy/</code>
+      </div>
+      <div class="card">
+        <span class="name">Strona błędu</span>
+        <code>/404</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ LEGEND ════════════════════ -->
+  <div class="legend">
+    <div class="legend-item">
+      <div class="swatch"></div>
+      <span>Strona — ciągła ramka</span>
+    </div>
+    <div class="legend-item">
+      <div class="swatch tmpl"></div>
+      <span>Szablon — przerywana ramka, osobna instancja dla każdego wpisu</span>
+    </div>
+    <div class="legend-item">
+      <div class="swatch group"></div>
+      <span>Grupa nawigacyjna — brak własnej strony, widoczna tylko w menu</span>
+    </div>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
