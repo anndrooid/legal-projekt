@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLSK Legal</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:#fff;color:#444;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.75rem}
+.sec{padding:5rem 0;border-top:1px solid #e8e8e8}
+.sec-alt{background:#f6f6f6}
+.sec-lbl{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.7rem}
+.sec-h2{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:#111;letter-spacing:-.025em;line-height:1.15;margin-bottom:.9rem}
+.sec-sub{font-size:1rem;color:#666;line-height:1.65;max-width:540px}
+
+.ph{display:block;background:#ddd;border-radius:4px}
+.btn-p{display:inline-block;padding:.75rem 1.45rem;background:#111;color:#fff;font-size:.9rem;font-weight:600;border-radius:7px;text-decoration:none;border:1.5px solid #111;cursor:pointer;font-family:inherit}
+.btn-s{display:inline-block;padding:.7rem 1.35rem;background:#fff;color:#333;font-size:.9rem;font-weight:500;border-radius:7px;text-decoration:none;border:1.5px solid #d4d4d4}
+.btn-row{display:flex;gap:.85rem;flex-wrap:wrap;align-items:center}
+.row-end{display:flex;justify-content:flex-end;margin-top:2rem}
+
+/* NAV — phone prominent */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e8e8}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px;max-width:1140px;margin:0 auto;padding:0 1.75rem;gap:2rem}
+.logo{width:108px;height:33px;background:#d4d4d4;border-radius:3px;flex-shrink:0}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:.86rem;font-weight:500;color:#555;text-decoration:none}
+.nav-links .sub::after{content:' ↓';font-size:.7rem;color:#bbb}
+.nav-right{display:flex;align-items:center;gap:1rem;flex-shrink:0}
+.nav-tel-label{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;line-height:1}
+.nav-tel-num{font-size:1.1rem;font-weight:800;color:#111;text-decoration:none;letter-spacing:-.01em}
+
+/* PRACTICE NAVIGATOR — above the fold hero */
+.pnav-wrap{padding:4rem 0 3.5rem;border-bottom:1px solid #e8e8e8}
+.pnav-intro{text-align:center;margin-bottom:2.5rem}
+.pnav-intro h1{font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:600;color:#333;letter-spacing:-.015em}
+.pnav-tiles{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #e4e4e4;border-radius:12px;overflow:hidden}
+.pnav-tile{padding:2rem 1.4rem;border-right:1px solid #e4e4e4;display:flex;flex-direction:column;gap:.65rem;cursor:pointer;transition:background .15s}
+.pnav-tile:last-child{border-right:none}
+.pnav-ico{width:40px;height:40px;background:#e8e8e8;border-radius:8px;flex-shrink:0}
+.pnav-name{font-size:1rem;font-weight:700;color:#111;line-height:1.25}
+.pnav-desc{font-size:.78rem;color:#777;line-height:1.5;flex:1}
+.pnav-arr{font-size:.85rem;color:#bbb;margin-top:.25rem}
+
+/* POSITIONING STATEMENT */
+.stmt-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.stmt-h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;color:#111;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.25rem}
+.stmt-body{font-size:1rem;color:#555;line-height:1.7;margin-bottom:2rem}
+.stmt-img{width:100%;aspect-ratio:16/9;background:#ddd;border-radius:10px}
+
+/* DIFFERENTIATORS — compact */
+.diff-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:0}
+.diff-card{border:1px solid #e4e4e4;border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;gap:.55rem;background:#fff}
+.diff-ico{width:38px;height:38px;background:#e8e8e8;border-radius:7px;flex-shrink:0}
+.diff-title{font-size:1rem;font-weight:700;color:#111}
+.diff-desc{font-size:.85rem;color:#666;line-height:1.6}
+
+/* TEAM — 6 small cards */
+.team-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem;margin-top:3rem;margin-bottom:2rem}
+.lw-photo{width:100%;aspect-ratio:1/1;background:#ddd;border-radius:8px;margin-bottom:.45rem}
+.lw-name{font-size:.82rem;font-weight:700;color:#111;line-height:1.25}
+.lw-role{font-size:.75rem;color:#888;line-height:1.3}
+
+/* CORPO SNAP — 3 small cards */
+.cs-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.cs3-card{border:1px solid #e4e4e4;border-radius:9px;overflow:hidden;background:#fff}
+.cs3-thumb{width:100%;aspect-ratio:16/9;background:#d0d0d0}
+.cs3-body{padding:1rem}
+.cs3-tag{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-bottom:.3rem}
+.cs3-title{font-size:.88rem;font-weight:700;color:#111;line-height:1.35;margin-bottom:.3rem}
+.cs3-lnk{font-size:.78rem;font-weight:600;color:#555;text-decoration:none}
+
+/* BOTTOM SPLIT — news + contact */
+.split-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
+.news-stack{display:flex;flex-direction:column;gap:0}
+.news-item{padding:1.25rem 0;border-bottom:1px solid #e8e8e8;display:flex;flex-direction:column;gap:.4rem}
+.news-item:first-child{padding-top:0}
+.news-date{font-size:.72rem;color:#aaa}
+.news-title{font-size:.95rem;font-weight:700;color:#111;line-height:1.35}
+.news-exc{font-size:.83rem;color:#666;line-height:1.5}
+.news-lnk{font-size:.78rem;font-weight:600;color:#333;text-decoration:none}
+
+.contact-box{background:#f0f0f0;border-radius:12px;padding:2rem}
+.contact-box h3{font-size:1.25rem;font-weight:700;color:#111;letter-spacing:-.02em;margin-bottom:.75rem;line-height:1.2}
+.contact-box p{font-size:.9rem;color:#666;line-height:1.65;margin-bottom:1.5rem}
+.contact-tel{font-size:1.6rem;font-weight:800;color:#111;text-decoration:none;display:block;letter-spacing:-.02em;margin-bottom:.5rem}
+.contact-email{font-size:.9rem;color:#555;text-decoration:none;display:block;margin-bottom:1.5rem}
+.contact-addr{font-size:.85rem;color:#777;line-height:1.6;margin-bottom:2rem}
+.contact-btn{display:block;text-align:center}
+
+/* FOOTER */
+footer{background:#111;padding:3.5rem 0 0}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;max-width:1140px;margin:0 auto;padding:0 1.75rem;padding-bottom:3rem}
+.footer-logo{width:90px;height:27px;background:#3a3a3a;border-radius:3px;margin-bottom:1.1rem}
+.footer-desc{font-size:.84rem;color:#666;line-height:1.65}
+.footer-col h4{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ccc;margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.footer-col a{font-size:.84rem;color:#666;text-decoration:none}
+.footer-bottom{max-width:1140px;margin:0 auto;padding:1.4rem 1.75rem;border-top:1px solid #222;display:flex;justify-content:space-between;font-size:.74rem;color:#555}
+.footer-bottom a{color:#555;text-decoration:none}
+
+@media(max-width:1000px){
+  .pnav-tiles{grid-template-columns:repeat(2,1fr);border-radius:10px}
+  .pnav-tile{border-right:none;border-bottom:1px solid #e4e4e4}
+  .pnav-tile:nth-child(odd){border-right:1px solid #e4e4e4}
+  .pnav-tile:last-child{border-bottom:none}
+  .stmt-grid{grid-template-columns:1fr;gap:2.5rem}
+  .stmt-img{display:none}
+  .team-grid{grid-template-columns:repeat(3,1fr)}
+  .cs-grid3{grid-template-columns:1fr 1fr}
+  .split-grid{grid-template-columns:1fr;gap:3rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;padding-bottom:2rem}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .pnav-tiles{grid-template-columns:1fr}
+  .pnav-tile:nth-child(odd){border-right:none}
+  .diff-row{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .cs-grid3{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo"></div>
+    <ul class="nav-links">
+      <li><a href="#">Nasz Zespół</a></li>
+      <li><a href="#" class="sub">Praktyki</a></li>
+      <li><a href="#">Corpo Snap</a></li>
+      <li><a href="#">Aktualności</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <div>
+        <div class="nav-tel-label">Zadzwoń</div>
+        <a href="tel:+48224159800" class="nav-tel-num">+48 22 415 98 00</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PRACTICE NAVIGATOR — the hero -->
+<div class="pnav-wrap">
+  <div class="wrap">
+    <div class="pnav-intro">
+      <h1>W jakiej sprawie możemy pomóc?</h1>
+    </div>
+    <div class="pnav-tiles">
+      <div class="pnav-tile">
+        <div class="pnav-ico"></div>
+        <p class="pnav-name">Rozwiązywanie Sporów</p>
+        <p class="pnav-desc">Spory korporacyjne, arbitraż, sądy i organy administracji</p>
+        <span class="pnav-arr">→</span>
+      </div>
+      <div class="pnav-tile">
+        <div class="pnav-ico"></div>
+        <p class="pnav-name">Life Sciences</p>
+        <p class="pnav-desc">Prawo farmaceutyczne, żywnościowe i regulacyjne</p>
+        <span class="pnav-arr">→</span>
+      </div>
+      <div class="pnav-tile">
+        <div class="pnav-ico"></div>
+        <p class="pnav-name">Dotacje, Granty i Zachęty</p>
+        <p class="pnav-desc">Finansowanie UE, ulgi podatkowe, postępowania kontrolne</p>
+        <span class="pnav-arr">→</span>
+      </div>
+      <div class="pnav-tile">
+        <div class="pnav-ico"></div>
+        <p class="pnav-name">Digital</p>
+        <p class="pnav-desc">Telekomunikacja, dane osobowe, AI i e-commerce</p>
+        <span class="pnav-arr">→</span>
+      </div>
+      <div class="pnav-tile">
+        <div class="pnav-ico"></div>
+        <p class="pnav-name">Spory Podatkowe</p>
+        <p class="pnav-desc">KAS, sądy administracyjne, TSUE, odpowiedzialność zarządu</p>
+        <span class="pnav-arr">→</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POSITIONING STATEMENT -->
+<section class="sec">
+  <div class="wrap">
+    <div class="stmt-grid">
+      <div>
+        <p class="sec-lbl">O kancelarii</p>
+        <h2 class="stmt-h2">Indywidualne podejście w sprawach, gdzie standardowe rozwiązania nie wystarczają.</h2>
+        <p class="stmt-body">Jesteśmy butikową kancelarią dla firm i przedsiębiorców w złożonych sporach i regulacyjnych wyzwaniach. Nie delegujemy odpowiedzialności w dół hierarchii — klient ma bezpośredni kontakt z partnerem prowadzącym sprawę.</p>
+        <div class="btn-row">
+          <a href="tel:+48224159800" class="btn-p">Zadzwoń: +48 22 415 98 00</a>
+          <a href="#kontakt" class="btn-s">Napisz do nas</a>
+        </div>
+      </div>
+      <div class="stmt-img"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="sec sec-alt">
+  <div class="wrap">
+    <p class="sec-lbl">Dlaczego BLSK</p>
+    <h2 class="sec-h2" style="margin-bottom:2.5rem">Boutique znaczy głębsza specjalizacja.</h2>
+    <div class="diff-row">
+      <div class="diff-card">
+        <div class="diff-ico"></div>
+        <p class="diff-title">Podejście bez szablonów</p>
+        <p class="diff-desc">Każda sprawa jest inna. Proponujemy rozwiązania skrojone do konkretnej sytuacji i celu klienta — bez gotowych schematów.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-ico"></div>
+        <p class="diff-title">Realny kontakt z partnerem</p>
+        <p class="diff-desc">Od pierwszego spotkania klient ma bezpośredni dostęp do prawnika odpowiedzialnego za sprawę.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-ico"></div>
+        <p class="diff-title">Gotowi na najtrudniejsze sprawy</p>
+        <p class="diff-desc">Wspieramy klientów w najbardziej wymagających postępowaniach — niezależnie od ich skali i złożoności.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec">
+  <div class="wrap">
+    <p class="sec-lbl">Nasz Zespół</p>
+    <h2 class="sec-h2">29 specjalistów, jedno podejście do każdej sprawy.</h2>
+    <div class="team-grid">
+      <div>
+        <div class="lw-photo"></div>
+        <p class="lw-name">Prof. Katarzyna Bilewska</p>
+        <p class="lw-role">Managing Partner</p>
+      </div>
+      <div>
+        <div class="lw-photo"></div>
+        <p class="lw-name">Wojciech Kozłowski</p>
+        <p class="lw-role">Partner</p>
+      </div>
+      <div>
+        <div class="lw-photo"></div>
+        <p class="lw-name">Maria Samolińska</p>
+        <p class="lw-role">Partner</p>
+      </div>
+      <div>
+        <div class="lw-photo"></div>
+        <p class="lw-name">Dr Michał Turczyk</p>
+        <p class="lw-role">Partner</p>
+      </div>
+      <div>
+        <div class="lw-photo"></div>
+        <p class="lw-name">Stanisław Dąbek</p>
+        <p class="lw-role">Partner</p>
+      </div>
+      <div>
+        <div class="lw-photo"></div>
+        <p class="lw-name">Aleksandra Rutkowska</p>
+        <p class="lw-role">Partner</p>
+      </div>
+    </div>
+    <div class="row-end">
+      <a href="#" class="btn-s">Poznaj wszystkich 29 prawników →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CORPO SNAP -->
+<section class="sec sec-alt">
+  <div class="wrap">
+    <p class="sec-lbl">Corpo Snap</p>
+    <h2 class="sec-h2">Prawo korporacyjne wyjaśnione konkretnie.</h2>
+    <div class="cs-grid3">
+      <div class="cs3-card">
+        <div class="cs3-thumb"></div>
+        <div class="cs3-body">
+          <p class="cs3-tag">Odcinek · Prawo spółek</p>
+          <p class="cs3-title">Kiedy zarząd odpowiada majątkiem własnym?</p>
+          <a href="#" class="cs3-lnk">Obejrzyj →</a>
+        </div>
+      </div>
+      <div class="cs3-card">
+        <div class="cs3-thumb"></div>
+        <div class="cs3-body">
+          <p class="cs3-tag">Odcinek · Prawo spółek</p>
+          <p class="cs3-title">Zaskarżanie uchwał zgromadzenia wspólników</p>
+          <a href="#" class="cs3-lnk">Obejrzyj →</a>
+        </div>
+      </div>
+      <div class="cs3-card">
+        <div class="cs3-thumb"></div>
+        <div class="cs3-body">
+          <p class="cs3-tag">Odcinek · Prawo spółek</p>
+          <p class="cs3-title">Umorzenie udziałów — dobrowolne i przymusowe</p>
+          <a href="#" class="cs3-lnk">Obejrzyj →</a>
+        </div>
+      </div>
+    </div>
+    <div class="row-end">
+      <a href="#" class="btn-s">Wszystkie odcinki →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS + CONTACT SPLIT -->
+<section class="sec" id="kontakt">
+  <div class="wrap">
+    <div class="split-grid">
+      <div>
+        <p class="sec-lbl">Aktualności</p>
+        <h2 class="sec-h2" style="margin-bottom:2rem">Co słychać w kancelarii.</h2>
+        <div class="news-stack">
+          <div class="news-item">
+            <p class="news-date">Styczeń 2025</p>
+            <p class="news-title">BLSK Legal wyróżnione w rankingu Chambers Europe</p>
+            <p class="news-exc">Kancelaria ponownie rekomendowana w kategorii Dispute Resolution.</p>
+            <a href="#" class="news-lnk">Czytaj więcej →</a>
+          </div>
+          <div class="news-item">
+            <p class="news-date">Grudzień 2024</p>
+            <p class="news-title">Do zespołu dołącza nowy counsel — specjalista od postępowań podatkowych</p>
+            <p class="news-exc">Rozwijamy praktykę Sporów Podatkowych.</p>
+            <a href="#" class="news-lnk">Czytaj więcej →</a>
+          </div>
+          <div class="news-item">
+            <p class="news-date">Październik 2024</p>
+            <p class="news-title">BLSK Legal partnerem konferencji prawa spółek handlowych</p>
+            <p class="news-exc">Objęliśmy patronat merytoryczny nad konferencją poświęconą odpowiedzialności organów spółek.</p>
+            <a href="#" class="news-lnk">Czytaj więcej →</a>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem">
+          <a href="#" class="btn-s">Wszystkie aktualności →</a>
+        </div>
+      </div>
+      <div>
+        <div class="contact-box">
+          <h3>Porozmawiajmy o Twojej sprawie.</h3>
+          <p>Zapraszamy na spotkania stacjonarne lub online — wyłącznie po wcześniejszym umówieniu terminu.</p>
+          <a href="tel:+48224159800" class="contact-tel">+48 22 415 98 00</a>
+          <a href="mailto:biuro@blsklegal.com" class="contact-email">biuro@blsklegal.com</a>
+          <p class="contact-addr">ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa<br>pon.–pt. 9:30–17:30</p>
+          <a href="mailto:biuro@blsklegal.com" class="btn-p contact-btn">Wyślij wiadomość</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"></div>
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsiębiorców w złożonych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa</p>
+    </div>
+    <div class="footer-col">
+      <h4>Praktyki</h4>
+      <ul>
+        <li><a href="#">Rozwiązywanie Sporów</a></li>
+        <li><a href="#">Life Sciences</a></li>
+        <li><a href="#">Dotacje i Granty</a></li>
+        <li><a href="#">Digital</a></li>
+        <li><a href="#">Spory Podatkowe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kancelaria</h4>
+      <ul>
+        <li><a href="#">Nasz Zespół</a></li>
+        <li><a href="#">Corpo Snap</a></li>
+        <li><a href="#">Aktualności</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
+        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 BLSK KOZŁOWSKI I WSPÓLNICY SP. K.</span>
+    <a href="#">Polityka prywatności</a>
+  </div>
+</footer>
+
+</body>
+</html>

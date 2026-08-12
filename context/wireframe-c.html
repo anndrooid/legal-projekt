@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLSK Legal</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:#fff;color:#444;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.75rem}
+.sec{padding:5.5rem 0;border-top:1px solid #e8e8e8}
+.sec-alt{background:#f6f6f6}
+.sec-lbl{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.7rem}
+.sec-h2{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:#111;letter-spacing:-.025em;line-height:1.15}
+
+.ph{display:block;background:#ddd;border-radius:4px}
+.btn-p{display:inline-block;padding:.75rem 1.45rem;background:#111;color:#fff;font-size:.9rem;font-weight:600;border-radius:7px;text-decoration:none;border:none;cursor:pointer;font-family:inherit}
+.btn-s{display:inline-block;padding:.7rem 1.35rem;background:#fff;color:#333;font-size:.9rem;font-weight:500;border-radius:7px;text-decoration:none;border:1.5px solid #d4d4d4}
+.btn-ghost{display:inline-block;padding:.7rem 1.35rem;background:transparent;color:#fff;font-size:.9rem;font-weight:600;border-radius:7px;text-decoration:none;border:1.5px solid rgba(255,255,255,.4)}
+.row-end{display:flex;justify-content:flex-end;margin-top:2rem}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e8e8}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px;max-width:1140px;margin:0 auto;padding:0 1.75rem}
+.logo{width:108px;height:33px;background:#d4d4d4;border-radius:3px;flex-shrink:0}
+.nav-links{display:flex;gap:1.75rem;list-style:none;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:500;color:#333;text-decoration:none}
+.nav-links .sub::after{content:' ↓';font-size:.7rem;color:#bbb}
+.nav-tel{font-size:.88rem;font-weight:700;color:#111;text-decoration:none;border:1.5px solid #222;border-radius:6px;padding:.38rem .85rem;white-space:nowrap}
+
+/* EDITORIAL HERO */
+.editorial{padding:5.5rem 0;border-bottom:1px solid #e8e8e8}
+.ed-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:5rem;align-items:center}
+.ed-video{width:100%;aspect-ratio:16/9;background:#ccc;border-radius:12px;position:relative;overflow:hidden}
+.ed-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.ed-play-btn{width:56px;height:56px;background:rgba(255,255,255,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;padding-left:4px}
+.ed-side{}
+.ed-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.75rem}
+.ed-title{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:#111;letter-spacing:-.025em;line-height:1.2;margin-bottom:1rem}
+.ed-desc{font-size:.97rem;color:#666;line-height:1.7;margin-bottom:1.75rem}
+.ed-cta{margin-bottom:2.5rem}
+.ed-divider{width:40px;height:1px;background:#ddd;margin-bottom:1.5rem}
+.ed-about{font-size:.85rem;color:#888;line-height:1.6}
+
+/* BIG STATEMENT */
+.statement{padding:4.5rem 0;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;text-align:center}
+.statement blockquote{max-width:780px;margin:0 auto;font-size:clamp(1.2rem,2.2vw,1.65rem);font-weight:600;color:#111;line-height:1.45;letter-spacing:-.02em;font-style:normal}
+.statement cite{display:block;margin-top:1.25rem;font-size:.78rem;color:#aaa;font-style:normal;letter-spacing:.06em;text-transform:uppercase}
+
+/* PRACTICES — editorial list */
+.prac-list{}
+.prac-row{display:grid;grid-template-columns:220px 1fr auto;gap:2.5rem;align-items:start;padding:2.25rem 0;border-bottom:1px solid #e8e8e8}
+.prac-row:first-child{padding-top:0;border-top:1px solid #e8e8e8;margin-top:3rem}
+.pr-left{}
+.pr-num{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bbb;display:block;margin-bottom:.4rem}
+.pr-name{font-size:1.25rem;font-weight:700;color:#111;line-height:1.25;letter-spacing:-.02em}
+.pr-desc{font-size:.93rem;color:#555;line-height:1.65}
+.pr-lnk{font-size:.82rem;font-weight:600;color:#333;text-decoration:none;white-space:nowrap;padding-top:.35rem;display:block}
+
+/* NEWS — editorial 1+2 */
+.news-editorial{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;margin-top:3.5rem;align-items:start}
+.news-big{}
+.news-big-img{width:100%;aspect-ratio:16/9;background:#ddd;border-radius:10px;margin-bottom:1.25rem}
+.news-big-date{font-size:.75rem;color:#aaa;margin-bottom:.5rem}
+.news-big-title{font-size:1.35rem;font-weight:700;color:#111;line-height:1.3;margin-bottom:.65rem;letter-spacing:-.015em}
+.news-big-exc{font-size:.92rem;color:#666;line-height:1.65;margin-bottom:.75rem}
+.news-big-lnk{font-size:.82rem;font-weight:600;color:#333;text-decoration:none}
+.news-small{display:flex;flex-direction:column;gap:0}
+.news-sm-item{padding:1.25rem 0;border-bottom:1px solid #e8e8e8;display:flex;flex-direction:column;gap:.4rem}
+.news-sm-item:first-child{padding-top:0}
+.news-sm-date{font-size:.72rem;color:#aaa}
+.news-sm-title{font-size:.95rem;font-weight:700;color:#111;line-height:1.35}
+.news-sm-lnk{font-size:.78rem;font-weight:600;color:#333;text-decoration:none}
+
+/* TEAM — 2 featured */
+.team-featured{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3.5rem;margin-bottom:2.5rem}
+.tf-card{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;padding:1.75rem;border:1px solid #e8e8e8;border-radius:12px}
+.tf-photo{width:88px;height:88px;background:#ddd;border-radius:8px;flex-shrink:0}
+.tf-name{font-size:1.05rem;font-weight:700;color:#111;margin-bottom:.2rem;letter-spacing:-.01em}
+.tf-role{font-size:.8rem;color:#888;margin-bottom:.65rem}
+.tf-bio{font-size:.84rem;color:#666;line-height:1.6}
+.team-link-bar{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.75rem;border:1px solid #e8e8e8;border-radius:10px;background:#f9f9f9}
+.team-link-bar p{font-size:.9rem;color:#555}
+.team-link-bar strong{color:#111}
+
+/* CTA BAR — dark inverted */
+.cta-bar{background:#111;padding:4.5rem 0}
+.cta-bar-inner{display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+.cta-bar h2{font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:700;color:#fff;letter-spacing:-.025em;line-height:1.2;max-width:520px}
+.cta-bar-right{display:flex;flex-direction:column;gap:.85rem;align-items:flex-start;flex-shrink:0}
+.cta-bar-tel{font-size:1.6rem;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-.02em;display:block}
+.cta-bar-addr{font-size:.82rem;color:#777;line-height:1.6}
+
+/* FOOTER */
+footer{background:#1a1a1a;padding:3.5rem 0 0}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;max-width:1140px;margin:0 auto;padding:0 1.75rem;padding-bottom:3rem}
+.footer-logo{width:90px;height:27px;background:#3a3a3a;border-radius:3px;margin-bottom:1.1rem}
+.footer-desc{font-size:.84rem;color:#666;line-height:1.65}
+.footer-col h4{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ccc;margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.footer-col a{font-size:.84rem;color:#666;text-decoration:none}
+.footer-bottom{max-width:1140px;margin:0 auto;padding:1.4rem 1.75rem;border-top:1px solid #2a2a2a;display:flex;justify-content:space-between;font-size:.74rem;color:#555}
+.footer-bottom a{color:#555;text-decoration:none}
+
+@media(max-width:900px){
+  .ed-grid{grid-template-columns:1fr;gap:2.5rem}
+  .prac-row{grid-template-columns:1fr;gap:1rem}
+  .pr-lnk{padding-top:0}
+  .news-editorial{grid-template-columns:1fr;gap:2.5rem}
+  .team-featured{grid-template-columns:1fr}
+  .cta-bar-inner{flex-direction:column;align-items:flex-start;gap:2rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;padding-bottom:2rem}
+}
+@media(max-width:580px){
+  .nav-links{display:none}
+  .tf-card{grid-template-columns:1fr}
+  .tf-photo{width:72px;height:72px}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo"></div>
+    <ul class="nav-links">
+      <li><a href="#">Nasz Zespół</a></li>
+      <li><a href="#" class="sub">Praktyki</a></li>
+      <li><a href="#">Corpo Snap</a></li>
+      <li><a href="#">Aktualności</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+    <a href="tel:+48224159800" class="nav-tel">+48 22 415 98 00</a>
+  </div>
+</nav>
+
+<!-- EDITORIAL HERO — featured Corpo Snap -->
+<section class="editorial">
+  <div class="wrap">
+    <div class="ed-grid">
+      <div class="ed-video">
+        <div class="ed-play">
+          <div class="ed-play-btn">▶</div>
+        </div>
+      </div>
+      <div class="ed-side">
+        <p class="ed-tag">Corpo Snap · Prawo spółek</p>
+        <h1 class="ed-title">Kiedy zarząd odpowiada majątkiem własnym za długi spółki?</h1>
+        <p class="ed-desc">Warunki odpowiedzialności z art. 299 KSH — kiedy wierzyciel może sięgnąć do majątku osobistego członka zarządu i jak się przed tym skutecznie bronić.</p>
+        <div class="ed-cta">
+          <a href="#" class="btn-p">Obejrzyj odcinek →</a>
+        </div>
+        <div class="ed-divider"></div>
+        <p class="ed-about">BLSK Legal to butikowa kancelaria prawna specjalizująca się w sporach korporacyjnych, regulacyjnych i podatkowych. Corpo Snap to nasz autorski cykl — prawo spółek wyjaśnione konkretnie, w kilka minut.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIG STATEMENT -->
+<div class="statement">
+  <div class="wrap">
+    <blockquote>
+      „Podchodzimy do spraw naszych klientów indywidualnie, w razie potrzeby proponując nieszablonowe rozwiązania. Jesteśmy gotowi wspierać naszych klientów w najbardziej wymagających sprawach, niezależnie od ich skali oraz złożoności."
+    </blockquote>
+    <cite>BLSK Legal — BLSK KOZŁOWSKI I WSPÓLNICY SP. K.</cite>
+  </div>
+</div>
+
+<!-- PRACTICES — editorial list -->
+<section class="sec">
+  <div class="wrap">
+    <p class="sec-lbl">Nasze praktyki</p>
+    <h2 class="sec-h2">Pięć obszarów. Pełna specjalizacja w każdym z nich.</h2>
+    <div class="prac-list">
+      <div class="prac-row">
+        <div class="pr-left">
+          <span class="pr-num">01</span>
+          <p class="pr-name">Rozwiązywanie Sporów</p>
+        </div>
+        <p class="pr-desc">Spory korporacyjne, arbitraż i postępowania przed sądami powszechnymi, trybunałami i organami administracji. Obejmujemy całą strategię — od zabezpieczenia roszczeń przez reprezentację po de-eskalację.</p>
+        <a href="#" class="pr-lnk">Dowiedz się więcej →</a>
+      </div>
+      <div class="prac-row">
+        <div class="pr-left">
+          <span class="pr-num">02</span>
+          <p class="pr-name">Life Sciences</p>
+        </div>
+        <p class="pr-desc">Doradztwo prawne dla branży farmaceutycznej i żywnościowej — od rejestracji produktów i audytów po postępowania regulacyjne i spory. Katarzyna łączy unikalne doświadczenie jako farmaceuta i prawnik.</p>
+        <a href="#" class="pr-lnk">Dowiedz się więcej →</a>
+      </div>
+      <div class="prac-row">
+        <div class="pr-left">
+          <span class="pr-num">03</span>
+          <p class="pr-name">Dotacje, Granty i Zachęty Rozwojowe</p>
+        </div>
+        <p class="pr-desc">Ponad 6 mld zł dotacji i 5 mld zł ulg dla klientów kancelarii. Model LEGAL-TECH-FIN HYBRID nominowany przez Financial Times Innovative Lawyers 2019. Obsługujemy granty, kontrole i spory ze środków publicznych.</p>
+        <a href="#" class="pr-lnk">Dowiedz się więcej →</a>
+      </div>
+      <div class="prac-row">
+        <div class="pr-left">
+          <span class="pr-num">04</span>
+          <p class="pr-name">Digital</p>
+        </div>
+        <p class="pr-desc">Telekomunikacja, ochrona danych osobowych, media, e-commerce i sztuczna inteligencja. Wsparcie prawne dla sektora technologicznego, nadawców i spółek IT na każdym etapie działalności.</p>
+        <a href="#" class="pr-lnk">Dowiedz się więcej →</a>
+      </div>
+      <div class="prac-row">
+        <div class="pr-left">
+          <span class="pr-num">05</span>
+          <p class="pr-name">Spory Podatkowe</p>
+        </div>
+        <p class="pr-desc">Postępowania przed Krajową Administracją Skarbową, sądami administracyjnymi, TSUE i Trybunałem Konstytucyjnym. Strategia sporu podatkowego, kontrole, odpowiedzialność zarządu i postępowania karno-skarbowe.</p>
+        <a href="#" class="pr-lnk">Dowiedz się więcej →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS — editorial -->
+<section class="sec sec-alt">
+  <div class="wrap">
+    <p class="sec-lbl">Aktualności</p>
+    <h2 class="sec-h2">Co słychać w kancelarii.</h2>
+    <div class="news-editorial">
+      <div class="news-big">
+        <div class="news-big-img"></div>
+        <p class="news-big-date">Styczeń 2025</p>
+        <h3 class="news-big-title">BLSK Legal wyróżnione w rankingu Chambers Europe — kategoria Dispute Resolution</h3>
+        <p class="news-big-exc">Kancelaria ponownie znalazła się wśród rekomendowanych firm w jednym z najbardziej prestiżowych rankingów prawniczych na świecie. Wyróżnienie dotyczy praktyki Rozwiązywania Sporów.</p>
+        <a href="#" class="news-big-lnk">Czytaj więcej →</a>
+      </div>
+      <div class="news-small">
+        <div class="news-sm-item">
+          <p class="news-sm-date">Grudzień 2024</p>
+          <p class="news-sm-title">Do zespołu dołącza nowy counsel — specjalista od postępowań podatkowych</p>
+          <a href="#" class="news-sm-lnk">Czytaj więcej →</a>
+        </div>
+        <div class="news-sm-item">
+          <p class="news-sm-date">Październik 2024</p>
+          <p class="news-sm-title">BLSK Legal partnerem merytorycznym konferencji prawa spółek handlowych</p>
+          <a href="#" class="news-sm-lnk">Czytaj więcej →</a>
+        </div>
+        <div class="news-sm-item">
+          <p class="news-sm-date">Wrzesień 2024</p>
+          <p class="news-sm-title">Prof. Bilewska wśród prelegentów konferencji prawa spółek w Pradze</p>
+          <a href="#" class="news-sm-lnk">Czytaj więcej →</a>
+        </div>
+      </div>
+    </div>
+    <div class="row-end">
+      <a href="#" class="btn-s">Wszystkie aktualności →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM — 2 featured -->
+<section class="sec">
+  <div class="wrap">
+    <p class="sec-lbl">Nasz Zespół</p>
+    <h2 class="sec-h2" style="margin-bottom:3rem">Prawnicy, którzy znają branżę od środka.</h2>
+    <div class="team-featured">
+      <div class="tf-card">
+        <div class="tf-photo"></div>
+        <div>
+          <p class="tf-name">Prof. Katarzyna Bilewska</p>
+          <p class="tf-role">Managing Partner</p>
+          <p class="tf-bio">Profesor prawa handlowego, autorka ponad 200 publikacji naukowych i praktycznych, w tym komentarzy do Kodeksu spółek handlowych. Specjalizuje się w sporach korporacyjnych i prawie farmaceutycznym.</p>
+        </div>
+      </div>
+      <div class="tf-card">
+        <div class="tf-photo"></div>
+        <div>
+          <p class="tf-name">Wojciech Kozłowski</p>
+          <p class="tf-role">Partner</p>
+          <p class="tf-bio">Specjalizuje się w postępowaniach spornych i regulacyjnych, w tym w sprawach z zakresu dotacji i zamówień publicznych. Doświadczenie w postępowaniach krajowych i europejskich.</p>
+        </div>
+      </div>
+    </div>
+    <div class="team-link-bar">
+      <p>Poznaj <strong>wszystkich 29 prawników i specjalistów</strong> kancelarii — partnerów, counselów, associates i ekspertów.</p>
+      <a href="#" class="btn-s">Nasz Zespół →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAR -->
+<div class="cta-bar" id="kontakt">
+  <div class="wrap">
+    <div class="cta-bar-inner">
+      <h2>Porozmawiajmy o Twojej sprawie. Najszybszy kontakt — przez telefon.</h2>
+      <div class="cta-bar-right">
+        <a href="tel:+48224159800" class="cta-bar-tel">+48 22 415 98 00</a>
+        <p class="cta-bar-addr">biuro@blsklegal.com<br>ul. Mazowiecka 9 (IV p.), Warszawa<br>pon.–pt. 9:30–17:30</p>
+        <a href="mailto:biuro@blsklegal.com" class="btn-ghost">Wyślij wiadomość e-mail</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"></div>
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsiębiorców w złożonych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa</p>
+    </div>
+    <div class="footer-col">
+      <h4>Praktyki</h4>
+      <ul>
+        <li><a href="#">Rozwiązywanie Sporów</a></li>
+        <li><a href="#">Life Sciences</a></li>
+        <li><a href="#">Dotacje i Granty</a></li>
+        <li><a href="#">Digital</a></li>
+        <li><a href="#">Spory Podatkowe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kancelaria</h4>
+      <ul>
+        <li><a href="#">Nasz Zespół</a></li>
+        <li><a href="#">Corpo Snap</a></li>
+        <li><a href="#">Aktualności</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
+        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 BLSK KOZŁOWSKI I WSPÓLNICY SP. K.</span>
+    <a href="#">Polityka prywatności</a>
+  </div>
+</footer>
+
+</body>
+</html>
