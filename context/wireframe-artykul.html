@@ -1,0 +1,649 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLSK w rankingu Chambers Europe 2024 — Aktualności — BLSK Legal</title>
+<style>
+/* === RESET & BASE === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  background:#fff;color:#333;
+  font-size:1.125rem;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* === LAYOUT === */
+.wrap{max-width:1600px;margin:0 auto;padding:0 3rem}
+
+/* === TYPOGRAPHY === */
+.h2-sec{font-size:clamp(2.25rem,4vw,4rem);font-weight:300;color:#111;letter-spacing:-.035em;line-height:1.08}
+.lead{font-size:clamp(1rem,1.3vw,1.375rem);color:#555;line-height:1.7}
+.label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:.75rem}
+
+/* === NAV === */
+nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid #e8e8e8}
+.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-logo{width:100px;height:30px;background:#d4d4d4;border-radius:3px}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:.875rem;font-weight:500;color:#333;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#111}
+.nav-links a.active{font-weight:700;color:#111}
+.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;line-height:1;margin-bottom:.2rem}
+.nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
+
+/* === ARTICLE HEADER === */
+.art-header{
+  margin-top:90px;
+  background:#fff;
+}
+.art-header-inner{
+  max-width:1600px;margin:0 auto;
+  padding:7rem 3rem 6rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;
+}
+.ph-back{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.82rem;font-weight:400;color:#aaa;
+  text-decoration:none;margin-bottom:1.5rem;
+  transition:color .2s;letter-spacing:.01em;
+}
+.ph-back:hover{color:#333}
+.art-cat-label{
+  font-size:.68rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#bbb;
+  display:block;margin-bottom:.85rem;
+}
+.art-title{
+  font-size:clamp(2rem,4.5vw,4rem);
+  font-weight:300;color:#111;
+  letter-spacing:-.04em;line-height:1.05;
+}
+.art-right{padding-top:.25rem}
+.art-meta-list{display:flex;flex-direction:column;gap:1.1rem;margin-bottom:2.5rem}
+.art-meta-row{display:flex;align-items:flex-start;gap:.75rem}
+.art-meta-lbl{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;min-width:90px;padding-top:.15rem;flex-shrink:0}
+.art-meta-val{font-size:.95rem;color:#555}
+.art-lead{
+  font-size:clamp(1rem,1.25vw,1.2rem);
+  color:#444;line-height:1.75;
+  margin-top:2rem;
+}
+
+/* === ARTICLE HERO IMAGE === */
+.art-hero-img{
+  width:100%;aspect-ratio:16/6;
+  background:#c8c8c8;
+  overflow:hidden;
+}
+
+/* === ARTICLE BODY LAYOUT === */
+.art-content{padding:5rem 0 8rem}
+.art-layout{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:6rem;
+  align-items:start;
+}
+
+/* === MAIN ARTICLE BODY === */
+.art-body{max-width:780px}
+.art-body h2{
+  font-size:1.5rem;font-weight:700;color:#111;
+  letter-spacing:-.02em;margin:3rem 0 1.1rem;line-height:1.2;
+}
+.art-body h3{
+  font-size:1.15rem;font-weight:700;color:#111;
+  margin:2rem 0 .75rem;
+}
+.art-body p{
+  font-size:1rem;color:#555;line-height:1.85;
+  margin-bottom:1.25rem;
+}
+.art-body ul,.art-body ol{
+  margin:.75rem 0 1.5rem;padding-left:1.5rem;
+  display:flex;flex-direction:column;gap:.55rem;
+}
+.art-body li{font-size:1rem;color:#555;line-height:1.75}
+.art-body strong{color:#111;font-weight:600}
+.art-body a{color:#111;text-decoration:underline}
+.art-lead-para{
+  font-size:1.175rem;color:#333;
+  line-height:1.8;margin-bottom:2rem;
+  border-left:3px solid #e0e0e0;
+  padding-left:1.5rem;
+}
+.art-blockquote{
+  margin:2.5rem 0;padding:2rem 2.5rem;
+  background:#f8f8f8;border-radius:10px;
+  border-left:4px solid #111;
+}
+.art-blockquote p{
+  font-size:1.1rem;color:#333;font-style:italic;
+  line-height:1.75;margin-bottom:.5rem;
+}
+.art-blockquote cite{
+  font-size:.8rem;color:#aaa;font-style:normal;
+  font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+}
+.art-img-block{
+  width:100%;aspect-ratio:16/9;background:#d4d4d4;
+  border-radius:10px;margin:2.5rem 0;
+}
+.art-img-caption{
+  font-size:.78rem;color:#aaa;
+  text-align:center;margin-top:.65rem;
+  margin-bottom:2rem;
+}
+.art-tags{
+  display:flex;gap:.5rem;flex-wrap:wrap;
+  margin-top:3rem;padding-top:2rem;
+  border-top:1px solid #e8e8e8;
+}
+.art-tag{
+  display:inline-block;padding:.35rem .85rem;
+  border:1px solid #e0e0e0;border-radius:100px;
+  font-size:.72rem;font-weight:500;color:#888;
+}
+.art-share{
+  display:flex;align-items:center;gap:1rem;
+  padding:2rem 0;
+  border-top:1px solid #e8e8e8;
+  margin-top:1.5rem;
+}
+.share-lbl{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa}
+.share-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.4rem 1rem;border:1.5px solid #e8e8e8;border-radius:100px;
+  font-size:.8rem;font-weight:500;color:#666;
+  cursor:pointer;text-decoration:none;
+  transition:all .18s;
+}
+.share-btn:hover{border-color:#333;color:#111}
+
+/* === SIDEBAR === */
+.art-sidebar{
+  position:sticky;top:110px;
+}
+.sidebar-section{
+  border:1px solid #e8e8e8;border-radius:12px;
+  padding:1.75rem;margin-bottom:1.5rem;
+}
+.sidebar-section h3{
+  font-size:.63rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:#bbb;margin-bottom:1.25rem;
+}
+.sidebar-person{display:flex;align-items:center;gap:.85rem;margin-bottom:1rem}
+.person-photo{width:44px;height:44px;background:#d4d4d4;border-radius:50%;flex-shrink:0}
+.person-name{font-size:.9rem;font-weight:700;color:#111;margin-bottom:.1rem}
+.person-role{font-size:.73rem;color:#888}
+.sidebar-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.82rem;font-weight:600;color:#111;
+  text-decoration:none;margin-top:.5rem;
+}
+.sidebar-link:hover{text-decoration:underline}
+
+/* Related articles in sidebar */
+.related-list{display:flex;flex-direction:column;gap:1rem}
+.related-item{
+  display:flex;flex-direction:column;gap:.3rem;
+  text-decoration:none;color:inherit;
+  padding-bottom:1rem;border-bottom:1px solid #f0f0f0;
+}
+.related-item:last-child{border-bottom:none;padding-bottom:0}
+.related-cat{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bbb}
+.related-title{font-size:.85rem;font-weight:600;color:#111;line-height:1.3}
+.related-item:hover .related-title{text-decoration:underline}
+.related-date{font-size:.72rem;color:#bbb}
+
+/* CTA box in sidebar */
+.sidebar-cta{background:#f8f8f8;border-color:#f0f0f0}
+
+/* === BUTTONS === */
+.btn-p{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.85rem;background:#111;color:#fff;font-size:.9rem;font-weight:600;border-radius:8px;text-decoration:none;cursor:pointer;font-family:inherit;border:none;transition:background .2s ease}
+.btn-p:hover{background:#333}
+.btn-s{display:inline-flex;align-items:center;gap:.75rem;padding:.8rem 1.75rem;background:#fff;color:#333;font-size:.9rem;font-weight:500;border-radius:8px;text-decoration:none;border:1.5px solid #ccc;transition:border-color .2s ease}
+.btn-s:hover{border-color:#888}
+.btn-c{width:52px;height:52px;border-radius:50%;border:1px solid #d0d0d0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;color:#333;flex-shrink:0;transition:background .25s ease,border-color .25s ease,color .25s ease}
+.btn-c .arr{display:block;width:19px;height:10px;font-size:0;position:relative}
+.btn-c .arr::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:currentColor;transform:translateY(-50%)}
+.btn-c .arr::after{content:'';position:absolute;top:50%;right:0;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-50%) rotate(45deg)}
+.btn-c:hover{background:#111;border-color:#111;color:#fff}
+.btn-c-sm{width:36px;height:36px}
+.btn-c-sm .arr{width:13px;height:8px}
+.btn-c-sm .arr::after{width:5px;height:5px}
+@keyframes btn-pulse{0%{box-shadow:0 0 0 0 rgba(0,0,0,.22)}70%{box-shadow:0 0 0 9px rgba(0,0,0,0)}100%{box-shadow:0 0 0 0 rgba(0,0,0,0)}}
+.btn-c:hover{animation:btn-pulse .7s ease}
+.btn-row-link{display:inline-flex;align-items:center;gap:.85rem;color:#111;font-weight:600;font-size:.95rem;text-decoration:none}
+.btn-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.row-between{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;gap:2rem}
+
+/* === MORE ARTICLES === */
+.more-section{
+  padding:6rem 0 8rem;
+  border-top:1px solid #e8e8e8;
+  background:#f8f8f8;
+}
+.more-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3rem 3.5rem;
+}
+.more-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:.5rem}
+.more-img{width:100%;aspect-ratio:16/9;background:#d4d4d4;border-radius:8px;margin-bottom:.75rem}
+.more-cat{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb}
+.more-title{font-size:.95rem;font-weight:700;color:#111;line-height:1.3}
+.more-card:hover .more-title{text-decoration:underline}
+.more-date{font-size:.72rem;color:#bbb}
+
+/* === FOOTER === */
+footer{background:#111;padding:5rem 0 0;border-top:1px solid #333}
+.footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
+.footer-logo{width:90px;height:27px;background:#383838;border-radius:3px;margin-bottom:1.25rem}
+.footer-desc{font-size:.9rem;color:#555;line-height:1.7}
+.footer-col h4{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col a{font-size:.875rem;color:#555;text-decoration:none}
+.footer-col a:hover{color:#bbb}
+.footer-bottom{max-width:1600px;margin:0 auto;padding:1.5rem 3rem;border-top:1px solid #222;display:flex;justify-content:space-between;font-size:.78rem;color:#444}
+.footer-bottom a{color:#444;text-decoration:none}
+
+/* === NAV DROPDOWN === */
+.nav-dropdown{position:relative}
+.nav-drop-trigger{display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;font-weight:500;color:#333;cursor:pointer;user-select:none;background:none;border:none;font-family:inherit;padding:0;transition:color .2s}
+.nav-drop-trigger:hover,.nav-dropdown:hover .nav-drop-trigger{color:#111}
+.nav-dropdown-active .nav-drop-trigger{font-weight:700;color:#111}
+.nav-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.1);padding:.75rem 0;list-style:none;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s;z-index:300}
+.nav-drop-menu::before{content:'';position:absolute;top:-1.5rem;left:-1rem;right:-1rem;height:1.5rem}
+.nav-dropdown:hover .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto}
+.nav-drop-menu a{display:block;padding:.65rem 1.25rem;font-size:.875rem;color:#333;text-decoration:none;transition:background .15s,color .15s}
+.nav-drop-menu a:hover,.nav-drop-menu a.active{background:#f5f5f5;color:#111}
+.nav-drop-menu a.active{font-weight:700}
+/* === HAMBURGER === */
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
+/* === MOBILE MENU === */
+.mobile-menu{position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto;padding:0 1.5rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;padding:2.5rem 0;border-bottom:1px solid #e8e8e8;margin-bottom:2rem}
+.mobile-menu-logo{width:90px;height:27px;background:#d4d4d4;border-radius:3px}
+.mobile-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:#333;line-height:1;padding:.25rem}
+.mobile-nav{list-style:none}
+.mobile-nav>li{border-bottom:1px solid #e8e8e8}
+.mobile-nav>li:last-child{border-bottom:none}
+.mobile-nav>li>a,.mobile-nav>li>button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.15rem 0;font-size:1.125rem;font-weight:500;color:#333;text-decoration:none;background:none;border:none;font-family:inherit;cursor:pointer;text-align:left}
+.mobile-submenu{list-style:none;padding-bottom:.75rem;display:none}
+.mobile-submenu.open{display:block}
+.mobile-submenu a{display:block;padding:.55rem .75rem;font-size:1rem;color:#555;text-decoration:none}
+.m-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.mobile-nav button.open .m-chevron{transform:rotate(180deg)}
+.mobile-menu-phone{margin-top:2.5rem;padding-top:2rem;border-top:1px solid #e8e8e8}
+.mobile-menu-phone .label{margin-bottom:.35rem}
+.mobile-menu-phone a{font-size:1.75rem;font-weight:700;color:#111;text-decoration:none}
+/* === RESPONSIVE === */
+@media(max-width:1200px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .nav-phone{display:none}
+  .art-header-inner{grid-template-columns:1fr;gap:3rem}
+  .art-layout{grid-template-columns:1fr;gap:4rem}
+  .art-sidebar{position:static}
+  .art-body{max-width:none}
+  .more-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}
+}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .wrap,.art-header-inner,.footer-grid,.footer-bottom,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}
+  .art-header-inner{padding-top:4rem;padding-bottom:4rem}
+  .art-content{padding:3rem 0 5rem}
+  .more-grid{grid-template-columns:1fr}
+  .more-section{padding:4rem 0 5rem}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .art-hero-img{aspect-ratio:1/1}
+  .art-share{flex-wrap:wrap}
+  .art-share .share-lbl{width:100%;margin-bottom:.5rem}
+  .sidebar-section{padding:1rem 1.25rem}
+  .sidebar-section .btn-p,.sidebar-section .btn-s{font-size:.78rem!important;padding:.65rem .9rem;white-space:nowrap}
+  .art-cta-btns{flex-direction:column}
+  .art-cta-btns .btn-p{white-space:nowrap}
+  .art-cta-btns .btn-p,.art-cta-btns .btn-s{width:100%;justify-content:center}
+}
+@media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="wireframe-home.html" class="nav-logo-link">
+      <div class="nav-logo"></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="nav-drop-menu">
+          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+          <li><a href="wireframe-digital.html">Digital</a></li>
+          <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        </ul>
+      </li>
+      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+      <li><a href="wireframe-aktualnosci.html" class="active">Aktualności</a></li>
+      <li><a href="wireframe-faq.html">FAQ</a></li>
+      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="nav-phone">
+      <span class="nav-phone-label">Zadzwoń teraz</span>
+      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+    </div>
+    <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="wireframe-home.html"><div class="mobile-menu-logo"></div></a>
+    <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+    <li>
+      <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <ul class="mobile-submenu" id="mobileSubmenu">
+        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+        <li><a href="wireframe-digital.html">Digital</a></li>
+        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+      </ul>
+    </li>
+    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+    <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+    <li><a href="wireframe-faq.html">FAQ</a></li>
+    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="mobile-menu-phone">
+    <span class="label">Zadzwoń teraz</span>
+    <a href="tel:+48224159800">+48 22 415 98 00</a>
+  </div>
+</div>
+
+<!-- ARTICLE HEADER -->
+<div class="art-header">
+  <div class="art-header-inner">
+    <div>
+      <a href="wireframe-aktualnosci.html" class="ph-back">‹ Aktualności</a>
+      <span class="art-cat-label">Rankingi · 3 czerwca 2024</span>
+      <h1 class="art-title">BLSK w rankingu Chambers Europe 2024 — Recommended Firm w kategorii Dispute Resolution</h1>
+    </div>
+    <div class="art-right">
+      <div class="art-meta-list">
+        <div class="art-meta-row">
+          <span class="art-meta-lbl">Kategoria</span>
+          <span class="art-meta-val">Rankingi</span>
+        </div>
+        <div class="art-meta-row">
+          <span class="art-meta-lbl">Data</span>
+          <span class="art-meta-val">3 czerwca 2024</span>
+        </div>
+        <div class="art-meta-row">
+          <span class="art-meta-lbl">Źródło</span>
+          <span class="art-meta-val">Chambers and Partners</span>
+        </div>
+        <div class="art-meta-row">
+          <span class="art-meta-lbl">Wyróżnieni</span>
+          <span class="art-meta-val">Prof. Katarzyna Bilewska, Wojciech Kozłowski</span>
+        </div>
+      </div>
+      <p class="art-lead">Kancelaria BLSK Legal po raz kolejny znalazła się w prestiżowym rankingu Chambers Europe, uzyskując rekomendację w kluczowej dla nas kategorii Dispute Resolution.</p>
+    </div>
+  </div>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="art-hero-img"></div>
+
+<!-- ARTICLE CONTENT -->
+<div class="art-content">
+  <div class="wrap">
+    <div class="art-layout">
+
+      <!-- MAIN ARTICLE -->
+      <article class="art-body">
+        <p class="art-lead-para">
+          Chambers and Partners to jeden z najbardziej wpływowych rankingów prawniczych na świecie. Rekomendacja w Chambers Europe opiera się na dogłębnej analizie realizowanych spraw, wywiadach z klientami i oceną niezależnych prawników z branży.
+        </p>
+
+        <p>Wyróżnienie BLSK Legal w kategorii <strong>Dispute Resolution: Corporate & Commercial</strong> potwierdza pozycję kancelarii jako jednego z wiodących podmiotów w Polsce w zakresie prowadzenia sporów korporacyjnych. W tegorocznym wydaniu rankingu kancelaria awansowała do wyższego bandu, co jest efektem kilkuletniej konsekwentnej pracy zespołu.</p>
+
+        <h2>Indywidualne wyróżnienia dla prawników BLSK</h2>
+        <p>Chambers Europe wyróżniło indywidualnie dwoje prawników kancelarii:</p>
+        <ul>
+          <li><strong>Prof. Katarzyna Bilewska</strong> — utrzymała pozycję w Band 1, z opisem podkreślającym jej „unikalną kombinację wiedzy akademickiej i umiejętności praktycznych w najtrudniejszych sporach korporacyjnych".</li>
+          <li><strong>Wojciech Kozłowski</strong> — awansował do Band 2, doceniony za „wyjątkową efektywność w sprawach dotyczących odpowiedzialności zarządu i sporów między wspólnikami".</li>
+        </ul>
+
+        <div class="art-blockquote">
+          <p>„BLSK wyróżnia się zdolnością do prowadzenia niezwykle złożonych sporów korporacyjnych z precyzją i determinacją. Klientów imponuje ich strategiczne podejście już na etapie planowania sporu."</p>
+          <cite>— Chambers and Partners, edycja 2024</cite>
+        </div>
+
+        <h2>Metodologia rankingu</h2>
+        <p>Ranking Chambers Europe budowany jest na podstawie ankiet rozesłanych do kilku tysięcy prawników i ich klientów w całej Europie. Ocenie podlegają m.in. jakość świadczonych usług, podejście do klienta, innowacyjność, a przede wszystkim rzeczywiste wyniki osiągane w sprawach.</p>
+        <p>Kancelarie są oceniane niezależnie przez ekspertów Chambers i przyporządkowywane do czterech bandów (Band 1 to najwyższy) lub kategorii „Recognised Practitioner". BLSK Legal jest wymieniona w rankingu nieprzerwanie od kilku lat.</p>
+
+        <div class="art-img-block"></div>
+        <p class="art-img-caption">Ceremonia Chambers Europe Awards — Warszawa, czerwiec 2024</p>
+
+        <h2>Kontekst i znaczenie wyróżnienia</h2>
+        <p>Wyróżnienie zbiega się z kolejnym rekordowym rokiem dla praktyki Rozwiązywania Sporów w BLSK. W 2023–2024 kancelaria prowadziła kilkanaście spraw o wartości powyżej 50 mln zł każda, z których większość zakończyła się sukcesem dla klienta na etapie pierwszej instancji.</p>
+        <p>Wśród spraw wyróżnionych przez Chambers znalazły się procesy z zakresu odpowiedzialności zarządu w spółkach publicznych, spory między wspólnikami o wyłączenie ze spółki oraz postępowania zabezpieczające o bezprecedensowym zakresie.</p>
+
+        <h2>Komentarz kancelarii</h2>
+        <p>Prof. Katarzyna Bilewska, Managing Partner BLSK Legal: <em>„Wyróżnienie Chambers Europe jest dla nas potwierdzeniem, że obrana strategia — głęboka specjalizacja i bezkompromisowe podejście do każdej sprawy — przynosi efekty nie tylko naszym klientom, ale jest też dostrzegane przez rynek. Jesteśmy dumni z całego zespołu."</em></p>
+
+        <div class="art-tags">
+          <span class="art-tag">Chambers Europe</span>
+          <span class="art-tag">Dispute Resolution</span>
+          <span class="art-tag">Rankingi</span>
+          <span class="art-tag">Spory korporacyjne</span>
+        </div>
+
+        <div class="art-share">
+          <span class="share-lbl">Udostępnij:</span>
+          <a href="#" class="share-btn">LinkedIn</a>
+          <a href="#" class="share-btn">Kopiuj link</a>
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="art-sidebar">
+
+        <div class="sidebar-section sidebar-cta">
+          <h3>Skontaktuj się</h3>
+          <p style="font-size:.875rem;color:#666;line-height:1.6;margin-bottom:1.25rem">Potrzebujesz wsparcia prawnego? Nasi eksperci są do Twojej dyspozycji.</p>
+          <a href="tel:+48224159800" class="btn-p" style="width:100%;justify-content:center;font-size:.875rem;margin-bottom:.75rem">Zadzwoń: +48 22 415 98 00</a>
+          <a href="wireframe-kontakt.html" class="btn-s" style="width:100%;justify-content:center;font-size:.875rem">Napisz do nas</a>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Wyróżnieni prawnicy</h3>
+          <div class="sidebar-person">
+            <div class="person-photo"></div>
+            <div>
+              <p class="person-name">Prof. Katarzyna Bilewska</p>
+              <p class="person-role">Managing Partner · Band 1</p>
+            </div>
+          </div>
+          <a href="wireframe-profesor-bilewska.html" class="sidebar-link">
+            Zobacz profil <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
+          </a>
+          <hr style="border:none;border-top:1px solid #f0f0f0;margin:1.25rem 0">
+          <div class="sidebar-person">
+            <div class="person-photo"></div>
+            <div>
+              <p class="person-name">Wojciech Kozłowski</p>
+              <p class="person-role">Partner · Band 2</p>
+            </div>
+          </div>
+          <a href="#" class="sidebar-link">
+            Zobacz profil <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
+          </a>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Praktyka</h3>
+          <p style="font-size:.875rem;color:#666;line-height:1.65;margin-bottom:1rem">Rozwiązywanie Sporów — spory korporacyjne, arbitraż i postępowania przed sądami powszechnymi i administracyjnymi.</p>
+          <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+            Dowiedz się więcej <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
+          </a>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Pozostałe aktualności</h3>
+          <div class="related-list">
+            <a href="wireframe-artykul.html" class="related-item">
+              <span class="related-cat">Wyróżnienia</span>
+              <span class="related-title">Prof. Bilewska z nagrodą Business Centre Club za wkład w prawo korporacyjne</span>
+              <span class="related-date">18 maja 2024</span>
+            </a>
+            <a href="wireframe-artykul.html" class="related-item">
+              <span class="related-cat">Rankingi</span>
+              <span class="related-title">BLSK Legal nominowany do FT Innovative Lawyers 2024</span>
+              <span class="related-date">22 kwietnia 2024</span>
+            </a>
+            <a href="wireframe-artykul.html" class="related-item">
+              <span class="related-cat">Rankingi</span>
+              <span class="related-title">Legal 500 EMEA 2024: Band 1 w Dispute Resolution</span>
+              <span class="related-date">15 lutego 2024</span>
+            </a>
+          </div>
+          <a href="wireframe-aktualnosci.html" class="btn-row-link" style="font-size:.85rem;margin-top:1.5rem;gap:.5rem">
+            Wszystkie aktualności <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- MORE ARTICLES -->
+<div class="more-section">
+  <div class="wrap">
+    <div class="row-between">
+      <div>
+        <span class="label">Aktualności</span>
+        <h2 class="h2-sec">Więcej z kancelarii</h2>
+      </div>
+      <a href="wireframe-aktualnosci.html" class="btn-row-link">
+        Wszystkie aktualności
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+    <div class="more-grid">
+      <a href="wireframe-artykul.html" class="more-card">
+        <div class="more-img"></div>
+        <span class="more-cat">Wyróżnienia</span>
+        <p class="more-title">Prof. Bilewska wyróżniona nagrodą Business Centre Club</p>
+        <span class="more-date">18 maja 2024</span>
+      </a>
+      <a href="wireframe-artykul.html" class="more-card">
+        <div class="more-img"></div>
+        <span class="more-cat">Rankingi</span>
+        <p class="more-title">BLSK Legal nominowany do FT Innovative Lawyers 2024</p>
+        <span class="more-date">22 kwietnia 2024</span>
+      </a>
+      <a href="wireframe-artykul.html" class="more-card">
+        <div class="more-img"></div>
+        <span class="more-cat">Zespół</span>
+        <p class="more-title">Dr Michał Turczyk i Aleksandra Rutkowska dołączają do BLSK jako Partnerzy</p>
+        <span class="more-date">1 marca 2024</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA przed stopką — K3 -->
+<section style="background:#111;padding:5rem 0">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap">
+    <div>
+      <span class="label" style="color:#555">Masz sprawę prawną?</span>
+      <h2 style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:300;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem">Porozmawiajmy o Twojej sytuacji.</h2>
+      <p style="font-size:1rem;color:#666;line-height:1.7">Umawiamy spotkania stacjonarne i online. Najszybszy kontakt: telefon.</p>
+    </div>
+    <div class="art-cta-btns" style="display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0">
+      <a href="tel:+48224159800" class="btn-p">Zadzwoń: +48 22 415 98 00</a>
+      <a href="wireframe-kontakt.html" class="btn-s" style="color:#aaa;border-color:#333">Napisz do nas</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo"></div>
+      <p class="footer-desc">BLSK KOZŁOWSKI I WSPÓLNICY SP. K. — kancelaria prawna specjalizująca się w doradztwie dla firm i przedsiębiorców. Warszawa, ul. Mazowiecka 9.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Praktyki</h4>
+      <ul>
+        <li><a href="#">Rozwiązywanie Sporów</a></li>
+        <li><a href="#">Life Sciences</a></li>
+        <li><a href="#">Dotacje i Granty</a></li>
+        <li><a href="#">Digital</a></li>
+        <li><a href="#">Spory Podatkowe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kancelaria</h4>
+      <ul>
+        <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+        <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+        <li><a href="wireframe-faq.html">FAQ</a></li>
+        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
+        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="#">ul. Mazowiecka 9, Warszawa</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BLSK KOZŁOWSKI I WSPÓLNICY SP. K.</span>
+    <span><a href="wireframe-polityka-prywatnosci.html">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+})();
+</script>
+</body>
+</html>

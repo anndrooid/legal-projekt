@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kierunek 6-2 — Home — BLSK Legal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:#f6f6f4;color:var(--navy);font-size:1.125rem;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased}
+:root{--crimson:#8C0002;--navy:#1a2440;--bg:#f6f6f4;--border:rgba(26,36,64,.12)}
+
+.wrap{max-width:1600px;margin:0 auto;padding:0 3rem}
+.sec{padding:7vw 0}
+.sec-white{background:#fff}
+.sec-warm{background:#f6f6f4}
+.sec-navy{background:#1a2440;color:#f6f6f4}
+
+/* Typography — bez opacity, bezpośrednie kolory jak w kierunku 6-2 */
+.h1-hero{font-family:'Raleway',serif;font-size:clamp(3rem,7.5vw,6.5rem);font-weight:600;color:var(--navy);letter-spacing:-.04em;line-height:1.02}
+.h2-sec{font-family:'Raleway',serif;font-size:clamp(2.25rem,4vw,4rem);font-weight:600;color:var(--navy);letter-spacing:-.035em;line-height:1.08}
+.h3-card{font-family:'Raleway',serif;font-size:clamp(1.2rem,1.8vw,1.75rem);font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.2}
+.lead{font-size:clamp(1rem,1.3vw,1.375rem);color:var(--navy);line-height:1.7;font-weight:400}
+.body-text{font-size:1.125rem;color:var(--navy);line-height:1.7}
+.stat-num{font-family:'Raleway',serif;font-size:clamp(3.5rem,7vw,7.5rem);font-weight:400;color:var(--navy);letter-spacing:-.05em;line-height:1}
+.label{font-family:'Raleway',sans-serif;font-size:1.2rem;font-weight:300;letter-spacing:.14em;color:var(--crimson);display:block;margin-bottom:.75rem}
+
+/* Ciemne sekcje — overrides */
+.sec-navy .h2-sec,.sec-navy .kt-h2{color:#fff}
+.sec-navy .label{color:rgba(255,255,255,.55)}
+.sec-navy .lead,.sec-navy .body-text{color:rgba(255,255,255,.8)}
+.sec-navy .step-title{color:#fff}
+.sec-navy .step-num{color:rgba(255,255,255,.4)}
+.sec-navy .step-desc{color:rgba(255,255,255,.75)}
+.sec-navy .btn-row-link{color:#fff}
+.sec-navy .btn-c{border-color:rgba(255,255,255,.3);color:#fff}
+.sec-navy .btn-c:hover{background:#fff;color:var(--navy);border-color:#fff}
+.sec-navy .kt-lead{color:rgba(255,255,255,.75)}
+.sec-navy .kt-lbl{color:rgba(255,255,255,.45)}
+.sec-navy .kt-val{color:rgba(255,255,255,.9)}
+
+/* NAV — zawsze solidny jak w kierunku 6-2 */
+nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:transparent;box-shadow:none;transition:background .35s ease,box-shadow .35s ease}
+nav.topnav.nav-solid{background:#f6f6f4}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-logo{width:100px;height:30px;background:rgba(255,255,255,.2);border-radius:3px;transition:background .35s ease}
+nav.topnav.nav-solid .nav-logo{background:#c8c4bc}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:1rem;font-weight:500;color:rgba(255,255,255,.9);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#fff}
+nav.topnav.nav-solid .nav-links a{color:var(--navy)}
+nav.topnav.nav-solid .nav-links a:hover{color:var(--crimson)}
+.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone-label{display:block;font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1;margin-bottom:.2rem;transition:color .35s}
+nav.topnav.nav-solid .nav-phone-label{color:var(--navy)}
+.nav-phone-num{display:block;font-size:2rem;font-weight:600;color:#fff;text-decoration:none;transition:color .35s}
+nav.topnav.nav-solid .nav-phone-num{color:var(--crimson)}
+
+/* DROPDOWN */
+.nav-dropdown{position:relative}
+.nav-drop-trigger{display:inline-flex;align-items:center;gap:.35rem;font-family:'Raleway',sans-serif;font-size:1rem;font-weight:500;color:rgba(255,255,255,.9);cursor:pointer;user-select:none;background:none;border:none;padding:0;transition:color .2s}
+.nav-drop-trigger:hover{color:#fff}
+nav.topnav.nav-solid .nav-drop-trigger{color:var(--navy)}
+nav.topnav.nav-solid .nav-drop-trigger:hover{color:var(--crimson)}
+.nav-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg)}
+.nav-dropdown::after{content:'';position:absolute;top:100%;left:-2rem;right:-2rem;height:1.75rem}
+.nav-drop-menu{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%);background:#f6f6f4;border:1px solid rgba(26,36,64,.15);border-radius:8px;box-shadow:0 12px 40px rgba(26,36,64,.12);padding:.75rem 0;list-style:none;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s;z-index:300}
+.nav-dropdown:hover .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto}
+.nav-drop-menu a{display:block;padding:.65rem 1.25rem;font-family:'Raleway',sans-serif;font-size:.9rem;font-weight:400;color:var(--navy);text-decoration:none;transition:background .15s}
+.nav-drop-menu a:hover{background:rgba(26,36,64,.06);color:var(--crimson)}
+
+/* HAMBURGER */
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.9);border-radius:2px;transition:background .35s}
+nav.topnav.nav-solid .nav-hamburger span{background:var(--navy)}
+
+/* HERO */
+.hero-screen{position:relative;width:100%;height:100vh;min-height:600px;background:#b8b4ac;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-placeholder-logo{width:180px;height:52px;background:rgba(255,255,255,.2);border-radius:4px}
+.hero-scroll-cue{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;pointer-events:none}
+.hero-scroll-cue span{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.hero-scroll-line{width:1px;height:56px;background:#fff;animation:line-pulse 2s ease-in-out infinite}
+@keyframes line-pulse{0%,100%{opacity:.35;transform:scaleY(.8)}50%{opacity:1;transform:scaleY(1)}}
+
+/* INTRO */
+.intro{padding:7vw 0;border-bottom:1px solid var(--border)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+
+/* STATS */
+.stats-band{border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1600px;margin:0 auto;padding:0 3rem;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-cell{padding:4.5rem 3rem 4.5rem 2rem;border-right:1px solid var(--border)}
+
+.stat-cell:last-child{border-right:none;padding-right:0}
+.stat-lbl{font-size:.9rem;color:var(--navy);margin-top:.65rem;line-height:1.45}
+
+/* BUTTONS */
+.btn-p{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.85rem;background:var(--crimson);color:#fff;font-family:'Raleway',sans-serif;font-size:.9rem;font-weight:600;border-radius:8px;text-decoration:none;cursor:pointer;border:none;transition:background .2s ease}
+.btn-p:hover{background:#6e0001}
+.btn-c{width:52px;height:52px;border-radius:50%;border:1px solid rgba(26,36,64,.25);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;color:var(--navy);flex-shrink:0;transition:background .5s,border-color .5s,color .5s}
+.btn-c .arr{display:block;width:19px;height:10px;font-size:0;position:relative;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.btn-c .arr::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:currentColor;transform:translateY(-50%)}
+.btn-c .arr::after{content:'';position:absolute;top:50%;right:0;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-50%) rotate(45deg)}
+.btn-c:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn-c:hover .arr{transform:rotate(-45deg)}
+.btn-c-sm{width:36px;height:36px}
+.btn-c-sm .arr{width:13px;height:8px}
+.btn-c-sm .arr::after{width:5px;height:5px}
+.btn-row-link{display:inline-flex;align-items:center;gap:.85rem;color:var(--navy);font-weight:600;font-family:'Raleway',sans-serif;font-size:.95rem;text-decoration:none}
+.btn-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.row-between{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;gap:2rem}
+
+/* PRAKTYKI */
+.prac-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.prac-card{padding:2.5rem 2rem;border-right:1px solid var(--border);background:#fff;display:flex;flex-direction:column;gap:.65rem}
+.prac-card:last-child{border-right:none}
+.prac-ico{width:44px;height:44px;background:rgba(26,36,64,.1);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--navy)}
+.prac-name{font-family:'Raleway',serif;font-size:1.3rem;font-weight:700;color:var(--navy);line-height:1.25}
+.prac-desc{font-size:.875rem;color:var(--navy);line-height:1.6;flex:1}
+
+/* PODEJŚCIE */
+.approach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:4rem}
+.approach-grid>div{padding:2.5rem 3rem 0 0;border-top:1px solid rgba(255,255,255,.1);position:relative}
+.approach-grid>div::before{content:'';position:absolute;top:-1px;left:0;width:2.5rem;height:2px;background:var(--crimson)}
+.approach-grid>div:last-child{padding-right:0}
+.step-num{font-family:'Raleway',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson);margin-bottom:.9rem;margin-top:1.5rem}
+.step-title{font-family:'Raleway',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:.65rem;line-height:1.25}
+.step-desc{font-size:.95rem;color:var(--navy);line-height:1.7}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.team-card{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.team-photo{width:100%;aspect-ratio:3/4;background:rgba(26,36,64,.1)}
+.team-body{padding:1.75rem 2rem 2rem}
+.team-name{font-family:'Raleway',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
+.team-role{font-size:.8rem;color:var(--crimson);margin-bottom:1.25rem;text-transform:uppercase;letter-spacing:.08em;font-weight:400}
+.team-count-bar{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:2rem 3rem;border:1px solid var(--border);border-radius:8px;background:#fff;margin-top:1.5rem}
+.team-count-bar p{font-size:1rem;color:var(--navy);line-height:1.5}
+
+/* CORPO SNAP */
+.cs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.cs-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff;text-decoration:none;color:inherit;display:block}
+.cs-thumb{width:100%;aspect-ratio:16/9;background:rgba(26,36,64,.1)}
+.cs-body{padding:1.75rem}
+.cs-tag{font-size:.63rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson);display:block;margin-bottom:.4rem}
+.cs-title{font-family:'Raleway',serif;font-size:1.3rem;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:.5rem}
+.cs-desc{font-size:.9rem;color:var(--navy);line-height:1.6}
+
+/* AKTUALNOŚCI */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.news-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:2rem;display:flex;flex-direction:column;gap:.5rem}
+.news-date{font-size:.75rem;color:var(--crimson);font-weight:400}
+.news-title{font-family:'Raleway',serif;font-size:1.3rem;font-weight:700;color:var(--navy);line-height:1.3}
+.news-exc{font-size:.95rem;color:var(--navy);line-height:1.6;flex:1}
+
+/* RANKINGI */
+.rankings-band{border-bottom:1px solid var(--border);padding:3vw 0;background:#fff}
+.rankings-inner{max-width:1600px;margin:0 auto;padding:0 3rem;display:flex;align-items:center;gap:3rem;flex-wrap:wrap}
+.rank-lbl{font-size:.63rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);flex-shrink:0;white-space:nowrap}
+.rank-logos{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
+.rank-logo{width:110px;height:48px;background:rgba(26,36,64,.1);border-radius:6px;flex-shrink:0}
+
+/* KONTAKT */
+.kt-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:start}
+.kt-h2{font-family:'Raleway',serif;font-size:clamp(2rem,3.5vw,3.5rem);font-weight:500;color:var(--navy);letter-spacing:-.03em;line-height:1.08;margin-bottom:1.25rem}
+.kt-lead{font-size:1.1rem;color:var(--navy);margin-bottom:2.5rem;line-height:1.7;font-weight:300}
+.kt-rows{display:flex;flex-direction:column;gap:1.25rem}
+.kt-lbl{font-size:.63rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson);display:block;margin-bottom:.2rem}
+.kt-val{font-size:1rem;color:var(--navy);font-weight:400;text-decoration:none;display:block}
+.form{display:flex;flex-direction:column;gap:1.1rem}
+.form-field{display:flex;flex-direction:column;gap:.35rem}
+.form-field label{font-size:.875rem;font-weight:500;color:rgba(255,255,255,.75);font-family:'Raleway',sans-serif}
+.form-field input,.form-field textarea{border:none;border-bottom:1.5px solid rgba(255,255,255,.25);border-radius:0;padding:.65rem 0;font-size:1rem;font-family:'Open Sans',sans-serif;color:#fff;background:transparent;resize:none;font-weight:300;outline:none;transition:border-color .2s;width:100%}
+.form-field input::placeholder,.form-field textarea::placeholder{color:rgba(255,255,255,.3)}
+.form-field input:focus,.form-field textarea:focus{border-bottom-color:rgba(255,255,255,.7)}
+.form-field textarea{min-height:110px}
+.form-field textarea{min-height:130px}
+.form-note{font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.6}
+
+/* MOBILE MENU */
+.mobile-menu{position:fixed;inset:0;z-index:500;background:#f6f6f4;overflow-y:auto;padding:0 3rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-bottom:1px solid var(--border)}
+.mobile-menu-logo{width:90px;height:27px;background:rgba(26,36,64,.15);border-radius:3px}
+.mobile-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--navy);line-height:1;padding:.25rem}
+.mobile-nav{list-style:none}
+.mobile-nav>li{border-bottom:1px solid var(--border)}
+.mobile-nav>li:last-child{border-bottom:none}
+.mobile-nav>li>a,.mobile-nav>li>button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.15rem 0;font-family:'Raleway',sans-serif;font-size:1.125rem;font-weight:500;color:var(--navy);text-decoration:none;background:none;border:none;cursor:pointer;text-align:left}
+.mobile-submenu{list-style:none;padding-bottom:.75rem;display:none}
+.mobile-submenu.open{display:block}
+.mobile-submenu a{display:block;padding:.55rem .75rem;font-size:1rem;color:var(--navy);text-decoration:none}
+.m-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.mobile-nav button.open .m-chevron{transform:rotate(180deg)}
+.mobile-menu-phone{padding-top:2rem;border-top:1px solid var(--border)}
+.mobile-menu-phone .label{margin-bottom:.35rem;color:var(--navy)}
+.mobile-menu-phone a{font-family:'Raleway',serif;font-size:1.75rem;font-weight:600;color:var(--crimson);text-decoration:none}
+
+/* FOOTER */
+footer{background:#0f1628;padding:5rem 0 0}
+.footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
+.footer-logo{width:90px;height:27px;background:#2a3555;border-radius:3px;margin-bottom:1.25rem}
+.footer-desc{font-size:.9rem;color:rgba(255,255,255,.35);line-height:1.7}
+.footer-col h4{font-size:.63rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col a{font-size:.875rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:#f6f6f4}
+.footer-bottom{max-width:1600px;margin:0 auto;padding:1.5rem 3rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.25)}
+.footer-bottom a{color:rgba(255,255,255,.25);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .nav-links{display:none}
+  .prac-grid{grid-template-columns:repeat(2,1fr)}
+  .prac-card:nth-child(2){border-right:none}
+  .prac-card:nth-child(4){border-right:none}
+  .prac-card{border-bottom:1px solid var(--border)}
+  .approach-grid{grid-template-columns:repeat(2,1fr);gap:3rem}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .team-photo{aspect-ratio:1/1}
+  .news-grid{grid-template-columns:repeat(2,1fr)}
+  .news-card:last-child{grid-column:1/-1}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-cell:nth-child(2){border-right:none}
+  .kt-grid{grid-template-columns:1fr;gap:4rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}
+  .nav-hamburger{display:flex}
+  .nav-phone{display:none}
+}
+@media(max-width:767px){
+  .wrap,.stats-inner,.rankings-inner,.footer-grid,.footer-bottom,.nav-inner,.mobile-menu{padding-left:1.5rem;padding-right:1.5rem}
+  .sec{padding:12vw 0}
+  .intro{padding:10vw 0}
+  .intro-grid{grid-template-columns:1fr;gap:2.5rem}
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .prac-grid{grid-template-columns:1fr;border-radius:0}
+  .prac-card{border-right:none!important}
+  .approach-grid,.team-grid{grid-template-columns:1fr}
+  .cs-grid,.news-grid{grid-template-columns:1fr;gap:2rem}
+  .row-between{flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .footer-grid{grid-template-columns:1fr}
+  .team-count-bar{flex-direction:column;align-items:flex-start;padding:1.5rem 2rem;gap:1.25rem}
+}
+@media(max-width:480px){
+  .stats-inner{grid-template-columns:1fr}
+  .stat-cell{border-right:none;padding-right:0}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV — zawsze solidny jak w kierunku 6-2 -->
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="wireframe-kierunek-nr6-2-home.html" class="nav-logo-link"><div class="nav-logo"></div></a>
+    <ul class="nav-links">
+      <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="nav-drop-menu">
+          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+          <li><a href="wireframe-digital.html">Digital</a></li>
+          <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        </ul>
+      </li>
+      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+      <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
+      <li><a href="wireframe-faq.html">FAQ</a></li>
+      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="nav-phone">
+      <span class="nav-phone-label">Zadzwo&#324; teraz</span>
+      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+    </div>
+    <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otw&oacute;rz menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="wireframe-kierunek-nr6-2-home.html"><div class="mobile-menu-logo"></div></a>
+    <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">&#x2715;</button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+    <li>
+      <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <ul class="mobile-submenu" id="mobileSubmenu">
+        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+        <li><a href="wireframe-digital.html">Digital</a></li>
+        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+      </ul>
+    </li>
+    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+    <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
+    <li><a href="wireframe-faq.html">FAQ</a></li>
+    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="mobile-menu-phone">
+    <span class="label">Zadzwo&#324; teraz</span>
+    <a href="tel:+48224159800">+48 22 415 98 00</a>
+  </div>
+</div>
+
+<!-- HERO — szary placeholder zdjęcia, pełny ekran -->
+<div class="hero-screen">
+  <div class="hero-placeholder-logo"></div>
+  <div class="hero-scroll-cue">
+    <span>Przewi&#324;</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</div>
+
+<!-- INTRO — białe tło -->
+<section class="intro sec-white">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div>
+        <span class="label">Kancelaria prawna &middot; Warszawa</span>
+        <h1 class="h1-hero">Wygrywamy trudne sprawy</h1>
+      </div>
+      <div style="padding-top:1rem">
+        <p class="lead" style="max-width:580px;margin-bottom:2.5rem">Wspieramy firmy i przedsi&#281;biorc&oacute;w indywidualnie i konkretnie &mdash; jeste&#347;my gotowi w najbardziej wymagaj&#261;cych sprawach, niezale&#380;nie od ich skali i z&#322;o&#380;ono&#347;ci.</p>
+        <div class="btn-row">
+          <a href="tel:+48224159800" class="btn-p">Zadzwo&#324;: +48 22 415 98 00</a>
+          <a href="#kontakt" class="btn-row-link">
+            Napisz do nas
+            <span class="btn-c"><span class="arr"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RANKINGI — białe tło -->
+<div class="rankings-band">
+  <div class="rankings-inner">
+    <span class="rank-lbl">Wyr&oacute;&#380;nienia i rankingi</span>
+    <div class="rank-logos">
+      <div class="rank-logo"></div>
+      <div class="rank-logo"></div>
+      <div class="rank-logo"></div>
+      <div class="rank-logo"></div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS — ciepły #f6f6f4 -->
+<div class="stats-band sec-warm">
+  <div class="stats-inner">
+    <div class="stat-cell">
+      <div class="stat-num">29</div>
+      <div class="stat-lbl">specjalist&oacute;w &mdash; partnerzy, counselowie, associates i eksperci bran&#380;owi</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">5</div>
+      <div class="stat-lbl">obszar&oacute;w specjalizacji &mdash; spory, Life Sciences, dotacje, digital, podatki</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">20+</div>
+      <div class="stat-lbl">lat do&#347;wiadczenia lider&oacute;w praktyk &mdash; partnerzy z kancelarii mi&#281;dzynarodowych</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">6 mld</div>
+      <div class="stat-lbl">z&#322;otych dotacji i ulg pozyskanych przez praktyk&#281; Dotacji, Grant&oacute;w i Zach&#281;t</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRAKTYKI — białe tło -->
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="row-between">
+      <div>
+        <span class="label">Nasze praktyki</span>
+        <h2 class="h2-sec">Pi&#281;&#263; obszar&oacute;w specjalizacji.<br>Jedno podej&#347;cie.</h2>
+      </div>
+      <a href="wireframe-faq.html" class="btn-row-link">
+        Jak pracujemy? Sprawd&#378; FAQ
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+    <div class="prac-grid">
+      <div class="prac-card">
+        <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="21"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="7" x2="1" y2="13"/><line x1="4" y1="7" x2="7" y2="13"/><path d="M1 13Q4 17 7 13"/><line x1="20" y1="7" x2="17" y2="13"/><line x1="20" y1="7" x2="23" y2="13"/><path d="M17 13Q20 17 23 13"/></svg></div>
+        <p class="prac-name">Rozwi&#261;zywanie Spor&oacute;w</p>
+        <p class="prac-desc">Spory korporacyjne, arbitra&#380; i post&#281;powania s&#261;dowe. Reprezentacja przed s&#261;dami, trybuna&#322;ami i organami administracji.</p>
+        <a href="wireframe-rozwiazywanie-sporow.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+          Dowiedz si&#281; wi&#281;cej
+          <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+      <div class="prac-card">
+        <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v5L5 17a1 1 0 00.9 1.5h12.2a1 1 0 00.9-1.5L14 8V3"/><path d="M6.5 15h11"/></svg></div>
+        <p class="prac-name">Life Sciences</p>
+        <p class="prac-desc">Prawo farmaceutyczne i &#380;ywno&#347;ciowe &mdash; doradztwo regulacyjne, rejestracja produkt&oacute;w, audyty i post&#281;powania.</p>
+        <a href="wireframe-life-sciences.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+          Dowiedz si&#281; wi&#281;cej
+          <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+      <div class="prac-card">
+        <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="prac-name">Dotacje, Granty i Zach&#281;ty</p>
+        <p class="prac-desc">Ponad 6 mld z&#322; pozyskanych dotacji i ulg podatkowych. Obs&#322;uga kontroli i post&#281;powa&#324; spornych ze &#347;rodk&oacute;w publicznych.</p>
+        <a href="wireframe-dotacje-granty.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+          Dowiedz si&#281; wi&#281;cej
+          <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+      <div class="prac-card">
+        <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <p class="prac-name">Digital</p>
+        <p class="prac-desc">Telekomunikacja, ochrona danych, AI i e-commerce. Wsparcie prawne dla sektora technologicznego, medi&oacute;w i nadawc&oacute;w.</p>
+        <a href="wireframe-digital.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+          Dowiedz si&#281; wi&#281;cej
+          <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+      <div class="prac-card" style="border-right:none">
+        <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="13" y2="13"/><line x1="8" y1="16" x2="11" y2="16"/><circle cx="15.5" cy="16.5" r="2.5"/><line x1="19" y1="20" x2="17.27" y2="18.27"/></svg></div>
+        <p class="prac-name">Spory Podatkowe</p>
+        <p class="prac-desc">Post&#281;powania przed KAS, s&#261;dami administracyjnymi i TSUE. Strategia sporu, kontrole, odpowiedzialno&#347;&#263; zarz&#261;du.</p>
+        <a href="wireframe-spory-podatkowe.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+          Dowiedz si&#281; wi&#281;cej
+          <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PODEJŚCIE — granatowe tło -->
+<section class="sec sec-navy">
+  <div class="wrap">
+    <span class="label">Jak pracujemy</span>
+    <h2 class="h2-sec" style="margin-bottom:4rem">
+      Indywidualnie.<br>Konkretnie.<br>Z pe&#322;nym zaanga&#380;owaniem.
+    </h2>
+    <div class="approach-grid">
+      <div>
+        <p class="step-num">Krok 01</p>
+        <p class="step-title">Rozumiemy spraw&#281;</p>
+        <p class="step-desc">Ka&#380;de post&#281;powanie zaczyna si&#281; od dok&#322;adnego zapoznania si&#281; z sytuacj&#261; klienta &mdash; faktami, celami i ryzykiem. Nie zak&#322;adamy niczego z g&oacute;ry.</p>
+      </div>
+      <div>
+        <p class="step-num">Krok 02</p>
+        <p class="step-title">Budujemy strategi&#281;</p>
+        <p class="step-desc">Proponujemy podej&#347;cie skrojone do konkretnej sprawy. Uwzgl&#281;dniamy ca&#322;o&#347;&#263; &mdash; prawn&#261;, biznesow&#261; i ludzk&#261; perspektyw&#281;.</p>
+      </div>
+      <div>
+        <p class="step-num">Krok 03</p>
+        <p class="step-title">Partner prowadzi Twoj&#261; spraw&#281;</p>
+        <p class="step-desc">W butikowej kancelarii partner jest bezpo&#347;rednio dost&#281;pny od pierwszego spotkania do ostatniej decyzji. Odpowiedzialno&#347;&#263; nie jest delegowana w d&oacute;&#322; hierarchii.</p>
+      </div>
+      <div>
+        <p class="step-num">Krok 04</p>
+        <p class="step-title">Dzia&#322;amy, nie tylko radzimy</p>
+        <p class="step-desc">Reprezentujemy, negocjujemy i podejmujemy decyzje razem z klientem. Jeste&#347;my gotowi w sprawach o ka&#380;dej skali i z&#322;o&#380;ono&#347;ci.</p>
+      </div>
+    </div>
+    <div class="btn-row" style="margin-top:4.5rem">
+      <a href="tel:+48224159800" class="btn-p">Zadzwo&#324;: +48 22 415 98 00</a>
+      <a href="#kontakt" class="btn-row-link">
+        Napisz do nas
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NASZ ZESPÓŁ — ciepły #f6f6f4 -->
+<section class="sec sec-warm">
+  <div class="wrap">
+    <div class="row-between">
+      <div>
+        <span class="label">Nasz Zesp&oacute;&#322;</span>
+        <h2 class="h2-sec">Prawnicy z do&#347;wiadczeniem<br>na ka&#380;dym szczeblu.</h2>
+      </div>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-body">
+          <p class="team-name">Prof. Katarzyna Bilewska</p>
+          <p class="team-role">Managing Partner</p>
+          <a href="profil-bilewska.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem">
+            Zobacz profil
+            <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+          </a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-body">
+          <p class="team-name">Wojciech Koz&#322;owski</p>
+          <p class="team-role">Partner</p>
+          <a href="#" class="btn-row-link" style="font-size:.875rem;gap:.55rem">
+            Zobacz profil
+            <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+          </a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-body">
+          <p class="team-name">Maria Samoli&#324;ska</p>
+          <p class="team-role">Partner</p>
+          <a href="#" class="btn-row-link" style="font-size:.875rem;gap:.55rem">
+            Zobacz profil
+            <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+          </a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-body">
+          <p class="team-name">Dr Micha&#322; Turczyk</p>
+          <p class="team-role">Partner</p>
+          <a href="#" class="btn-row-link" style="font-size:.875rem;gap:.55rem">
+            Zobacz profil
+            <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="team-count-bar">
+      <p>Poznaj <strong>wszystkich 29 prawnik&oacute;w i specjalist&oacute;w</strong> kancelarii &mdash; partner&oacute;w, counsel&oacute;w, associates i ekspert&oacute;w bran&#380;owych.</p>
+      <a href="wireframe-nasz-zespol.html" class="btn-row-link" style="flex-shrink:0;gap:.75rem">
+        Nasz Zesp&oacute;&#322;
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CORPO SNAP — białe tło -->
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="row-between">
+      <div>
+        <span class="label">Corpo Snap</span>
+        <h2 class="h2-sec">Prawo korporacyjne<br>wyja&#347;nione konkretnie.</h2>
+      </div>
+      <a href="wireframe-corpo-snap.html" class="btn-row-link">
+        Wszystkie odcinki
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+    <div class="cs-grid">
+      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
+        <div class="cs-thumb"></div>
+        <div class="cs-body">
+          <span class="cs-tag">Corpo Snap &middot; Prawo sp&oacute;&#322;ek</span>
+          <p class="cs-title">Kiedy zarz&#261;d odpowiada maj&#261;tkiem w&#322;asnym za d&#322;ugi sp&oacute;&#322;ki?</p>
+          <p class="cs-desc">Art. 299 KSH &mdash; warunki odpowiedzialno&#347;ci, przes&#322;anki wy&#322;&#261;czenia i konsekwencje dla decyzji zarz&#261;dczych.</p>
+        </div>
+      </a>
+      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
+        <div class="cs-thumb"></div>
+        <div class="cs-body">
+          <span class="cs-tag">Corpo Snap &middot; Prawo sp&oacute;&#322;ek</span>
+          <p class="cs-title">Zaskar&#380;anie uchwa&#322; zgromadzenia wsp&oacute;lnik&oacute;w &mdash; co warto wiedzie&#263;?</p>
+          <p class="cs-desc">Uchylenie a stwierdzenie niewa&#380;no&#347;ci uchwa&#322;y &mdash; r&oacute;&#380;nice, terminy i konsekwencje dla sp&oacute;&#322;ki.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AKTUALNOŚCI — ciepłe beżowe tło, karty na białym -->
+<section class="sec sec-warm">
+  <div class="wrap">
+    <div class="row-between">
+      <div>
+        <span class="label">Aktualno&#347;ci</span>
+        <h2 class="h2-sec">Co s&#322;ycha&#263; w kancelarii.</h2>
+      </div>
+      <a href="wireframe-aktualnosci.html" class="btn-row-link">
+        Wszystkie aktualno&#347;ci
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+    <div class="news-grid">
+      <div class="news-card">
+        <p class="news-date">Stycze&#324; 2025</p>
+        <p class="news-title">BLSK Legal wyr&oacute;&#380;nione w rankingu Chambers Europe</p>
+        <p class="news-exc">Kancelaria ponownie rekomendowana w kategorii Dispute Resolution.</p>
+        <a href="wireframe-artykul.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">
+          Czytaj wi&#281;cej
+          <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+      <div class="news-card">
+        <p class="news-date">Grudzie&#324; 2024</p>
+        <p class="news-title">Do zespo&#322;u do&#322;&#261;cza nowy counsel &mdash; specjalista od post&#281;powa&#324; podatkowych</p>
+        <p class="news-exc">Rozwijamy praktyk&#281; Spor&oacute;w Podatkowych.</p>
+        <a href="wireframe-artykul.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">
+          Czytaj wi&#281;cej
+          <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+      <div class="news-card">
+        <p class="news-date">Pa&#378;dziernik 2024</p>
+        <p class="news-title">BLSK Legal partnerem konferencji prawa sp&oacute;&#322;ek handlowych</p>
+        <p class="news-exc">Obj&#281;li&#347;my patronat merytoryczny nad konferencj&#261; po&#347;wi&#281;con&#261; odpowiedzialno&#347;ci organ&oacute;w sp&oacute;&#322;ek.</p>
+        <a href="wireframe-artykul.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">
+          Czytaj wi&#281;cej
+          <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT — granatowe tło -->
+<section class="sec sec-navy" id="kontakt">
+  <div class="wrap">
+    <div class="kt-grid">
+      <div>
+        <span class="label">Kontakt</span>
+        <h2 class="kt-h2">Porozmawiajmy<br>o Twojej sprawie.</h2>
+        <p class="kt-lead">Zapraszamy na spotkania stacjonarne lub online &mdash; wy&#322;&#261;cznie po wcze&#347;niejszym um&oacute;wieniu terminu. Najszybszy kontakt: telefon.</p>
+        <div class="kt-rows">
+          <div><span class="kt-lbl">Telefon</span><a href="tel:+48224159800" class="kt-val">+48 22 415 98 00</a></div>
+          <div><span class="kt-lbl">E-mail</span><a href="mailto:biuro@blsklegal.com" class="kt-val">biuro@blsklegal.com</a></div>
+          <div><span class="kt-lbl">Adres</span><span class="kt-val">ul. Mazowiecka 9 (IV p.), 00-052 Warszawa</span></div>
+          <div><span class="kt-lbl">Godziny pracy</span><span class="kt-val">poniedzia&#322;ek &ndash; pi&#261;tek, 9:30&ndash;17:30</span></div>
+        </div>
+      </div>
+      <form class="form">
+        <div class="form-field">
+          <label for="a-imie">Imi&#281; i nazwisko</label>
+          <input type="text" id="a-imie" placeholder="Jan Kowalski">
+        </div>
+        <div class="form-field">
+          <label for="a-firma">Firma / organizacja <span style="font-weight:300;opacity:.6">(opcjonalnie)</span></label>
+          <input type="text" id="a-firma" placeholder="Nazwa firmy">
+        </div>
+        <div class="form-field">
+          <label for="a-email">Adres e-mail</label>
+          <input type="email" id="a-email" placeholder="jan@firma.pl">
+        </div>
+        <div class="form-field">
+          <label for="a-wiad">Tre&#347;&#263; wiadomo&#347;ci</label>
+          <textarea id="a-wiad" placeholder="Opisz kr&oacute;tko spraw&#281; lub pytanie&hellip;"></textarea>
+        </div>
+        <p class="form-note">Przesy&#322;aj&#261;c formularz, wyra&#380;asz zgod&#281; na przetwarzanie danych osobowych przez BLSK KOZŁOWSKI I WSP&Oacute;LNICY SP. K. w celu odpowiedzi na wiadomo&#347;&#263;.</p>
+        <button type="submit" class="btn-p" style="align-self:flex-start">Wy&#347;lij wiadomo&#347;&#263;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"></div>
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa</p>
+    </div>
+    <div class="footer-col">
+      <h4>Praktyki</h4>
+      <ul>
+        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+        <li><a href="wireframe-digital.html">Digital</a></li>
+        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kancelaria</h4>
+      <ul>
+        <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+        <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
+        <li><a href="wireframe-faq.html">FAQ</a></li>
+        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
+        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 BLSK KOZŁOWSKI I WSP&Oacute;LNICY SP. K.</span>
+    <a href="wireframe-polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('nav.topnav');
+  var hero=document.querySelector('.hero-screen');
+  function updateNav(){nav.classList.toggle('nav-solid',window.scrollY>(hero?hero.offsetHeight*.55:300));}
+  window.addEventListener('scroll',updateNav,{passive:true});
+  window.addEventListener('resize',updateNav,{passive:true});
+  updateNav();
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden'});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow=''});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open')});}
+})();
+</script>
+
+</body>
+</html>

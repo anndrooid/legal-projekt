@@ -1,0 +1,693 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odcinek 14: Odpowiedzialność zarządu — Corpo Snap — BLSK Legal</title>
+<style>
+/* === RESET & BASE === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  background:#fff;color:#333;
+  font-size:1.125rem;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* === LAYOUT === */
+.wrap{max-width:1600px;margin:0 auto;padding:0 3rem}
+
+/* === TYPOGRAPHY === */
+.h2-sec{font-size:clamp(2.25rem,4vw,4rem);font-weight:300;color:#111;letter-spacing:-.035em;line-height:1.08}
+.lead{font-size:clamp(1rem,1.3vw,1.375rem);color:#555;line-height:1.7}
+.label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:.75rem}
+
+/* === NAV === */
+nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid #e8e8e8}
+.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-logo{width:100px;height:30px;background:#d4d4d4;border-radius:3px}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:.875rem;font-weight:500;color:#333;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#111}
+.nav-links a.active{font-weight:700;color:#111}
+.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;line-height:1;margin-bottom:.2rem}
+.nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
+
+/* === EPISODE HEADER === */
+.ep-header{
+  margin-top:90px;
+  background:#fff;
+}
+.ep-header-inner{
+  max-width:1600px;margin:0 auto;
+  padding:7rem 3rem 5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;
+}
+.ph-back{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.82rem;font-weight:400;color:#aaa;
+  text-decoration:none;margin-bottom:1.5rem;
+  transition:color .2s;letter-spacing:.01em;
+}
+.ph-back:hover{color:#333}
+.ep-num{
+  font-size:.68rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#bbb;
+  display:block;margin-bottom:.85rem;
+}
+.ep-title{
+  font-size:clamp(2rem,4.5vw,4rem);
+  font-weight:300;color:#111;
+  letter-spacing:-.04em;line-height:1.05;
+}
+.ep-right{padding-top:.25rem}
+.ep-meta{display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2.5rem}
+.ep-meta-row{display:flex;align-items:flex-start;gap:.75rem}
+.ep-meta-lbl{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;min-width:90px;padding-top:.15rem}
+.ep-meta-val{font-size:.95rem;color:#555}
+.ep-tags{display:flex;gap:.5rem;flex-wrap:wrap}
+.ep-tag{
+  display:inline-block;padding:.35rem .85rem;
+  border:1px solid #e0e0e0;border-radius:100px;
+  font-size:.72rem;font-weight:500;color:#888;
+}
+
+/* === PORTRAIT VIDEO + CONTENT LAYOUT === */
+.ep-main{padding:5rem 0 8rem}
+.ep-main-inner{
+  max-width:1600px;margin:0 auto;padding:0 3rem;
+  display:grid;
+  grid-template-columns:360px 1fr 300px;
+  gap:4rem;
+  align-items:start;
+}
+/* Portrait video — 9:16 ratio like phone */
+.video-col{position:sticky;top:110px}
+.video-player{
+  width:100%;aspect-ratio:9/16;
+  background:#c8c8c8;
+  border-radius:16px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,.15);
+}
+.video-play-center{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:68px;height:68px;border-radius:50%;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 8px 32px rgba(0,0,0,.2);
+  display:flex;align-items:center;justify-content:center;
+}
+.video-play-center::after{
+  content:'';
+  border-style:solid;
+  border-color:transparent transparent transparent #111;
+  border-width:12px 0 12px 18px;
+  margin-left:4px;
+}
+.video-ep-badge{
+  position:absolute;top:1rem;left:1rem;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(6px);
+  border-radius:6px;padding:.3rem .75rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;
+}
+.video-col-meta{margin-top:1.5rem;display:flex;flex-direction:column;gap:.85rem}
+.video-col-meta-row{display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem}
+.video-col-meta-lbl{color:#bbb;min-width:70px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding-top:.15rem}
+.video-col-meta-val{color:#555}
+
+/* Right column — article full width */
+.content-col{display:block}
+.ep-sidebar-inline{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:3rem;padding-top:3rem;border-top:1px solid #e8e8e8}
+.ep-sidebar-card{flex:1;min-width:240px;border:1px solid #e8e8e8;border-radius:12px;padding:1.5rem}
+.ep-sidebar-card h3{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:1.25rem}
+.sidebar-expert{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+.expert-photo{width:52px;height:52px;background:#d4d4d4;border-radius:50%;flex-shrink:0}
+.expert-name{font-size:.95rem;font-weight:700;color:#111;margin-bottom:.15rem}
+.expert-role{font-size:.78rem;color:#888}
+.sidebar-ep-list{display:flex;flex-direction:column;gap:.85rem}
+.sidebar-ep{display:flex;gap:.75rem;align-items:flex-start;text-decoration:none;color:inherit}
+.sidebar-ep-thumb{width:60px;height:40px;background:#d4d4d4;border-radius:6px;flex-shrink:0}
+.sidebar-ep-num{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-bottom:.2rem}
+.sidebar-ep-title{font-size:.82rem;font-weight:600;color:#111;line-height:1.3}
+
+/* === CONTENT BELOW VIDEO (legacy) === */
+.content-section{padding:5rem 0 8rem}
+.content-layout{display:block}
+
+/* === ARTICLE BODY === */
+.ep-body h2{
+  font-size:1.5rem;font-weight:700;color:#111;
+  letter-spacing:-.02em;margin:2.5rem 0 1rem;
+}
+.ep-body p{
+  font-size:1rem;color:#555;line-height:1.8;
+  margin-bottom:1.25rem;
+}
+.ep-body ul{
+  margin:1rem 0 1.5rem 0;padding-left:1.5rem;
+  display:flex;flex-direction:column;gap:.5rem;
+}
+.ep-body li{font-size:1rem;color:#555;line-height:1.7}
+.ep-body strong{color:#111;font-weight:600}
+.ep-lead{
+  font-size:1.175rem;color:#333;
+  line-height:1.75;margin-bottom:2rem;
+  border-left:3px solid #e0e0e0;
+  padding-left:1.5rem;
+}
+.ep-share{
+  display:flex;align-items:center;gap:1rem;
+  padding:2rem 0;
+  border-top:1px solid #e8e8e8;
+  margin-top:3rem;
+}
+.share-lbl{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa}
+.share-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.4rem 1rem;border:1.5px solid #e8e8e8;border-radius:100px;
+  font-size:.8rem;font-weight:500;color:#666;
+  cursor:pointer;text-decoration:none;
+  transition:all .18s;
+}
+.share-btn:hover{border-color:#333;color:#111}
+
+/* === SIDEBAR === */
+.ep-sidebar{
+  position:sticky;top:110px;
+}
+.sidebar-section{
+  border:1px solid #e8e8e8;border-radius:12px;
+  padding:1.75rem;
+  margin-bottom:1.5rem;
+}
+.sidebar-section h3{
+  font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;
+  margin-bottom:1.25rem;
+}
+.sidebar-expert{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.expert-photo{width:52px;height:52px;background:#d4d4d4;border-radius:50%;flex-shrink:0}
+.expert-name{font-size:.95rem;font-weight:700;color:#111;margin-bottom:.15rem}
+.expert-role{font-size:.78rem;color:#888}
+.expert-profile-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.82rem;font-weight:600;color:#111;
+  text-decoration:none;margin-top:.75rem;
+}
+.expert-profile-link:hover{text-decoration:underline}
+.linkedin-link-small{
+  display:flex;align-items:center;gap:.65rem;
+  padding:.7rem 1.25rem;
+  border:1.5px solid #0077b5;border-radius:8px;
+  font-size:.82rem;font-weight:600;color:#0077b5;
+  text-decoration:none;margin-top:1rem;
+  transition:background .2s,color .2s;
+}
+.linkedin-link-small:hover{background:#0077b5;color:#fff}
+.li-icon-sm{width:16px;height:16px;background:#0077b5;border-radius:2px;flex-shrink:0;transition:background .2s}
+.linkedin-link-small:hover .li-icon-sm{background:#fff}
+
+/* Related in sidebar */
+.sidebar-ep-list{display:flex;flex-direction:column;gap:1rem}
+.sidebar-ep{
+  display:flex;gap:.85rem;align-items:flex-start;
+  text-decoration:none;color:inherit;
+  padding-bottom:1rem;border-bottom:1px solid #f0f0f0;
+}
+.sidebar-ep:last-child{border-bottom:none;padding-bottom:0}
+.sidebar-ep-thumb{
+  width:72px;height:48px;background:#d4d4d4;
+  border-radius:6px;flex-shrink:0;
+}
+.sidebar-ep-num{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-bottom:.2rem}
+.sidebar-ep-title{font-size:.82rem;font-weight:600;color:#111;line-height:1.3}
+.sidebar-ep:hover .sidebar-ep-title{text-decoration:underline}
+
+/* === BUTTONS === */
+.btn-p{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.85rem;background:#111;color:#fff;font-size:.9rem;font-weight:600;border-radius:8px;text-decoration:none;cursor:pointer;font-family:inherit;border:none;transition:background .2s ease}
+.btn-p:hover{background:#333}
+.btn-s{display:inline-flex;align-items:center;gap:.75rem;padding:.8rem 1.75rem;background:#fff;color:#333;font-size:.9rem;font-weight:500;border-radius:8px;text-decoration:none;border:1.5px solid #ccc;transition:border-color .2s ease}
+.btn-s:hover{border-color:#888}
+.btn-c{width:52px;height:52px;border-radius:50%;border:1px solid #d0d0d0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;color:#333;flex-shrink:0;transition:background .25s ease,border-color .25s ease,color .25s ease}
+.btn-c .arr{display:block;width:19px;height:10px;font-size:0;position:relative}
+.btn-c .arr::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:currentColor;transform:translateY(-50%)}
+.btn-c .arr::after{content:'';position:absolute;top:50%;right:0;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-50%) rotate(45deg)}
+.btn-c:hover{background:#111;border-color:#111;color:#fff}
+.btn-c-sm{width:36px;height:36px}
+.btn-c-sm .arr{width:13px;height:8px}
+.btn-c-sm .arr::after{width:5px;height:5px}
+@keyframes btn-pulse{0%{box-shadow:0 0 0 0 rgba(0,0,0,.22)}70%{box-shadow:0 0 0 9px rgba(0,0,0,0)}100%{box-shadow:0 0 0 0 rgba(0,0,0,0)}}
+.btn-c:hover{animation:btn-pulse .7s ease}
+.btn-row-link{display:inline-flex;align-items:center;gap:.85rem;color:#111;font-weight:600;font-size:.95rem;text-decoration:none}
+.btn-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.row-between{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;gap:2rem}
+
+/* === MORE EPISODES === */
+.more-section{
+  padding:6rem 0 8rem;
+  border-top:1px solid #e8e8e8;
+  background:#f8f8f8;
+}
+.ep-grid-sm{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.ep-card-sm{
+  border:1px solid #e8e8e8;border-radius:10px;overflow:hidden;
+  background:#fff;text-decoration:none;color:inherit;display:block;
+  transition:box-shadow .25s,transform .25s;
+}
+.ep-card-sm:hover{box-shadow:0 6px 24px rgba(0,0,0,.07);transform:translateY(-2px)}
+.ep-thumb-sm{width:100%;aspect-ratio:16/9;background:#ccc;position:relative}
+.ep-play-sm{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.88);
+  display:flex;align-items:center;justify-content:center;
+}
+.ep-play-sm::after{content:'';border-style:solid;border-color:transparent transparent transparent #111;border-width:6px 0 6px 10px;margin-left:2px}
+.ep-body-sm{padding:1.1rem 1.25rem 1.25rem}
+.ep-num-sm{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:.4rem}
+.ep-title-sm{font-size:.92rem;font-weight:700;color:#111;line-height:1.3}
+
+/* === CTA === */
+.cta-sec{background:#111;padding:6rem 0}
+.cta-inner{max-width:760px;margin:0 auto;text-align:center;padding:0 3rem}
+.kt-h2-inv{font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;color:#fff;letter-spacing:-.03em;line-height:1.08;margin-bottom:1.25rem}
+.kt-lead-inv{font-size:1.1rem;color:#888;margin-bottom:2.5rem;line-height:1.7}
+
+/* === FOOTER === */
+footer{background:#111;padding:5rem 0 0;border-top:1px solid #222}
+.footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
+.footer-logo{width:90px;height:27px;background:#383838;border-radius:3px;margin-bottom:1.25rem}
+.footer-desc{font-size:.9rem;color:#555;line-height:1.7}
+.footer-col h4{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col a{font-size:.875rem;color:#555;text-decoration:none}
+.footer-col a:hover{color:#bbb}
+.footer-bottom{max-width:1600px;margin:0 auto;padding:1.5rem 3rem;border-top:1px solid #222;display:flex;justify-content:space-between;font-size:.78rem;color:#444}
+.footer-bottom a{color:#444;text-decoration:none}
+
+/* === NAV DROPDOWN === */
+.nav-dropdown{position:relative}
+.nav-drop-trigger{display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;font-weight:500;color:#333;cursor:pointer;user-select:none;background:none;border:none;font-family:inherit;padding:0;transition:color .2s}
+.nav-drop-trigger:hover,.nav-dropdown:hover .nav-drop-trigger{color:#111}
+.nav-dropdown-active .nav-drop-trigger{font-weight:700;color:#111}
+.nav-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.1);padding:.75rem 0;list-style:none;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s;z-index:300}
+.nav-drop-menu::before{content:'';position:absolute;top:-1.5rem;left:-1rem;right:-1rem;height:1.5rem}
+.nav-dropdown:hover .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto}
+.nav-drop-menu a{display:block;padding:.65rem 1.25rem;font-size:.875rem;color:#333;text-decoration:none;transition:background .15s,color .15s}
+.nav-drop-menu a:hover,.nav-drop-menu a.active{background:#f5f5f5;color:#111}
+.nav-drop-menu a.active{font-weight:700}
+/* === HAMBURGER === */
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
+/* === MOBILE MENU === */
+.mobile-menu{position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto;padding:0 1.5rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;padding:2.5rem 0;border-bottom:1px solid #e8e8e8;margin-bottom:2rem}
+.mobile-menu-logo{width:90px;height:27px;background:#d4d4d4;border-radius:3px}
+.mobile-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:#333;line-height:1;padding:.25rem}
+.mobile-nav{list-style:none}
+.mobile-nav>li{border-bottom:1px solid #e8e8e8}
+.mobile-nav>li:last-child{border-bottom:none}
+.mobile-nav>li>a,.mobile-nav>li>button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.15rem 0;font-size:1.125rem;font-weight:500;color:#333;text-decoration:none;background:none;border:none;font-family:inherit;cursor:pointer;text-align:left}
+.mobile-submenu{list-style:none;padding-bottom:.75rem;display:none}
+.mobile-submenu.open{display:block}
+.mobile-submenu a{display:block;padding:.55rem .75rem;font-size:1rem;color:#555;text-decoration:none}
+.m-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.mobile-nav button.open .m-chevron{transform:rotate(180deg)}
+.mobile-menu-phone{margin-top:2.5rem;padding-top:2rem;border-top:1px solid #e8e8e8}
+.mobile-menu-phone .label{margin-bottom:.35rem}
+.mobile-menu-phone a{font-size:1.75rem;font-weight:700;color:#111;text-decoration:none}
+/* === RESPONSIVE === */
+@media(max-width:1200px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .nav-phone{display:none}
+  .ep-header-inner{grid-template-columns:1fr;gap:3rem}
+  .ep-main-inner{grid-template-columns:1fr;gap:4rem}
+  .video-col{position:static}
+  .ep-sidebar{position:static}
+  .ep-grid-sm{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}
+}
+@media(max-width:768px){
+  .wrap,.ep-header-inner,.footer-grid,.footer-bottom,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}
+  .ep-main-inner{padding-left:1.5rem;padding-right:1.5rem}
+  .ep-header-inner{padding-top:4rem;padding-bottom:4rem}
+  .ep-main{padding:3rem 0 5rem}
+  .ep-grid-sm{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .more-section{padding:4rem 0 5rem}
+}
+@media(max-width:600px){
+  .video-col{max-width:none;width:100%}
+  .ep-share{flex-wrap:wrap}
+  .share-lbl{width:100%;margin-bottom:.5rem}
+  .sidebar-section{padding:1rem 1.25rem}
+  .sidebar-section .btn-p,.sidebar-section .btn-s{font-size:.78rem;padding:.65rem .9rem;white-space:nowrap}
+  .sidebar-section .btn-row-link{display:block}
+  .sidebar-section .btn-c-sm{display:none}
+}
+@media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="wireframe-home.html" class="nav-logo-link">
+      <div class="nav-logo"></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="nav-drop-menu">
+          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+          <li><a href="wireframe-digital.html">Digital</a></li>
+          <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        </ul>
+      </li>
+      <li><a href="wireframe-corpo-snap.html" class="active">Corpo Snap</a></li>
+      <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+      <li><a href="wireframe-faq.html">FAQ</a></li>
+      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="nav-phone">
+      <span class="nav-phone-label">Zadzwoń teraz</span>
+      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+    </div>
+    <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="wireframe-home.html"><div class="mobile-menu-logo"></div></a>
+    <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+    <li>
+      <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <ul class="mobile-submenu" id="mobileSubmenu">
+        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+        <li><a href="wireframe-digital.html">Digital</a></li>
+        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+      </ul>
+    </li>
+    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+    <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+    <li><a href="wireframe-faq.html">FAQ</a></li>
+    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="mobile-menu-phone">
+    <span class="label">Zadzwoń teraz</span>
+    <a href="tel:+48224159800">+48 22 415 98 00</a>
+  </div>
+</div>
+
+<!-- EPISODE HEADER -->
+<div class="ep-header">
+  <div class="ep-header-inner">
+    <!-- LEWA: tytuł -->
+    <div>
+      <a href="wireframe-corpo-snap.html" class="ph-back">‹ Corpo Snap</a>
+      <span class="ep-num">Odcinek 14 · Odpowiedzialność zarządu</span>
+      <h1 class="ep-title">Odpowiedzialność zarządu sp. z o.o. za zobowiązania spółki</h1>
+    </div>
+    <!-- PRAWA: meta + opis -->
+    <div class="ep-right" style="padding-top:2.5rem">
+      <div class="ep-meta">
+        <div class="ep-meta-row">
+          <span class="ep-meta-lbl">Ekspert</span>
+          <span class="ep-meta-val">Prof. Katarzyna Bilewska</span>
+        </div>
+        <div class="ep-meta-row">
+          <span class="ep-meta-lbl">Data</span>
+          <span class="ep-meta-val">12 sierpnia 2024</span>
+        </div>
+        <div class="ep-meta-row">
+          <span class="ep-meta-lbl">Temat</span>
+          <div class="ep-tags">
+            <span class="ep-tag">Odpowiedzialność zarządu</span>
+            <span class="ep-tag">Prawo spółek</span>
+            <span class="ep-tag">Art. 299 k.s.h.</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:1rem;color:#555;line-height:1.75">Kiedy spółka z o.o. nie reguluje swoich zobowiązań, wierzyciele mogą sięgnąć po majątek osobisty członków zarządu. Art. 299 k.s.h. — jeden z najgroźniejszych przepisów dla każdego prezesa.</p>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO + CONTENT (portrait video layout) -->
+<div class="ep-main">
+  <div class="ep-main-inner">
+
+    <!-- LEWA KOLUMNA: pionowy film 9:16 + meta -->
+    <div class="video-col">
+      <div class="video-player">
+        <div class="video-play-center"></div>
+        <span class="video-ep-badge">Odcinek 14 · 2:47 min</span>
+      </div>
+      <div class="video-col-meta">
+        <div class="video-col-meta-row">
+          <span class="video-col-meta-lbl">Ekspert</span>
+          <span class="video-col-meta-val">Prof. Katarzyna Bilewska</span>
+        </div>
+        <div class="video-col-meta-row">
+          <span class="video-col-meta-lbl">Data</span>
+          <span class="video-col-meta-val">12 sierpnia 2024</span>
+        </div>
+        <div class="video-col-meta-row">
+          <span class="video-col-meta-lbl">Temat</span>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem">
+            <span class="ep-tag">Odpowiedzialność zarządu</span>
+            <span class="ep-tag">Art. 299 k.s.h.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ŚRODKOWA KOLUMNA: artykuł -->
+    <div class="content-col">
+      <article class="ep-body">
+
+        <h2>Na czym polega odpowiedzialność z art. 299 k.s.h.?</h2>
+        <p>Jeżeli egzekucja przeciwko spółce okaże się bezskuteczna, członkowie zarządu odpowiadają solidarnie za jej zobowiązania. Oznacza to, że wierzyciel może kierować roszczenia bezpośrednio do prywatnego majątku prezesa, dyrektora finansowego lub innego członka zarządu.</p>
+        <p>Odpowiedzialność ta ma charakter subsydiarny — warunkiem jej uruchomienia jest bezskuteczność egzekucji wobec samej spółki. Wierzyciel nie musi jednak czekać na formalną bezskuteczność, wystarczy wykazanie, że majątek spółki jest niewystarczający do zaspokojenia roszczeń.</p>
+
+        <h2>Trzy sposoby uwolnienia się od odpowiedzialności</h2>
+        <p>Kodeks przewiduje katalog przesłanek egzoneracyjnych, czyli okoliczności zwalniających z odpowiedzialności:</p>
+        <ul>
+          <li><strong>Złożenie wniosku o ogłoszenie upadłości we właściwym czasie</strong> — kluczowe jest tutaj zachowanie 30-dniowego terminu od momentu, gdy zarząd uzyskał lub powinien był uzyskać wiedzę o stanie niewypłacalności spółki.</li>
+          <li><strong>Brak winy w niezłożeniu wniosku</strong> — rzadko skuteczna przesłanka, wymagająca wykazania, że zarząd nie miał faktycznych możliwości działania.</li>
+          <li><strong>Brak szkody po stronie wierzyciela</strong> — wykazanie, że nawet prawidłowe działania zarządu nie zapobiegłyby szkodzie wierzyciela.</li>
+        </ul>
+
+        <h2>Najczęstsze błędy zarządów</h2>
+        <p>W praktyce kancelarii obserwujemy kilka powtarzających się scenariuszy, które prowadzą do pociągnięcia zarządu do odpowiedzialności osobistej:</p>
+        <ul>
+          <li>Spóźnione złożenie wniosku o upadłość — nierzadko o kilka lub kilkanaście miesięcy.</li>
+          <li>Brak dokumentacji wewnętrznej potwierdzającej stan wiedzy zarządu o sytuacji finansowej spółki.</li>
+          <li>Przekonanie, że rezygnacja z funkcji chroni przed odpowiedzialnością za zobowiązania powstałe w czasie pełnienia mandatu.</li>
+        </ul>
+
+        <h2>Praktyczny wniosek</h2>
+        <p>Monitorowanie kondycji finansowej spółki i reagowanie na pierwsze symptomy problemów płynnościowych to nie tylko dobra praktyka zarządcza — to obowiązek prawny. Odpowiedzialność z art. 299 k.s.h. jest realnym i bardzo dotkliwym narzędziem w rękach wierzycieli.</p>
+
+        <div class="ep-share">
+          <span class="share-lbl">Udostępnij:</span>
+          <a href="#" class="share-btn">LinkedIn</a>
+          <a href="#" class="share-btn">Kopiuj link</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- PRAWA KOLUMNA: sidebar -->
+    <div class="ep-sidebar">
+
+      <div class="sidebar-section">
+        <h3>Ekspert w tym odcinku</h3>
+        <div class="sidebar-expert">
+          <div class="expert-photo"></div>
+          <div>
+            <p class="expert-name">Prof. Katarzyna Bilewska</p>
+            <p class="expert-role">Managing Partner</p>
+          </div>
+        </div>
+        <p style="font-size:.85rem;color:#666;line-height:1.6;margin-bottom:1rem">Specjalistka w zakresie rozwiązywania sporów korporacyjnych i prawa spółek. Profesor nauk prawnych.</p>
+        <a href="wireframe-profesor-bilewska.html" class="btn-row-link" style="font-size:.82rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
+        </a>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Więcej z serii</h3>
+        <div class="sidebar-ep-list">
+          <a href="wireframe-corpo-snap-odcinek.html" class="sidebar-ep">
+            <div class="sidebar-ep-thumb"></div>
+            <div>
+              <p class="sidebar-ep-num">Odcinek 13</p>
+              <p class="sidebar-ep-title">Due diligence przy nabyciu udziałów</p>
+            </div>
+          </a>
+          <a href="wireframe-corpo-snap-odcinek.html" class="sidebar-ep">
+            <div class="sidebar-ep-thumb"></div>
+            <div>
+              <p class="sidebar-ep-num">Odcinek 12</p>
+              <p class="sidebar-ep-title">Prawo holdingowe — nowelizacja k.s.h.</p>
+            </div>
+          </a>
+          <a href="wireframe-corpo-snap-odcinek.html" class="sidebar-ep">
+            <div class="sidebar-ep-thumb"></div>
+            <div>
+              <p class="sidebar-ep-num">Odcinek 11</p>
+              <p class="sidebar-ep-title">Wyłączenie wspólnika ze spółki z o.o.</p>
+            </div>
+          </a>
+        </div>
+        <a href="wireframe-corpo-snap.html" class="btn-row-link" style="font-size:.82rem;margin-top:1.25rem;gap:.5rem">
+          Wszystkie odcinki <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
+        </a>
+      </div>
+
+      <div class="sidebar-section" style="background:#f8f8f8;border-color:#f0f0f0">
+        <h3>Skontaktuj się</h3>
+        <p style="font-size:.875rem;color:#666;line-height:1.6;margin-bottom:1.25rem">Masz pytanie po obejrzeniu? Nasi eksperci są do dyspozycji.</p>
+        <a href="tel:+48224159800" class="btn-p" style="width:100%;justify-content:center;font-size:.875rem;margin-bottom:.65rem">Zadzwoń: +48 22 415 98 00</a>
+        <a href="wireframe-kontakt.html" class="btn-s" style="width:100%;justify-content:center;font-size:.875rem">Napisz do nas</a>
+      </div>
+
+    </div><!-- /ep-sidebar -->
+
+  </div><!-- /ep-main-inner -->
+</div><!-- /ep-main -->
+
+<!-- MORE EPISODES -->
+<div class="more-section">
+  <div class="wrap">
+    <div class="row-between">
+      <div>
+        <span class="label">Corpo Snap</span>
+        <h2 class="h2-sec">Więcej odcinków</h2>
+      </div>
+      <a href="wireframe-corpo-snap.html" class="btn-row-link">
+        Wszystkie odcinki
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+    <div class="ep-grid-sm">
+      <a href="wireframe-corpo-snap-odcinek.html" class="ep-card-sm">
+        <div class="ep-thumb-sm">
+          <div class="ep-play-sm"></div>
+        </div>
+        <div class="ep-body-sm">
+          <p class="ep-num-sm">Odcinek 13 · Transakcje i przejęcia</p>
+          <p class="ep-title-sm">Due diligence przy nabyciu udziałów — na co zwrócić uwagę?</p>
+        </div>
+      </a>
+      <a href="wireframe-corpo-snap-odcinek.html" class="ep-card-sm">
+        <div class="ep-thumb-sm">
+          <div class="ep-play-sm"></div>
+        </div>
+        <div class="ep-body-sm">
+          <p class="ep-num-sm">Odcinek 12 · Prawo spółek</p>
+          <p class="ep-title-sm">Prawo holdingowe — co zmieniła nowelizacja KSH?</p>
+        </div>
+      </a>
+      <a href="wireframe-corpo-snap-odcinek.html" class="ep-card-sm">
+        <div class="ep-thumb-sm">
+          <div class="ep-play-sm"></div>
+        </div>
+        <div class="ep-body-sm">
+          <p class="ep-num-sm">Odcinek 11 · Spory korporacyjne</p>
+          <p class="ep-title-sm">Wyłączenie wspólnika ze spółki z o.o. — procedura i praktyka</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="cta-inner">
+    <span class="label" style="color:#555;justify-content:center;display:block">Skontaktuj się z nami</span>
+    <h2 class="kt-h2-inv">Potrzebujesz pomocy prawnej?</h2>
+    <p class="kt-lead-inv">Rozmawiamy konkretnie i bez zbędnych formalności. Zadzwoń lub napisz — umawiamy spotkania stacjonarne i online.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="tel:+48224159800" class="btn-p" style="background:#fff;color:#111">+48 22 415 98 00</a>
+      <a href="wireframe-home.html#kontakt" class="btn-s" style="border-color:#444;color:#bbb">Napisz do nas</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo"></div>
+      <p class="footer-desc">BLSK KOZŁOWSKI I WSPÓLNICY SP. K. — kancelaria prawna specjalizująca się w doradztwie dla firm i przedsiębiorców. Warszawa, ul. Mazowiecka 9.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Praktyki</h4>
+      <ul>
+        <li><a href="#">Rozwiązywanie Sporów</a></li>
+        <li><a href="#">Life Sciences</a></li>
+        <li><a href="#">Dotacje i Granty</a></li>
+        <li><a href="#">Digital</a></li>
+        <li><a href="#">Spory Podatkowe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kancelaria</h4>
+      <ul>
+        <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+        <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+        <li><a href="wireframe-faq.html">FAQ</a></li>
+        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
+        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="#">ul. Mazowiecka 9, Warszawa</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BLSK KOZŁOWSKI I WSPÓLNICY SP. K.</span>
+    <span><a href="wireframe-polityka-prywatnosci.html">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+})();
+</script>
+</body>
+</html>

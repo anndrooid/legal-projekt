@@ -1,0 +1,808 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nasz Zespół — BLSK Legal</title>
+<style>
+/* === RESET & BASE === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  background:#fff;color:#333;
+  font-size:1.125rem;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* === LAYOUT === */
+.wrap{max-width:1600px;margin:0 auto;padding:0 3rem}
+
+/* === TYPOGRAPHY (identyczna jak wireframe-home) === */
+.h1-hero{font-size:clamp(3rem,7.5vw,6.5rem);font-weight:300;color:#111;letter-spacing:-.04em;line-height:1.02}
+.h2-sec{font-size:clamp(2.25rem,4vw,4rem);font-weight:300;color:#111;letter-spacing:-.035em;line-height:1.08}
+.lead{font-size:clamp(1rem,1.3vw,1.375rem);color:#555;line-height:1.7}
+.label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:.75rem}
+
+/* === NAV === */
+nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem 2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid #aaa;box-shadow:none}
+.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-logo{width:100px;height:30px;background:#d4d4d4;border-radius:3px}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:.875rem;font-weight:500;color:#333;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#111}
+.nav-links a.active{font-weight:700;color:#111}
+.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;line-height:1;margin-bottom:.2rem}
+.nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
+
+/* =====================================================
+   PAGE HEADER — styl Ligit (news-insights):
+   - border-top poziomy na górze całej sekcji
+   - lewa: "< Powrót" nad dużym tytułem (bez border-left)
+   - prawa: krótki opis wyrównany do góry
+   - brak labela/tagu
+   ===================================================== */
+.page-header{
+  margin-top:90px;
+  background:#fff;
+}
+.page-header-inner{
+  max-width:1600px;margin:0 auto;padding:7rem 3rem 8rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6rem;
+  align-items:start;
+}
+
+/* Lewa kolumna */
+.ph-back{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.82rem;font-weight:400;color:#aaa;
+  text-decoration:none;margin-bottom:1.5rem;
+  transition:color .2s;
+  letter-spacing:.01em;
+}
+.ph-back:hover{color:#333}
+.ph-back-arrow{font-size:.9rem;line-height:1}
+
+/* Tytuł — bez border-left, jak Ligit */
+.ph-title{
+  font-size:clamp(3rem,7.5vw,6.5rem);
+  font-weight:300;color:#111;
+  letter-spacing:-.04em;line-height:1.02;
+}
+
+/* Prawa kolumna */
+.ph-right{
+  padding-top:.25rem;
+}
+.ph-desc{
+  font-size:clamp(1rem,1.3vw,1.375rem);
+  color:#555;line-height:1.7;
+  max-width:580px;
+}
+
+/* === FILTER BAR === */
+.filter-wrap{
+  padding-top:4rem;
+}
+.filter-inner{
+  max-width:1600px;margin:0 auto;padding:0 3rem 4rem;
+  display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;
+}
+.filter-lbl{
+  font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ccc;
+  margin-right:.75rem;white-space:nowrap;
+}
+.filter-tab{
+  display:inline-flex;align-items:center;padding:.4rem 1.15rem;
+  border:1.5px solid #ddd;border-radius:100px;
+  font-size:.8rem;font-weight:500;color:#777;
+  cursor:pointer;background:#fff;font-family:inherit;
+  transition:all .18s ease;
+}
+.filter-tab:hover{border-color:#333;color:#111}
+.filter-tab.active{background:#111;border-color:#111;color:#fff}
+
+/* === TEAM GRID — wszyscy jednakowi === */
+.team-section{padding:0rem 0 8rem}
+.team-tier-header{grid-column:1/-1;display:flex;align-items:baseline;gap:1rem;padding:2.5rem 0 .75rem;border-top:1px solid #e8e8e8;margin-top:.5rem}
+.team-tier-header:first-child{border-top:none;margin-top:0;padding-top:.5rem}
+.team-tier-label{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#aaa}
+.team-tier-count{font-size:.8rem;color:#ccc}
+.team-grid{
+  max-width:1600px;margin:0 auto;
+  padding:0 3rem;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+}
+.team-card{
+  background:#fff;border:1px solid #e8e8e8;border-radius:14px;
+  overflow:hidden;
+  transition:box-shadow .25s ease,transform .25s ease;
+}
+.team-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-2px)}
+.team-photo{
+  width:100%;aspect-ratio:3/4;background:#d4d4d4;
+}
+.team-body{padding:1.5rem 1.75rem 1.75rem}
+.team-name{font-size:1rem;font-weight:700;color:#111;margin-bottom:.2rem}
+.team-role{font-size:.78rem;color:#888;margin-bottom:.45rem}
+.team-spec{font-size:.73rem;color:#bbb;line-height:1.4;margin-bottom:1.1rem}
+
+/* === BUTTONS === */
+.btn-p{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.85rem;background:#111;color:#fff;font-size:.9rem;font-weight:600;border-radius:8px;text-decoration:none;cursor:pointer;font-family:inherit;border:none;transition:background .2s ease}
+.btn-p:hover{background:#333}
+.btn-s{display:inline-flex;align-items:center;gap:.75rem;padding:.8rem 1.75rem;background:#fff;color:#333;font-size:.9rem;font-weight:500;border-radius:8px;text-decoration:none;border:1.5px solid #ccc;transition:border-color .2s ease}
+.btn-s:hover{border-color:#888}
+.btn-c{width:52px;height:52px;border-radius:50%;border:1px solid #d0d0d0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;color:#333;flex-shrink:0;transition:background .25s ease,border-color .25s ease,color .25s ease}
+.btn-c .arr{display:block;width:19px;height:10px;font-size:0;position:relative}
+.btn-c .arr::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:currentColor;transform:translateY(-50%)}
+.btn-c .arr::after{content:'';position:absolute;top:50%;right:0;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-50%) rotate(45deg)}
+.btn-c:hover{background:#111;border-color:#111;color:#fff}
+.btn-c-sm{width:36px;height:36px}
+.btn-c-sm .arr{width:13px;height:8px}
+.btn-c-sm .arr::after{width:5px;height:5px}
+@keyframes btn-pulse{0%{box-shadow:0 0 0 0 rgba(0,0,0,.22)}70%{box-shadow:0 0 0 9px rgba(0,0,0,0)}100%{box-shadow:0 0 0 0 rgba(0,0,0,0)}}
+.btn-c:hover{animation:btn-pulse .7s ease}
+.btn-row-link{display:inline-flex;align-items:center;gap:.85rem;color:#111;font-weight:600;font-size:.95rem;text-decoration:none}
+.btn-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+
+/* === KONTAKT CTA — prosta wersja bez formularza === */
+.cta-sec{
+  background:#f5f5f5;
+}
+.cta-sec .wrap{
+  border-top:1px solid #e8e8e8;
+  padding-top:8rem;
+  padding-bottom:8rem;
+}
+.cta-inner{max-width:760px;margin:0 auto;text-align:center}
+.kt-h2{font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;color:#111;letter-spacing:-.03em;line-height:1.08;margin-bottom:1.25rem}
+.kt-lead{font-size:1.1rem;color:#555;margin-bottom:2.5rem;line-height:1.7}
+
+/* === FOOTER === */
+footer{background:#111;padding:5rem 0 0}
+.footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
+.footer-logo{width:90px;height:27px;background:#383838;border-radius:3px;margin-bottom:1.25rem}
+.footer-desc{font-size:.9rem;color:#555;line-height:1.7}
+.footer-col h4{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col a{font-size:.875rem;color:#555;text-decoration:none}
+.footer-col a:hover{color:#bbb}
+.footer-bottom{max-width:1600px;margin:0 auto;padding:1.5rem 3rem;border-top:1px solid #222;display:flex;justify-content:space-between;font-size:.78rem;color:#444}
+.footer-bottom a{color:#444;text-decoration:none}
+
+/* === NAV DROPDOWN === */
+.nav-dropdown{position:relative}
+.nav-drop-trigger{display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;font-weight:500;color:#333;cursor:pointer;user-select:none;background:none;border:none;font-family:inherit;padding:0;transition:color .2s}
+.nav-drop-trigger:hover,.nav-dropdown:hover .nav-drop-trigger{color:#111}
+.nav-dropdown-active .nav-drop-trigger{font-weight:700;color:#111}
+.nav-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.1);padding:.75rem 0;list-style:none;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s;z-index:300}
+.nav-drop-menu::before{content:'';position:absolute;top:-1.5rem;left:-1rem;right:-1rem;height:1.5rem}
+.nav-dropdown:hover .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto}
+.nav-drop-menu a{display:block;padding:.65rem 1.25rem;font-size:.875rem;color:#333;text-decoration:none;transition:background .15s,color .15s}
+.nav-drop-menu a:hover,.nav-drop-menu a.active{background:#f5f5f5;color:#111}
+.nav-drop-menu a.active{font-weight:700}
+/* === HAMBURGER === */
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
+/* === MOBILE MENU === */
+.mobile-menu{position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto;padding:0 1.5rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;padding:2.5rem 0;border-bottom:1px solid #e8e8e8;margin-bottom:2rem}
+.mobile-menu-logo{width:90px;height:27px;background:#d4d4d4;border-radius:3px}
+.mobile-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:#333;line-height:1;padding:.25rem}
+.mobile-nav{list-style:none}
+.mobile-nav>li{border-bottom:1px solid #e8e8e8}
+.mobile-nav>li:last-child{border-bottom:none}
+.mobile-nav>li>a,.mobile-nav>li>button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.15rem 0;font-size:1.125rem;font-weight:500;color:#333;text-decoration:none;background:none;border:none;font-family:inherit;cursor:pointer;text-align:left}
+.mobile-submenu{list-style:none;padding-bottom:.75rem;display:none}
+.mobile-submenu.open{display:block}
+.mobile-submenu a{display:block;padding:.55rem .75rem;font-size:1rem;color:#555;text-decoration:none}
+.m-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.mobile-nav button.open .m-chevron{transform:rotate(180deg)}
+.mobile-menu-phone{margin-top:2.5rem;padding-top:2rem;border-top:1px solid #e8e8e8}
+.mobile-menu-phone .label{margin-bottom:.35rem}
+.mobile-menu-phone a{font-size:1.75rem;font-weight:700;color:#111;text-decoration:none}
+/* === RESPONSIVE === */
+@media(max-width:1200px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .nav-phone{display:none}
+  .page-header-inner{grid-template-columns:1fr;gap:3rem}
+  .ph-right{padding-bottom:0}
+  .team-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}
+  .kt-grid{grid-template-columns:1fr;gap:4rem}
+}
+@media(max-width:900px){
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .wrap,.team-grid,.filter-inner,.team-count,.footer-grid,.footer-bottom,.nav-inner,.page-header-inner{padding-left:1.5rem;padding-right:1.5rem}
+  .page-header-inner{padding-top:5rem;padding-bottom:5rem}
+  .filter-wrap{padding-top:2.5rem}
+  .filter-inner{padding-bottom:2.5rem}
+  .team-section{padding:4rem 0 5rem}
+  .team-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+  .footer-grid{grid-template-columns:1fr}
+  .cta-sec .wrap{padding-top:5rem;padding-bottom:5rem}
+}
+@media(max-width:480px){
+  .team-grid{grid-template-columns:1fr}
+}
+@media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="wireframe-home.html" class="nav-logo-link">
+      <div class="nav-logo"></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="wireframe-nasz-zespol.html" class="active">Nasz Zespół</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="nav-drop-menu">
+          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+          <li><a href="wireframe-digital.html">Digital</a></li>
+          <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        </ul>
+      </li>
+      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+      <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+      <li><a href="wireframe-faq.html">FAQ</a></li>
+      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="nav-phone">
+      <span class="nav-phone-label">Zadzwoń teraz</span>
+      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+    </div>
+    <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="wireframe-home.html"><div class="mobile-menu-logo"></div></a>
+    <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+    <li>
+      <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <ul class="mobile-submenu" id="mobileSubmenu">
+        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+        <li><a href="wireframe-digital.html">Digital</a></li>
+        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+      </ul>
+    </li>
+    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+    <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+    <li><a href="wireframe-faq.html">FAQ</a></li>
+    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="mobile-menu-phone">
+    <span class="label">Zadzwoń teraz</span>
+    <a href="tel:+48224159800">+48 22 415 98 00</a>
+  </div>
+</div>
+
+<!-- =====================
+     PAGE HEADER — Ligit style
+     ===================== -->
+<div class="page-header">
+  <div class="page-header-inner">
+
+    <!-- Lewa kolumna: powrót + tytuł (bez border-left, jak Ligit) -->
+    <div class="ph-left">
+      <a href="wireframe-home.html" class="ph-back">
+        <span class="ph-back-arrow">‹</span>
+        Powrót do strony głównej
+      </a>
+      <h1 class="ph-title">Nasz Zespół</h1>
+    </div>
+
+    <!-- Prawa kolumna: opis wyrównany do góry -->
+    <div class="ph-right">
+      <p class="ph-desc">29 prawników — partnerzy z doświadczeniem z kancelarii międzynarodowych, counselowie i associates o wąskich specjalizacjach. Każdy klient jest obsługiwany przez prawnika, który zna jego branżę i rozumie stawkę.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-wrap">
+  <div class="filter-inner">
+    <span class="filter-lbl">Filtruj:</span>
+    <button class="filter-tab active" onclick="filterTeam('all',this)">Wszyscy (29)</button>
+    <button class="filter-tab" onclick="filterTeam('partner',this)">Partnerzy</button>
+    <button class="filter-tab" onclick="filterTeam('counsel',this)">Counsel</button>
+    <button class="filter-tab" onclick="filterTeam('associate',this)">Associates</button>
+    <button class="filter-tab" onclick="filterTeam('support',this)">Pozostały zespół</button>
+  </div>
+</div>
+
+<!-- TEAM GRID — wszyscy 29 jednakowi -->
+<div class="team-section">
+  <div class="team-grid" id="teamGrid">
+
+    <!-- PARTNERZY -->
+    <div class="team-tier-header" data-tier-header="partner">
+      <span class="team-tier-label">Partnerzy</span>
+      <span class="team-tier-count">8 osób</span>
+    </div>
+    <div class="team-card" data-tier="partner">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Prof. Katarzyna Bilewska</p>
+        <p class="team-role">Managing Partner</p>
+        <p class="team-spec">Rozwiązywanie Sporów · Prawo korporacyjne</p>
+        <a href="wireframe-profesor-bilewska.html" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="partner">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Wojciech Kozłowski</p>
+        <p class="team-role">Partner</p>
+        <p class="team-spec">Dotacje i Granty · Zachęty Rozwojowe</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="partner">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Maria Samolińska</p>
+        <p class="team-role">Partner</p>
+        <p class="team-spec">Life Sciences · Prawo farmaceutyczne</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="partner">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Dr Michał Turczyk</p>
+        <p class="team-role">Partner</p>
+        <p class="team-spec">Spory Podatkowe · Postępowania KAS</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="partner">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Stanisław Dąbek</p>
+        <p class="team-role">Partner</p>
+        <p class="team-spec">Dotacje i Granty · Rozwiązywanie Sporów</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="partner">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Aleksandra Rutkowska</p>
+        <p class="team-role">Partner</p>
+        <p class="team-spec">Digital · Ochrona danych · Telekomunikacja</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="partner">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Paweł Lewandowski</p>
+        <p class="team-role">Partner</p>
+        <p class="team-spec">Rozwiązywanie Sporów · Arbitraż</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="partner">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Katarzyna Sabiłło</p>
+        <p class="team-role">Partner</p>
+        <p class="team-spec">Life Sciences · Pharma · Żywność</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- COUNSEL -->
+    <div class="team-tier-header" data-tier-header="counsel">
+      <span class="team-tier-label">Counsel</span>
+      <span class="team-tier-count">7 osób</span>
+    </div>
+    <div class="team-card" data-tier="counsel">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Grzegorz Kukowka</p>
+        <p class="team-role">Managing Counsel</p>
+        <p class="team-spec">Dotacje i Granty · Zachęty Rozwojowe</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="counsel">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Małgorzata Dębicka</p>
+        <p class="team-role">Counsel</p>
+        <p class="team-spec">Life Sciences · Rejestracja produktów</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="counsel">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Konrad Pęski</p>
+        <p class="team-role">Counsel</p>
+        <p class="team-spec">Spory Podatkowe · Postępowania administracyjne</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="counsel">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Aleksander Brzozowski</p>
+        <p class="team-role">Counsel</p>
+        <p class="team-spec">Rozwiązywanie Sporów · Arbitraż</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="counsel">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Mateusz Węklar</p>
+        <p class="team-role">Counsel</p>
+        <p class="team-spec">Digital · E-commerce · Ochrona danych</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="counsel">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Antoni Żukowski</p>
+        <p class="team-role">Counsel</p>
+        <p class="team-spec">Spory Podatkowe · KAS · TSUE</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="counsel">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Dariusz Dąbek</p>
+        <p class="team-role">Counsel</p>
+        <p class="team-spec">Dotacje i Granty · Kontrole</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ASSOCIATES -->
+    <div class="team-tier-header" data-tier-header="associate">
+      <span class="team-tier-label">Associates</span>
+      <span class="team-tier-count">7 osób</span>
+    </div>
+    <div class="team-card" data-tier="associate">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Dariusz Rosolski</p>
+        <p class="team-role">Senior Associate</p>
+        <p class="team-spec">Rozwiązywanie Sporów · Arbitraż</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="associate">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Radosław Żygadło</p>
+        <p class="team-role">Senior Associate</p>
+        <p class="team-spec">Spory Podatkowe</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="associate">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Aleksandra Jurga-Więckowska</p>
+        <p class="team-role">Associate</p>
+        <p class="team-spec">Life Sciences · Prawo farmaceutyczne</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="associate">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Konrad Siezieniewski</p>
+        <p class="team-role">Associate</p>
+        <p class="team-spec">Digital · Telekomunikacja</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="associate">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Aleksandra Pieńkawa</p>
+        <p class="team-role">Junior Associate</p>
+        <p class="team-spec">Rozwiązywanie Sporów</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="associate">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Przemysław Bednarski</p>
+        <p class="team-role">Junior Associate</p>
+        <p class="team-spec">Dotacje i Granty</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="associate">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Przemysław Kolanek</p>
+        <p class="team-role">Junior Associate</p>
+        <p class="team-spec">Spory Podatkowe</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- SUPPORT -->
+    <div class="team-tier-header" data-tier-header="support">
+      <span class="team-tier-label">Pozostały zespół</span>
+      <span class="team-tier-count">8 osób</span>
+    </div>
+    <div class="team-card" data-tier="support">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Łukasz Figacz</p>
+        <p class="team-role">Project Manager</p>
+        <p class="team-spec">&nbsp;</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="support">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Julita Loreth</p>
+        <p class="team-role">Paralegal</p>
+        <p class="team-spec">&nbsp;</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="support">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Martyna Madej</p>
+        <p class="team-role">Paralegal</p>
+        <p class="team-spec">&nbsp;</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="support">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Weronika Kogut</p>
+        <p class="team-role">Consultant</p>
+        <p class="team-spec">&nbsp;</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="support">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Hanna Gągała</p>
+        <p class="team-role">Office Manager</p>
+        <p class="team-spec">&nbsp;</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="support">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Katarzyna Smolińska</p>
+        <p class="team-role">Head of Office</p>
+        <p class="team-spec">&nbsp;</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="support">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Ewa Skowronek</p>
+        <p class="team-role">Office &amp; Finance Specialist</p>
+        <p class="team-spec">&nbsp;</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-card" data-tier="support">
+      <div class="team-photo"></div>
+      <div class="team-body">
+        <p class="team-name">Natalia Klepacka</p>
+        <p class="team-role">Junior Assistant</p>
+        <p class="team-spec">&nbsp;</p>
+        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /team-grid -->
+</div><!-- /team-section -->
+
+<!-- CTA KONTAKT — prosta wersja (jak w oryginalnym nasz-zespol) -->
+<div class="cta-sec">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="label" style="text-align:center">Kontakt</span>
+      <h2 class="kt-h2">Porozmawiajmy<br>o Twojej sprawie.</h2>
+      <p class="kt-lead">Najszybszy kontakt: telefon. Zapraszamy na spotkania stacjonarne lub online — wyłącznie po wcześniejszym umówieniu terminu.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a href="tel:+48224159800" class="btn-p">Zadzwoń: +48 22 415 98 00</a>
+        <a href="wireframe-home.html#kontakt" class="btn-s">Formularz kontaktowy</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"></div>
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsiębiorców w złożonych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa</p>
+    </div>
+    <div class="footer-col">
+      <h4>Praktyki</h4>
+      <ul>
+        <li><a href="#">Rozwiązywanie Sporów</a></li>
+        <li><a href="#">Life Sciences</a></li>
+        <li><a href="#">Dotacje i Granty</a></li>
+        <li><a href="#">Digital</a></li>
+        <li><a href="#">Spory Podatkowe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kancelaria</h4>
+      <ul>
+        <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+        <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+        <li><a href="wireframe-faq.html">FAQ</a></li>
+        <li><a href="wireframe-home.html#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
+        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BLSK KOZŁOWSKI I WSPÓLNICY SP. K.</span>
+    <a href="wireframe-polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+</footer>
+
+<script>
+function filterTeam(tier, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.querySelectorAll('.team-card').forEach(function(card) {
+    var show = tier === 'all' || card.dataset.tier === tier;
+    card.style.display = show ? '' : 'none';
+  });
+
+  document.querySelectorAll('.team-tier-header').forEach(function(hdr) {
+    var show = tier === 'all' || hdr.dataset.tierHeader === tier;
+    hdr.style.display = show ? '' : 'none';
+  });
+}
+</script>
+
+<script>
+(function(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+})();
+</script>
+</body>
+</html>

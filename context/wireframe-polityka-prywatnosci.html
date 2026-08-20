@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polityka prywatności — BLSK Legal</title>
+<style>
+/* === RESET & BASE === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  background:#fff;color:#333;
+  font-size:1.125rem;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* === LAYOUT === */
+.wrap{max-width:1600px;margin:0 auto;padding:0 3rem}
+
+/* === TYPOGRAPHY === */
+.h2-sec{font-size:clamp(2.25rem,4vw,4rem);font-weight:300;color:#111;letter-spacing:-.035em;line-height:1.08}
+.lead{font-size:clamp(1rem,1.3vw,1.375rem);color:#555;line-height:1.7}
+.label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:.75rem}
+
+/* === NAV === */
+nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid #e8e8e8}
+.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-logo{width:100px;height:30px;background:#d4d4d4;border-radius:3px}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:.875rem;font-weight:500;color:#333;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#111}
+.nav-links a.active{font-weight:700;color:#111}
+.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;line-height:1;margin-bottom:.2rem}
+.nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
+
+/* === PAGE HEADER === */
+.page-header{margin-top:90px;background:#fff}
+.page-header-inner{
+  max-width:1600px;margin:0 auto;padding:7rem 3rem 6rem;
+  display:grid;grid-template-columns:1fr 2fr;gap:8rem;align-items:start;
+}
+.ph-back{display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:400;color:#aaa;text-decoration:none;margin-bottom:1.5rem;transition:color .2s;letter-spacing:.01em}
+.ph-back:hover{color:#333}
+.ph-title{font-size:clamp(3rem,7.5vw,6.5rem);font-weight:300;color:#111;letter-spacing:-.04em;line-height:1.02}
+.ph-right{padding-top:.25rem}
+.ph-desc{font-size:clamp(1rem,1.3vw,1.375rem);color:#555;line-height:1.7;max-width:580px}
+.ph-meta{margin-top:2rem;font-size:.8rem;color:#bbb}
+
+/* === PRIVACY LAYOUT === */
+.privacy-section{padding:0 0 10rem}
+.privacy-layout{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:8rem;
+  align-items:start;
+}
+.privacy-nav{position:sticky;top:130px}
+.privacy-nav-label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ccc;margin-bottom:1.25rem}
+.privacy-nav-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.privacy-nav-item a{
+  display:block;padding:.6rem 0;
+  font-size:.82rem;font-weight:500;color:#bbb;
+  text-decoration:none;
+  border-bottom:1px solid #f0f0f0;
+  transition:color .2s;
+  line-height:1.4;
+}
+.privacy-nav-item a:hover{color:#111}
+.privacy-nav-item.active a{color:#111;font-weight:700}
+
+/* === PRIVACY CONTENT === */
+.privacy-content{border-top:1px solid #e8e8e8}
+.privacy-block{
+  padding:3.5rem 0;
+  border-bottom:1px solid #e8e8e8;
+}
+.privacy-block:last-child{border-bottom:none}
+.privacy-block-label{
+  font-size:.62rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#ccc;
+  display:block;margin-bottom:1rem;
+}
+.privacy-block h2{
+  font-size:1.35rem;font-weight:700;color:#111;
+  line-height:1.25;margin-bottom:1.5rem;
+  letter-spacing:-.02em;
+}
+.privacy-block p{
+  font-size:1rem;color:#555;line-height:1.8;
+  margin-bottom:1rem;
+}
+.privacy-block p:last-child{margin-bottom:0}
+.privacy-block ul,.privacy-block ol{
+  margin:1rem 0 1rem 1.5rem;
+  color:#555;
+}
+.privacy-block li{
+  font-size:1rem;line-height:1.7;
+  margin-bottom:.4rem;
+  padding-left:.25rem;
+}
+.privacy-block strong{color:#111;font-weight:600}
+.privacy-block a{color:#111;text-decoration:underline}
+.privacy-block a:hover{opacity:.7}
+
+.data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+.data-table th{
+  text-align:left;padding:.75rem 1rem;
+  background:#f8f8f8;
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888;
+  border-bottom:2px solid #e8e8e8;
+}
+.data-table td{
+  padding:.8rem 1rem;
+  color:#555;line-height:1.6;
+  border-bottom:1px solid #f0f0f0;
+  vertical-align:top;
+}
+.data-table tr:last-child td{border-bottom:none}
+
+/* === BUTTONS === */
+.btn-p{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.85rem;background:#111;color:#fff;font-size:.9rem;font-weight:600;border-radius:8px;text-decoration:none;cursor:pointer;font-family:inherit;border:none;transition:background .2s ease}
+.btn-p:hover{background:#333}
+.btn-s{display:inline-flex;align-items:center;gap:.75rem;padding:.8rem 1.75rem;background:#fff;color:#333;font-size:.9rem;font-weight:500;border-radius:8px;text-decoration:none;border:1.5px solid #ccc;transition:border-color .2s ease}
+.btn-s:hover{border-color:#888}
+.btn-c{width:52px;height:52px;border-radius:50%;border:1px solid #d0d0d0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;color:#333;flex-shrink:0;transition:background .25s ease,border-color .25s ease,color .25s ease}
+.btn-c .arr{display:block;width:19px;height:10px;font-size:0;position:relative}
+.btn-c .arr::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:currentColor;transform:translateY(-50%)}
+.btn-c .arr::after{content:'';position:absolute;top:50%;right:0;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-50%) rotate(45deg)}
+.btn-c:hover{background:#111;border-color:#111;color:#fff}
+.btn-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+
+/* === CTA === */
+.cta-sec{background:#f5f5f5}
+.cta-sec .wrap{padding-top:8rem;padding-bottom:8rem}
+.cta-inner{max-width:760px;margin:0 auto;text-align:center}
+.kt-h2{font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;color:#111;letter-spacing:-.03em;line-height:1.08;margin-bottom:1.25rem}
+.kt-lead{font-size:1.1rem;color:#555;margin-bottom:2.5rem;line-height:1.7}
+
+/* === FOOTER === */
+footer{background:#111;padding:5rem 0 0}
+.footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
+.footer-logo{width:90px;height:27px;background:#383838;border-radius:3px;margin-bottom:1.25rem}
+.footer-desc{font-size:.9rem;color:#555;line-height:1.7}
+.footer-col h4{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col a{font-size:.875rem;color:#555;text-decoration:none}
+.footer-col a:hover{color:#bbb}
+.footer-bottom{max-width:1600px;margin:0 auto;padding:1.5rem 3rem;border-top:1px solid #222;display:flex;justify-content:space-between;font-size:.78rem;color:#444}
+.footer-bottom a{color:#444;text-decoration:none}
+
+/* === NAV DROPDOWN === */
+.nav-dropdown{position:relative}
+.nav-drop-trigger{display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;font-weight:500;color:#333;cursor:pointer;user-select:none;background:none;border:none;font-family:inherit;padding:0;transition:color .2s}
+.nav-drop-trigger:hover,.nav-dropdown:hover .nav-drop-trigger{color:#111}
+.nav-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.1);padding:.75rem 0;list-style:none;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s;z-index:300}
+.nav-drop-menu::before{content:'';position:absolute;top:-1.5rem;left:-1rem;right:-1rem;height:1.5rem}
+.nav-dropdown:hover .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto}
+.nav-drop-menu a{display:block;padding:.65rem 1.25rem;font-size:.875rem;color:#333;text-decoration:none;transition:background .15s,color .15s}
+.nav-drop-menu a:hover,.nav-drop-menu a.active{background:#f5f5f5;color:#111}
+.nav-drop-menu a.active{font-weight:700}
+/* === HAMBURGER === */
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
+/* === MOBILE MENU === */
+.mobile-menu{position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto;padding:0 1.5rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;padding:2.5rem 0;border-bottom:1px solid #e8e8e8;margin-bottom:2rem}
+.mobile-menu-logo{width:90px;height:27px;background:#d4d4d4;border-radius:3px}
+.mobile-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:#333;line-height:1;padding:.25rem}
+.mobile-nav{list-style:none}
+.mobile-nav>li{border-bottom:1px solid #e8e8e8}
+.mobile-nav>li:last-child{border-bottom:none}
+.mobile-nav>li>a,.mobile-nav>li>button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.15rem 0;font-size:1.125rem;font-weight:500;color:#333;text-decoration:none;background:none;border:none;font-family:inherit;cursor:pointer;text-align:left}
+.mobile-submenu{list-style:none;padding-bottom:.75rem;display:none}
+.mobile-submenu.open{display:block}
+.mobile-submenu a{display:block;padding:.55rem .75rem;font-size:1rem;color:#555;text-decoration:none}
+.m-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.mobile-nav button.open .m-chevron{transform:rotate(180deg)}
+.mobile-menu-phone{margin-top:2.5rem;padding-top:2rem;border-top:1px solid #e8e8e8}
+.mobile-menu-phone .label{margin-bottom:.35rem}
+.mobile-menu-phone a{font-size:1.75rem;font-weight:700;color:#111;text-decoration:none}
+/* === RESPONSIVE === */
+@media(max-width:1200px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .nav-phone{display:none}
+  .page-header-inner{grid-template-columns:1fr;gap:3rem}
+  .privacy-layout{grid-template-columns:1fr;gap:3rem}
+  .privacy-nav{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}
+}
+@media(max-width:768px){
+  .wrap,.page-header-inner,.footer-grid,.footer-bottom,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}
+  .page-header-inner{padding-top:5rem;padding-bottom:4rem}
+  .privacy-section{padding:0 0 5rem}
+  .privacy-block{padding:2.5rem 0}
+  .footer-grid{grid-template-columns:1fr}
+  .cta-sec .wrap{padding-top:5rem;padding-bottom:5rem}
+  .data-table{font-size:.8rem}
+  .data-table th,.data-table td{padding:.6rem .75rem}
+}
+@media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="wireframe-home.html" class="nav-logo-link">
+      <div class="nav-logo"></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="nav-drop-menu">
+          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+          <li><a href="wireframe-digital.html">Digital</a></li>
+          <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        </ul>
+      </li>
+      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+      <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+      <li><a href="wireframe-faq.html">FAQ</a></li>
+      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="nav-phone">
+      <span class="nav-phone-label">Zadzwoń teraz</span>
+      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+    </div>
+    <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="wireframe-home.html"><div class="mobile-menu-logo"></div></a>
+    <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+    <li>
+      <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <ul class="mobile-submenu" id="mobileSubmenu">
+        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+        <li><a href="wireframe-digital.html">Digital</a></li>
+        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+      </ul>
+    </li>
+    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+    <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+    <li><a href="wireframe-faq.html">FAQ</a></li>
+    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="mobile-menu-phone">
+    <span class="label">Zadzwoń teraz</span>
+    <a href="tel:+48224159800">+48 22 415 98 00</a>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="ph-left">
+      <a href="wireframe-home.html" class="ph-back">‹ Strona główna</a>
+      <h1 class="ph-title">Polityka<br>prywatności</h1>
+    </div>
+    <div class="ph-right">
+      <p class="ph-desc">Informacje o tym, jak przetwarzamy dane osobowe — kto jest administratorem, w jakim celu i na jakiej podstawie prawnej zbieramy dane oraz jakie przysługują Ci prawa.</p>
+      <p class="ph-meta">Wersja obowiązująca od 1 stycznia 2024 r.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div class="privacy-section">
+  <div class="wrap">
+    <div class="privacy-layout">
+
+      <!-- SIDEBAR NAV -->
+      <nav class="privacy-nav" aria-label="Spis treści">
+        <p class="privacy-nav-label">Spis treści</p>
+        <ul class="privacy-nav-list">
+          <li class="privacy-nav-item active"><a href="#s1">Administrator danych</a></li>
+          <li class="privacy-nav-item"><a href="#s2">Skąd mamy Twoje dane</a></li>
+          <li class="privacy-nav-item"><a href="#s3">Cele i podstawy przetwarzania</a></li>
+          <li class="privacy-nav-item"><a href="#s4">Okres przechowywania</a></li>
+          <li class="privacy-nav-item"><a href="#s5">Odbiorcy danych</a></li>
+          <li class="privacy-nav-item"><a href="#s6">Twoje prawa</a></li>
+          <li class="privacy-nav-item"><a href="#s7">Pliki cookie</a></li>
+          <li class="privacy-nav-item"><a href="#s8">Zmiany polityki</a></li>
+          <li class="privacy-nav-item"><a href="#s9">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <!-- CONTENT -->
+      <div class="privacy-content">
+
+        <div class="privacy-block" id="s1">
+          <span class="privacy-block-label">01</span>
+          <h2>Administrator danych osobowych</h2>
+          <p>Administratorem Twoich danych osobowych jest <strong>BLSK KOZŁOWSKI I WSPÓLNICY SP. K.</strong> z siedzibą w Warszawie, ul. Mazowiecka 9 (IV p.), 00-052 Warszawa, wpisana do Krajowego Rejestru Sądowego prowadzonego przez Sąd Rejonowy dla m.st. Warszawy w Warszawie, XII Wydział Gospodarczy KRS.</p>
+          <p>We wszelkich sprawach dotyczących ochrony danych osobowych możesz skontaktować się z nami:</p>
+          <ul>
+            <li>e-mail: <a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+            <li>telefon: <a href="tel:+48224159800">+48 22 415 98 00</a> (pon.–pt., 9:30–17:30)</li>
+            <li>adres korespondencyjny: ul. Mazowiecka 9, 00-052 Warszawa</li>
+          </ul>
+        </div>
+
+        <div class="privacy-block" id="s2">
+          <span class="privacy-block-label">02</span>
+          <h2>Skąd mamy Twoje dane</h2>
+          <p>Przetwarzamy dane osobowe, które:</p>
+          <ul>
+            <li><strong>Przekazujesz nam bezpośrednio</strong> — wypełniając formularz kontaktowy na stronie, wysyłając wiadomość e-mail, dzwoniąc do kancelarii lub spotykając się z naszymi prawnikami.</li>
+            <li><strong>Zbieramy automatycznie</strong> — podczas odwiedzin strony internetowej, za pośrednictwem plików cookie i podobnych technologii (adres IP, typ przeglądarki, strony odwiedzone, czas wizyty).</li>
+            <li><strong>Otrzymujemy od osób trzecich</strong> — w ramach prowadzonych spraw sądowych i transakcji, od klientów kancelarii wskazujących nas jako pełnomocnika lub doradcę.</li>
+          </ul>
+        </div>
+
+        <div class="privacy-block" id="s3">
+          <span class="privacy-block-label">03</span>
+          <h2>Cele i podstawy przetwarzania danych</h2>
+          <p>Przetwarzamy dane osobowe w następujących celach i na następujących podstawach prawnych:</p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cel przetwarzania</th>
+                <th>Podstawa prawna (RODO)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Odpowiedź na zapytania przesłane przez formularz kontaktowy lub e-mail</td>
+                <td>Art. 6 ust. 1 lit. f — prawnie uzasadniony interes administratora (udzielenie odpowiedzi na korespondencję)</td>
+              </tr>
+              <tr>
+                <td>Zawarcie i realizacja umowy o świadczenie pomocy prawnej</td>
+                <td>Art. 6 ust. 1 lit. b — niezbędność do wykonania umowy lub podjęcia działań przed jej zawarciem</td>
+              </tr>
+              <tr>
+                <td>Wypełnienie obowiązków wynikających z przepisów prawa (m.in. ustawa o radcach prawnych, ustawa o adwokaturze, przepisy AML)</td>
+                <td>Art. 6 ust. 1 lit. c — obowiązek prawny ciążący na administratorze</td>
+              </tr>
+              <tr>
+                <td>Dochodzenie lub obrona roszczeń</td>
+                <td>Art. 6 ust. 1 lit. f — prawnie uzasadniony interes administratora</td>
+              </tr>
+              <tr>
+                <td>Analityka strony internetowej i poprawa jej funkcjonowania</td>
+                <td>Art. 6 ust. 1 lit. f — prawnie uzasadniony interes administratora; lub art. 6 ust. 1 lit. a — zgoda (dla cookies analitycznych)</td>
+              </tr>
+              <tr>
+                <td>Przesyłanie newslettera i informacji o działalności kancelarii</td>
+                <td>Art. 6 ust. 1 lit. a — zgoda osoby, której dane dotyczą</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Podanie danych osobowych jest dobrowolne, jednak niepodanie danych niezbędnych do realizacji usługi uniemożliwia jej świadczenie.</p>
+        </div>
+
+        <div class="privacy-block" id="s4">
+          <span class="privacy-block-label">04</span>
+          <h2>Okres przechowywania danych</h2>
+          <p>Dane osobowe przechowujemy przez okres niezbędny do realizacji celów, dla których zostały zebrane:</p>
+          <ul>
+            <li><strong>Dane z formularza kontaktowego</strong> — do czasu udzielenia odpowiedzi i przez 12 miesięcy od ostatniego kontaktu, chyba że nawiązana zostanie współpraca.</li>
+            <li><strong>Dane związane z umową o świadczenie pomocy prawnej</strong> — przez czas trwania umowy oraz przez 10 lat od jej zakończenia (termin przedawnienia roszczeń).</li>
+            <li><strong>Dane przetwarzane na podstawie obowiązku prawnego</strong> (m.in. AML) — przez okresy wskazane w przepisach szczególnych, nie krócej niż 5 lat.</li>
+            <li><strong>Dane z plików cookie analitycznych</strong> — przez okres wskazany w polityce cookies, maksymalnie 26 miesięcy.</li>
+            <li><strong>Dane przetwarzane na podstawie zgody</strong> — do czasu wycofania zgody.</li>
+          </ul>
+          <p>Po upływie wskazanych okresów dane są usuwane lub anonimizowane.</p>
+        </div>
+
+        <div class="privacy-block" id="s5">
+          <span class="privacy-block-label">05</span>
+          <h2>Odbiorcy danych osobowych</h2>
+          <p>Twoje dane osobowe mogą być przekazywane następującym kategoriom odbiorców:</p>
+          <ul>
+            <li><strong>Podmioty świadczące usługi na rzecz kancelarii</strong> — dostawcy systemów informatycznych, operatorzy poczty elektronicznej, firmy obsługujące hosting strony internetowej, dostawcy usług księgowych — wyłącznie na podstawie stosownych umów powierzenia przetwarzania danych.</li>
+            <li><strong>Organy publiczne</strong> — sądy, organy administracji, organy ścigania — wyłącznie na podstawie obowiązujących przepisów prawa.</li>
+            <li><strong>Prawnicy i doradcy</strong> — współpracujące kancelarie lub eksperci zewnętrzni zaangażowani w prowadzenie konkretnej sprawy, wyłącznie w zakresie niezbędnym do jej realizacji.</li>
+          </ul>
+          <p>Dane co do zasady nie są przekazywane poza Europejski Obszar Gospodarczy. W przypadku korzystania z narzędzi dostawców działających poza EOG (np. Google Analytics) stosujemy standardowe klauzule umowne zatwierdzone przez Komisję Europejską.</p>
+        </div>
+
+        <div class="privacy-block" id="s6">
+          <span class="privacy-block-label">06</span>
+          <h2>Twoje prawa</h2>
+          <p>Na podstawie przepisów RODO przysługują Ci następujące prawa:</p>
+          <ul>
+            <li><strong>Prawo dostępu</strong> — możesz uzyskać informację, czy i jakie dane przetwarzamy, oraz otrzymać kopię tych danych.</li>
+            <li><strong>Prawo do sprostowania</strong> — możesz żądać poprawienia nieprawidłowych lub uzupełnienia niekompletnych danych.</li>
+            <li><strong>Prawo do usunięcia</strong> — możesz żądać usunięcia danych w przypadkach wskazanych w art. 17 RODO (m.in. gdy dane nie są już niezbędne do celów, dla których zostały zebrane).</li>
+            <li><strong>Prawo do ograniczenia przetwarzania</strong> — możesz żądać ograniczenia przetwarzania danych w przypadkach wskazanych w art. 18 RODO.</li>
+            <li><strong>Prawo do przenoszenia danych</strong> — możesz otrzymać dane w ustrukturyzowanym formacie nadającym się do odczytu maszynowego.</li>
+            <li><strong>Prawo do sprzeciwu</strong> — możesz wnieść sprzeciw wobec przetwarzania opartego na prawnie uzasadnionym interesie administratora.</li>
+            <li><strong>Prawo do wycofania zgody</strong> — jeżeli przetwarzanie odbywa się na podstawie zgody, możesz ją wycofać w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania przed jej wycofaniem.</li>
+          </ul>
+          <p>Aby skorzystać z powyższych praw, skontaktuj się z nami pod adresem <a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a>. Na Twoje żądanie odpowiemy bez zbędnej zwłoki, nie później niż w ciągu 30 dni.</p>
+          <p>Masz również prawo wniesienia skargi do organu nadzorczego — <strong>Prezesa Urzędu Ochrony Danych Osobowych</strong> (ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl" target="_blank" rel="noopener">uodo.gov.pl</a>), jeżeli uważasz, że przetwarzanie Twoich danych narusza przepisy RODO.</p>
+        </div>
+
+        <div class="privacy-block" id="s7">
+          <span class="privacy-block-label">07</span>
+          <h2>Pliki cookie i dane techniczne</h2>
+          <p>Nasza strona internetowa używa plików cookie — małych plików tekstowych zapisywanych na Twoim urządzeniu. Stosujemy trzy kategorie plików cookie:</p>
+          <ul>
+            <li><strong>Niezbędne</strong> — wymagane do prawidłowego działania strony (np. zapamiętanie preferencji dotyczących cookies). Nie wymagają zgody.</li>
+            <li><strong>Analityczne</strong> — pozwalają nam mierzyć ruch na stronie i poprawiać jej funkcjonowanie (Google Analytics). Wymagają Twojej zgody.</li>
+            <li><strong>Marketingowe</strong> — służą do personalizacji treści i reklam. Wymagają Twojej zgody.</li>
+          </ul>
+          <p>Możesz zarządzać preferencjami dotyczącymi plików cookie w każdej chwili za pomocą panelu ustawień cookies dostępnego na naszej stronie lub poprzez ustawienia przeglądarki internetowej. Wyłączenie plików cookie może wpłynąć na funkcjonowanie niektórych elementów strony.</p>
+          <p>Zbieramy również dane techniczne generowane automatycznie przy odwiedzinach strony: adres IP, typ i wersję przeglądarki, system operacyjny, referrer URL. Dane te służą wyłącznie celom statystycznym i bezpieczeństwa.</p>
+        </div>
+
+        <div class="privacy-block" id="s8">
+          <span class="privacy-block-label">08</span>
+          <h2>Zmiany polityki prywatności</h2>
+          <p>Zastrzegamy sobie prawo do zmiany niniejszej polityki prywatności — w szczególności w przypadku zmian przepisów prawa, zmian w zakresie świadczonych usług lub zmian stosowanych technologii.</p>
+          <p>O istotnych zmianach poinformujemy poprzez zamieszczenie zaktualizowanej wersji na stronie internetowej z nową datą obowiązywania. Zachęcamy do regularnego zapoznawania się z treścią polityki.</p>
+        </div>
+
+        <div class="privacy-block" id="s9">
+          <span class="privacy-block-label">09</span>
+          <h2>Kontakt w sprawach ochrony danych</h2>
+          <p>We wszelkich sprawach związanych z przetwarzaniem danych osobowych oraz realizacją przysługujących Ci praw prosimy o kontakt:</p>
+          <ul>
+            <li><strong>E-mail:</strong> <a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+            <li><strong>Telefon:</strong> <a href="tel:+48224159800">+48 22 415 98 00</a> (pon.–pt., 9:30–17:30)</li>
+            <li><strong>Adres:</strong> BLSK KOZŁOWSKI I WSPÓLNICY SP. K., ul. Mazowiecka 9 (IV p.), 00-052 Warszawa</li>
+          </ul>
+          <p>Staramy się odpowiadać na wszystkie zapytania w ciągu jednego dnia roboczego.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="label">Skontaktuj się z nami</span>
+      <h2 class="kt-h2">Pytania dotyczące<br>przetwarzania danych?</h2>
+      <p class="kt-lead">Odpowiemy konkretnie i bez zbędnych formalności. Zadzwoń lub napisz.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a href="tel:+48224159800" class="btn-p">+48 22 415 98 00</a>
+        <a href="wireframe-kontakt.html" class="btn-s">Formularz kontaktowy</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo"></div>
+      <p class="footer-desc">BLSK KOZŁOWSKI I WSPÓLNICY SP. K. — kancelaria prawna specjalizująca się w doradztwie dla firm i przedsiębiorców. Warszawa, ul. Mazowiecka 9.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Praktyki</h4>
+      <ul>
+        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+        <li><a href="wireframe-digital.html">Digital</a></li>
+        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kancelaria</h4>
+      <ul>
+        <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+        <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+        <li><a href="wireframe-faq.html">FAQ</a></li>
+        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
+        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="#">ul. Mazowiecka 9, Warszawa</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BLSK KOZŁOWSKI I WSPÓLNICY SP. K.</span>
+    <span><a href="wireframe-polityka-prywatnosci.html">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+
+  // Active sidebar nav on scroll
+  var sections=document.querySelectorAll('.privacy-block[id]');
+  var navItems=document.querySelectorAll('.privacy-nav-item');
+  function onScroll(){
+    var scrollY=window.scrollY+160;
+    var current='';
+    sections.forEach(function(s){if(scrollY>=s.offsetTop)current=s.id;});
+    navItems.forEach(function(item){
+      var link=item.querySelector('a');
+      item.classList.toggle('active',link&&link.getAttribute('href')==='#'+current);
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>

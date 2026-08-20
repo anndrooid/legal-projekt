@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spory Podatkowe — BLSK Legal</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:#fff;color:#333;font-size:1.125rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+.wrap{max-width:1600px;margin:0 auto;padding:0 3rem}
+.h2-sec{font-size:clamp(2.25rem,4vw,4rem);font-weight:300;color:#111;letter-spacing:-.035em;line-height:1.08}
+.lead{font-size:clamp(1rem,1.3vw,1.375rem);color:#555;line-height:1.7}
+.label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:.75rem}
+.body-text{font-size:1rem;color:#555;line-height:1.8}
+
+nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid #e8e8e8}
+.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-logo{width:100px;height:30px;background:#d4d4d4;border-radius:3px}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:.875rem;font-weight:500;color:#333;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#111}
+.nav-links a.active{font-weight:700;color:#111}
+.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;line-height:1;margin-bottom:.2rem}
+.nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
+
+.page-header{margin-top:90px;background:#fff}
+.page-header-inner{max-width:1600px;margin:0 auto;padding:7rem 3rem 6rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.ph-back{display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:400;color:#aaa;text-decoration:none;margin-bottom:1.5rem;transition:color .2s}
+.ph-back:hover{color:#333}
+.ph-title{font-size:clamp(3rem,7.5vw,6.5rem);font-weight:300;color:#111;letter-spacing:-.04em;line-height:1.02}
+.ph-desc{font-size:clamp(1rem,1.3vw,1.375rem);color:#555;line-height:1.7;max-width:580px}
+.ph-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:2rem}
+.ph-tag{display:inline-block;padding:.35rem .85rem;border:1px solid #e0e0e0;border-radius:100px;font-size:.72rem;font-weight:500;color:#888}
+
+.services-section{padding:5rem 0 6rem;background:#f8f8f8}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem}
+.service-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:2.5rem 2.25rem 2.75rem;display:flex;flex-direction:column;gap:1rem}
+.service-num{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ccc}
+.service-ico{width:44px;height:44px;background:#e8e8e8;border-radius:10px;flex-shrink:0}
+.service-title{font-size:1.1rem;font-weight:700;color:#111;line-height:1.25;letter-spacing:-.01em}
+.service-desc{font-size:.9rem;color:#666;line-height:1.7;flex:1}
+
+/* FORUMS BAND */
+.forums-band{padding:6rem 0;background:#111}
+.forums-band-inner{max-width:1600px;margin:0 auto;padding:0 3rem}
+.forums-title{font-size:clamp(1.75rem,3vw,2.75rem);font-weight:300;color:#fff;letter-spacing:-.03em;line-height:1.1;max-width:640px;margin-bottom:3.5rem}
+.forums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.forum-item{padding:1.75rem 2rem;background:#1a1a1a;border-radius:12px}
+.forum-abbr{font-size:1.5rem;font-weight:300;color:#fff;letter-spacing:-.03em;margin-bottom:.4rem}
+.forum-name{font-size:.8rem;color:#555;line-height:1.4}
+
+/* APPROACH */
+.approach-band{padding:6rem 0}
+.approach-inner{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center}
+
+.team-section{padding:6rem 0 8rem;background:#f8f8f8}
+.team-grid-2p{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:4rem;max-width:700px}
+.team-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;transition:box-shadow .25s ease,transform .25s ease}
+.team-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-2px)}
+.team-photo{width:100%;aspect-ratio:3/4;background:#d4d4d4}
+.team-body{padding:1.25rem 1.5rem 1.5rem}
+.team-badge{display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;background:#f5f5f5;padding:.2rem .6rem;border-radius:100px;margin-bottom:.55rem}
+.team-name{font-size:.9rem;font-weight:700;color:#111;margin-bottom:.2rem;line-height:1.2}
+.team-role{font-size:.73rem;color:#888}
+
+.cs-section{padding:6rem 0;background:#fff}
+.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem}
+.cs-card{border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;background:#fff;text-decoration:none;color:inherit;display:block;transition:box-shadow .25s,transform .25s}
+.cs-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.07);transform:translateY(-2px)}
+.cs-thumb{width:100%;aspect-ratio:16/9;background:#ccc;position:relative}
+.cs-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center}
+.cs-play::after{content:'';border-style:solid;border-color:transparent transparent transparent #111;border-width:7px 0 7px 12px;margin-left:2px}
+.cs-body{padding:1.5rem 1.75rem 1.75rem}
+.cs-tag{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:.5rem}
+.cs-title{font-size:1rem;font-weight:700;color:#111;line-height:1.3;margin-bottom:.45rem}
+.cs-desc{font-size:.875rem;color:#666;line-height:1.6}
+
+.btn-p{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.85rem;background:#111;color:#fff;font-size:.9rem;font-weight:600;border-radius:8px;text-decoration:none;border:none;transition:background .2s ease}
+.btn-p:hover{background:#333}
+.btn-s{display:inline-flex;align-items:center;gap:.75rem;padding:.8rem 1.75rem;background:#fff;color:#333;font-size:.9rem;font-weight:500;border-radius:8px;text-decoration:none;border:1.5px solid #ccc;transition:border-color .2s ease}
+.btn-s:hover{border-color:#888}
+.btn-c{width:52px;height:52px;border-radius:50%;border:1px solid #d0d0d0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;color:#333;flex-shrink:0;transition:background .25s ease,border-color .25s ease,color .25s ease}
+.btn-c .arr{display:block;width:19px;height:10px;font-size:0;position:relative}
+.btn-c .arr::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:currentColor;transform:translateY(-50%)}
+.btn-c .arr::after{content:'';position:absolute;top:50%;right:0;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-50%) rotate(45deg)}
+.btn-c:hover{background:#111;border-color:#111;color:#fff}
+.btn-c-sm{width:36px;height:36px}
+.btn-c-sm .arr{width:13px;height:8px}
+.btn-c-sm .arr::after{width:5px;height:5px}
+.btn-row-link{display:inline-flex;align-items:center;gap:.85rem;color:#111;font-weight:600;font-size:.95rem;text-decoration:none}
+.btn-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.row-between{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem}
+
+.cta-sec{background:#f5f5f5}
+.cta-sec .wrap{padding-top:8rem;padding-bottom:8rem}
+.cta-inner{max-width:760px;margin:0 auto;text-align:center}
+.kt-h2{font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;color:#111;letter-spacing:-.03em;line-height:1.08;margin-bottom:1.25rem}
+.kt-lead{font-size:1.1rem;color:#555;margin-bottom:2.5rem;line-height:1.7}
+
+footer{background:#111;padding:5rem 0 0}
+.footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
+.footer-logo{width:90px;height:27px;background:#383838;border-radius:3px;margin-bottom:1.25rem}
+.footer-desc{font-size:.9rem;color:#555;line-height:1.7}
+.footer-col h4{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col a{font-size:.875rem;color:#555;text-decoration:none}
+.footer-col a:hover{color:#bbb}
+.footer-bottom{max-width:1600px;margin:0 auto;padding:1.5rem 3rem;border-top:1px solid #222;display:flex;justify-content:space-between;font-size:.78rem;color:#444}
+.footer-bottom a{color:#444;text-decoration:none}
+
+/* === NAV DROPDOWN === */
+.nav-dropdown{position:relative}
+.nav-drop-trigger{display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;font-weight:500;color:#333;cursor:pointer;user-select:none;background:none;border:none;font-family:inherit;padding:0;transition:color .2s}
+.nav-drop-trigger:hover,.nav-dropdown:hover .nav-drop-trigger{color:#111}
+.nav-dropdown-active .nav-drop-trigger{font-weight:700;color:#111}
+.nav-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.1);padding:.75rem 0;list-style:none;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s;z-index:300}
+.nav-drop-menu::before{content:'';position:absolute;top:-1.5rem;left:-1rem;right:-1rem;height:1.5rem}
+.nav-dropdown:hover .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto}
+.nav-drop-menu a{display:block;padding:.65rem 1.25rem;font-size:.875rem;color:#333;text-decoration:none;transition:background .15s,color .15s}
+.nav-drop-menu a:hover,.nav-drop-menu a.active{background:#f5f5f5;color:#111}
+.nav-drop-menu a.active{font-weight:700}
+/* === HAMBURGER === */
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
+/* === MOBILE MENU === */
+.mobile-menu{position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto;padding:0 1.5rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;padding:2.5rem 0;border-bottom:1px solid #e8e8e8;margin-bottom:2rem}
+.mobile-menu-logo{width:90px;height:27px;background:#d4d4d4;border-radius:3px}
+.mobile-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:#333;line-height:1;padding:.25rem}
+.mobile-nav{list-style:none}
+.mobile-nav>li{border-bottom:1px solid #e8e8e8}
+.mobile-nav>li:last-child{border-bottom:none}
+.mobile-nav>li>a,.mobile-nav>li>button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.15rem 0;font-size:1.125rem;font-weight:500;color:#333;text-decoration:none;background:none;border:none;font-family:inherit;cursor:pointer;text-align:left}
+.mobile-submenu{list-style:none;padding-bottom:.75rem;display:none}
+.mobile-submenu.open{display:block}
+.mobile-submenu a{display:block;padding:.55rem .75rem;font-size:1rem;color:#555;text-decoration:none}
+.m-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.mobile-nav button.open .m-chevron{transform:rotate(180deg)}
+.mobile-menu-phone{margin-top:2.5rem;padding-top:2rem;border-top:1px solid #e8e8e8}
+.mobile-menu-phone .label{margin-bottom:.35rem}
+.mobile-menu-phone a{font-size:1.75rem;font-weight:700;color:#111;text-decoration:none}
+
+@media(max-width:1200px){
+  .nav-links{display:none}
+  .page-header-inner{grid-template-columns:1fr;gap:3rem}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .forums-grid{grid-template-columns:repeat(2,1fr)}
+  .approach-inner{grid-template-columns:1fr;gap:4rem}
+  .cs-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}
+  .nav-hamburger{display:flex}
+  .nav-phone{display:none}
+}
+@media(max-width:768px){
+  .wrap,.page-header-inner,.forums-band-inner,.footer-grid,.footer-bottom,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}
+  .page-header-inner{padding-top:5rem;padding-bottom:4rem}
+  .services-grid,.cs-grid,.forums-grid{grid-template-columns:1fr}
+  .team-grid-2p{grid-template-columns:1fr;max-width:100%}
+  .team-grid-2{grid-template-columns:1fr;max-width:100%}
+  .footer-grid{grid-template-columns:1fr}
+  .cta-sec .wrap{padding-top:5rem;padding-bottom:5rem}
+  html,body{overflow-x:hidden}
+}
+@media(max-width:600px){
+  .row-between{flex-wrap:wrap}
+}
+@media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="wireframe-home.html" class="nav-logo-link"><div class="nav-logo"></div></a>
+    <ul class="nav-links">
+      <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+      <li class="nav-dropdown nav-dropdown-active">
+        <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="nav-drop-menu">
+          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+          <li><a href="wireframe-digital.html">Digital</a></li>
+          <li><a href="wireframe-spory-podatkowe.html" class="active">Spory Podatkowe</a></li>
+        </ul>
+      </li>
+      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+      <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+      <li><a href="wireframe-faq.html">FAQ</a></li>
+      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="nav-phone">
+      <span class="nav-phone-label">Zadzwoń teraz</span>
+      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+    </div>
+    <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="wireframe-home.html"><div class="mobile-menu-logo"></div></a>
+    <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+    <li>
+      <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <ul class="mobile-submenu" id="mobileSubmenu">
+        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+        <li><a href="wireframe-digital.html">Digital</a></li>
+        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+      </ul>
+    </li>
+    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+    <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+    <li><a href="wireframe-faq.html">FAQ</a></li>
+    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="mobile-menu-phone">
+    <span class="label">Zadzwoń teraz</span>
+    <a href="tel:+48224159800">+48 22 415 98 00</a>
+  </div>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <a href="wireframe-home.html" class="ph-back">‹ Praktyki</a>
+      <h1 class="ph-title">Spory Podatkowe</h1>
+    </div>
+    <div>
+      <p class="ph-desc">Wspieramy klientów na każdym etapie kontroli podatkowych, celno-skarbowych i postępowań podatkowych. Reprezentacja przed sądami administracyjnymi, KAS, Trybunałem Sprawiedliwości UE i Komisją Europejską.</p>
+      <p class="ph-desc" style="margin-top:1.5rem">Specjalizujemy się w złożonych sporach z organami podatkowymi — szukamy nieszablonowych rozwiązań i mamy doświadczenie w przełomowych wyrokach NSA, TK i TSUE.</p>
+      <div class="ph-tags">
+        <span class="ph-tag">Kontrole podatkowe</span>
+        <span class="ph-tag">Postępowania KAS</span>
+        <span class="ph-tag">NSA i WSA</span>
+        <span class="ph-tag">TSUE</span>
+        <span class="ph-tag">Postępowania karno-skarbowe</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="services-section">
+  <div class="wrap">
+    <div class="row-between">
+      <div>
+        <span class="label">Zakres usług</span>
+        <h2 class="h2-sec">Jak możemy pomóc</h2>
+      </div>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-ico"></div>
+        <p class="service-title">Strategia sporu</p>
+        <p class="service-desc">Opracowujemy strategię prowadzenia sporu podatkowego — nieszablonową i dopasowaną do Twojej sprawy. Mamy doświadczenie w sprawach, które tworzyły przełomowe wyroki NSA, TK i TSUE.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-ico"></div>
+        <p class="service-title">Kontrole podatkowe</p>
+        <p class="service-desc">Reprezentacja podczas czynności sprawdzających, kontroli podatkowych i celno-skarbowych. Przygotowujemy Cię do kontroli, asystujemy podczas czynności i formułujemy wyjaśnienia i zastrzeżenia.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-ico"></div>
+        <p class="service-title">Postępowania podatkowe</p>
+        <p class="service-desc">Reprezentacja przed Krajową Administracją Skarbową, sądami administracyjnymi (WSA i NSA), Trybunałem Konstytucyjnym i TSUE w sprawach wymiarowych, zwrotach podatku i odpowiedzialności osób trzecich.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-ico"></div>
+        <p class="service-title">Wsparcie członków zarządu</p>
+        <p class="service-desc">Doradzamy zarządom spółek kapitałowych w zarządzaniu odpowiedzialnością karno-skarbową i majątkową. Analizujemy ryzyka, opracowujemy strategie ochrony i reprezentujemy w postępowaniach.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-ico"></div>
+        <p class="service-title">Ryzyka podatkowe i osobiste</p>
+        <p class="service-desc">Doradztwo w ocenie i zarządzaniu ryzykiem podatkowym podatników oraz ryzykiem karno-skarbowym osób fizycznych. Identyfikujemy zagrożenia i opracowujemy strategię ich minimalizacji.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <div class="service-ico"></div>
+        <p class="service-title">Postępowania karno-skarbowe</p>
+        <p class="service-desc">Reprezentacja w sprawach karno-skarbowych na każdym etapie — od postępowania przygotowawczego przez sąd rejonowy. Obrona osób fizycznych i podmiotów zbiorowych w postępowaniach karnoskarbowych.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">07</div>
+        <div class="service-ico"></div>
+        <p class="service-title">Procedury podatkowe</p>
+        <p class="service-desc">Tworzymy i wdrażamy wewnętrzne procedury podatkowe minimalizujące ryzyko sporu z organami. Polityki cen transferowych, dokumentacje TPR i inne obowiązki sprawozdawcze.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">08</div>
+        <div class="service-ico"></div>
+        <p class="service-title">Współpraca z organami podatkowymi</p>
+        <p class="service-desc">Doradztwo w interpretacjach indywidualnych, opiniach zabezpieczających, uprzednich porozumieniach cenowych (APA) i programach współdziałania z Krajową Administracją Skarbową.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="forums-band">
+  <div class="forums-band-inner">
+    <p class="forums-title">Reprezentujemy klientów przed najwyższymi organami podatkowymi w Polsce i Europie.</p>
+    <div class="forums-grid">
+      <div class="forum-item">
+        <p class="forum-abbr">KAS</p>
+        <p class="forum-name">Krajowa Administracja Skarbowa — wszystkie szczeble</p>
+      </div>
+      <div class="forum-item">
+        <p class="forum-abbr">WSA / NSA</p>
+        <p class="forum-name">Wojewódzkie i Naczelny Sąd Administracyjny</p>
+      </div>
+      <div class="forum-item">
+        <p class="forum-abbr">TSUE / SądUE</p>
+        <p class="forum-name">Trybunał Sprawiedliwości UE i Sąd UE w Luksemburgu</p>
+      </div>
+      <div class="forum-item">
+        <p class="forum-abbr">TK / KE</p>
+        <p class="forum-name">Trybunał Konstytucyjny i Komisja Europejska</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="approach-band">
+  <div class="wrap">
+    <div class="approach-inner">
+      <div>
+        <span class="label">Nasze podejście</span>
+        <h2 class="h2-sec">Ponad 20 lat doświadczenia. Przełomowe wyroki na najwyższych forach.</h2>
+        <p class="lead" style="margin-top:2rem">Aleksandra Rutkowska specjalizuje się w kontrolach podatkowych, celno-skarbowych i postępowaniach podatkowych od ponad 20 lat. Jej sprawy tworzyły precedensowe rozstrzygnięcia NSA i TSUE.</p>
+      </div>
+      <div>
+        <p class="body-text" style="margin-bottom:1.5rem">Nie jesteśmy tylko pełnomocnikami procesowymi — doradzamy strategicznie od pierwszego sygnału ryzyka. Pomagamy wybrać właściwą ścieżkę: interpretacja, porozumienie cenowe, program współdziałania z KAS lub agresywna linia obrony w postępowaniu spornym.</p>
+        <p class="body-text">Specjalizujemy się w sprawach, w których standardowe podejście nie wystarcza — złożone struktury korporacyjne, transakcje transgraniczne, rozliczenia cen transferowych i postępowania karno-skarbowe dla zarządów.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="team-section">
+  <div class="wrap">
+    <div class="row-between" style="margin-bottom:4rem">
+      <div>
+        <span class="label">Nasz zespół</span>
+        <h2 class="h2-sec">Prawnicy specjalizujący się<br>w Sporach Podatkowych</h2>
+      </div>
+      <a href="wireframe-nasz-zespol.html" class="btn-row-link">
+        Cały zespół
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+    <div class="team-grid-2p">
+
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-body">
+          <span class="team-badge">Lider praktyki</span>
+          <p class="team-name">Aleksandra Rutkowska</p>
+          <p class="team-role">Partner · Radca prawny</p>
+          <a href="#" class="btn-row-link" style="font-size:.8rem;gap:.4rem;margin-top:.85rem">Profil <span class="btn-c btn-c-sm"><span class="arr"></span></span></a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-body">
+          <span class="team-badge" style="opacity:0">—</span>
+          <p class="team-name">Aleksander Brzozowski</p>
+          <p class="team-role">Counsel</p>
+          <a href="#" class="btn-row-link" style="font-size:.8rem;gap:.4rem;margin-top:.85rem">Profil <span class="btn-c btn-c-sm"><span class="arr"></span></span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="cs-section">
+  <div class="wrap">
+    <div class="row-between" style="margin-bottom:0">
+      <div>
+        <span class="label">Corpo Snap</span>
+        <h2 class="h2-sec">Prawo podatkowe wyjaśnione konkretnie</h2>
+      </div>
+      <a href="wireframe-corpo-snap.html" class="btn-row-link">
+        Wszystkie odcinki
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+    <div class="cs-grid">
+      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
+        <div class="cs-thumb"><div class="cs-play"></div></div>
+        <div class="cs-body">
+          <p class="cs-tag">Odcinek 30 · Spory Podatkowe</p>
+          <p class="cs-title">Kontrola podatkowa — jak się przygotować i co robić w jej trakcie</p>
+          <p class="cs-desc">Prawa podatnika, przebieg kontroli, najczęstsze błędy i jak reagować na protokół pokontrolny.</p>
+        </div>
+      </a>
+      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
+        <div class="cs-thumb"><div class="cs-play"></div></div>
+        <div class="cs-body">
+          <p class="cs-tag">Odcinek 27 · Spory Podatkowe</p>
+          <p class="cs-title">NSA vs WSA — różnice i jak skutecznie zaskarżyć decyzję organu</p>
+          <p class="cs-desc">Tryb odwoławczy w sprawach podatkowych: kiedy do WSA, kiedy kasacja do NSA i ile to trwa.</p>
+        </div>
+      </a>
+      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
+        <div class="cs-thumb"><div class="cs-play"></div></div>
+        <div class="cs-body">
+          <p class="cs-tag">Odcinek 21 · Spory Podatkowe</p>
+          <p class="cs-title">Odpowiedzialność karno-skarbowa zarządu — kiedy ryzykujesz prywatnym majątkiem</p>
+          <p class="cs-desc">Art. 116 Ordynacji i KKS — przesłanki odpowiedzialności i jak zarząd może się chronić.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-sec">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="label">Skontaktuj się z nami</span>
+      <h2 class="kt-h2">Kontrola podatkowa lub spór z organem?</h2>
+      <p class="kt-lead">Im wcześniej wejdziemy do sprawy, tym lepiej. Zadzwoń lub napisz — umawiamy spotkania stacjonarne i online.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a href="tel:+48224159800" class="btn-p">+48 22 415 98 00</a>
+        <a href="wireframe-kontakt.html" class="btn-s">Formularz kontaktowy</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo"></div>
+      <p class="footer-desc">BLSK KOZŁOWSKI I WSPÓLNICY SP. K. — kancelaria prawna specjalizująca się w doradztwie dla firm i przedsiębiorców. Warszawa, ul. Mazowiecka 9.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Praktyki</h4>
+      <ul>
+        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
+        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
+        <li><a href="wireframe-digital.html">Digital</a></li>
+        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kancelaria</h4>
+      <ul>
+        <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
+        <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
+        <li><a href="wireframe-faq.html">FAQ</a></li>
+        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
+        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="#">ul. Mazowiecka 9, Warszawa</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BLSK KOZŁOWSKI I WSPÓLNICY SP. K.</span>
+    <span><a href="wireframe-polityka-prywatnosci.html">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+})();
+</script>
+</body>
+</html>
