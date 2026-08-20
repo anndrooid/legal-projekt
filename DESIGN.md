@@ -28,30 +28,30 @@ Strona ma sprawiać wrażenie kancelarii, która nie musi się starać — pewna
 
 ## 3. Typografia
 
-Dwa kroje: **Raleway** (nagłówki, nav, buttony, etykiety) i **Open Sans** (treść, formularze).
+Jeden krój: **PP Neue Montreal** (self-hosted OTF, `context/fonts/`). Zastąpił Raleway i Open Sans — cała typografia opiera się na jednej rodzinie.
 
-| Klasa / rola | Rozmiar | Weight | Krój | Użycie |
+| Klasa / rola | Rozmiar | Weight | Letter-spacing | Użycie |
 |---|---|---|---|---|
-| `stat-num` | clamp(3.5rem, 7vw, 7.5rem) | 400 | Raleway | Licznik statystyk (29, 5, 20+, 6 mld) |
-| `h1-hero` | clamp(3rem, 7.5vw, 6.5rem) | 600 | Raleway | Główny nagłówek hero |
-| `ph-title` | clamp(3rem, 7.5vw, 6.5rem) | 600 | Raleway | Nagłówek strony wewnętrznej (praktyki, zespół) |
-| `h2-sec` | clamp(2.25rem, 4vw, 4rem) | 600 | Raleway | Nagłówki sekcji na home |
-| `kt-h2` | clamp(2rem, 3.5vw, 3.5rem) | 500 | Raleway | Nagłówek sekcji kontakt |
-| `card-title` | 1.3rem | 700 | Raleway | Tytuły kart: `.prac-name`, `.step-title`, `.team-name`, `.cs-title`, `.news-title` |
-| `h3-card` | clamp(1.2rem, 1.8vw, 1.75rem) | 500 | Raleway | ⚠ Klasa zdefiniowana w CSS, nieużyta w żadnym wireframie — rezerwa na przyszłe karty (profil prawnika) |
-| `lead` | clamp(1rem, 1.3vw, 1.375rem) | 400 | Open Sans | Teksty wstępne sekcji |
-| `label` | 1.2rem | 300 | Raleway | Eyebrow labels (uppercase, letter-spacing .14em) |
-| `body` | 1.125rem | 400 | Open Sans | Ciało tekstu, opisy kart |
-| `nav-link` | 1rem | 500 | Raleway | Linki nawigacyjne |
-| `stat-lbl` | 0.9rem | 400 | Open Sans | Opis pod licznikiem statystyk |
-| `card-desc` | 0.875–0.95rem | 400 | Open Sans | Opisy w kartach (prac-desc, cs-desc, news-exc, step-desc) |
-| `ph-back` | 1.2rem | 300 | Open Sans | Breadcrumb / link powrotu na stronie wewnętrznej (hover → accent) |
-| `srv-num` | 2rem | 300 | Raleway | Numer pozycji w liście usług (letter-spacing .18em, kolor rgba(255,255,255,.3)) |
-| `srv-title` | 2rem | 400 | Raleway | Tytuł pozycji w liście usług — kolor #f6f6f4 na ciemnym tle |
-| `srv-desc` | 1rem | 300 | Open Sans | Opis pozycji w liście usług — kolor rgba(255,255,255,.7), line-height 1.78 |
-| `btn-primary` | 0.9rem | 600 | Raleway | Tekst przycisku wypełnionego |
-| `btn-link` | 0.95rem | 600 | Raleway | Tekst przycisku ghost / link z strzałką |
-| `micro-label` | 0.63rem | 600 | Raleway | Etykiety kategorii, tagi (uppercase, letter-spacing .12em) |
+| `stat-num` | clamp(3.5rem, 7vw, 7.5rem) | 400 | -.015em | Licznik statystyk (29, 5, 20+, 6 mld) |
+| `h1-hero` | clamp(3rem, 7.5vw, 6.5rem) | 500 | -.015em + scaleX(1.04) | Główny nagłówek hero |
+| `ph-title` | clamp(3rem, 7.5vw, 6.5rem) | 500 | -.015em + scaleX(1.04) | Nagłówek strony wewnętrznej (praktyki, zespół) |
+| `h2-sec` | clamp(2.25rem, 4vw, 4rem) | 500 | -.015em + scaleX(1.04) | Nagłówki sekcji na home |
+| `kt-h2` | clamp(2rem, 3.5vw, 3.5rem) | 500 | -.015em | Nagłówek sekcji kontakt |
+| `card-title` | 1.3rem | 600 | dziedziczony (.03em) | Tytuły kart: `.prac-name`, `.step-title`, `.team-name`, `.cs-title`, `.news-title` |
+| `h3-card` | clamp(1.2rem, 1.8vw, 1.75rem) | 500 | -.015em | ⚠ Klasa zdefiniowana w CSS, nieużyta w żadnym wireframie — rezerwa na przyszłe karty (profil prawnika) |
+| `lead` | clamp(1rem, 1.3vw, 1.375rem) | 400 | dziedziczony (.03em) | Teksty wstępne sekcji |
+| `label` | 1.2rem | 300 | .14em | Eyebrow labels (uppercase) |
+| `body` | 1.125rem | 400 | .03em | Ciało tekstu, opisy kart |
+| `nav-link` | 1rem | 500 | dziedziczony (.03em) | Linki nawigacyjne i dropdown |
+| `stat-lbl` | 0.9rem | 400 | dziedziczony (.03em) | Opis pod licznikiem statystyk |
+| `card-desc` | 0.875–0.95rem | 400 | dziedziczony (.03em) | Opisy w kartach (prac-desc, cs-desc, news-exc, step-desc) |
+| `ph-back` | 1.2rem | 300 | dziedziczony (.03em) | Breadcrumb / link powrotu na stronie wewnętrznej (hover → accent) |
+| `srv-num` | 2rem | 300 | .18em | Numer pozycji w liście usług (kolor rgba(255,255,255,.3)) |
+| `srv-title` | 2rem | 400 | -.015em | Tytuł pozycji w liście usług — kolor #f6f6f4 na ciemnym tle |
+| `srv-desc` | 1rem | 300 | dziedziczony (.03em) | Opis pozycji w liście usług — kolor rgba(255,255,255,.7), line-height 1.78 |
+| `btn-primary` | 0.9rem | 600 | dziedziczony (.03em) | Tekst przycisku wypełnionego |
+| `btn-link` | 0.95rem | 500 | dziedziczony (.03em) | Tekst przycisku ghost / link z strzałką |
+| `micro-label` | 0.63rem | 400 | .12em | Etykiety kategorii, tagi (uppercase) |
 
 ---
 
