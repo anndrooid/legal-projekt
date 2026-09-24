@@ -1,17 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BLSK Legal — Wireframe A (Ligit + Sprawakarna + GWW + PeakLegal)</title>
 <style>
+@font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Thin.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Italic.otf') format('opentype');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Bold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+
 /* Wireframe A — syntetyzuje 4 inspiracje klienta na podstawie rzeczywistych wartości CSS */
 
 /* ===== RESET ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
 body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-family:'PPNeueMontreal',sans-serif;
   background:#fff;color:#333;
   /* PeakLegal: body text 1.5625rem desktop — stosujemy 1.125rem jako rozsądny wireframe-equiv */
   font-size:1.125rem;line-height:1.65;
@@ -465,6 +472,21 @@ nav.nav-solid .nav-hamburger span{background:#333}
   .stat-cell{border-right:none;padding-right:0}
 }
 @media(min-width:1024px){.h1-hero{font-size:6rem}}
+
+/* PP Neue Montreal — typografia */
+body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
+.h1-hero{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
+.ph-title{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
+.h2-sec{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
+.kt-h2{font-weight:500;letter-spacing:-.015em}
+.h3-card{font-weight:500;letter-spacing:-.015em}
+.stat-num{font-weight:400;letter-spacing:-.015em}
+.label{font-weight:300}
+.prac-name,.step-title,.team-name,.cs-title,.news-title{font-weight:600}
+.btn-row-link,.nav-phone-num{font-weight:500}
+.btn-c{transition:background .5s,border-color .5s,color .5s}
+.btn-c .arr{transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.btn-c:hover .arr{transform:rotate(-45deg)}
 </style>
 </head>
 <body>
