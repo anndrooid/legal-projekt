@@ -289,6 +289,84 @@ body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
 .btn-c{transition:background .5s,border-color .5s,color .5s}
 .btn-c .arr{transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .btn-c:hover .arr{transform:rotate(-45deg)}
+
+/* Design system — kolory */
+:root{--crimson:#8C0002;--navy:#1a2440;--bg:#f6f6f4;--border:rgba(26,36,64,.12)}
+body{background:#f6f6f4;color:var(--navy)}
+.lead,.body-text,.stat-lbl,.prac-desc,.step-desc,.cs-desc,.news-exc,.ph-desc{color:var(--navy)}
+.h1-hero,.h2-sec,.h3-card,.ph-title,.kt-h2,.stat-num{color:var(--navy)}
+.label{color:var(--crimson)}
+.btn-p{background:var(--crimson);color:#fff}
+.btn-p:hover{background:#6e0001}
+.btn-c{border-color:rgba(26,36,64,.25);color:var(--navy)}
+.btn-c:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn-row-link{color:var(--navy)}
+
+/* Nav */
+nav.topnav{background:#f6f6f4;box-shadow:none}
+.nav-inner{border-bottom:none}
+.nav-logo{background:#c8c4bc}
+.nav-links a{color:var(--navy)}
+.nav-links a:hover,.nav-links a.active{color:var(--crimson);font-weight:500}
+.nav-drop-trigger{color:var(--navy)}
+.nav-drop-trigger:hover,.nav-dropdown-active .nav-drop-trigger{color:var(--crimson)}
+.nav-phone-label{color:var(--navy)}
+.nav-phone-num{color:var(--crimson);font-size:2rem;font-weight:500}
+.nav-hamburger span{background:var(--navy)}
+.nav-drop-menu{background:#f6f6f4;border-color:rgba(26,36,64,.15)}
+.nav-drop-menu a{color:var(--navy)}
+.nav-drop-menu a:hover,.nav-drop-menu a.active{background:rgba(26,36,64,.06);color:var(--crimson);font-weight:500}
+
+/* Mobile menu */
+.mobile-menu{background:#f6f6f4}
+.mobile-menu-top{border-color:var(--border)}
+.mobile-menu-logo{background:rgba(26,36,64,.15)}
+.mobile-close{color:var(--navy)}
+.mobile-nav>li{border-color:var(--border)}
+.mobile-nav>li>a,.mobile-nav>li>button{color:var(--navy)}
+.mobile-submenu a{color:var(--navy)}
+.mobile-menu-phone{border-top-color:var(--border)}
+.mobile-menu-phone a{color:var(--crimson);font-weight:600}
+.mobile-menu-phone .label{color:var(--navy)}
+
+/* Footer */
+footer{background:#0f1628}
+.footer-logo{background:#2a3555}
+.footer-desc{color:rgba(255,255,255,.35)}
+.footer-col h4{color:rgba(255,255,255,.3);font-weight:600}
+.footer-col a{color:rgba(255,255,255,.45)}
+.footer-col a:hover{color:#f6f6f4}
+.footer-bottom{border-top-color:rgba(255,255,255,.08);color:rgba(255,255,255,.25)}
+.footer-bottom a{color:rgba(255,255,255,.25)}
+
+/* Cards i elementy */
+.news-card,.team-card,.cs-card,.prac-card,.service-card{border-color:var(--border);background:#fff}
+.news-date{color:var(--crimson)}
+.news-title,.news-exc{color:var(--navy)}
+.cs-tag{color:var(--crimson)}
+.cs-title,.cs-desc{color:var(--navy)}
+.team-name{color:var(--navy)}
+.team-role{color:var(--crimson)}
+.team-badge{color:var(--navy);background:rgba(26,36,64,.06)}
+.ph-back{color:var(--navy)}
+.ph-back:hover{color:var(--crimson)}
+.ph-tag{border-color:var(--border);color:var(--navy)}
+.rank-logo{background:rgba(26,36,64,.1)}
+.rank-lbl{color:var(--navy)}
+.step-num{color:var(--crimson)}
+.srv-circle{border-color:rgba(26,36,64,.25);color:var(--navy)}
+
+/* Sekcja ciemna */
+.sec-navy{background:#1a2440;color:#f6f6f4}
+.sec-navy .h2-sec,.sec-navy .kt-h2{color:#fff}
+.sec-navy .label{color:rgba(255,255,255,.55)}
+.sec-navy .lead,.sec-navy .body-text{color:rgba(255,255,255,.8)}
+.sec-navy .step-title{color:#fff}
+.sec-navy .step-num{color:rgba(255,255,255,.4)}
+.sec-navy .step-desc{color:rgba(255,255,255,.75)}
+.sec-navy .btn-row-link{color:#fff}
+.sec-navy .btn-c{border-color:rgba(255,255,255,.3);color:#fff}
+.sec-navy .btn-c:hover{background:#fff;color:var(--navy);border-color:#fff}
 </style>
 </head>
 <body>
