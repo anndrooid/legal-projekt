@@ -453,7 +453,18 @@ footer{background:#0f1628;padding:5rem 0 0}
 /* Statystyki obok siebie */
 .approach-stat{flex-direction:row;gap:3rem;flex-wrap:wrap}
 .stat-item{flex:1;min-width:120px}
+@media(prefers-reduced-motion:no-preference){
+  .js-ready .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+  .js-ready .reveal.visible{opacity:1;transform:translateY(0)}
+  .reveal-d1{transition-delay:.1s}
+  .reveal-d2{transition-delay:.2s}
+  .reveal-d3{transition-delay:.3s}
+  .line-clip{display:block;overflow:hidden;padding-bottom:.05em}
+  .line-inner{display:block;transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
+  .line-inner.visible{transform:translateY(0)}
+}
 </style>
+<script>document.documentElement.classList.add('js-ready')</script>
 </head>
 <body>
 
@@ -518,13 +529,13 @@ footer{background:#0f1628;padding:5rem 0 0}
 <div class="page-header">
   <div class="page-header-inner">
     <div class="ph-left">
-      <a href="strona-glowna.html" class="ph-back">‹ Praktyki</a>
-      <h1 class="ph-title">Rozwiązywanie Sporów</h1>
+      <a href="strona-glowna.html" class="ph-back reveal">‹ Praktyki</a>
+      <h1 class="ph-title">Rozwiązywanie<br>Sporów</h1>
     </div>
     <div class="ph-right">
-      <p class="ph-desc">Zapewniamy kompleksowe wsparcie prawne na każdym etapie sporu. Skutecznie reprezentujemy Klientów przed trybunałami arbitrażowymi, sądami powszechnymi i organami administracji publicznej.</p>
-      <p class="ph-desc" style="margin-top:1.5rem">Nasza praktyka wykracza poza salę sądową – obejmuje codzienną analizę ryzyka, doradztwo strategiczne i wsparcie wewnętrznych działów prawnych.</p>
-      <div class="ph-tags">
+      <p class="ph-desc reveal reveal-d1">Zapewniamy kompleksowe wsparcie prawne na każdym etapie sporu. Skutecznie reprezentujemy Klientów przed trybunałami arbitrażowymi, sądami powszechnymi i organami administracji publicznej.</p>
+      <p class="ph-desc reveal reveal-d2" style="margin-top:1.5rem">Nasza praktyka wykracza poza salę sądową – obejmuje codzienną analizę ryzyka, doradztwo strategiczne i wsparcie wewnętrznych działów prawnych.</p>
+      <div class="ph-tags reveal reveal-d3">
         <span class="ph-tag">Spory korporacyjne</span>
         <span class="ph-tag">Arbitraż</span>
         <span class="ph-tag">Sądy powszechne</span>
@@ -545,35 +556,35 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
     <div class="services-grid">
 
-      <div class="service-card">
+      <div class="service-card reveal">
         <div class="service-num">01</div>
         <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="8" x2="1" y2="14"/><line x1="4" y1="8" x2="7" y2="14"/><path d="M1 14q3 4 6 0"/><line x1="20" y1="8" x2="17" y2="14"/><line x1="20" y1="8" x2="23" y2="14"/><path d="M17 14q3 4 6 0"/></svg></div>
         <p class="service-title">Strategia</p>
         <p class="service-desc">Budujemy kompleksowe, zindywidualizowane strategie procesowe, których celem jest maksymalizacja szans na korzystne rozstrzygnięcie przy jednoczesnym minimalizowaniu kosztów i czasu trwania sporu.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card reveal reveal-d1">
         <div class="service-num">02</div>
         <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 12 3 21 9"/><path d="M3 9v12h18V9"/><line x1="7" y1="13" x2="7" y2="21"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="17" y1="13" x2="17" y2="21"/></svg></div>
         <p class="service-title">Reprezentacja</p>
         <p class="service-desc">Reprezentujemy Klientów przed sądami powszechnymi wszystkich instancji, trybunałami arbitrażowymi (krajowymi i międzynarodowymi) oraz organami administracji państwowej i regulatorami.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card reveal reveal-d2">
         <div class="service-num">03</div>
         <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <p class="service-title">Zarządzanie ryzykiem</p>
         <p class="service-desc">Doradzamy wewnętrznym działom prawnym i compliance w zakresie identyfikacji, oceny i zarządzania ryzykiem prawnym związanym z prowadzoną działalnością. Pomagamy wdrożyć procesy minimalizujące ryzyko przyszłych sporów.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card reveal reveal-d3">
         <div class="service-num">04</div>
         <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
         <p class="service-title">Zabezpieczenie roszczeń</p>
         <p class="service-desc">Doradzamy i reprezentujemy w postępowaniach o zabezpieczenie roszczeń przed wszczęciem lub w trakcie procesu. Działamy szybko i skutecznie – zabezpieczenie roszczeń często decyduje o faktycznym wyniku sporu.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card reveal">
         <div class="service-num">05</div>
         <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="3" y2="21"/><line x1="21" y1="3" x2="14" y2="10"/></svg></div>
         <p class="service-title">Zapobieganie eskalacji sporu</p>
@@ -590,7 +601,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div class="approach-inner">
       <div>
         <span class="label">Nasze podejście</span>
-        <h2 class="h2-sec">Spory korporacyjne, arbitraż i postępowania administracyjne.</h2>
+        <h2 class="h2-sec">Spory korporacyjne, arbitraż<br>i postępowania administracyjne.</h2>
         <div class="approach-stat">
           <div class="stat-item">
             <div class="stat-num">20+</div>
@@ -603,9 +614,9 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
       <div>
-        <p class="lead" style="margin-bottom:2rem">Nasze doświadczenie obejmuje złożone spory handlowe i regulacyjne, w tym postępowania dotyczące wspólników, organów spółek i inwestorów – również w kontekście transgranicznym.</p>
-        <p class="body-text" style="margin-bottom:1.5rem">Łączymy precyzję analityczną z agresywną, skuteczną reprezentacją. Rozumiemy, że dla naszych Klientów spór to nie tylko kwestia prawna – to realne ryzyko biznesowe, które wymaga strategicznego myślenia od pierwszego dnia.</p>
-        <p class="body-text">Każda sprawa to indywidualna strategia. Oceniamy szanse i ryzyka rzetelnie – doradzamy nie tylko wtedy, kiedy warto walczyć, ale też kiedy warto osiągnąć ugodę.</p>
+        <p class="lead reveal" style="margin-bottom:2rem">Nasze doświadczenie obejmuje złożone spory handlowe i regulacyjne, w tym postępowania dotyczące wspólników, organów spółek i inwestorów – również w kontekście transgranicznym.</p>
+        <p class="body-text reveal reveal-d1" style="margin-bottom:1.5rem">Łączymy precyzję analityczną z agresywną, skuteczną reprezentacją. Rozumiemy, że dla naszych Klientów spór to nie tylko kwestia prawna – to realne ryzyko biznesowe, które wymaga strategicznego myślenia od pierwszego dnia.</p>
+        <p class="body-text reveal reveal-d2">Każda sprawa to indywidualna strategia. Oceniamy szanse i ryzyka rzetelnie – doradzamy nie tylko wtedy, kiedy warto walczyć, ale też kiedy warto osiągnąć ugodę.</p>
       </div>
     </div>
   </div>
@@ -619,25 +630,25 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
     <div class="quotes-grid">
 
-      <div class="quote-card">
+      <div class="quote-card reveal">
         <p class="quote-source">Legal 500 EMEA · Dispute Resolution</p>
         <p class="quote-text">„Zespół wyróżnia się kompetencjami w zakresie litigation przy silnym rozumieniu biznesowym i efektywną współpracą. Prowadzi złożone, precedensowe sprawy z innowacyjnymi rozwiązaniami."</p>
         <p class="quote-about">O kancelarii ZMW Legal</p>
       </div>
 
-      <div class="quote-card">
+      <div class="quote-card reveal reveal-d1">
         <p class="quote-source">Legal 500 EMEA · Dispute Resolution</p>
         <p class="quote-text">„Wysoko wykwalifikowani Partnerzy i Associates łączący doświadczenie z kancelarii międzynarodowych z elastycznością kancelarii butikowej."</p>
         <p class="quote-about">O kancelarii ZMW Legal</p>
       </div>
 
-      <div class="quote-card">
+      <div class="quote-card reveal reveal-d2">
         <p class="quote-source">Chambers &amp; Partners · Prof. Anna Zawadzka</p>
         <p class="quote-text">„Dogłębna analiza problemu, dostarczanie szerokiego wachlarza opcji i ścieżek działania. Klientów imponuje strategiczne podejście już na etapie planowania sporu."</p>
         <p class="quote-about">Managing Partner · Band 1</p>
       </div>
 
-      <div class="quote-card">
+      <div class="quote-card reveal reveal-d3">
         <p class="quote-source">Chambers &amp; Partners · Piotr Mrowiec</p>
         <p class="quote-text">„Klienci doceniają poziom merytoryczny, proaktywne zaangażowanie i kompleksowe podejście. Unikalne doświadczenie w wielomilionowych sporach na forach krajowych i międzynarodowych."</p>
         <p class="quote-about">Partner · Band 2</p>
@@ -662,7 +673,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
     <div class="team-grid-prac">
 
-      <div class="team-card">
+      <div class="team-card reveal">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge">Lider praktyki</span>
@@ -674,7 +685,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
 
-      <div class="team-card">
+      <div class="team-card reveal reveal-d1">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge">Lider praktyki</span>
@@ -686,7 +697,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
 
-      <div class="team-card">
+      <div class="team-card reveal reveal-d2">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge">Lider praktyki</span>
@@ -698,7 +709,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
 
-      <div class="team-card">
+      <div class="team-card reveal reveal-d3">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge" style="opacity:0">–</span>
@@ -710,7 +721,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
 
-      <div class="team-card">
+      <div class="team-card reveal">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge" style="opacity:0">–</span>
@@ -722,7 +733,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
 
-      <div class="team-card">
+      <div class="team-card reveal reveal-d1">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge" style="opacity:0">–</span>
@@ -734,7 +745,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
 
-      <div class="team-card">
+      <div class="team-card reveal reveal-d2">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge" style="opacity:0">–</span>
@@ -746,7 +757,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
 
-      <div class="team-card">
+      <div class="team-card reveal reveal-d3">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge" style="opacity:0">–</span>
@@ -758,7 +769,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
 
-      <div class="team-card">
+      <div class="team-card reveal">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge" style="opacity:0">–</span>
@@ -770,7 +781,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
       </div>
 
-      <div class="team-card">
+      <div class="team-card reveal reveal-d1">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge" style="opacity:0">–</span>
@@ -792,9 +803,9 @@ footer{background:#0f1628;padding:5rem 0 0}
   <div class="wrap">
     <div class="cta-inner">
       <span class="label">Skontaktuj się z nami</span>
-      <h2 class="kt-h2">Masz sprawę do rozwiązania?</h2>
-      <p class="kt-lead">Rozmawiamy konkretnie i bez zbędnych formalności. Zadzwoń lub napisz – umawiamy spotkania stacjonarne i online.</p>
-      <div class="btn-row" style="justify-content:center">
+      <h2 class="kt-h2">Masz sprawę<br>do rozwiązania?</h2>
+      <p class="kt-lead reveal reveal-d1">Rozmawiamy konkretnie i bez zbędnych formalności. Zadzwoń lub napisz – umawiamy spotkania stacjonarne i online.</p>
+      <div class="btn-row reveal reveal-d2" style="justify-content:center">
         <a href="tel:+48223194760" class="btn-p">+48 22 319 47 60</a>
         <a href="kontakt.html" class="btn-s">Formularz kontaktowy</a>
       </div>
@@ -850,6 +861,34 @@ footer{background:#0f1628;padding:5rem 0 0}
   if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
   if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
   if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+  document.documentElement.classList.add('js-ready');
+  var noMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(window.IntersectionObserver&&!noMotion){
+    var hio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.line-inner').forEach(function(li,idx){
+            setTimeout(function(){li.classList.add('visible');},idx*110);
+          });
+          hio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -25% 0px'});
+    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title').forEach(function(el){
+      var parts=el.innerHTML.split(/<br\s*\/?>/i);
+      el.innerHTML=parts.map(function(p){return '<span class="line-clip"><span class="line-inner">'+p.trim()+'</span></span>';}).join('');
+      el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
+      hio.observe(el);
+    });
+  }
+  if(window.IntersectionObserver){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -18% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+  }
 })();
 </script>
 </body>

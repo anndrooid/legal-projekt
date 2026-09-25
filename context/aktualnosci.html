@@ -517,7 +517,18 @@ footer{background:#0f1628;padding:5rem 0 0}
   .featured-section{padding:3rem 0 3rem}
   .articles-section{padding:3rem 0 5rem}
 }
+@media(prefers-reduced-motion:no-preference){
+  .js-ready .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+  .js-ready .reveal.visible{opacity:1;transform:translateY(0)}
+  .reveal-d1{transition-delay:.1s}
+  .reveal-d2{transition-delay:.2s}
+  .reveal-d3{transition-delay:.3s}
+  .line-clip{display:block;overflow:hidden;padding-bottom:.05em}
+  .line-inner{display:block;transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
+  .line-inner.visible{transform:translateY(0)}
+}
 </style>
+<script>document.documentElement.classList.add('js-ready')</script>
 </head>
 <body>
 
@@ -582,11 +593,11 @@ footer{background:#0f1628;padding:5rem 0 0}
 <div class="page-header">
   <div class="page-header-inner">
     <div class="ph-left">
-      <a href="strona-glowna.html" class="ph-back">‹ Strona główna</a>
+      <a href="strona-glowna.html" class="ph-back reveal">‹ Strona główna</a>
       <h1 class="ph-title">Aktualności</h1>
     </div>
     <div class="ph-right">
-      <p class="ph-desc">Nagrody i rankingi, nowi prawnicy w zespole, partnerstwa akademickie i komentarze eksperckie. Śledź, co dzieje się w ZMW Legal.</p>
+      <p class="ph-desc reveal reveal-d1">Nagrody i rankingi, nowi prawnicy w zespole, partnerstwa akademickie i komentarze eksperckie. Śledź, co dzieje się w ZMW Legal.</p>
     </div>
   </div>
 </div>
@@ -634,7 +645,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div class="articles-grid">
 
       <!-- Article 1 - with image -->
-      <div class="article-card" data-cat="Wyróżnienia">
+      <div class="article-card reveal" data-cat="Wyróżnienia">
         <div class="article-img"></div>
         <p class="article-cat">Wyróżnienia</p>
         <h3 class="article-title">Prof. Zawadzka wyróżniona nagrodą Business Centre Club za wkład w rozwój prawa korporacyjnego</h3>
@@ -647,7 +658,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
 
       <!-- Article 2 - with image -->
-      <div class="article-card" data-cat="Rankingi">
+      <div class="article-card reveal reveal-d1" data-cat="Rankingi">
         <div class="article-img"></div>
         <p class="article-cat">Rankingi</p>
         <h3 class="article-title">ZMW Legal w gronie nominowanych do FT Innovative Lawyers 2024 za innowacyjne podej&#347;cie do obs&#322;ugi projekt&oacute;w</h3>
@@ -660,7 +671,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
 
       <!-- Article 3 - with image -->
-      <div class="article-card" data-cat="Zespół">
+      <div class="article-card reveal reveal-d2" data-cat="Zespół">
         <div class="article-img"></div>
         <p class="article-cat">Zespół</p>
         <h3 class="article-title">Dr Jakub Stelmach i Marta Kowalczyk dołączają do ZMW Legal jako Partnerzy</h3>
@@ -673,7 +684,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
 
       <!-- Article 4 - no image -->
-      <div class="article-card no-img" data-cat="Rankingi">
+      <div class="article-card no-img reveal reveal-d3" data-cat="Rankingi">
         <p class="article-cat">Rankingi</p>
         <h3 class="article-title">ZMW Legal w rankingu Legal 500 EMEA 2024: Band 1 w kategorii Dispute Resolution</h3>
         <p class="article-exc">Prestiżowy ranking Legal 500 umieścił kancelarię w pierwszej grupie najlepszych firm w Polsce w obszarze rozwiązywania sporów. Indywidualne wyróżnienia dla czterech prawników.</p>
@@ -685,7 +696,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
 
       <!-- Article 5 - no image -->
-      <div class="article-card no-img" data-cat="Partnerstwa">
+      <div class="article-card no-img reveal" data-cat="Partnerstwa">
         <p class="article-cat">Partnerstwa</p>
         <h3 class="article-title">ZMW Legal nawiązuje partnerstwo z Wydziałem Prawa Uniwersytetu Warszawskiego</h3>
         <p class="article-exc">Kancelaria dołącza do grona patronów strategicznych WPiA UW. Wspólne projekty edukacyjne, praktyki studenckie i seminaria naukowe.</p>
@@ -697,7 +708,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
 
       <!-- Article 6 - no image -->
-      <div class="article-card no-img" data-cat="Transakcje">
+      <div class="article-card no-img reveal reveal-d1" data-cat="Transakcje">
         <p class="article-cat">Transakcje</p>
         <h3 class="article-title">ZMW Legal doradzało przy największej fuzji w sektorze farmaceutycznym – transakcja powyżej 200 mln zł</h3>
         <p class="article-exc">Zespół ZMW Legal pod kierunkiem Karoliny Rychlewskiej przeprowadził obsługę prawną fuzji dwóch spółek z sektora Life Sciences.</p>
@@ -709,7 +720,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
 
       <!-- Article 7 - no image -->
-      <div class="article-card no-img" data-cat="Media">
+      <div class="article-card no-img reveal reveal-d2" data-cat="Media">
         <p class="article-cat">Media</p>
         <h3 class="article-title">Tomasz Nowicki prelegentem na European Tax Law Conference w Amsterdamie</h3>
         <p class="article-exc">Partner kancelarii ZMW Legal wziął udział w panelu poświęconym harmonizacji unijnych przepisów o rozliczaniu dotacji i pomocy publicznej.</p>
@@ -721,7 +732,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
 
       <!-- Article 8 - no image -->
-      <div class="article-card no-img" data-cat="Publikacje">
+      <div class="article-card no-img reveal reveal-d3" data-cat="Publikacje">
         <p class="article-cat">Publikacje</p>
         <h3 class="article-title">Nowe regulacje dotyczące spółek holdingowych – komentarz ekspertów ZMW Legal do nowelizacji KSH</h3>
         <p class="article-exc">Prof. Zawadzka i dr Stelmach opublikowali szczegółowy komentarz do zmian w Kodeksie spółek handlowych. Analiza dotyczy odpowiedzialności zarządów spółek zależnych.</p>
@@ -733,7 +744,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
 
       <!-- Article 9 - no image -->
-      <div class="article-card no-img" data-cat="Wyróżnienia">
+      <div class="article-card no-img reveal" data-cat="Wyróżnienia">
         <p class="article-cat">Wyróżnienia</p>
         <h3 class="article-title">Piotr Mrowiec w gronie wyróżnionych przez Who's Who Legal: Litigation 2024</h3>
         <p class="article-exc">Partner zarządzający kancelarii został wymieniony w prestiżowym przewodniku Who's Who Legal jako jeden z czołowych polskich specjalistów w obszarze litigation.</p>
@@ -763,9 +774,9 @@ footer{background:#0f1628;padding:5rem 0 0}
   <div class="wrap">
     <div class="cta-inner">
       <span class="label">Skontaktuj się z nami</span>
-      <h2 class="kt-h2">Jesteś zainteresowany współpracą?</h2>
-      <p class="kt-lead">Rozmawiamy konkretnie. Zadzwoń lub napisz – umawiamy spotkania stacjonarne i online.</p>
-      <div class="btn-row" style="justify-content:center">
+      <h2 class="kt-h2">Jesteś zainteresowany<br>współpracą?</h2>
+      <p class="kt-lead reveal reveal-d1">Rozmawiamy konkretnie. Zadzwoń lub napisz – umawiamy spotkania stacjonarne i online.</p>
+      <div class="btn-row reveal reveal-d2" style="justify-content:center">
         <a href="tel:+48223194760" class="btn-p">+48 22 319 47 60</a>
         <a href="strona-glowna.html#kontakt" class="btn-s">Formularz kontaktowy</a>
       </div>
@@ -840,6 +851,34 @@ footer{background:#0f1628;padding:5rem 0 0}
       }
     });
   });
+  document.documentElement.classList.add('js-ready');
+  var noMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(window.IntersectionObserver&&!noMotion){
+    var hio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.line-inner').forEach(function(li,idx){
+            setTimeout(function(){li.classList.add('visible');},idx*110);
+          });
+          hio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -25% 0px'});
+    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title').forEach(function(el){
+      var parts=el.innerHTML.split(/<br\s*\/?>/i);
+      el.innerHTML=parts.map(function(p){return '<span class="line-clip"><span class="line-inner">'+p.trim()+'</span></span>';}).join('');
+      el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
+      hio.observe(el);
+    });
+  }
+  if(window.IntersectionObserver){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -18% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+  }
 })();
 </script>
 </body>

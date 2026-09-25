@@ -437,7 +437,22 @@ footer{background:#0f1628;padding:5rem 0 0}
 .footer-bottom a{color:rgba(255,255,255,.25);text-decoration:none}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}}
 @media(max-width:600px){.footer-grid{grid-template-columns:1fr}.footer-bottom,.footer-grid,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}}
+
+/* ANIMATIONS */
+@media(prefers-reduced-motion:no-preference){
+  .js-ready .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+  .js-ready .reveal.visible{opacity:1;transform:translateY(0)}
+  .reveal-d1{transition-delay:.1s}
+  .reveal-d2{transition-delay:.2s}
+  .reveal-d3{transition-delay:.3s}
+  .line-clip{display:block;overflow:hidden;padding-bottom:.05em}
+  .line-inner{display:block;transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
+  .line-inner.visible{transform:translateY(0)}
+  .js-ready .team-card{transition:opacity .95s cubic-bezier(.25,.46,.45,.94),transform .95s cubic-bezier(.25,.46,.45,.94)}
+  .js-ready .team-card:not(.tc-vis){opacity:0;transform:translateX(-24px)}
+}
 </style>
+<script>document.documentElement.classList.add('js-ready')</script>
 </head>
 <body>
 
@@ -506,7 +521,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 
     <!-- Lewa kolumna: powrót + tytuł (bez border-left, jak Ligit) -->
     <div class="ph-left">
-      <a href="strona-glowna.html" class="ph-back">
+      <a href="strona-glowna.html" class="ph-back reveal">
         <span class="ph-back-arrow">‹</span>
         Powrót do strony głównej
       </a>
@@ -515,14 +530,14 @@ footer{background:#0f1628;padding:5rem 0 0}
 
     <!-- Prawa kolumna: opis wyrównany do góry -->
     <div class="ph-right">
-      <p class="ph-desc">29 prawników – partnerzy z doświadczeniem z kancelarii międzynarodowych, counselowie i associates o wąskich specjalizacjach. Każdy klient jest obsługiwany przez prawnika, który zna jego branżę i rozumie stawkę.</p>
+      <p class="ph-desc reveal reveal-d1">29 prawników – partnerzy z doświadczeniem z kancelarii międzynarodowych, counselowie i associates o wąskich specjalizacjach. Każdy klient jest obsługiwany przez prawnika, który zna jego branżę i rozumie stawkę.</p>
     </div>
 
   </div>
 </div>
 
 <!-- FILTER BAR -->
-<div class="filter-wrap">
+<div class="filter-wrap reveal">
   <div class="filter-inner">
     <span class="filter-lbl">Filtruj:</span>
     <button class="filter-tab active" onclick="filterTeam('all',this)">Wszyscy (29)</button>
@@ -538,7 +553,7 @@ footer{background:#0f1628;padding:5rem 0 0}
   <div class="team-grid" id="teamGrid">
 
     <!-- PARTNERZY -->
-    <div class="team-tier-header" data-tier-header="partner">
+    <div class="team-tier-header reveal" data-tier-header="partner">
       <span class="team-tier-label">Partnerzy</span>
       <span class="team-tier-count">8 osób</span>
     </div>
@@ -639,7 +654,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
 
     <!-- COUNSEL -->
-    <div class="team-tier-header" data-tier-header="counsel">
+    <div class="team-tier-header reveal" data-tier-header="counsel">
       <span class="team-tier-label">Counsel</span>
       <span class="team-tier-count">7 osób</span>
     </div>
@@ -728,7 +743,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
 
     <!-- ASSOCIATES -->
-    <div class="team-tier-header" data-tier-header="associate">
+    <div class="team-tier-header reveal" data-tier-header="associate">
       <span class="team-tier-label">Associates</span>
       <span class="team-tier-count">7 osób</span>
     </div>
@@ -817,7 +832,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
 
     <!-- SUPPORT -->
-    <div class="team-tier-header" data-tier-header="support">
+    <div class="team-tier-header reveal" data-tier-header="support">
       <span class="team-tier-label">Pozostały zespół</span>
       <span class="team-tier-count">8 osób</span>
     </div>
@@ -924,10 +939,10 @@ footer{background:#0f1628;padding:5rem 0 0}
 <div class="cta-sec">
   <div class="wrap">
     <div class="cta-inner">
-      <span class="label" style="text-align:center">Kontakt</span>
+      <span class="label reveal" style="text-align:center">Kontakt</span>
       <h2 class="kt-h2">Porozmawiajmy<br>o Twojej sprawie.</h2>
-      <p class="kt-lead">Najszybszy kontakt: telefon. Zapraszamy na spotkania stacjonarne lub online – wyłącznie po wcześniejszym umówieniu terminu.</p>
-      <div class="btn-row" style="justify-content:center">
+      <p class="kt-lead reveal reveal-d1">Najszybszy kontakt: telefon. Zapraszamy na spotkania stacjonarne lub online – wyłącznie po wcześniejszym umówieniu terminu.</p>
+      <div class="btn-row reveal reveal-d2" style="justify-content:center">
         <a href="tel:+48223194760" class="btn-p">Zadzwoń: +48 22 319 47 60</a>
         <a href="strona-glowna.html#kontakt" class="btn-s">Formularz kontaktowy</a>
       </div>
@@ -994,10 +1009,63 @@ function filterTeam(tier, btn) {
 
 <script>
 (function(){
+  document.documentElement.classList.add('js-ready');
   var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
   if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
   if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
   if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+
+  var noMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // Line-by-line heading reveal
+  if(window.IntersectionObserver&&!noMotion){
+    var hio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.line-inner').forEach(function(li,idx){
+            setTimeout(function(){li.classList.add('visible');},idx*110);
+          });
+          hio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -25% 0px'});
+    document.querySelectorAll('.ph-title,.kt-h2').forEach(function(el){
+      var parts=el.innerHTML.split(/<br\s*\/?>/i);
+      el.innerHTML=parts.map(function(p){
+        return '<span class="line-clip"><span class="line-inner">'+p.trim()+'</span></span>';
+      }).join('');
+      el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
+      hio.observe(el);
+    });
+  }
+
+  // Scroll reveal (static .reveal elements)
+  if(window.IntersectionObserver){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -18% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+  }
+
+  // Team cards — stagger per row (idx % 4), inline styles to avoid flash
+  if(window.IntersectionObserver&&!noMotion){
+    var tio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('tc-vis');
+          e.target.addEventListener('transitionend',function(){this.style.transitionDelay='';},{once:true});
+          tio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.team-card').forEach(function(card){
+      var leftFrac=Math.max(0,card.getBoundingClientRect().left)/window.innerWidth;
+      card.style.transitionDelay=(leftFrac*0.25).toFixed(2)+'s';
+      tio.observe(card);
+    });
+  }
 })();
 </script>
 </body>

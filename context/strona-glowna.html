@@ -86,7 +86,7 @@ nav.topnav.nav-solid .nav-hamburger span{background:var(--navy)}
 /* HERO */
 .hero-screen{position:relative;width:100%;height:100vh;min-height:600px;background:#b8b4ac;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-placeholder-logo{width:180px;height:52px;background:rgba(255,255,255,.2);border-radius:4px}
-.hero-scroll-cue{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;pointer-events:none}
+.hero-scroll-cue{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;text-decoration:none;cursor:pointer}
 .hero-scroll-cue span{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff}
 .hero-scroll-line{width:1px;height:56px;background:#fff;animation:line-pulse 2s ease-in-out infinite}
 @keyframes line-pulse{0%,100%{opacity:.35;transform:scaleY(.8)}50%{opacity:1;transform:scaleY(1)}}
@@ -207,7 +207,7 @@ nav.topnav.nav-solid .nav-hamburger span{background:var(--navy)}
 .mobile-menu-phone a{font-family:'PPNeueMontreal',sans-serif;font-size:1.75rem;font-weight:600;color:var(--crimson);text-decoration:none}
 
 /* FOOTER */
-footer{background:#1a2440;padding:5rem 0 0}
+footer{background:#0f1628;padding:5rem 0 0}
 .footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
 .footer-logo{width:90px;height:27px;background:#2a3555;border-radius:3px;margin-bottom:1.25rem}
 .footer-desc{font-size:.9rem;color:rgba(255,255,255,.35);line-height:1.7}
@@ -217,6 +217,22 @@ footer{background:#1a2440;padding:5rem 0 0}
 .footer-col a:hover{color:#f6f6f4}
 .footer-bottom{max-width:1600px;margin:0 auto;padding:1.5rem 3rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.25)}
 .footer-bottom a{color:rgba(255,255,255,.25);text-decoration:none}
+
+/* ANIMATIONS */
+@media(prefers-reduced-motion:no-preference){
+  .js-ready .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+  .js-ready .reveal.visible{opacity:1;transform:translateY(0)}
+  .reveal-d1{transition-delay:.1s}
+  .reveal-d2{transition-delay:.2s}
+  .reveal-d3{transition-delay:.3s}
+  .reveal-d4{transition-delay:.4s}
+  .approach-grid>div::before{width:0;transition:width .55s ease .15s}
+  .approach-grid>div.visible::before{width:2.5rem}
+  /* Line-by-line heading reveal */
+  .line-clip{display:block;overflow:hidden;padding-bottom:.05em}
+  .line-inner{display:block;transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
+  .line-inner.visible{transform:translateY(0)}
+}
 
 /* RESPONSIVE */
 @media(max-width:1200px){
@@ -320,21 +336,21 @@ footer{background:#1a2440;padding:5rem 0 0}
 <!-- HERO -->
 <div class="hero-screen">
   <div class="hero-placeholder-logo"></div>
-  <div class="hero-scroll-cue">
+  <a href="#po-hero" class="hero-scroll-cue">
     <span>Przewi&#324;</span>
     <div class="hero-scroll-line"></div>
-  </div>
+  </a>
 </div>
 
 <!-- INTRO -->
-<section class="intro sec-white">
+<section class="intro sec-white" id="po-hero">
   <div class="wrap">
     <div class="intro-grid">
       <div>
-        <span class="label">Kancelaria prawna &middot; Warszawa</span>
-        <h1 class="h1-hero">Wygrywamy trudne sprawy</h1>
+        <span class="label reveal">Kancelaria prawna &middot; Warszawa</span>
+        <h1 class="h1-hero reveal reveal-d1">Wygrywamy<br>trudne sprawy</h1>
       </div>
-      <div style="padding-top:1rem">
+      <div style="padding-top:1rem" class="reveal reveal-d2">
         <p class="lead" style="max-width:580px;margin-bottom:2.5rem">Wspieramy firmy i przedsi&#281;biorc&oacute;w indywidualnie i konkretnie &ndash; jeste&#347;my gotowi w najbardziej wymagaj&#261;cych sprawach, niezale&#380;nie od ich skali i z&#322;o&#380;ono&#347;ci.</p>
         <div class="btn-row">
           <a href="tel:+48223194760" class="btn-p">Zadzwo&#324;: +48 22 319 47 60</a>
@@ -351,7 +367,7 @@ footer{background:#1a2440;padding:5rem 0 0}
 <!-- RANKINGI -->
 <div class="rankings-band">
   <div class="rankings-inner">
-    <span class="rank-lbl">Wyr&oacute;&#380;nienia i rankingi</span>
+    <span class="rank-lbl reveal">Wyr&oacute;&#380;nienia i rankingi</span>
     <div class="rank-logos">
       <div class="rank-logo rank-logo-txt"><span class="rank-pub-name">Chambers<br>Europe</span></div>
       <div class="rank-logo rank-logo-txt"><span class="rank-pub-name">Legal 500<br>EMEA</span></div>
@@ -364,20 +380,20 @@ footer{background:#1a2440;padding:5rem 0 0}
 <!-- STATS -->
 <div class="stats-band sec-warm">
   <div class="stats-inner">
-    <div class="stat-cell">
-      <div class="stat-num">29</div>
+    <div class="stat-cell reveal">
+      <div class="stat-num" data-count="29">29</div>
       <div class="stat-lbl">specjalist&oacute;w &ndash; partnerzy, counselowie, associates i eksperci bran&#380;owi</div>
     </div>
-    <div class="stat-cell">
-      <div class="stat-num">5</div>
+    <div class="stat-cell reveal reveal-d1">
+      <div class="stat-num" data-count="5">5</div>
       <div class="stat-lbl">obszar&oacute;w specjalizacji &ndash; spory, Life Sciences, fundusze, digital, podatki</div>
     </div>
-    <div class="stat-cell">
-      <div class="stat-num">20+</div>
+    <div class="stat-cell reveal reveal-d2">
+      <div class="stat-num" data-count="20" data-suffix="+">20+</div>
       <div class="stat-lbl">lat do&#347;wiadczenia lider&oacute;w praktyk &ndash; partnerzy z kancelarii mi&#281;dzynarodowych</div>
     </div>
-    <div class="stat-cell">
-      <div class="stat-num">4 mld</div>
+    <div class="stat-cell reveal reveal-d3">
+      <div class="stat-num" data-count="4" data-suffix=" mld">4 mld</div>
       <div class="stat-lbl">z&#322;otych dotacji i ulg pozyskanych przez praktyk&#281; Funduszy i Pomocy Publicznej</div>
     </div>
   </div>
@@ -386,7 +402,7 @@ footer{background:#1a2440;padding:5rem 0 0}
 <!-- PRAKTYKI -->
 <section class="sec sec-white">
   <div class="wrap">
-    <div class="row-between">
+    <div class="row-between reveal">
       <div>
         <span class="label">Nasze praktyki</span>
         <h2 class="h2-sec">Pi&#281;&#263; obszar&oacute;w specjalizacji.<br>Jedno podej&#347;cie.</h2>
@@ -397,7 +413,7 @@ footer{background:#1a2440;padding:5rem 0 0}
       </a>
     </div>
     <div class="prac-grid">
-      <div class="prac-card">
+      <div class="prac-card reveal">
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="21"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="7" x2="1" y2="13"/><line x1="4" y1="7" x2="7" y2="13"/><path d="M1 13Q4 17 7 13"/><line x1="20" y1="7" x2="17" y2="13"/><line x1="20" y1="7" x2="23" y2="13"/><path d="M17 13Q20 17 23 13"/></svg></div>
         <p class="prac-name">Rozwi&#261;zywanie Spor&oacute;w</p>
         <p class="prac-desc">Spory korporacyjne, arbitra&#380; i post&#281;powania s&#261;dowe. Reprezentacja przed s&#261;dami, trybuna&#322;ami i organami administracji.</p>
@@ -406,7 +422,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
       </div>
-      <div class="prac-card">
+      <div class="prac-card reveal reveal-d1">
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v5L5 17a1 1 0 00.9 1.5h12.2a1 1 0 00.9-1.5L14 8V3"/><path d="M6.5 15h11"/></svg></div>
         <p class="prac-name">Life Sciences</p>
         <p class="prac-desc">Prawo farmaceutyczne i &#380;ywno&#347;ciowe &ndash; doradztwo regulacyjne, rejestracja produkt&oacute;w, audyty i post&#281;powania.</p>
@@ -415,7 +431,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
       </div>
-      <div class="prac-card">
+      <div class="prac-card reveal reveal-d2">
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="prac-name">Fundusze i Pomoc Publiczna</p>
         <p class="prac-desc">Ponad 4 mld z&#322; pozyskanych dotacji i ulg podatkowych. Obs&#322;uga kontroli i post&#281;powa&#324; spornych ze &#347;rodk&oacute;w publicznych.</p>
@@ -424,7 +440,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
       </div>
-      <div class="prac-card">
+      <div class="prac-card reveal reveal-d3">
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <p class="prac-name">Digital</p>
         <p class="prac-desc">Telekomunikacja, ochrona danych, AI i e-commerce. Wsparcie prawne dla sektora technologicznego, medi&oacute;w i nadawc&oacute;w.</p>
@@ -433,7 +449,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
       </div>
-      <div class="prac-card" style="border-right:none">
+      <div class="prac-card reveal reveal-d4" style="border-right:none">
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="13" y2="13"/><line x1="8" y1="16" x2="11" y2="16"/><circle cx="15.5" cy="16.5" r="2.5"/><line x1="19" y1="20" x2="17.27" y2="18.27"/></svg></div>
         <p class="prac-name">Spory Podatkowe</p>
         <p class="prac-desc">Post&#281;powania przed KAS, s&#261;dami administracyjnymi i TSUE. Strategia sporu, kontrole, odpowiedzialno&#347;&#263; zarz&#261;du.</p>
@@ -449,33 +465,33 @@ footer{background:#1a2440;padding:5rem 0 0}
 <!-- PODEJŚCIE -->
 <section class="sec sec-navy">
   <div class="wrap">
-    <span class="label">Jak pracujemy</span>
-    <h2 class="h2-sec" style="margin-bottom:4rem">
+    <span class="label reveal">Jak pracujemy</span>
+    <h2 class="h2-sec reveal reveal-d1" style="margin-bottom:4rem">
       Indywidualnie.<br>Konkretnie.<br>Z pe&#322;nym zaanga&#380;owaniem.
     </h2>
     <div class="approach-grid">
-      <div>
+      <div class="reveal">
         <p class="step-num">Krok 01</p>
         <p class="step-title">Rozumiemy spraw&#281;</p>
         <p class="step-desc">Ka&#380;de post&#281;powanie zaczyna si&#281; od dok&#322;adnego zapoznania si&#281; z sytuacj&#261; klienta &ndash; faktami, celami i ryzykiem. Nie zak&#322;adamy niczego z g&oacute;ry.</p>
       </div>
-      <div>
+      <div class="reveal reveal-d1">
         <p class="step-num">Krok 02</p>
         <p class="step-title">Budujemy strategi&#281;</p>
         <p class="step-desc">Proponujemy podej&#347;cie skrojone do konkretnej sprawy. Uwzgl&#281;dniamy ca&#322;o&#347;&#263; &ndash; prawn&#261;, biznesow&#261; i ludzk&#261; perspektyw&#281;.</p>
       </div>
-      <div>
+      <div class="reveal reveal-d2">
         <p class="step-num">Krok 03</p>
         <p class="step-title">Partner prowadzi Twoj&#261; spraw&#281;</p>
         <p class="step-desc">W butikowej kancelarii partner jest bezpo&#347;rednio dost&#281;pny od pierwszego spotkania do ostatniej decyzji. Odpowiedzialno&#347;&#263; nie jest delegowana w d&oacute;&#322; hierarchii.</p>
       </div>
-      <div>
+      <div class="reveal reveal-d3">
         <p class="step-num">Krok 04</p>
         <p class="step-title">Dzia&#322;amy, nie tylko radzimy</p>
         <p class="step-desc">Reprezentujemy, negocjujemy i podejmujemy decyzje razem z klientem. Jeste&#347;my gotowi w sprawach o ka&#380;dej skali i z&#322;o&#380;ono&#347;ci.</p>
       </div>
     </div>
-    <div class="btn-row" style="margin-top:4.5rem">
+    <div class="btn-row reveal" style="margin-top:4.5rem">
       <a href="tel:+48223194760" class="btn-p">Zadzwo&#324;: +48 22 319 47 60</a>
       <a href="#kontakt" class="btn-row-link">
         Napisz do nas
@@ -488,14 +504,14 @@ footer{background:#1a2440;padding:5rem 0 0}
 <!-- NASZ ZESPÓŁ -->
 <section class="sec sec-warm">
   <div class="wrap">
-    <div class="row-between">
+    <div class="row-between reveal">
       <div>
         <span class="label">Nasz Zesp&oacute;&#322;</span>
         <h2 class="h2-sec">Prawnicy z do&#347;wiadczeniem<br>na ka&#380;dym szczeblu.</h2>
       </div>
     </div>
     <div class="team-grid">
-      <div class="team-card">
+      <div class="team-card reveal">
         <div class="team-photo"></div>
         <div class="team-body">
           <p class="team-name">Prof. Anna Zawadzka</p>
@@ -506,7 +522,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           </a>
         </div>
       </div>
-      <div class="team-card">
+      <div class="team-card reveal reveal-d1">
         <div class="team-photo"></div>
         <div class="team-body">
           <p class="team-name">Piotr Mrowiec</p>
@@ -517,7 +533,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           </a>
         </div>
       </div>
-      <div class="team-card">
+      <div class="team-card reveal reveal-d2">
         <div class="team-photo"></div>
         <div class="team-body">
           <p class="team-name">Karolina Rychlewska</p>
@@ -528,7 +544,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           </a>
         </div>
       </div>
-      <div class="team-card">
+      <div class="team-card reveal reveal-d3">
         <div class="team-photo"></div>
         <div class="team-body">
           <p class="team-name">Dr Jakub Stelmach</p>
@@ -540,7 +556,7 @@ footer{background:#1a2440;padding:5rem 0 0}
         </div>
       </div>
     </div>
-    <div class="team-count-bar">
+    <div class="team-count-bar reveal">
       <p>Poznaj <strong>wszystkich 29 prawnik&oacute;w i specjalist&oacute;w</strong> kancelarii &ndash; partner&oacute;w, counsel&oacute;w, associates i ekspert&oacute;w bran&#380;owych.</p>
       <a href="nasz-zespol.html" class="btn-row-link" style="flex-shrink:0;gap:.75rem">
         Nasz Zesp&oacute;&#322;
@@ -554,7 +570,7 @@ footer{background:#1a2440;padding:5rem 0 0}
 <!-- AKTUALNOŚCI -->
 <section class="sec sec-white">
   <div class="wrap">
-    <div class="row-between">
+    <div class="row-between reveal">
       <div>
         <span class="label">Aktualno&#347;ci</span>
         <h2 class="h2-sec">Co s&#322;ycha&#263; w kancelarii.</h2>
@@ -565,7 +581,7 @@ footer{background:#1a2440;padding:5rem 0 0}
       </a>
     </div>
     <div class="news-grid">
-      <div class="news-card">
+      <div class="news-card reveal">
         <p class="news-date">Stycze&#324; 2025</p>
         <p class="news-title">ZMW Legal wyr&oacute;&#380;nione w rankingu Chambers Europe</p>
         <p class="news-exc">Kancelaria ponownie rekomendowana w kategorii Dispute Resolution.</p>
@@ -574,7 +590,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
       </div>
-      <div class="news-card">
+      <div class="news-card reveal reveal-d1">
         <p class="news-date">Grudzie&#324; 2024</p>
         <p class="news-title">Do zespo&#322;u do&#322;&#261;cza nowy counsel &ndash; specjalista od post&#281;powa&#324; podatkowych</p>
         <p class="news-exc">Rozwijamy praktyk&#281; Spor&oacute;w Podatkowych.</p>
@@ -583,7 +599,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
       </div>
-      <div class="news-card">
+      <div class="news-card reveal reveal-d2">
         <p class="news-date">Pa&#378;dziernik 2024</p>
         <p class="news-title">ZMW Legal partnerem konferencji prawa sp&oacute;&#322;ek handlowych</p>
         <p class="news-exc">Obj&#281;li&#347;my patronat merytoryczny nad konferencj&#261; po&#347;wi&#281;con&#261; odpowiedzialno&#347;ci organ&oacute;w sp&oacute;&#322;ek.</p>
@@ -600,7 +616,7 @@ footer{background:#1a2440;padding:5rem 0 0}
 <section class="sec sec-navy" id="kontakt">
   <div class="wrap">
     <div class="kt-grid">
-      <div>
+      <div class="reveal">
         <span class="label">Kontakt</span>
         <h2 class="kt-h2">Porozmawiajmy<br>o Twojej sprawie.</h2>
         <p class="kt-lead">Zapraszamy na spotkania stacjonarne lub online &ndash; wy&#322;&#261;cznie po wcze&#347;niejszym um&oacute;wieniu terminu. Najszybszy kontakt: telefon.</p>
@@ -611,7 +627,7 @@ footer{background:#1a2440;padding:5rem 0 0}
           <div><span class="kt-lbl">Godziny pracy</span><span class="kt-val">poniedzia&#322;ek &ndash; pi&#261;tek, 9:30&ndash;17:30</span></div>
         </div>
       </div>
-      <form class="form">
+      <form class="form reveal reveal-d1">
         <div class="form-field">
           <label for="a-imie">Imi&#281; i nazwisko</label>
           <input type="text" id="a-imie" placeholder="Jan Kowalski">
@@ -677,6 +693,7 @@ footer{background:#1a2440;padding:5rem 0 0}
 
 <script>
 (function(){
+  document.documentElement.classList.add('js-ready');
   var nav=document.querySelector('nav.topnav');
   var hero=document.querySelector('.hero-screen');
   function updateNav(){nav.classList.toggle('nav-solid',window.scrollY>(hero?hero.offsetHeight*.55:300));}
@@ -687,6 +704,66 @@ footer{background:#1a2440;padding:5rem 0 0}
   if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden'});}
   if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow=''});}
   if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open')});}
+
+  // Line-by-line heading reveal
+  var noMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(window.IntersectionObserver && !noMotion){
+    var hio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.line-inner').forEach(function(li,idx){
+            setTimeout(function(){li.classList.add('visible');},idx*110);
+          });
+          hio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -25% 0px'});
+    document.querySelectorAll('.h1-hero,.h2-sec,.kt-h2').forEach(function(h){
+      var parts=h.innerHTML.split(/<br\s*\/?>/i);
+      h.innerHTML=parts.map(function(p){
+        return '<span class="line-clip"><span class="line-inner">'+p.trim()+'</span></span>';
+      }).join('');
+      h.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3','reveal-d4');
+      hio.observe(h);
+    });
+  }
+
+  // Scroll reveal
+  if(window.IntersectionObserver){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -18% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+  }
+
+  // Stat counter
+  function animateCount(el){
+    var target=parseInt(el.dataset.count,10);
+    var suffix=el.dataset.suffix||'';
+    var dur=1400,start=null;
+    function tick(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/dur,1);
+      var ease=1-Math.pow(1-p,3);
+      el.textContent=Math.round(ease*target)+suffix;
+      if(p<1)requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var statBand=document.querySelector('.stats-band');
+  if(statBand&&window.IntersectionObserver){
+    var sio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          document.querySelectorAll('.stat-num[data-count]').forEach(animateCount);
+          sio.disconnect();
+        }
+      });
+    },{threshold:0.3});
+    sio.observe(statBand);
+  }
 })();
 </script>
 

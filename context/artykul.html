@@ -589,7 +589,18 @@ footer{background:#0f1628;padding:5rem 0 0}
 /* art-title waga jak inne strony + more-section bialy */
 .art-title{font-weight:500;letter-spacing:-.015em}
 .more-section{background:#fff}
+@media(prefers-reduced-motion:no-preference){
+  .js-ready .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+  .js-ready .reveal.visible{opacity:1;transform:translateY(0)}
+  .reveal-d1{transition-delay:.1s}
+  .reveal-d2{transition-delay:.2s}
+  .reveal-d3{transition-delay:.3s}
+  .line-clip{display:block;overflow:hidden;padding-bottom:.05em}
+  .line-inner{display:block;transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
+  .line-inner.visible{transform:translateY(0)}
+}
 </style>
+<script>document.documentElement.classList.add('js-ready')</script>
 </head>
 <body>
 
@@ -654,9 +665,9 @@ footer{background:#0f1628;padding:5rem 0 0}
 <div class="art-header">
   <div class="art-header-inner">
     <div>
-      <a href="aktualnosci.html" class="ph-back">‹ Aktualności</a>
-      <span class="art-cat-label">Rankingi · 3 czerwca 2024</span>
-      <h1 class="art-title">ZMW Legal w rankingu Chambers Europe 2024 – Recommended Firm w kategorii Dispute Resolution</h1>
+      <a href="aktualnosci.html" class="ph-back reveal">‹ Aktualności</a>
+      <span class="art-cat-label reveal reveal-d1">Rankingi · 3 czerwca 2024</span>
+      <h1 class="art-title">ZMW Legal w rankingu Chambers Europe 2024 –<br>Recommended Firm w kategorii Dispute Resolution</h1>
     </div>
     <div class="art-right">
       <div class="art-meta-list">
@@ -677,13 +688,13 @@ footer{background:#0f1628;padding:5rem 0 0}
           <span class="art-meta-val">Prof. Anna Zawadzka, Piotr Mrowiec</span>
         </div>
       </div>
-      <p class="art-lead">Kancelaria ZMW Legal po raz kolejny znalazła się w prestiżowym rankingu Chambers Europe, uzyskując rekomendację w kluczowej dla nas kategorii Dispute Resolution.</p>
+      <p class="art-lead reveal reveal-d2">Kancelaria ZMW Legal po raz kolejny znalazła się w prestiżowym rankingu Chambers Europe, uzyskując rekomendację w kluczowej dla nas kategorii Dispute Resolution.</p>
     </div>
   </div>
 </div>
 
 <!-- HERO IMAGE -->
-<div class="art-hero-img"></div>
+<div class="art-hero-img reveal"></div>
 
 <!-- ARTICLE CONTENT -->
 <div class="art-content">
@@ -692,46 +703,46 @@ footer{background:#0f1628;padding:5rem 0 0}
 
       <!-- MAIN ARTICLE -->
       <article class="art-body">
-        <p class="art-lead-para">
+        <p class="art-lead-para reveal">
           Chambers and Partners to jeden z najbardziej wpływowych rankingów prawniczych na świecie. Rekomendacja w Chambers Europe opiera się na dogłębnej analizie realizowanych spraw, wywiadach z klientami i oceną niezależnych prawników z branży.
         </p>
 
-        <p>Wyróżnienie ZMW Legal w kategorii <strong>Dispute Resolution: Corporate & Commercial</strong> potwierdza pozycję kancelarii jako jednego z wiodących podmiotów w Polsce w zakresie prowadzenia sporów korporacyjnych. W tegorocznym wydaniu rankingu kancelaria awansowała do wyższego bandu, co jest efektem kilkuletniej konsekwentnej pracy zespołu.</p>
+        <p class="reveal">Wyróżnienie ZMW Legal w kategorii <strong>Dispute Resolution: Corporate & Commercial</strong> potwierdza pozycję kancelarii jako jednego z wiodących podmiotów w Polsce w zakresie prowadzenia sporów korporacyjnych. W tegorocznym wydaniu rankingu kancelaria awansowała do wyższego bandu, co jest efektem kilkuletniej konsekwentnej pracy zespołu.</p>
 
-        <h2>Indywidualne wyróżnienia dla prawników ZMW Legal</h2>
-        <p>Chambers Europe wyróżniło indywidualnie dwoje prawników kancelarii:</p>
-        <ul>
+        <h2 class="reveal">Indywidualne wyróżnienia dla prawników ZMW Legal</h2>
+        <p class="reveal">Chambers Europe wyróżniło indywidualnie dwoje prawników kancelarii:</p>
+        <ul class="reveal">
           <li><strong>Prof. Anna Zawadzka</strong> – utrzymała pozycję w Band 1, z opisem podkreślającym jej „unikalną kombinację wiedzy akademickiej i umiejętności praktycznych w najtrudniejszych sporach korporacyjnych".</li>
           <li><strong>Piotr Mrowiec</strong> – awansował do Band 2, doceniony za „wyjątkową efektywność w sprawach dotyczących odpowiedzialności zarządu i sporów między wspólnikami".</li>
         </ul>
 
-        <div class="art-blockquote">
+        <div class="art-blockquote reveal">
           <p>„ZMW Legal wyróżnia się zdolnością do prowadzenia niezwykle złożonych sporów korporacyjnych z precyzją i determinacją. Klientów imponuje ich strategiczne podejście już na etapie planowania sporu."</p>
           <cite>– Chambers and Partners, edycja 2024</cite>
         </div>
 
-        <h2>Metodologia rankingu</h2>
-        <p>Ranking Chambers Europe budowany jest na podstawie ankiet rozesłanych do kilku tysięcy prawników i ich klientów w całej Europie. Ocenie podlegają m.in. jakość świadczonych usług, podejście do klienta, innowacyjność, a przede wszystkim rzeczywiste wyniki osiągane w sprawach.</p>
-        <p>Kancelarie są oceniane niezależnie przez ekspertów Chambers i przyporządkowywane do czterech bandów (Band 1 to najwyższy) lub kategorii „Recognised Practitioner". ZMW Legal jest wymieniona w rankingu nieprzerwanie od kilku lat.</p>
+        <h2 class="reveal">Metodologia rankingu</h2>
+        <p class="reveal">Ranking Chambers Europe budowany jest na podstawie ankiet rozesłanych do kilku tysięcy prawników i ich klientów w całej Europie. Ocenie podlegają m.in. jakość świadczonych usług, podejście do klienta, innowacyjność, a przede wszystkim rzeczywiste wyniki osiągane w sprawach.</p>
+        <p class="reveal">Kancelarie są oceniane niezależnie przez ekspertów Chambers i przyporządkowywane do czterech bandów (Band 1 to najwyższy) lub kategorii „Recognised Practitioner". ZMW Legal jest wymieniana w rankingu nieprzerwanie od kilku lat.</p>
 
-        <div class="art-img-block"></div>
-        <p class="art-img-caption">Ceremonia Chambers Europe Awards – Warszawa, czerwiec 2024</p>
+        <div class="art-img-block reveal"></div>
+        <p class="art-img-caption reveal">Ceremonia Chambers Europe Awards – Warszawa, czerwiec 2024</p>
 
-        <h2>Kontekst i znaczenie wyróżnienia</h2>
-        <p>Wyróżnienie zbiega się z kolejnym rekordowym rokiem dla praktyki Rozwiązywania Sporów w ZMW Legal. W 2023–2024 kancelaria prowadziła kilkanaście spraw o wartości powyżej 50 mln zł każda, z których większość zakończyła się sukcesem dla klienta na etapie pierwszej instancji.</p>
-        <p>Wśród spraw wyróżnionych przez Chambers znalazły się procesy z zakresu odpowiedzialności zarządu w spółkach publicznych, spory między wspólnikami o wyłączenie ze spółki oraz postępowania zabezpieczające o bezprecedensowym zakresie.</p>
+        <h2 class="reveal">Kontekst i znaczenie wyróżnienia</h2>
+        <p class="reveal">Wyróżnienie zbiega się z kolejnym rekordowym rokiem dla praktyki Rozwiązywania Sporów w ZMW Legal. W 2023–2024 kancelaria prowadziła kilkanaście spraw o wartości powyżej 50 mln zł każda, z których większość zakończyła się sukcesem dla klienta na etapie pierwszej instancji.</p>
+        <p class="reveal">Wśród spraw wyróżnionych przez Chambers znalazły się procesy z zakresu odpowiedzialności zarządu w spółkach publicznych, spory między wspólnikami o wyłączenie ze spółki oraz postępowania zabezpieczające o bezprecedensowym zakresie.</p>
 
-        <h2>Komentarz kancelarii</h2>
-        <p>Prof. Anna Zawadzka, Managing Partner ZMW Legal: <em>„Wyróżnienie Chambers Europe jest dla nas potwierdzeniem, że obrana strategia – głęboka specjalizacja i bezkompromisowe podejście do każdej sprawy – przynosi efekty nie tylko naszym klientom, ale jest też dostrzegane przez rynek. Jesteśmy dumni z całego zespołu."</em></p>
+        <h2 class="reveal">Komentarz kancelarii</h2>
+        <p class="reveal">Prof. Anna Zawadzka, Managing Partner ZMW Legal: <em>„Wyróżnienie Chambers Europe jest dla nas potwierdzeniem, że obrana strategia – głęboka specjalizacja i bezkompromisowe podejście do każdej sprawy – przynosi efekty nie tylko naszym klientom, ale jest też dostrzegane przez rynek. Jesteśmy dumni z całego zespołu."</em></p>
 
-        <div class="art-tags">
+        <div class="art-tags reveal">
           <span class="art-tag">Chambers Europe</span>
           <span class="art-tag">Dispute Resolution</span>
           <span class="art-tag">Rankingi</span>
           <span class="art-tag">Spory korporacyjne</span>
         </div>
 
-        <div class="art-share">
+        <div class="art-share reveal">
           <span class="share-lbl">Udostępnij:</span>
           <a href="#" class="share-btn">LinkedIn</a>
           <a href="#" class="share-btn">Kopiuj link</a>
@@ -741,14 +752,14 @@ footer{background:#0f1628;padding:5rem 0 0}
       <!-- SIDEBAR -->
       <aside class="art-sidebar">
 
-        <div class="sidebar-section sidebar-cta">
+        <div class="sidebar-section sidebar-cta reveal">
           <h3>Skontaktuj się</h3>
           <p style="font-size:.875rem;color:#666;line-height:1.6;margin-bottom:1.25rem">Potrzebujesz wsparcia prawnego? Nasi eksperci są do Twojej dyspozycji.</p>
           <a href="tel:+48223194760" class="btn-p" style="width:100%;justify-content:center;font-size:.875rem;margin-bottom:.75rem">Zadzwoń: +48 22 319 47 60</a>
           <a href="kontakt.html" class="btn-s" style="width:100%;justify-content:center;font-size:.875rem">Napisz do nas</a>
         </div>
 
-        <div class="sidebar-section">
+        <div class="sidebar-section reveal reveal-d1">
           <h3>Wyróżnieni prawnicy</h3>
           <div class="sidebar-person">
             <div class="person-photo"></div>
@@ -773,7 +784,7 @@ footer{background:#0f1628;padding:5rem 0 0}
           </a>
         </div>
 
-        <div class="sidebar-section">
+        <div class="sidebar-section reveal reveal-d2">
           <h3>Praktyka</h3>
           <p style="font-size:.875rem;color:#666;line-height:1.65;margin-bottom:1rem">Rozwiązywanie Sporów – spory korporacyjne, arbitraż i postępowania przed sądami powszechnymi i administracyjnymi.</p>
           <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
@@ -781,7 +792,7 @@ footer{background:#0f1628;padding:5rem 0 0}
           </a>
         </div>
 
-        <div class="sidebar-section">
+        <div class="sidebar-section reveal reveal-d3">
           <h3>Pozostałe aktualności</h3>
           <div class="related-list">
             <a href="artykul.html" class="related-item">
@@ -824,19 +835,19 @@ footer{background:#0f1628;padding:5rem 0 0}
       </a>
     </div>
     <div class="more-grid">
-      <a href="artykul.html" class="more-card">
+      <a href="artykul.html" class="more-card reveal">
         <div class="more-img"></div>
         <span class="more-cat">Wyróżnienia</span>
         <p class="more-title">Prof. Zawadzka wyróżniona nagrodą Business Centre Club</p>
         <span class="more-date">18 maja 2024</span>
       </a>
-      <a href="artykul.html" class="more-card">
+      <a href="artykul.html" class="more-card reveal reveal-d1">
         <div class="more-img"></div>
         <span class="more-cat">Rankingi</span>
         <p class="more-title">ZMW Legal nominowany do FT Innovative Lawyers 2024</p>
         <span class="more-date">22 kwietnia 2024</span>
       </a>
-      <a href="artykul.html" class="more-card">
+      <a href="artykul.html" class="more-card reveal reveal-d2">
         <div class="more-img"></div>
         <span class="more-cat">Zespół</span>
         <p class="more-title">Dr Jakub Stelmach i Marta Kowalczyk dołączają do ZMW Legal jako Partnerzy</p>
@@ -850,11 +861,11 @@ footer{background:#0f1628;padding:5rem 0 0}
 <section style="background:var(--navy);padding:5rem 0">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap">
     <div>
-      <span class="label" style="color:rgba(255,255,255,.5)">Masz sprawę prawną?</span>
-      <h2 style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:500;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem">Porozmawiajmy o Twojej sytuacji.</h2>
-      <p style="font-size:1rem;color:rgba(255,255,255,.6);line-height:1.7">Umawiamy spotkania stacjonarne i online. Najszybszy kontakt: telefon.</p>
+      <span class="label reveal" style="color:rgba(255,255,255,.5)">Masz sprawę prawną?</span>
+      <h2 class="reveal reveal-d1" style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:500;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem">Porozmawiajmy o Twojej sytuacji.</h2>
+      <p class="reveal reveal-d2" style="font-size:1rem;color:rgba(255,255,255,.6);line-height:1.7">Umawiamy spotkania stacjonarne i online. Najszybszy kontakt: telefon.</p>
     </div>
-    <div class="art-cta-btns" style="display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0">
+    <div class="art-cta-btns reveal reveal-d2" style="display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0">
       <a href="tel:+48223194760" class="btn-p">Zadzwoń: +48 22 319 47 60</a>
       <a href="kontakt.html" class="btn-s" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.25);background:transparent">Napisz do nas</a>
     </div>
@@ -909,6 +920,32 @@ footer{background:#0f1628;padding:5rem 0 0}
   if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
   if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
   if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+  document.documentElement.classList.add('js-ready');
+  var noMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(window.IntersectionObserver&&!noMotion){
+    var hio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.line-inner').forEach(function(li,idx){setTimeout(function(){li.classList.add('visible');},idx*110);});
+          hio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -25% 0px'});
+    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title,.art-title').forEach(function(el){
+      var parts=el.innerHTML.split(/<br\s*\/?>/i);
+      el.innerHTML=parts.map(function(p){return '<span class="line-clip"><span class="line-inner">'+p.trim()+'</span></span>';}).join('');
+      el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
+      hio.observe(el);
+    });
+  }
+  if(window.IntersectionObserver){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -18% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+  }
 })();
 </script>
 </body>
