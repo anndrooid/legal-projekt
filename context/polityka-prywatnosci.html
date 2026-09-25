@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kontakt — BLSK Legal</title>
+<title>Polityka prywatności – ZMW Legal</title>
 <style>
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Thin.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
@@ -32,14 +32,14 @@ body{
 
 /* === NAV === */
 nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
-.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid #e8e8e8}
-.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-logo-link{text-decoration:none;justify-self:start}
 .nav-logo{width:100px;height:30px;background:#d4d4d4;border-radius:3px}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;justify-content:center}
 .nav-links a{font-size:.875rem;font-weight:500;color:#333;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#111}
 .nav-links a.active{font-weight:700;color:#111}
-.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone{text-align:right;justify-self:end}
 .nav-phone-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;line-height:1;margin-bottom:.2rem}
 .nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
 
@@ -47,112 +47,86 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 .page-header{margin-top:90px;background:#fff}
 .page-header-inner{
   max-width:1600px;margin:0 auto;padding:7rem 3rem 6rem;
-  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;
+  display:grid;grid-template-columns:1fr 2fr;gap:8rem;align-items:start;
 }
 .ph-back{display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:400;color:#aaa;text-decoration:none;margin-bottom:1.5rem;transition:color .2s;letter-spacing:.01em}
 .ph-back:hover{color:#333}
 .ph-title{font-size:clamp(3rem,7.5vw,6.5rem);font-weight:300;color:#111;letter-spacing:-.04em;line-height:1.02}
 .ph-right{padding-top:.25rem}
 .ph-desc{font-size:clamp(1rem,1.3vw,1.375rem);color:#555;line-height:1.7;max-width:580px}
+.ph-meta{margin-top:2rem;font-size:.8rem;color:#bbb}
 
-/* === CONTACT SECTION === */
-.contact-section{padding:0 0 8rem}
-.contact-layout{
+/* === PRIVACY LAYOUT === */
+.privacy-section{padding:0 0 10rem}
+.privacy-layout{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 2fr;
   gap:8rem;
   align-items:start;
 }
+.privacy-nav{position:sticky;top:130px}
+.privacy-nav-label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ccc;margin-bottom:1.25rem}
+.privacy-nav-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.privacy-nav-item a{
+  display:block;padding:.6rem 0;
+  font-size:.82rem;font-weight:500;color:#bbb;
+  text-decoration:none;
+  border-bottom:1px solid #f0f0f0;
+  transition:color .2s;
+  line-height:1.4;
+}
+.privacy-nav-item a:hover{color:#111}
+.privacy-nav-item.active a{color:#111;font-weight:700}
 
-/* === INFO LEWA === */
-.contact-info{}
-.info-phone-block{margin-bottom:4rem}
-.info-phone-label{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#bbb;display:block;margin-bottom:.5rem}
-.info-phone-num{
-  font-size:clamp(2rem,3.5vw,3rem);
-  font-weight:300;color:#111;
-  letter-spacing:-.03em;line-height:1.05;
-  text-decoration:none;display:block;
+/* === PRIVACY CONTENT === */
+.privacy-content{border-top:1px solid #e8e8e8}
+.privacy-block{
+  padding:3.5rem 0;
+  border-bottom:1px solid #e8e8e8;
 }
-.info-phone-num:hover{color:#555}
-.info-phone-note{font-size:.875rem;color:#aaa;margin-top:.4rem}
+.privacy-block:last-child{border-bottom:none}
+.privacy-block-label{
+  font-size:.62rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#ccc;
+  display:block;margin-bottom:1rem;
+}
+.privacy-block h2{
+  font-size:1.35rem;font-weight:700;color:#111;
+  line-height:1.25;margin-bottom:1.5rem;
+  letter-spacing:-.02em;
+}
+.privacy-block p{
+  font-size:1rem;color:#555;line-height:1.8;
+  margin-bottom:1rem;
+}
+.privacy-block p:last-child{margin-bottom:0}
+.privacy-block ul,.privacy-block ol{
+  margin:1rem 0 1rem 1.5rem;
+  color:#555;
+}
+.privacy-block li{
+  font-size:1rem;line-height:1.7;
+  margin-bottom:.4rem;
+  padding-left:.25rem;
+}
+.privacy-block strong{color:#111;font-weight:600}
+.privacy-block a{color:#111;text-decoration:underline}
+.privacy-block a:hover{opacity:.7}
 
-.info-rows{display:flex;flex-direction:column;gap:2rem;margin-bottom:4rem}
-.info-row{}
-.info-row-lbl{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;display:block;margin-bottom:.3rem}
-.info-row-val{font-size:1rem;color:#333;line-height:1.6}
-.info-row-val a{color:#333;text-decoration:none}
-.info-row-val a:hover{text-decoration:underline}
-
-.info-hours{display:flex;flex-direction:column;gap:.35rem}
-.info-hours-row{display:flex;gap:1.5rem;font-size:.95rem;color:#555}
-.info-hours-row span:first-child{color:#aaa}
-
-/* MAP PLACEHOLDER */
-.map-placeholder{
-  width:100%;aspect-ratio:16/9;
-  background:#e8e8e8;border-radius:12px;
-  position:relative;overflow:hidden;
+.data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+.data-table th{
+  text-align:left;padding:.75rem 1rem;
+  background:#f8f8f8;
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888;
+  border-bottom:2px solid #e8e8e8;
 }
-.map-label{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:#bbb;text-align:center;line-height:1.5;
+.data-table td{
+  padding:.8rem 1rem;
+  color:#555;line-height:1.6;
+  border-bottom:1px solid #f0f0f0;
+  vertical-align:top;
 }
-.map-pin{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);
-  width:32px;height:40px;
-  display:flex;flex-direction:column;align-items:center;margin-top:-2rem;
-}
-.map-pin-dot{
-  width:18px;height:18px;border-radius:50%;
-  background:#111;flex-shrink:0;
-}
-.map-pin-line{
-  width:1px;height:18px;background:#111;
-}
-
-/* === FORMULARZ PRAWA === */
-.contact-form-wrap{}
-.form-title{font-size:1.5rem;font-weight:700;color:#111;letter-spacing:-.02em;margin-bottom:.5rem}
-.form-subtitle{font-size:.95rem;color:#888;margin-bottom:2.5rem;line-height:1.6}
-
-.form{display:flex;flex-direction:column;gap:1.25rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.form-field{display:flex;flex-direction:column;gap:.4rem}
-.form-field label{font-size:.8rem;font-weight:700;color:#333;letter-spacing:.01em}
-.form-field input,.form-field textarea,.form-field select{
-  border:1.5px solid #e0e0e0;border-radius:8px;
-  padding:.8rem 1rem;font-size:.95rem;
-  font-family:inherit;color:#111;background:#fff;
-  transition:border-color .2s;
-}
-.form-field input:focus,.form-field textarea:focus{
-  outline:none;border-color:#111;
-}
-.form-field textarea{min-height:150px;resize:vertical}
-.form-optional{font-size:.72rem;color:#bbb;font-weight:400;margin-left:.3rem}
-
-/* CAPTCHA */
-.captcha-field{
-  display:flex;align-items:center;gap:1.25rem;
-  padding:1.1rem 1.25rem;
-  border:1.5px solid #e0e0e0;border-radius:8px;
-  background:#fafafa;
-}
-.captcha-question{font-size:.95rem;color:#333;font-weight:600;white-space:nowrap}
-.captcha-eq{font-size:1.1rem;color:#111;font-weight:700;padding:0 .5rem}
-.captcha-input{
-  width:80px;border:1.5px solid #e0e0e0;border-radius:6px;
-  padding:.6rem .75rem;font-size:.95rem;
-  font-family:inherit;color:#111;background:#fff;
-  transition:border-color .2s;
-}
-.captcha-input:focus{outline:none;border-color:#111}
-.captcha-note{font-size:.75rem;color:#bbb;margin-left:auto}
-
-.form-consent{font-size:.8rem;color:#888;line-height:1.65}
-.form-consent a{color:#555;text-decoration:underline}
+.data-table tr:last-child td{border-bottom:none}
 
 /* === BUTTONS === */
 .btn-p{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.85rem;background:#111;color:#fff;font-size:.9rem;font-weight:600;border-radius:8px;text-decoration:none;cursor:pointer;font-family:inherit;border:none;transition:background .2s ease}
@@ -164,9 +138,14 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 .btn-c .arr::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:currentColor;transform:translateY(-50%)}
 .btn-c .arr::after{content:'';position:absolute;top:50%;right:0;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-50%) rotate(45deg)}
 .btn-c:hover{background:#111;border-color:#111;color:#fff}
-@keyframes btn-pulse{0%{box-shadow:0 0 0 0 rgba(0,0,0,.22)}70%{box-shadow:0 0 0 9px rgba(0,0,0,0)}100%{box-shadow:0 0 0 0 rgba(0,0,0,0)}}
-.btn-c:hover{animation:btn-pulse .7s ease}
 .btn-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+
+/* === CTA === */
+.cta-sec{background:#f5f5f5}
+.cta-sec .wrap{padding-top:8rem;padding-bottom:8rem}
+.cta-inner{max-width:760px;margin:0 auto;text-align:center}
+.kt-h2{font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;color:#111;letter-spacing:-.03em;line-height:1.08;margin-bottom:1.25rem}
+.kt-lead{font-size:1.1rem;color:#555;margin-bottom:2.5rem;line-height:1.7}
 
 /* === FOOTER === */
 footer{background:#111;padding:5rem 0 0}
@@ -184,7 +163,6 @@ footer{background:#111;padding:5rem 0 0}
 .nav-dropdown{position:relative}
 .nav-drop-trigger{display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;font-weight:500;color:#333;cursor:pointer;user-select:none;background:none;border:none;font-family:inherit;padding:0;transition:color .2s}
 .nav-drop-trigger:hover,.nav-dropdown:hover .nav-drop-trigger{color:#111}
-.nav-dropdown-active .nav-drop-trigger{font-weight:700;color:#111}
 .nav-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
 .nav-dropdown:hover .nav-chevron{transform:rotate(180deg)}
 .nav-drop-menu{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.1);padding:.75rem 0;list-style:none;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s;z-index:300}
@@ -220,25 +198,23 @@ footer{background:#111;padding:5rem 0 0}
   .nav-hamburger{display:flex}
   .nav-phone{display:none}
   .page-header-inner{grid-template-columns:1fr;gap:3rem}
-  .contact-layout{grid-template-columns:1fr;gap:5rem}
+  .privacy-layout{grid-template-columns:1fr;gap:3rem}
+  .privacy-nav{display:none}
   .footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}
 }
 @media(max-width:768px){
   .wrap,.page-header-inner,.footer-grid,.footer-bottom,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}
   .page-header-inner{padding-top:5rem;padding-bottom:4rem}
-  .contact-section{padding:0 0 5rem}
-  .form-row{grid-template-columns:1fr}
+  .privacy-section{padding:0 0 5rem}
+  .privacy-block{padding:2.5rem 0}
   .footer-grid{grid-template-columns:1fr}
-  .info-phone-block{margin-bottom:3rem}
-  .info-rows{gap:1.5rem;margin-bottom:3rem}
-  .captcha-field{flex-wrap:wrap}
-  .captcha-note{display:none}
-  .captcha-question{white-space:normal}
-  html,body{overflow-x:hidden}
+  .cta-sec .wrap{padding-top:5rem;padding-bottom:5rem}
+  .data-table{font-size:.8rem}
+  .data-table th,.data-table td{padding:.6rem .75rem}
 }
 @media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
 
-/* PP Neue Montreal — typografia */
+/* PP Neue Montreal – typografia */
 body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
 .h1-hero{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
 .ph-title{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
@@ -253,7 +229,7 @@ body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
 .btn-c .arr{transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .btn-c:hover .arr{transform:rotate(-45deg)}
 
-/* Design system — kolory */
+/* Design system – kolory */
 :root{--crimson:#8C0002;--navy:#1a2440;--bg:#f6f6f4;--border:rgba(26,36,64,.12)}
 body{background:#f6f6f4;color:var(--navy)}
 .lead,.body-text,.stat-lbl,.prac-desc,.step-desc,.cs-desc,.news-exc,.ph-desc{color:var(--navy)}
@@ -265,16 +241,16 @@ body{background:#f6f6f4;color:var(--navy)}
 .btn-c:hover{background:var(--navy);border-color:var(--navy);color:#fff}
 .btn-row-link{color:var(--navy)}
 
-/* Nav — identyczny z design system */
+/* Nav – identyczny z design system */
 nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#f6f6f4;box-shadow:0 1px 0 rgba(26,36,64,.12)}
-.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:none}
-.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-logo-link{text-decoration:none;justify-self:start}
 .nav-logo{width:100px;height:30px;background:#c8c4bc;border-radius:3px}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;justify-content:center}
 .nav-links a{font-family:'PPNeueMontreal',sans-serif;font-size:1rem;font-weight:500;color:var(--navy);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--crimson)}
 .nav-links a.active{font-weight:500;color:var(--crimson)}
-.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone{text-align:right;justify-self:end}
 .nav-phone-label{display:block;font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.2rem}
 .nav-phone-num{display:block;font-size:2rem;font-weight:500;color:var(--crimson);text-decoration:none}
 .nav-dropdown{position:relative}
@@ -349,7 +325,7 @@ footer{background:#0f1628}
 .sec-navy .btn-c{border-color:rgba(255,255,255,.3);color:#fff}
 .sec-navy .btn-c:hover{background:#fff;color:var(--navy);border-color:#fff}
 
-/* Komponenty — wyrównanie do design system */
+/* Komponenty – wyrównanie do design system */
 .page-header{background:#f6f6f4}
 .page-header-inner{padding-top:10vw;padding-bottom:10vw}
 .ph-back{font-family:'PPNeueMontreal',sans-serif;font-size:1.2rem;font-weight:300;color:var(--navy);letter-spacing:.03em}
@@ -372,7 +348,7 @@ footer{background:#0f1628}
 .team-badge{color:rgba(26,36,64,.6);background:rgba(26,36,64,.05);border:none}
 .team-card:hover{box-shadow:0 12px 40px rgba(26,36,64,.08);transform:none}
 
-/* Komponenty — wyrównanie runda 2 */
+/* Komponenty – wyrównanie runda 2 */
 /* Filter bar (nasz zespol) */
 .filter-lbl{color:rgba(26,36,64,.4)}
 .filter-tab{border:1.5px solid rgba(26,36,64,.2);color:var(--navy);background:#f6f6f4;font-family:'PPNeueMontreal',sans-serif}
@@ -416,7 +392,7 @@ footer{background:#0f1628}
 .ph-meta{color:rgba(26,36,64,.5)}
 .article-meta{color:rgba(26,36,64,.4)}
 
-/* Stopka — identyczna z design system */
+/* Stopka – identyczna z design system */
 footer{background:#0f1628;padding:5rem 0 0}
 .footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
 .footer-logo{width:90px;height:27px;background:#2a3555;border-radius:3px;margin-bottom:1.25rem}
@@ -429,66 +405,89 @@ footer{background:#0f1628;padding:5rem 0 0}
 .footer-bottom a{color:rgba(255,255,255,.25);text-decoration:none}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}}
 @media(max-width:600px){.footer-grid{grid-template-columns:1fr}.footer-bottom,.footer-grid,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}}
+
+/* Polityka prywatności – wyrównanie do design system */
+.privacy-section{background:#fff;padding:7rem 0 8rem}
+@media(max-width:1024px){.privacy-section{padding:3rem 0 5rem}}
+.privacy-content{border-top-color:var(--border)}
+.privacy-block{border-bottom-color:var(--border)}
+.privacy-block-label{color:var(--crimson);font-weight:500;letter-spacing:.14em}
+.privacy-block h2{color:var(--navy);font-weight:500}
+.privacy-block p{color:var(--navy)}
+.privacy-block ul,.privacy-block ol{color:var(--navy)}
+.privacy-block li{color:var(--navy)}
+.privacy-block strong{color:var(--navy);font-weight:600}
+.privacy-block a{color:var(--crimson);text-decoration:underline;text-underline-offset:.2em}
+.privacy-block a:hover{opacity:.75}
+.privacy-nav-label{color:rgba(26,36,64,.4);font-weight:500}
+.privacy-nav-item a{color:rgba(26,36,64,.45);border-bottom-color:var(--border);font-family:'PPNeueMontreal',sans-serif}
+.privacy-nav-item a:hover{color:var(--crimson)}
+.privacy-nav-item.active a{color:var(--navy);font-weight:500}
+.data-table th{background:rgba(26,36,64,.04);color:rgba(26,36,64,.5);border-bottom-color:var(--border)}
+.data-table td{color:var(--navy);border-bottom-color:rgba(26,36,64,.07)}
+.ph-meta{color:rgba(26,36,64,.4);font-family:'PPNeueMontreal',sans-serif;font-size:.875rem;margin-top:1.5rem}
+.cta-sec{background:#f6f6f4}
+.kt-h2{color:var(--navy)}
+.kt-lead{color:var(--navy)}
 </style>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html" class="nav-logo-link">
-      <div class="nav-logo"></div>
+    <a href="strona-glowna.html" class="nav-logo-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
     </a>
     <ul class="nav-links">
-      <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+      <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
       <li class="nav-dropdown">
         <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
         <ul class="nav-drop-menu">
-          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
-          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-          <li><a href="wireframe-digital.html">Digital</a></li>
-          <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+          <li><a href="rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+          <li><a href="life-sciences.html">Life Sciences</a></li>
+          <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+          <li><a href="digital.html">Digital</a></li>
+          <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
         </ul>
       </li>
-      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-      <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
-      <li><a href="wireframe-faq.html">FAQ</a></li>
-      <li><a href="wireframe-kontakt.html" class="active">Kontakt</a></li>
+      <li><a href="aktualnosci.html">Aktualności</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
     <div class="nav-phone">
       <span class="nav-phone-label">Zadzwoń teraz</span>
-      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+      <a href="tel:+48223194760" class="nav-phone-num">+48 22 319 47 60</a>
     </div>
     <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-top">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html"><div class="mobile-menu-logo"></div></a>
+    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
     <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
   </div>
   <ul class="mobile-nav">
-    <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+    <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
     <li>
       <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
       <ul class="mobile-submenu" id="mobileSubmenu">
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </li>
-    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-    <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
-    <li><a href="wireframe-faq.html">FAQ</a></li>
-    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    <li><a href="aktualnosci.html">Aktualności</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
   </ul>
   <div class="mobile-menu-phone">
     <span class="label">Zadzwoń teraz</span>
-    <a href="tel:+48224159800">+48 22 415 98 00</a>
+    <a href="tel:+48223194760">+48 22 319 47 60</a>
   </div>
 </div>
 
@@ -496,132 +495,197 @@ footer{background:#0f1628;padding:5rem 0 0}
 <div class="page-header">
   <div class="page-header-inner">
     <div class="ph-left">
-      <a href="wireframe-home.html" class="ph-back">‹ Strona główna</a>
-      <h1 class="ph-title">Kontakt</h1>
+      <a href="strona-glowna.html" class="ph-back">‹ Strona główna</a>
+      <h1 class="ph-title">Polityka<br>prywatności</h1>
     </div>
     <div class="ph-right">
-      <p class="ph-desc">Zapraszamy na spotkania stacjonarne lub online — wyłącznie po wcześniejszym umówieniu terminu. Najszybszy kontakt: telefon. Odpowiadamy tego samego dnia roboczego.</p>
+      <p class="ph-desc">Informacje o tym, jak przetwarzamy dane osobowe – kto jest administratorem, w jakim celu i na jakiej podstawie prawnej zbieramy dane oraz jakie przysługują Ci prawa.</p>
+      <p class="ph-meta">Wersja obowiązująca od 1 stycznia 2024 r.</p>
     </div>
   </div>
 </div>
 
-<!-- CONTACT -->
-<div class="contact-section">
+<!-- PRIVACY POLICY -->
+<div class="privacy-section">
   <div class="wrap">
-    <div class="contact-layout">
+    <div class="privacy-layout">
 
-      <!-- LEWA: DANE + MAPA -->
-      <div class="contact-info">
+      <!-- SIDEBAR NAV -->
+      <nav class="privacy-nav" aria-label="Spis treści">
+        <p class="privacy-nav-label">Spis treści</p>
+        <ul class="privacy-nav-list">
+          <li class="privacy-nav-item active"><a href="#s1">Administrator danych</a></li>
+          <li class="privacy-nav-item"><a href="#s2">Skąd mamy Twoje dane</a></li>
+          <li class="privacy-nav-item"><a href="#s3">Cele i podstawy przetwarzania</a></li>
+          <li class="privacy-nav-item"><a href="#s4">Okres przechowywania</a></li>
+          <li class="privacy-nav-item"><a href="#s5">Odbiorcy danych</a></li>
+          <li class="privacy-nav-item"><a href="#s6">Twoje prawa</a></li>
+          <li class="privacy-nav-item"><a href="#s7">Pliki cookie</a></li>
+          <li class="privacy-nav-item"><a href="#s8">Zmiany polityki</a></li>
+          <li class="privacy-nav-item"><a href="#s9">Kontakt</a></li>
+        </ul>
+      </nav>
 
-        <div class="info-phone-block">
-          <span class="info-phone-label">Telefon</span>
-          <a href="tel:+48224159800" class="info-phone-num">+48 22 415 98 00</a>
-          <p class="info-phone-note">Pon.–Pt., 9:30–17:30</p>
+      <!-- CONTENT -->
+      <div class="privacy-content">
+
+        <div class="privacy-block" id="s1">
+          <span class="privacy-block-label">01</span>
+          <h2>Administrator danych osobowych</h2>
+          <p>Administratorem Twoich danych osobowych jest <strong>ZAWADZKA MROWIEC &amp; WSPÓLNICY SP. K.</strong> z siedzibą w Warszawie, ul. Wspólna 47A (III p.), 00-684 Warszawa, wpisana do Krajowego Rejestru Sądowego prowadzonego przez Sąd Rejonowy dla m.st. Warszawy w Warszawie, XII Wydział Gospodarczy KRS.</p>
+          <p>We wszelkich sprawach dotyczących ochrony danych osobowych możesz skontaktować się z nami:</p>
+          <ul>
+            <li>e-mail: <a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
+            <li>telefon: <a href="tel:+48223194760">+48 22 319 47 60</a> (pon.–pt., 9:30–17:30)</li>
+            <li>adres korespondencyjny: ul. Wspólna 47A, 00-684 Warszawa</li>
+          </ul>
         </div>
 
-        <div class="info-rows">
-          <div class="info-row">
-            <span class="info-row-lbl">Email</span>
-            <div class="info-row-val">
-              <a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a>
-            </div>
-          </div>
-          <div class="info-row">
-            <span class="info-row-lbl">Adres</span>
-            <div class="info-row-val">
-              ul. Mazowiecka 9, IV piętro<br>
-              00-052 Warszawa
-            </div>
-          </div>
-          <div class="info-row">
-            <span class="info-row-lbl">Godziny pracy</span>
-            <div class="info-hours">
-              <div class="info-hours-row"><span>Poniedziałek–Piątek</span><span>9:30–17:30</span></div>
-              <div class="info-hours-row"><span>Sobota–Niedziela</span><span>Nieczynne</span></div>
-            </div>
-          </div>
-          <div class="info-row">
-            <span class="info-row-lbl">LinkedIn</span>
-            <div class="info-row-val">
-              <a href="#">BLSK Legal na LinkedIn</a>
-            </div>
-          </div>
+        <div class="privacy-block" id="s2">
+          <span class="privacy-block-label">02</span>
+          <h2>Skąd mamy Twoje dane</h2>
+          <p>Przetwarzamy dane osobowe, które:</p>
+          <ul>
+            <li><strong>Przekazujesz nam bezpośrednio</strong> – wypełniając formularz kontaktowy na stronie, wysyłając wiadomość e-mail, dzwoniąc do kancelarii lub spotykając się z naszymi prawnikami.</li>
+            <li><strong>Zbieramy automatycznie</strong> – podczas odwiedzin strony internetowej, za pośrednictwem plików cookie i podobnych technologii (adres IP, typ przeglądarki, strony odwiedzone, czas wizyty).</li>
+            <li><strong>Otrzymujemy od osób trzecich</strong> – w ramach prowadzonych spraw sądowych i transakcji, od klientów kancelarii wskazujących nas jako pełnomocnika lub doradcę.</li>
+          </ul>
         </div>
 
-        <!-- MAPA — klikalny link do Google Maps -->
-        <a href="https://maps.google.com/?q=ul.+Mazowiecka+9,+00-052+Warszawa" target="_blank" rel="noopener" class="map-placeholder" style="display:block;text-decoration:none;cursor:pointer;position:relative">
-          <div class="map-pin">
-            <div class="map-pin-dot"></div>
-            <div class="map-pin-line"></div>
-          </div>
-          <p class="map-label">ul. Mazowiecka 9<br>Warszawa</p>
-          <span style="position:absolute;bottom:.75rem;right:.75rem;background:#fff;border:1px solid #e8e8e8;border-radius:6px;padding:.3rem .7rem;font-size:.7rem;font-weight:600;color:#333">Otwórz w Google Maps ↗</span>
-        </a>
+        <div class="privacy-block" id="s3">
+          <span class="privacy-block-label">03</span>
+          <h2>Cele i podstawy przetwarzania danych</h2>
+          <p>Przetwarzamy dane osobowe w następujących celach i na następujących podstawach prawnych:</p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cel przetwarzania</th>
+                <th>Podstawa prawna (RODO)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Odpowiedź na zapytania przesłane przez formularz kontaktowy lub e-mail</td>
+                <td>Art. 6 ust. 1 lit. f – prawnie uzasadniony interes administratora (udzielenie odpowiedzi na korespondencję)</td>
+              </tr>
+              <tr>
+                <td>Zawarcie i realizacja umowy o świadczenie pomocy prawnej</td>
+                <td>Art. 6 ust. 1 lit. b – niezbędność do wykonania umowy lub podjęcia działań przed jej zawarciem</td>
+              </tr>
+              <tr>
+                <td>Wypełnienie obowiązków wynikających z przepisów prawa (m.in. ustawa o radcach prawnych, ustawa o adwokaturze, przepisy AML)</td>
+                <td>Art. 6 ust. 1 lit. c – obowiązek prawny ciążący na administratorze</td>
+              </tr>
+              <tr>
+                <td>Dochodzenie lub obrona roszczeń</td>
+                <td>Art. 6 ust. 1 lit. f – prawnie uzasadniony interes administratora</td>
+              </tr>
+              <tr>
+                <td>Analityka strony internetowej i poprawa jej funkcjonowania</td>
+                <td>Art. 6 ust. 1 lit. f – prawnie uzasadniony interes administratora; lub art. 6 ust. 1 lit. a – zgoda (dla cookies analitycznych)</td>
+              </tr>
+              <tr>
+                <td>Przesyłanie newslettera i informacji o działalności kancelarii</td>
+                <td>Art. 6 ust. 1 lit. a – zgoda osoby, której dane dotyczą</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Podanie danych osobowych jest dobrowolne, jednak niepodanie danych niezbędnych do realizacji usługi uniemożliwia jej świadczenie.</p>
+        </div>
+
+        <div class="privacy-block" id="s4">
+          <span class="privacy-block-label">04</span>
+          <h2>Okres przechowywania danych</h2>
+          <p>Dane osobowe przechowujemy przez okres niezbędny do realizacji celów, dla których zostały zebrane:</p>
+          <ul>
+            <li><strong>Dane z formularza kontaktowego</strong> – do czasu udzielenia odpowiedzi i przez 12 miesięcy od ostatniego kontaktu, chyba że nawiązana zostanie współpraca.</li>
+            <li><strong>Dane związane z umową o świadczenie pomocy prawnej</strong> – przez czas trwania umowy oraz przez 10 lat od jej zakończenia (termin przedawnienia roszczeń).</li>
+            <li><strong>Dane przetwarzane na podstawie obowiązku prawnego</strong> (m.in. AML) – przez okresy wskazane w przepisach szczególnych, nie krócej niż 5 lat.</li>
+            <li><strong>Dane z plików cookie analitycznych</strong> – przez okres wskazany w polityce cookies, maksymalnie 26 miesięcy.</li>
+            <li><strong>Dane przetwarzane na podstawie zgody</strong> – do czasu wycofania zgody.</li>
+          </ul>
+          <p>Po upływie wskazanych okresów dane są usuwane lub anonimizowane.</p>
+        </div>
+
+        <div class="privacy-block" id="s5">
+          <span class="privacy-block-label">05</span>
+          <h2>Odbiorcy danych osobowych</h2>
+          <p>Twoje dane osobowe mogą być przekazywane następującym kategoriom odbiorców:</p>
+          <ul>
+            <li><strong>Podmioty świadczące usługi na rzecz kancelarii</strong> – dostawcy systemów informatycznych, operatorzy poczty elektronicznej, firmy obsługujące hosting strony internetowej, dostawcy usług księgowych – wyłącznie na podstawie stosownych umów powierzenia przetwarzania danych.</li>
+            <li><strong>Organy publiczne</strong> – sądy, organy administracji, organy ścigania – wyłącznie na podstawie obowiązujących przepisów prawa.</li>
+            <li><strong>Prawnicy i doradcy</strong> – współpracujące kancelarie lub eksperci zewnętrzni zaangażowani w prowadzenie konkretnej sprawy, wyłącznie w zakresie niezbędnym do jej realizacji.</li>
+          </ul>
+          <p>Dane co do zasady nie są przekazywane poza Europejski Obszar Gospodarczy. W przypadku korzystania z narzędzi dostawców działających poza EOG (np. Google Analytics) stosujemy standardowe klauzule umowne zatwierdzone przez Komisję Europejską.</p>
+        </div>
+
+        <div class="privacy-block" id="s6">
+          <span class="privacy-block-label">06</span>
+          <h2>Twoje prawa</h2>
+          <p>Na podstawie przepisów RODO przysługują Ci następujące prawa:</p>
+          <ul>
+            <li><strong>Prawo dostępu</strong> – możesz uzyskać informację, czy i jakie dane przetwarzamy, oraz otrzymać kopię tych danych.</li>
+            <li><strong>Prawo do sprostowania</strong> – możesz żądać poprawienia nieprawidłowych lub uzupełnienia niekompletnych danych.</li>
+            <li><strong>Prawo do usunięcia</strong> – możesz żądać usunięcia danych w przypadkach wskazanych w art. 17 RODO (m.in. gdy dane nie są już niezbędne do celów, dla których zostały zebrane).</li>
+            <li><strong>Prawo do ograniczenia przetwarzania</strong> – możesz żądać ograniczenia przetwarzania danych w przypadkach wskazanych w art. 18 RODO.</li>
+            <li><strong>Prawo do przenoszenia danych</strong> – możesz otrzymać dane w ustrukturyzowanym formacie nadającym się do odczytu maszynowego.</li>
+            <li><strong>Prawo do sprzeciwu</strong> – możesz wnieść sprzeciw wobec przetwarzania opartego na prawnie uzasadnionym interesie administratora.</li>
+            <li><strong>Prawo do wycofania zgody</strong> – jeżeli przetwarzanie odbywa się na podstawie zgody, możesz ją wycofać w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania przed jej wycofaniem.</li>
+          </ul>
+          <p>Aby skorzystać z powyższych praw, skontaktuj się z nami pod adresem <a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a>. Na Twoje żądanie odpowiemy bez zbędnej zwłoki, nie później niż w ciągu 30 dni.</p>
+          <p>Masz również prawo wniesienia skargi do organu nadzorczego – <strong>Prezesa Urzędu Ochrony Danych Osobowych</strong> (ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl" target="_blank" rel="noopener">uodo.gov.pl</a>), jeżeli uważasz, że przetwarzanie Twoich danych narusza przepisy RODO.</p>
+        </div>
+
+        <div class="privacy-block" id="s7">
+          <span class="privacy-block-label">07</span>
+          <h2>Pliki cookie i dane techniczne</h2>
+          <p>Nasza strona internetowa używa plików cookie – małych plików tekstowych zapisywanych na Twoim urządzeniu. Stosujemy trzy kategorie plików cookie:</p>
+          <ul>
+            <li><strong>Niezbędne</strong> – wymagane do prawidłowego działania strony (np. zapamiętanie preferencji dotyczących cookies). Nie wymagają zgody.</li>
+            <li><strong>Analityczne</strong> – pozwalają nam mierzyć ruch na stronie i poprawiać jej funkcjonowanie (Google Analytics). Wymagają Twojej zgody.</li>
+            <li><strong>Marketingowe</strong> – służą do personalizacji treści i reklam. Wymagają Twojej zgody.</li>
+          </ul>
+          <p>Możesz zarządzać preferencjami dotyczącymi plików cookie w każdej chwili za pomocą panelu ustawień cookies dostępnego na naszej stronie lub poprzez ustawienia przeglądarki internetowej. Wyłączenie plików cookie może wpłynąć na funkcjonowanie niektórych elementów strony.</p>
+          <p>Zbieramy również dane techniczne generowane automatycznie przy odwiedzinach strony: adres IP, typ i wersję przeglądarki, system operacyjny, referrer URL. Dane te służą wyłącznie celom statystycznym i bezpieczeństwa.</p>
+        </div>
+
+        <div class="privacy-block" id="s8">
+          <span class="privacy-block-label">08</span>
+          <h2>Zmiany polityki prywatności</h2>
+          <p>Zastrzegamy sobie prawo do zmiany niniejszej polityki prywatności – w szczególności w przypadku zmian przepisów prawa, zmian w zakresie świadczonych usług lub zmian stosowanych technologii.</p>
+          <p>O istotnych zmianach poinformujemy poprzez zamieszczenie zaktualizowanej wersji na stronie internetowej z nową datą obowiązywania. Zachęcamy do regularnego zapoznawania się z treścią polityki.</p>
+        </div>
+
+        <div class="privacy-block" id="s9">
+          <span class="privacy-block-label">09</span>
+          <h2>Kontakt w sprawach ochrony danych</h2>
+          <p>We wszelkich sprawach związanych z przetwarzaniem danych osobowych oraz realizacją przysługujących Ci praw prosimy o kontakt:</p>
+          <ul>
+            <li><strong>E-mail:</strong> <a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
+            <li><strong>Telefon:</strong> <a href="tel:+48223194760">+48 22 319 47 60</a> (pon.–pt., 9:30–17:30)</li>
+            <li><strong>Adres:</strong> ZAWADZKA MROWIEC &amp; WSPÓLNICY SP. K., ul. Wspólna 47A (III p.), 00-684 Warszawa</li>
+          </ul>
+          <p>Staramy się odpowiadać na wszystkie zapytania w ciągu jednego dnia roboczego.</p>
+        </div>
 
       </div>
+    </div>
+  </div>
+</div>
 
-      <!-- PRAWA: FORMULARZ -->
-      <div class="contact-form-wrap">
-        <h2 class="form-title">Napisz do nas</h2>
-        <p class="form-subtitle">Odpowiadamy tego samego dnia roboczego. W pilnych sprawach — zadzwoń.</p>
-
-        <form class="form" onsubmit="return false">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="company">Firma / organizacja <span class="form-optional">(opcjonalnie)</span></label>
-              <input type="text" id="company" placeholder="Nazwa spółki">
-            </div>
-            <div class="form-field">
-              <label for="name">Imię i nazwisko</label>
-              <input type="text" id="name" placeholder="Jan Kowalski">
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="email">Adres e-mail</label>
-            <input type="email" id="email" placeholder="jan@firma.pl">
-          </div>
-
-          <div class="form-field">
-            <label for="phone">Telefon <span class="form-optional">(opcjonalnie)</span></label>
-            <input type="tel" id="phone" placeholder="+48 000 000 000">
-          </div>
-
-          <div class="form-field">
-            <label for="message">Treść wiadomości</label>
-            <textarea id="message" placeholder="Opisz krótko swoją sprawę lub pytanie…"></textarea>
-          </div>
-
-          <!-- CAPTCHA MATEMATYCZNA -->
-          <div class="form-field">
-            <label>Weryfikacja</label>
-            <div class="captcha-field">
-              <span class="captcha-question">Ile to:</span>
-              <span class="captcha-eq">7 + 3 =</span>
-              <input type="text" class="captcha-input" placeholder="?">
-              <span class="captcha-note">Ochrona przed spamem</span>
-            </div>
-          </div>
-
-          <p class="form-consent">Wysyłając wiadomość, akceptujesz <a href="#">Politykę prywatności</a>. Dane przetwarzamy wyłącznie w celu odpowiedzi na zapytanie.</p>
-
-          <div>
-            <button type="submit" class="btn-p">Wyślij wiadomość</button>
-          </div>
-        </form>
-
-        <!-- SUCCESS STATE — widoczny po wysłaniu formularza -->
-        <div style="display:none;margin-top:2rem;padding:2.5rem;background:#f0f9f4;border:1.5px solid #b6e6cb;border-radius:12px;text-align:center" id="formSuccess">
-          <div style="width:52px;height:52px;border-radius:50%;background:#22c55e;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem">
-            <svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M4 10l5 5 7-7"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;color:#111;margin-bottom:.5rem">Wiadomość wysłana!</h3>
-          <p style="font-size:.95rem;color:#555;line-height:1.65;margin-bottom:1.5rem">Dziękujemy za kontakt. Odpiszemy tego samego dnia roboczego.<br>W pilnych sprawach zadzwoń: <a href="tel:+48224159800" style="color:#111;font-weight:600">+48 22 415 98 00</a></p>
-          <button onclick="document.getElementById('formSuccess').style.display='none'" class="btn-s" style="font-size:.875rem">Wyślij kolejną wiadomość</button>
-        </div>
-        <p style="font-size:.75rem;color:#aaa;margin-top:.75rem"><em>[Wireframe: po wysłaniu formularza pokazuje się powyższy ekran sukcesu zamiast formularza]</em></p>
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="label">Skontaktuj się z nami</span>
+      <h2 class="kt-h2">Pytania dotyczące<br>przetwarzania danych?</h2>
+      <p class="kt-lead">Odpowiemy konkretnie i bez zbędnych formalności. Zadzwoń lub napisz.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a href="tel:+48223194760" class="btn-p">+48 22 319 47 60</a>
+        <a href="kontakt.html" class="btn-s">Formularz kontaktowy</a>
       </div>
-
     </div>
   </div>
 </div>
@@ -630,44 +694,42 @@ footer{background:#0f1628;padding:5rem 0 0}
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo"></div>
-      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto;margin-bottom:1.25rem" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#f6f6f4">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="rgba(246,246,244,0.5)" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
     </div>
     <div class="footer-col">
       <h4>Praktyki</h4>
       <ul>
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kancelaria</h4>
       <ul>
-        <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
-        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-        <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
-        <li><a href="wireframe-faq.html">FAQ</a></li>
-        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+        <li><a href="nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+        <li><a href="aktualnosci.html">Aktualno&#347;ci</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
-        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="tel:+48223194760">+48 22 319 47 60</a></li>
+        <li><a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 BLSK KOZ&#321;OWSKI I WSP&Oacute;LNICY SP. K.</span>
-    <a href="wireframe-polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
+    <span>&copy; 2026 ZAWADZKA MROWIEC &amp; WSP&Oacute;LNICY SP. K.</span>
+    <a href="polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
   </div>
 </footer>
-
 
 <script>
 (function(){
@@ -675,6 +737,21 @@ footer{background:#0f1628;padding:5rem 0 0}
   if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
   if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
   if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+
+  // Active sidebar nav on scroll
+  var sections=document.querySelectorAll('.privacy-block[id]');
+  var navItems=document.querySelectorAll('.privacy-nav-item');
+  function onScroll(){
+    var scrollY=window.scrollY+160;
+    var current='';
+    sections.forEach(function(s){if(scrollY>=s.offsetTop)current=s.id;});
+    navItems.forEach(function(item){
+      var link=item.querySelector('a');
+      item.classList.toggle('active',link&&link.getAttribute('href')==='#'+current);
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
 })();
 </script>
 </body>

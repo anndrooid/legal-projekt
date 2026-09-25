@@ -1,4 +1,4 @@
-# Brand foundations — BLSK Legal
+# Brand foundations — ZMW Legal
 
 ## Fundament
 
@@ -14,7 +14,7 @@
 
 ## Positioning statement
 
-Dla **firm i przedsiębiorców w złożonych sporach, sprawach podatkowych i regulacyjnych** jesteśmy **butikową kancelarią prawną wyspecjalizowaną w pięciu obszarach**, które daje **indywidualne podejście i nieszablonowe rozwiązania w najbardziej wymagających sprawach**. W przeciwieństwie do dużych kancelarii korporacyjnych, gdzie klient jest jednym z wielu, jesteśmy boutique — mamy głębszą specjalizację i realny kontakt z partnerem.
+Dla **firm i przedsiębiorców w złożonych sporach, sprawach podatkowych i regulacyjnych** jesteśmy **butikową kancelarią prawną wyspecjalizowaną w pięciu obszarach**, która daje **indywidualne podejście i nieszablonowe rozwiązania w najbardziej wymagających sprawach**. W przeciwieństwie do dużych kancelarii korporacyjnych, gdzie klient jest jednym z wielu, jesteśmy boutique — mamy głębszą specjalizację i realny kontakt z partnerem.
 
 ## Obietnica i pozycjonowanie
 
@@ -23,14 +23,14 @@ Butikowa kancelaria dla firm w złożonych sporach i regulacyjnych wyzwaniach �
 ## Archetyp
 
 **Pierwszy: Mędrzec (Sage)**
-Buduje autorytet przez wiedzę i jej dzielenie — Corpo Snap, 200+ publikacji Prof. Bilewskiej, komentarze do KSH, konferencje akademickie. Autorytet nie przez ogłoszenie, ale przez dowód.
+Buduje autorytet przez wiedzę i jej dzielenie — Corpo Snap, 20+ publikacji Prof. Zawadzkiej, komentarze do KSH, konferencje akademickie. Autorytet nie przez ogłoszenie, ale przez dowód.
 
 **Drugi: Bohater (Hero)**
 „Gotowi wspierać w najbardziej wymagających sprawach, niezależnie od ich skali oraz złożoności." Nie unika trudnych spraw — po nie sięga.
 
 ## Osobowość
 
-Gdyby BLSK Legal była człowiekiem, byłaby:
+Gdyby ZMW Legal była człowiekiem, byłaby:
 
 - **Kompetentna** — wie, co robi, i daje to odczuć bez przechwałek
 - **Partnerska** — mówi „wspieramy", nie „obsługujemy"
@@ -46,13 +46,11 @@ Partnerski · Konkretny · Odważny
 
 ### Tak brzmimy
 
-*(cytaty z obecnych materiałów kancelarii — to jest głos docelowy)*
-
 „Podchodzimy do spraw naszych klientów indywidualnie, w razie potrzeby proponując nieszablonowe rozwiązania."
 
 „Jesteśmy gotowi wspierać naszych klientów w najbardziej wymagających sprawach, niezależnie od ich skali oraz złożoności."
 
-„Katarzyna łączy unikalne doświadczenia jako farmaceuta i prawnik."
+„Anna łączy unikalne doświadczenia jako akademik i praktyk."
 
 ### Jest / Nie jest
 
@@ -61,13 +59,13 @@ Partnerski · Konkretny · Odważny
 | Partnerski — „wspieramy" | Dystansujący — „zapewniamy obsługę" |
 | Indywidualny — „nieszablonowe rozwiązania" | Szablonowy — „standardowa procedura" |
 | Konkretny — wymienione trybunały z nazwy | Ogólnikowy — „szeroki zakres usług" |
-| Ciepły — Maria mówi „Kasia", nie „Katarzyna" | Chłodnie korporacyjny |
+| Ciepły — imię w komunikacji bezpośredniej | Chłodnie korporacyjny |
 | Ambitny — „niezależnie od skali i złożoności" | Ostrożny — bez zastrzeżeń i ucieczek |
 | Narracyjny — historia dołączenia z cytatem | Biurokratyczny — suche wyliczanki |
 
 ### Słowa zakazane
 
-Czego w komunikacji BLSK nie ma i nie będzie:
+Czego w komunikacji ZMW Legal nie ma i nie będzie:
 
 - „renomowana kancelaria"
 - „najwyższe standardy"
@@ -113,15 +111,32 @@ Skala: −2 (lewa skrajność) → 0 (środek) → +2 (prawa skrajność)
 
 ## Logo
 
-Logo istnieje — przenosimy z obecnej strony blsklegal.com. Plik docelowo do `assets/`.
+Logo SVG inline, wariant C (stos ZMW / LEGAL). Plik docelowy: `assets/logo.svg`.
+
+**Wersja jasna (nav, strony wewnętrzne):**
+- ZMW: Z — crimson #8C0002, MW — navy #1a2440
+- LEGAL: navy #1a2440, rozłożone na całą szerokość ZMW (textLength)
+
+**Wersja ciemna (stopka):**
+- MW i LEGAL w kolorze bg #f6f6f4 / rgba(246,246,244,0.5)
 
 ## Kierunek kolorystyczny
 
-Zachowujemy paletę z obecnej strony blsklegal.com. Kierunek ogólny (na podstawie inspiracji): zimna, stonowana baza (czerń, grafit lub głęboka zieleń/granat), jeden akcent kolorystyczny, dużo białej przestrzeni. Bez ciepłych beży i stockowego złota kojarzącego się z „renomowaną kancelarią".
+Paleta ZMW Legal:
+
+| Token | Wartość | Zastosowanie |
+|---|---|---|
+| crimson | #8C0002 | akcent — CTA, eyebrow labels, numer telefonu, hover |
+| navy | #1a2440 | tekst, tła ciemnych sekcji |
+| bg | #f6f6f4 | tło strony, naprzemienne sekcje |
+| white | #ffffff | tło kart, białe sekcje |
+| border | rgba(26,36,64,.12) | obramowania kart, separatory |
+
+Bez ciepłych beży i stockowego złota kojarzącego się z „renomowaną kancelarią". Bez gradientów.
 
 ## Kierunek typograficzny
 
-Zachowujemy czcionki z obecnej strony. Kierunek: nowoczesna bezszeryfowa jako dominanta (czytelność, technologiczny sznyt) z możliwym szeryfowym akcentem dla nagłówków (klasa, autorytet). Poważna, ale nie skostniała.
+Jeden krój: **PP Neue Montreal** (self-hosted OTF, `context/fonts/`). Wagi: 300, 400, 500, 600. Nowoczesna bezszeryfowa jako dominanta — czytelność i technologiczny sznyt. Szczegółowe role typograficzne: `DESIGN.md`.
 
 ## Zakazy wizualne
 

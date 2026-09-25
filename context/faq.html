@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FAQ — BLSK Legal</title>
+<title>FAQ – ZMW Legal</title>
 <style>
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Thin.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
@@ -32,14 +32,14 @@ body{
 
 /* === NAV === */
 nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
-.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid #e8e8e8}
-.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-logo-link{text-decoration:none;justify-self:start}
 .nav-logo{width:100px;height:30px;background:#d4d4d4;border-radius:3px}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;justify-content:center}
 .nav-links a{font-size:.875rem;font-weight:500;color:#333;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#111}
 .nav-links a.active{font-weight:700;color:#111}
-.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone{text-align:right;justify-self:end}
 .nav-phone-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;line-height:1;margin-bottom:.2rem}
 .nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
 
@@ -202,7 +202,7 @@ footer{background:#111;padding:5rem 0 0}
 }
 @media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
 
-/* PP Neue Montreal — typografia */
+/* PP Neue Montreal – typografia */
 body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
 .h1-hero{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
 .ph-title{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
@@ -217,7 +217,7 @@ body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
 .btn-c .arr{transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .btn-c:hover .arr{transform:rotate(-45deg)}
 
-/* Design system — kolory */
+/* Design system – kolory */
 :root{--crimson:#8C0002;--navy:#1a2440;--bg:#f6f6f4;--border:rgba(26,36,64,.12)}
 body{background:#f6f6f4;color:var(--navy)}
 .lead,.body-text,.stat-lbl,.prac-desc,.step-desc,.cs-desc,.news-exc,.ph-desc{color:var(--navy)}
@@ -229,16 +229,16 @@ body{background:#f6f6f4;color:var(--navy)}
 .btn-c:hover{background:var(--navy);border-color:var(--navy);color:#fff}
 .btn-row-link{color:var(--navy)}
 
-/* Nav — identyczny z design system */
+/* Nav – identyczny z design system */
 nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#f6f6f4;box-shadow:0 1px 0 rgba(26,36,64,.12)}
-.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:none}
-.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-logo-link{text-decoration:none;justify-self:start}
 .nav-logo{width:100px;height:30px;background:#c8c4bc;border-radius:3px}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;justify-content:center}
 .nav-links a{font-family:'PPNeueMontreal',sans-serif;font-size:1rem;font-weight:500;color:var(--navy);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--crimson)}
 .nav-links a.active{font-weight:500;color:var(--crimson)}
-.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone{text-align:right;justify-self:end}
 .nav-phone-label{display:block;font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.2rem}
 .nav-phone-num{display:block;font-size:2rem;font-weight:500;color:var(--crimson);text-decoration:none}
 .nav-dropdown{position:relative}
@@ -313,7 +313,7 @@ footer{background:#0f1628}
 .sec-navy .btn-c{border-color:rgba(255,255,255,.3);color:#fff}
 .sec-navy .btn-c:hover{background:#fff;color:var(--navy);border-color:#fff}
 
-/* Komponenty — wyrównanie do design system */
+/* Komponenty – wyrównanie do design system */
 .page-header{background:#f6f6f4}
 .page-header-inner{padding-top:10vw;padding-bottom:10vw}
 .ph-back{font-family:'PPNeueMontreal',sans-serif;font-size:1.2rem;font-weight:300;color:var(--navy);letter-spacing:.03em}
@@ -336,7 +336,7 @@ footer{background:#0f1628}
 .team-badge{color:rgba(26,36,64,.6);background:rgba(26,36,64,.05);border:none}
 .team-card:hover{box-shadow:0 12px 40px rgba(26,36,64,.08);transform:none}
 
-/* Komponenty — wyrównanie runda 2 */
+/* Komponenty – wyrównanie runda 2 */
 /* Filter bar (nasz zespol) */
 .filter-lbl{color:rgba(26,36,64,.4)}
 .filter-tab{border:1.5px solid rgba(26,36,64,.2);color:var(--navy);background:#f6f6f4;font-family:'PPNeueMontreal',sans-serif}
@@ -380,7 +380,7 @@ footer{background:#0f1628}
 .ph-meta{color:rgba(26,36,64,.5)}
 .article-meta{color:rgba(26,36,64,.4)}
 
-/* Stopka — identyczna z design system */
+/* Stopka – identyczna z design system */
 footer{background:#0f1628;padding:5rem 0 0}
 .footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
 .footer-logo{width:90px;height:27px;background:#2a3555;border-radius:3px;margin-bottom:1.25rem}
@@ -393,35 +393,65 @@ footer{background:#0f1628;padding:5rem 0 0}
 .footer-bottom a{color:rgba(255,255,255,.25);text-decoration:none}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}}
 @media(max-width:600px){.footer-grid{grid-template-columns:1fr}.footer-bottom,.footer-grid,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}}
+
+/* === FAQ — palette + alternating === */
+.faq-section{background:#fff;padding:7rem 0 8rem}
+.cta-sec{background:#f6f6f4}
+.faq-nav-label{color:rgba(26,36,64,.4)}
+.faq-nav-item a{color:rgba(26,36,64,.6)}
+.faq-nav-item a:hover{color:var(--crimson)}
+.faq-nav-item.active a{color:var(--navy);font-weight:500}
+.accordion{border-top-color:var(--border)}
+.acc-item{border-bottom-color:var(--border)}
+.acc-trigger-title{color:var(--navy);font-weight:500}
+.acc-icon{border-color:rgba(26,36,64,.2);color:var(--navy)}
+.acc-trigger.open .acc-icon{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.acc-body p{color:var(--navy)}
+.acc-body strong{color:var(--navy)}
+.acc-body a{color:var(--crimson)}
+
+/* === FAQ — pełne pokrycie kolorów + wagi === */
+.acc-trigger-title{font-weight:500}
+.acc-body p,.acc-body li{color:var(--navy)}
+.acc-body strong{color:var(--navy);font-weight:600}
+.acc-body a{color:var(--crimson)}
+.kt-h2{color:var(--navy);font-weight:500}
+.kt-lead{color:rgba(26,36,64,.6)}
+.faq-nav-item a{color:rgba(26,36,64,.55);text-decoration:none}
+
+/* faq dodatkowe */
+.faq-section-title{color:var(--navy);font-weight:500}
+.acc-trigger-title{font-weight:500}
+.faq-intro{color:var(--navy)}
+@media(max-width:1024px){.faq-section{padding:3rem 0 5rem}}
 </style>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html" class="nav-logo-link">
-      <div class="nav-logo"></div>
+    <a href="strona-glowna.html" class="nav-logo-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
     </a>
     <ul class="nav-links">
-      <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+      <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
       <li class="nav-dropdown">
         <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
         <ul class="nav-drop-menu">
-          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
-          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-          <li><a href="wireframe-digital.html">Digital</a></li>
-          <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+          <li><a href="rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+          <li><a href="life-sciences.html">Life Sciences</a></li>
+          <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+          <li><a href="digital.html">Digital</a></li>
+          <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
         </ul>
       </li>
-      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-      <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
-      <li><a href="wireframe-faq.html" class="active">FAQ</a></li>
-      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+      <li><a href="aktualnosci.html">Aktualności</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
     <div class="nav-phone">
       <span class="nav-phone-label">Zadzwoń teraz</span>
-      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+      <a href="tel:+48223194760" class="nav-phone-num">+48 22 319 47 60</a>
     </div>
     <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
       <span></span><span></span><span></span>
@@ -430,29 +460,28 @@ footer{background:#0f1628;padding:5rem 0 0}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-top">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html"><div class="mobile-menu-logo"></div></a>
+    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
     <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
   </div>
   <ul class="mobile-nav">
-    <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+    <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
     <li>
       <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
       <ul class="mobile-submenu" id="mobileSubmenu">
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </li>
-    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-    <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
-    <li><a href="wireframe-faq.html">FAQ</a></li>
-    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    <li><a href="aktualnosci.html">Aktualności</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
   </ul>
   <div class="mobile-menu-phone">
     <span class="label">Zadzwoń teraz</span>
-    <a href="tel:+48224159800">+48 22 415 98 00</a>
+    <a href="tel:+48223194760">+48 22 319 47 60</a>
   </div>
 </div>
 
@@ -460,11 +489,11 @@ footer{background:#0f1628;padding:5rem 0 0}
 <div class="page-header">
   <div class="page-header-inner">
     <div class="ph-left">
-      <a href="wireframe-home.html" class="ph-back">‹ Strona główna</a>
+      <a href="strona-glowna.html" class="ph-back">‹ Strona główna</a>
       <h1 class="ph-title">FAQ</h1>
     </div>
     <div class="ph-right">
-      <p class="ph-desc">Najczęstsze pytania o współpracę z kancelarią — jak umówić spotkanie, jakie sprawy prowadzimy, jak ustalamy wynagrodzenie.</p>
+      <p class="ph-desc">Najczęstsze pytania o współpracę z kancelarią – jak umówić spotkanie, jakie sprawy prowadzimy, jak ustalamy wynagrodzenie.</p>
     </div>
   </div>
 </div>
@@ -498,19 +527,19 @@ footer{background:#0f1628;padding:5rem 0 0}
             <span class="acc-icon"><span class="acc-arr"></span></span>
           </button>
           <div class="acc-body open">
-            <p>Zapraszamy na spotkania stacjonarne lub online — wyłącznie po wcześniejszym umówieniu terminu. Najszybszy kontakt: telefon <strong><a href="tel:+48224159800">+48 22 415 98 00</a></strong> (dostępny w godzinach 9:30–17:30) lub wiadomość przez formularz kontaktowy na stronie.</p>
+            <p>Zapraszamy na spotkania stacjonarne lub online – wyłącznie po wcześniejszym umówieniu terminu. Najszybszy kontakt: telefon <strong><a href="tel:+48223194760">+48 22 319 47 60</a></strong> (dostępny w godzinach 9:30–17:30) lub wiadomość przez formularz kontaktowy na stronie.</p>
             <p>Po otrzymaniu wiadomości nasz zespół skontaktuje się z Tobą, aby ustalić termin, formę spotkania i właściwego eksperta.</p>
           </div>
         </div>
 
         <div class="acc-item" id="q2">
           <button class="acc-trigger" onclick="toggleAcc(this)">
-            <span class="acc-trigger-title">Czy obsługujecie klientów indywidualnych — osoby prywatne?</span>
+            <span class="acc-trigger-title">Czy obsługujecie klientów indywidualnych – osoby prywatne?</span>
             <span class="acc-icon"><span class="acc-arr"></span></span>
           </button>
           <div class="acc-body">
-            <p>BLSK Legal specjalizuje się przede wszystkim w obsłudze firm i przedsiębiorców — nasze praktyki obejmują spory korporacyjne, prawo farmaceutyczne, dotacje i granty, prawo mediów i technologii oraz spory podatkowe.</p>
-            <p>Chcemy pozostać dostępni dla wszystkich klientów, dlatego zapraszamy do kontaktu — ocenimy, czy Twoja sprawa leży w obszarze naszej specjalizacji i czy możemy Ci pomóc.</p>
+            <p>ZMW Legal specjalizuje się przede wszystkim w obsłudze firm i przedsiębiorców – nasze praktyki obejmują spory korporacyjne, prawo farmaceutyczne, fundusze i pomoc publiczna, prawo mediów i technologii oraz spory podatkowe.</p>
+            <p>Chcemy pozostać dostępni dla wszystkich klientów, dlatego zapraszamy do kontaktu – ocenimy, czy Twoja sprawa leży w obszarze naszej specjalizacji i czy możemy Ci pomóc.</p>
           </div>
         </div>
 
@@ -520,7 +549,7 @@ footer{background:#0f1628;padding:5rem 0 0}
             <span class="acc-icon"><span class="acc-arr"></span></span>
           </button>
           <div class="acc-body">
-            <p>Kancelaria oferuje obsługę w języku <strong>polskim i angielskim</strong>. Wybrani prawnicy posługują się również językiem niemieckim i rosyjskim — poinformuj nas o Twoich preferencjach językowych podczas umawiania spotkania.</p>
+            <p>Kancelaria oferuje obsługę w języku <strong>polskim i angielskim</strong>. Wybrani prawnicy posługują się również językiem niemieckim i rosyjskim – poinformuj nas o Twoich preferencjach językowych podczas umawiania spotkania.</p>
           </div>
         </div>
 
@@ -530,7 +559,7 @@ footer{background:#0f1628;padding:5rem 0 0}
             <span class="acc-icon"><span class="acc-arr"></span></span>
           </button>
           <div class="acc-body">
-            <p>Tak. Prowadzimy spotkania zarówno stacjonarne w siedzibie kancelarii (ul. Mazowiecka 9, IV piętro, Warszawa), jak i online — Microsoft Teams, Zoom lub Google Meet.</p>
+            <p>Tak. Prowadzimy spotkania zarówno stacjonarne w siedzibie kancelarii (ul. Wspólna 47A, III piętro, Warszawa), jak i online – Microsoft Teams, Zoom lub Google Meet.</p>
             <p>Formę spotkania ustalamy indywidualnie przy potwierdzaniu terminu.</p>
           </div>
         </div>
@@ -541,8 +570,8 @@ footer{background:#0f1628;padding:5rem 0 0}
             <span class="acc-icon"><span class="acc-arr"></span></span>
           </button>
           <div class="acc-body">
-            <p>Staramy się odpowiadać na wiadomości tego samego dnia roboczego. Wiadomości wysłane po godzinach pracy lub w weekend — następnego dnia roboczego.</p>
-            <p>Jeśli sprawa jest pilna, zadzwoń: <strong><a href="tel:+48224159800">+48 22 415 98 00</a></strong>, dostępny od 9:30 do 17:30.</p>
+            <p>Staramy się odpowiadać na wiadomości tego samego dnia roboczego. Wiadomości wysłane po godzinach pracy lub w weekend – następnego dnia roboczego.</p>
+            <p>Jeśli sprawa jest pilna, zadzwoń: <strong><a href="tel:+48223194760">+48 22 319 47 60</a></strong>, dostępny od 9:30 do 17:30.</p>
           </div>
         </div>
 
@@ -553,7 +582,7 @@ footer{background:#0f1628;padding:5rem 0 0}
           </button>
           <div class="acc-body">
             <p>Pierwsze spotkanie to rozmowa, podczas której poznajemy Twoją sytuację i potrzeby. Na jej podstawie oceniamy, jakie działania prawne są możliwe, i proponujemy konkretne podejście do sprawy.</p>
-            <p>Przed spotkaniem warto przygotować podstawowe dokumenty związane ze sprawą — pozwoli to na efektywniejszą rozmowę i zaproponowanie realnych rozwiązań.</p>
+            <p>Przed spotkaniem warto przygotować podstawowe dokumenty związane ze sprawą – pozwoli to na efektywniejszą rozmowę i zaproponowanie realnych rozwiązań.</p>
           </div>
         </div>
 
@@ -563,7 +592,7 @@ footer{background:#0f1628;padding:5rem 0 0}
             <span class="acc-icon"><span class="acc-arr"></span></span>
           </button>
           <div class="acc-body">
-            <p>Tak. Siedziba kancelarii znajduje się w Warszawie, ale regularnie obsługujemy klientów z całej Polski oraz z zagranicy — w szczególności firmy działające na rynku polskim lub prowadzące spory z polskimi podmiotami.</p>
+            <p>Tak. Siedziba kancelarii znajduje się w Warszawie, ale regularnie obsługujemy klientów z całej Polski oraz z zagranicy – w szczególności firmy działające na rynku polskim lub prowadzące spory z polskimi podmiotami.</p>
             <p>Spotkania z klientami spoza Warszawy odbywają się zazwyczaj online lub w uzgodnionym miejscu.</p>
           </div>
         </div>
@@ -574,7 +603,7 @@ footer{background:#0f1628;padding:5rem 0 0}
             <span class="acc-icon"><span class="acc-arr"></span></span>
           </button>
           <div class="acc-body">
-            <p>Warunki wynagrodzenia ustalamy indywidualnie, w zależności od rodzaju i złożoności sprawy. Stosujemy różne modele rozliczeń: ryczałt za projekt, stawkę godzinową lub — w wybranych sprawach — wynagrodzenie uzależnione od wyniku.</p>
+            <p>Warunki wynagrodzenia ustalamy indywidualnie, w zależności od rodzaju i złożoności sprawy. Stosujemy różne modele rozliczeń: ryczałt za projekt, stawkę godzinową lub – w wybranych sprawach – wynagrodzenie uzależnione od wyniku.</p>
             <p>Warunki finansowe omawiamy transparentnie na etapie pierwszej rozmowy, przed podjęciem jakichkolwiek działań.</p>
           </div>
         </div>
@@ -590,10 +619,10 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div class="cta-inner">
       <span class="label">Skontaktuj się z nami</span>
       <h2 class="kt-h2">Nie znalazłeś odpowiedzi<br>na swoje pytanie?</h2>
-      <p class="kt-lead">Zadzwoń lub napisz — odpowiemy konkretnie i bez zbędnych formalności.</p>
+      <p class="kt-lead">Zadzwoń lub napisz – odpowiemy konkretnie i bez zbędnych formalności.</p>
       <div class="btn-row" style="justify-content:center">
-        <a href="tel:+48224159800" class="btn-p">+48 22 415 98 00</a>
-        <a href="wireframe-kontakt.html" class="btn-s">Formularz kontaktowy</a>
+        <a href="tel:+48223194760" class="btn-p">+48 22 319 47 60</a>
+        <a href="kontakt.html" class="btn-s">Formularz kontaktowy</a>
       </div>
     </div>
   </div>
@@ -603,41 +632,40 @@ footer{background:#0f1628;padding:5rem 0 0}
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo"></div>
-      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto;margin-bottom:1.25rem" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#f6f6f4">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="rgba(246,246,244,0.5)" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
     </div>
     <div class="footer-col">
       <h4>Praktyki</h4>
       <ul>
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kancelaria</h4>
       <ul>
-        <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
-        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-        <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
-        <li><a href="wireframe-faq.html">FAQ</a></li>
-        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+        <li><a href="nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+        <li><a href="aktualnosci.html">Aktualno&#347;ci</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
-        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="tel:+48223194760">+48 22 319 47 60</a></li>
+        <li><a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 BLSK KOZ&#321;OWSKI I WSP&Oacute;LNICY SP. K.</span>
-    <a href="wireframe-polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
+    <span>&copy; 2026 ZAWADZKA MROWIEC &amp; WSP&Oacute;LNICY SP. K.</span>
+    <a href="polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
   </div>
 </footer>
 

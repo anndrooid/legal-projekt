@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spory Podatkowe — BLSK Legal</title>
+<title>Digital – ZMW Legal</title>
 <style>
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Thin.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
@@ -23,14 +23,14 @@ body{font-family:'PPNeueMontreal',sans-serif;background:#fff;color:#333;font-siz
 .body-text{font-size:1rem;color:#555;line-height:1.8}
 
 nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
-.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid #e8e8e8}
-.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-logo-link{text-decoration:none;justify-self:start}
 .nav-logo{width:100px;height:30px;background:#d4d4d4;border-radius:3px}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;justify-content:center}
 .nav-links a{font-size:.875rem;font-weight:500;color:#333;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#111}
 .nav-links a.active{font-weight:700;color:#111}
-.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone{text-align:right;justify-self:end}
 .nav-phone-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;line-height:1;margin-bottom:.2rem}
 .nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
 
@@ -43,26 +43,24 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 .ph-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:2rem}
 .ph-tag{display:inline-block;padding:.35rem .85rem;border:1px solid #e0e0e0;border-radius:100px;font-size:.72rem;font-weight:500;color:#888}
 
+/* SERVICES – 2-col grid (smaller team, fewer services) */
 .services-section{padding:5rem 0 6rem;background:#f8f8f8}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem}
+.services-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:4rem}
 .service-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:2.5rem 2.25rem 2.75rem;display:flex;flex-direction:column;gap:1rem}
 .service-num{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ccc}
 .service-ico{width:44px;height:44px;background:#e8e8e8;border-radius:10px;flex-shrink:0}
 .service-title{font-size:1.1rem;font-weight:700;color:#111;line-height:1.25;letter-spacing:-.01em}
 .service-desc{font-size:.9rem;color:#666;line-height:1.7;flex:1}
 
-/* FORUMS BAND */
-.forums-band{padding:6rem 0;background:#111}
-.forums-band-inner{max-width:1600px;margin:0 auto;padding:0 3rem}
-.forums-title{font-size:clamp(1.75rem,3vw,2.75rem);font-weight:300;color:#fff;letter-spacing:-.03em;line-height:1.1;max-width:640px;margin-bottom:3.5rem}
-.forums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.forum-item{padding:1.75rem 2rem;background:#1a1a1a;border-radius:12px}
-.forum-abbr{font-size:1.5rem;font-weight:300;color:#fff;letter-spacing:-.03em;margin-bottom:.4rem}
-.forum-name{font-size:.8rem;color:#555;line-height:1.4}
-
 /* APPROACH */
 .approach-band{padding:6rem 0}
 .approach-inner{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center}
+.approach-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.25rem}
+.approach-item{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem 1.5rem;background:#f8f8f8;border-radius:10px}
+.approach-item-ico{width:36px;height:36px;background:#e0e0e0;border-radius:8px;flex-shrink:0;margin-top:.1rem}
+.approach-item-text{}
+.approach-item-title{font-size:.9rem;font-weight:700;color:#111;margin-bottom:.2rem}
+.approach-item-desc{font-size:.83rem;color:#666;line-height:1.6}
 
 .team-section{padding:6rem 0 8rem;background:#f8f8f8}
 .team-grid-2p{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:4rem;max-width:700px}
@@ -73,19 +71,6 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 .team-badge{display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;background:#f5f5f5;padding:.2rem .6rem;border-radius:100px;margin-bottom:.55rem}
 .team-name{font-size:.9rem;font-weight:700;color:#111;margin-bottom:.2rem;line-height:1.2}
 .team-role{font-size:.73rem;color:#888}
-
-.cs-section{padding:6rem 0;background:#fff}
-.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem}
-.cs-card{border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;background:#fff;text-decoration:none;color:inherit;display:block;transition:box-shadow .25s,transform .25s}
-.cs-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.07);transform:translateY(-2px)}
-.cs-thumb{width:100%;aspect-ratio:16/9;background:#ccc;position:relative}
-.cs-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center}
-.cs-play::after{content:'';border-style:solid;border-color:transparent transparent transparent #111;border-width:7px 0 7px 12px;margin-left:2px}
-.cs-body{padding:1.5rem 1.75rem 1.75rem}
-.cs-tag{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:.5rem}
-.cs-title{font-size:1rem;font-weight:700;color:#111;line-height:1.3;margin-bottom:.45rem}
-.cs-desc{font-size:.875rem;color:#666;line-height:1.6}
-
 .btn-p{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.85rem;background:#111;color:#fff;font-size:.9rem;font-weight:600;border-radius:8px;text-decoration:none;border:none;transition:background .2s ease}
 .btn-p:hover{background:#333}
 .btn-s{display:inline-flex;align-items:center;gap:.75rem;padding:.8rem 1.75rem;background:#fff;color:#333;font-size:.9rem;font-weight:500;border-radius:8px;text-decoration:none;border:1.5px solid #ccc;transition:border-color .2s ease}
@@ -102,7 +87,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 .btn-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 .row-between{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem}
 
-.cta-sec{background:#f5f5f5}
+.cta-sec{background:#f6f6f4}
 .cta-sec .wrap{padding-top:8rem;padding-bottom:8rem}
 .cta-inner{max-width:760px;margin:0 auto;text-align:center}
 .kt-h2{font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;color:#111;letter-spacing:-.03em;line-height:1.08;margin-bottom:1.25rem}
@@ -157,20 +142,16 @@ footer{background:#111;padding:5rem 0 0}
 @media(max-width:1200px){
   .nav-links{display:none}
   .page-header-inner{grid-template-columns:1fr;gap:3rem}
-  .services-grid{grid-template-columns:repeat(2,1fr)}
-  .forums-grid{grid-template-columns:repeat(2,1fr)}
   .approach-inner{grid-template-columns:1fr;gap:4rem}
-  .cs-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}
   .nav-hamburger{display:flex}
   .nav-phone{display:none}
 }
 @media(max-width:768px){
-  .wrap,.page-header-inner,.forums-band-inner,.footer-grid,.footer-bottom,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}
+  .wrap,.page-header-inner,.footer-grid,.footer-bottom,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}
   .page-header-inner{padding-top:5rem;padding-bottom:4rem}
-  .services-grid,.cs-grid,.forums-grid{grid-template-columns:1fr}
+  .services-grid-2{grid-template-columns:1fr}
   .team-grid-2p{grid-template-columns:1fr;max-width:100%}
-  .team-grid-2{grid-template-columns:1fr;max-width:100%}
   .footer-grid{grid-template-columns:1fr}
   .cta-sec .wrap{padding-top:5rem;padding-bottom:5rem}
   html,body{overflow-x:hidden}
@@ -180,7 +161,7 @@ footer{background:#111;padding:5rem 0 0}
 }
 @media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
 
-/* PP Neue Montreal — typografia */
+/* PP Neue Montreal – typografia */
 body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
 .h1-hero{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
 .ph-title{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
@@ -189,16 +170,16 @@ body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
 .h3-card{font-weight:500;letter-spacing:-.015em}
 .stat-num{font-weight:400;letter-spacing:-.015em}
 .label{font-weight:300}
-.prac-name,.step-title,.team-name,.cs-title,.news-title{font-weight:600}
+.prac-name,.step-title,.team-name,.news-title{font-weight:600}
 .btn-row-link,.nav-phone-num{font-weight:500}
 .btn-c{transition:background .5s,border-color .5s,color .5s}
 .btn-c .arr{transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .btn-c:hover .arr{transform:rotate(-45deg)}
 
-/* Design system — kolory */
+/* Design system – kolory */
 :root{--crimson:#8C0002;--navy:#1a2440;--bg:#f6f6f4;--border:rgba(26,36,64,.12)}
 body{background:#f6f6f4;color:var(--navy)}
-.lead,.body-text,.stat-lbl,.prac-desc,.step-desc,.cs-desc,.news-exc,.ph-desc{color:var(--navy)}
+.lead,.body-text,.stat-lbl,.prac-desc,.step-desc,.news-exc,.ph-desc{color:var(--navy)}
 .h1-hero,.h2-sec,.h3-card,.ph-title,.kt-h2,.stat-num{color:var(--navy)}
 .label{color:var(--crimson)}
 .btn-p{background:var(--crimson);color:#fff}
@@ -207,16 +188,16 @@ body{background:#f6f6f4;color:var(--navy)}
 .btn-c:hover{background:var(--navy);border-color:var(--navy);color:#fff}
 .btn-row-link{color:var(--navy)}
 
-/* Nav — identyczny z design system */
+/* Nav – identyczny z design system */
 nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#f6f6f4;box-shadow:0 1px 0 rgba(26,36,64,.12)}
-.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:none}
-.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-logo-link{text-decoration:none;justify-self:start}
 .nav-logo{width:100px;height:30px;background:#c8c4bc;border-radius:3px}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;justify-content:center}
 .nav-links a{font-family:'PPNeueMontreal',sans-serif;font-size:1rem;font-weight:500;color:var(--navy);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--crimson)}
 .nav-links a.active{font-weight:500;color:var(--crimson)}
-.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone{text-align:right;justify-self:end}
 .nav-phone-label{display:block;font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.2rem}
 .nav-phone-num{display:block;font-size:2rem;font-weight:500;color:var(--crimson);text-decoration:none}
 .nav-dropdown{position:relative}
@@ -263,11 +244,9 @@ footer{background:#0f1628}
 .footer-bottom a{color:rgba(255,255,255,.25)}
 
 /* Cards i elementy */
-.news-card,.team-card,.cs-card,.prac-card,.service-card{border-color:var(--border);background:#fff}
+.news-card,.team-card,.prac-card,.service-card{border-color:var(--border);background:#fff}
 .news-date{color:var(--crimson)}
 .news-title,.news-exc{color:var(--navy)}
-.cs-tag{color:var(--crimson)}
-.cs-title,.cs-desc{color:var(--navy)}
 .team-name{color:var(--navy)}
 .team-role{color:var(--crimson)}
 .team-badge{color:var(--navy);background:rgba(26,36,64,.06)}
@@ -291,7 +270,7 @@ footer{background:#0f1628}
 .sec-navy .btn-c{border-color:rgba(255,255,255,.3);color:#fff}
 .sec-navy .btn-c:hover{background:#fff;color:var(--navy);border-color:#fff}
 
-/* Komponenty — wyrównanie do design system */
+/* Komponenty – wyrównanie do design system */
 .page-header{background:#f6f6f4}
 .page-header-inner{padding-top:10vw;padding-bottom:10vw}
 .ph-back{font-family:'PPNeueMontreal',sans-serif;font-size:1.2rem;font-weight:300;color:var(--navy);letter-spacing:.03em}
@@ -314,7 +293,7 @@ footer{background:#0f1628}
 .team-badge{color:rgba(26,36,64,.6);background:rgba(26,36,64,.05);border:none}
 .team-card:hover{box-shadow:0 12px 40px rgba(26,36,64,.08);transform:none}
 
-/* Komponenty — wyrównanie runda 2 */
+/* Komponenty – wyrównanie runda 2 */
 /* Filter bar (nasz zespol) */
 .filter-lbl{color:rgba(26,36,64,.4)}
 .filter-tab{border:1.5px solid rgba(26,36,64,.2);color:var(--navy);background:#f6f6f4;font-family:'PPNeueMontreal',sans-serif}
@@ -332,10 +311,6 @@ footer{background:#0f1628}
 .btn-s{background:#f6f6f4;color:var(--navy);border-color:rgba(26,36,64,.2)}
 .btn-s:hover{border-color:var(--crimson);color:var(--crimson)}
 /* Case study cards */
-.cs-tag{color:rgba(26,36,64,.4)}
-.cs-title{color:var(--navy)}
-.cs-desc{color:var(--navy)}
-.cs-card{background:#f6f6f4;border-color:rgba(26,36,64,.1)}
 /* News / Aktualnosci */
 .news-tag{color:var(--crimson)}
 .news-title{color:var(--navy)}
@@ -358,7 +333,7 @@ footer{background:#0f1628}
 .ph-meta{color:rgba(26,36,64,.5)}
 .article-meta{color:rgba(26,36,64,.4)}
 
-/* Stopka — identyczna z design system */
+/* Stopka – identyczna z design system */
 footer{background:#0f1628;padding:5rem 0 0}
 .footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
 .footer-logo{width:90px;height:27px;background:#2a3555;border-radius:3px;margin-bottom:1.25rem}
@@ -372,49 +347,41 @@ footer{background:#0f1628;padding:5rem 0 0}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}}
 @media(max-width:600px){.footer-grid{grid-template-columns:1fr}.footer-bottom,.footer-grid,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}}
 
-/* Spory podatkowe — paleta i tla */
+/* Digital – paleta i tla */
 .services-section{background:#fff}
 .service-card{background:#fff}
 .service-ico{display:flex;align-items:center;justify-content:center;color:var(--navy)}
-.forums-band{background:#1a2440}
-.forum-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px}
-.forums-title{color:rgba(255,255,255,.9)}
-.forum-abbr{color:#f6f6f4}
-.forum-name{color:rgba(255,255,255,.5)}
 .approach-band{background:#f6f6f4}
+.approach-item-ico{display:flex;align-items:center;justify-content:center;color:var(--navy)}
 .team-section{background:#fff}
 .team-photo{background:rgba(26,36,64,.12)}
-.cs-section{background:#f6f6f4}
-.cs-thumb{background:rgba(26,36,64,.1)}
-.cs-play::after{border-left-color:var(--navy)}
-.cta-sec{background:#fff}
+.cta-sec{background:#f6f6f4}
 </style>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html" class="nav-logo-link"><div class="nav-logo"></div></a>
+    <a href="strona-glowna.html" class="nav-logo-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
     <ul class="nav-links">
-      <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+      <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
       <li class="nav-dropdown nav-dropdown-active">
         <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
         <ul class="nav-drop-menu">
-          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
-          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-          <li><a href="wireframe-digital.html">Digital</a></li>
-          <li><a href="wireframe-spory-podatkowe.html" class="active">Spory Podatkowe</a></li>
+          <li><a href="rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+          <li><a href="life-sciences.html">Life Sciences</a></li>
+          <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+          <li><a href="digital.html" class="active">Digital</a></li>
+          <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
         </ul>
       </li>
-      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-      <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
-      <li><a href="wireframe-faq.html">FAQ</a></li>
-      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+      <li><a href="aktualnosci.html">Aktualności</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
     <div class="nav-phone">
       <span class="nav-phone-label">Zadzwoń teraz</span>
-      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+      <a href="tel:+48223194760" class="nav-phone-num">+48 22 319 47 60</a>
     </div>
     <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
       <span></span><span></span><span></span>
@@ -423,47 +390,46 @@ footer{background:#0f1628;padding:5rem 0 0}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-top">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html"><div class="mobile-menu-logo"></div></a>
+    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
     <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
   </div>
   <ul class="mobile-nav">
-    <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+    <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
     <li>
       <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
       <ul class="mobile-submenu" id="mobileSubmenu">
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </li>
-    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-    <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
-    <li><a href="wireframe-faq.html">FAQ</a></li>
-    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    <li><a href="aktualnosci.html">Aktualności</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
   </ul>
   <div class="mobile-menu-phone">
     <span class="label">Zadzwoń teraz</span>
-    <a href="tel:+48224159800">+48 22 415 98 00</a>
+    <a href="tel:+48223194760">+48 22 319 47 60</a>
   </div>
 </div>
 
 <div class="page-header">
   <div class="page-header-inner">
     <div>
-      <a href="wireframe-home.html" class="ph-back">‹ Praktyki</a>
-      <h1 class="ph-title">Spory Podatkowe</h1>
+      <a href="strona-glowna.html" class="ph-back">‹ Praktyki</a>
+      <h1 class="ph-title">Digital</h1>
     </div>
     <div>
-      <p class="ph-desc">Wspieramy klientów na każdym etapie kontroli podatkowych, celno-skarbowych i postępowań podatkowych. Reprezentacja przed sądami administracyjnymi, KAS, Trybunałem Sprawiedliwości UE i Komisją Europejską.</p>
-      <p class="ph-desc" style="margin-top:1.5rem">Specjalizujemy się w złożonych sporach z organami podatkowymi — szukamy nieszablonowych rozwiązań i mamy doświadczenie w przełomowych wyrokach NSA, TK i TSUE.</p>
+      <p class="ph-desc">Doradztwo prawne dla podmiotów działających w obszarze telekomunikacji, ochrony danych, mediów, e-commerce i sztucznej inteligencji.</p>
+      <p class="ph-desc" style="margin-top:1.5rem">Łączymy wiedzę prawną z praktycznym rozumieniem realiów technologii, mediów i telekomunikacji – wspieramy na każdym etapie budowania i wdrażania produktów cyfrowych.</p>
       <div class="ph-tags">
-        <span class="ph-tag">Kontrole podatkowe</span>
-        <span class="ph-tag">Postępowania KAS</span>
-        <span class="ph-tag">NSA i WSA</span>
-        <span class="ph-tag">TSUE</span>
-        <span class="ph-tag">Postępowania karno-skarbowe</span>
+        <span class="ph-tag">Media i film</span>
+        <span class="ph-tag">Telekomunikacja</span>
+        <span class="ph-tag">E-commerce</span>
+        <span class="ph-tag">Sztuczna inteligencja</span>
+        <span class="ph-tag">Ochrona danych</span>
       </div>
     </div>
   </div>
@@ -477,88 +443,36 @@ footer{background:#0f1628;padding:5rem 0 0}
         <h2 class="h2-sec">Jak możemy pomóc</h2>
       </div>
     </div>
-    <div class="services-grid">
+    <div class="services-grid-2">
 
       <div class="service-card">
         <div class="service-num">01</div>
-        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="8" x2="1" y2="14"/><line x1="4" y1="8" x2="7" y2="14"/><path d="M1 14q3 4 6 0"/><line x1="20" y1="8" x2="17" y2="14"/><line x1="20" y1="8" x2="23" y2="14"/><path d="M17 14q3 4 6 0"/></svg></div>
-        <p class="service-title">Strategia sporu</p>
-        <p class="service-desc">Opracowujemy strategię prowadzenia sporu podatkowego — nieszablonową i dopasowaną do Twojej sprawy. Mamy doświadczenie w sprawach, które tworzyły przełomowe wyroki NSA, TK i TSUE.</p>
+        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="17" y1="7" x2="22" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/></svg></div>
+        <p class="service-title">Sektor mediów i film</p>
+        <p class="service-desc">Doradztwo prawne dla podmiotów medialnych – zarządzanie prawami autorskimi i własnością intelektualną w produkcjach krajowych i międzynarodowych. Doświadczenie przy produkcjach uhonorowanych Oscarem: „The Zone of Interest" i „A Real Pain".</p>
       </div>
 
       <div class="service-card">
         <div class="service-num">02</div>
-        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-        <p class="service-title">Kontrole podatkowe</p>
-        <p class="service-desc">Reprezentacja podczas czynności sprawdzających, kontroli podatkowych i celno-skarbowych. Przygotowujemy Cię do kontroli, asystujemy podczas czynności i formułujemy wyjaśnienia i zastrzeżenia.</p>
+        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M10.54 16.1a6 6 0 012.92 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+        <p class="service-title">Telekomunikacja i technologia</p>
+        <p class="service-desc">Doradztwo dla podmiotów technologicznych i telekomunikacyjnych w zakresie zgodności z prawem UE i międzynarodowym. Własność intelektualna, nowe technologie, sztuczna inteligencja i AI Act.</p>
       </div>
 
       <div class="service-card">
         <div class="service-num">03</div>
-        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 12 3 21 9"/><path d="M3 9v12h18V9"/><line x1="7" y1="13" x2="7" y2="21"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="17" y1="13" x2="17" y2="21"/></svg></div>
-        <p class="service-title">Postępowania podatkowe</p>
-        <p class="service-desc">Reprezentacja przed Krajową Administracją Skarbową, sądami administracyjnymi (WSA i NSA), Trybunałem Konstytucyjnym i TSUE w sprawach wymiarowych, zwrotach podatku i odpowiedzialności osób trzecich.</p>
+        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
+        <p class="service-title">Platformy e-commerce</p>
+        <p class="service-desc">Doradztwo dla platform e-commerce działających na rynkach krajowych i międzynarodowych. Analiza compliance produktowego w wielu jurysdykcjach – prawo konsumenckie, produktowe, handlowe i informacyjne.</p>
       </div>
 
       <div class="service-card">
         <div class="service-num">04</div>
-        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <p class="service-title">Wsparcie członków zarządu</p>
-        <p class="service-desc">Doradzamy zarządom spółek kapitałowych w zarządzaniu odpowiedzialnością karno-skarbową i majątkową. Analizujemy ryzyka, opracowujemy strategie ochrony i reprezentujemy w postępowaniach.</p>
+        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <p class="service-title">Nadawcy, operatorzy i firmy IT</p>
+        <p class="service-desc">Wsparcie transformacji cyfrowej: wdrażanie innowacyjnych technologii, alokacja częstotliwości radiowych, inwestycje w infrastrukturę szerokopasmową, koordynacja z regulatorami i organami administracji publicznej.</p>
       </div>
 
-      <div class="service-card">
-        <div class="service-num">05</div>
-        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-        <p class="service-title">Ryzyka podatkowe i osobiste</p>
-        <p class="service-desc">Doradztwo w ocenie i zarządzaniu ryzykiem podatkowym podatników oraz ryzykiem karno-skarbowym osób fizycznych. Identyfikujemy zagrożenia i opracowujemy strategię ich minimalizacji.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-num">06</div>
-        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <p class="service-title">Postępowania karno-skarbowe</p>
-        <p class="service-desc">Reprezentacja w sprawach karno-skarbowych na każdym etapie — od postępowania przygotowawczego przez sąd rejonowy. Obrona osób fizycznych i podmiotów zbiorowych w postępowaniach karnoskarbowych.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-num">07</div>
-        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></div>
-        <p class="service-title">Procedury podatkowe</p>
-        <p class="service-desc">Tworzymy i wdrażamy wewnętrzne procedury podatkowe minimalizujące ryzyko sporu z organami. Polityki cen transferowych, dokumentacje TPR i inne obowiązki sprawozdawcze.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-num">08</div>
-        <div class="service-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>
-        <p class="service-title">Współpraca z organami podatkowymi</p>
-        <p class="service-desc">Doradztwo w interpretacjach indywidualnych, opiniach zabezpieczających, uprzednich porozumieniach cenowych (APA) i programach współdziałania z Krajową Administracją Skarbową.</p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="forums-band">
-  <div class="forums-band-inner">
-    <p class="forums-title">Reprezentujemy klientów przed najwyższymi organami podatkowymi w Polsce i Europie.</p>
-    <div class="forums-grid">
-      <div class="forum-item">
-        <p class="forum-abbr">KAS</p>
-        <p class="forum-name">Krajowa Administracja Skarbowa — wszystkie szczeble</p>
-      </div>
-      <div class="forum-item">
-        <p class="forum-abbr">WSA / NSA</p>
-        <p class="forum-name">Wojewódzkie i Naczelny Sąd Administracyjny</p>
-      </div>
-      <div class="forum-item">
-        <p class="forum-abbr">TSUE / SądUE</p>
-        <p class="forum-name">Trybunał Sprawiedliwości UE i Sąd UE w Luksemburgu</p>
-      </div>
-      <div class="forum-item">
-        <p class="forum-abbr">TK / KE</p>
-        <p class="forum-name">Trybunał Konstytucyjny i Komisja Europejska</p>
-      </div>
     </div>
   </div>
 </div>
@@ -567,13 +481,34 @@ footer{background:#0f1628;padding:5rem 0 0}
   <div class="wrap">
     <div class="approach-inner">
       <div>
-        <span class="label">Nasze podejście</span>
-        <h2 class="h2-sec">Ponad 20 lat doświadczenia. Przełomowe wyroki na najwyższych forach.</h2>
-        <p class="lead" style="margin-top:2rem">Aleksandra Rutkowska specjalizuje się w kontrolach podatkowych, celno-skarbowych i postępowaniach podatkowych od ponad 20 lat. Jej sprawy tworzyły precedensowe rozstrzygnięcia NSA i TSUE.</p>
+        <span class="label">Nasze doświadczenie</span>
+        <h2 class="h2-sec">Prawo dla sektora cyfrowego – od studia filmowego po regulatora AI.</h2>
+        <p class="lead" style="margin-top:2rem">Nasze doświadczenie obejmuje produkcje filmowe uhonorowane Oscarem, regulacje telekomunikacyjne, compliance GDPR i doradztwo w zakresie AI Act dla podmiotów wdrażających systemy sztucznej inteligencji.</p>
       </div>
       <div>
-        <p class="body-text" style="margin-bottom:1.5rem">Nie jesteśmy tylko pełnomocnikami procesowymi — doradzamy strategicznie od pierwszego sygnału ryzyka. Pomagamy wybrać właściwą ścieżkę: interpretacja, porozumienie cenowe, program współdziałania z KAS lub agresywna linia obrony w postępowaniu spornym.</p>
-        <p class="body-text">Specjalizujemy się w sprawach, w których standardowe podejście nie wystarcza — złożone struktury korporacyjne, transakcje transgraniczne, rozliczenia cen transferowych i postępowania karno-skarbowe dla zarządów.</p>
+        <div class="approach-list">
+          <div class="approach-item">
+            <div class="approach-item-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="approach-item-text">
+              <p class="approach-item-title">Ponad 15 lat w Digital</p>
+              <p class="approach-item-desc">Lider praktyki specjalizuje się w mediach, technologii, telekomunikacji i usługach cyfrowych od ponad 15 lat.</p>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="approach-item-text">
+              <p class="approach-item-title">Produkcje filmowe klasy światowej</p>
+              <p class="approach-item-desc">Doświadczenie przy produkcjach wyróżnionych Oscarem – „The Zone of Interest" i „A Real Pain".</p>
+            </div>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
+            <div class="approach-item-text">
+              <p class="approach-item-title">Regulacje AI i nowe technologie</p>
+              <p class="approach-item-desc">Doradzamy w zakresie AI Act, GDPR i cyfrowych regulacji UE – od compliance po spory z organami.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -584,21 +519,25 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div class="row-between" style="margin-bottom:4rem">
       <div>
         <span class="label">Nasz zespół</span>
-        <h2 class="h2-sec">Prawnicy specjalizujący się<br>w Sporach Podatkowych</h2>
+        <h2 class="h2-sec">Prawnicy specjalizujący się<br>w Digital</h2>
       </div>
-      <a href="wireframe-nasz-zespol.html" class="btn-row-link">
+      <a href="nasz-zespol.html" class="btn-row-link">
         Cały zespół
         <span class="btn-c"><span class="arr"></span></span>
       </a>
     </div>
+    <!-- Praktyka Digital – mały, wyspecjalizowany zespół -->
+    <p style="max-width:640px;font-size:1rem;color:#666;line-height:1.75;margin-bottom:3rem">Butikowy zespół z głęboką specjalizacją w regulacjach cyfrowych – telekomunikacja, ochrona danych, AI Act, e-commerce i prawo medialne. Pracujemy z operatorami, nadawcami, spółkami tech i e-commerce.</p>
+
     <div class="team-grid-2p">
 
       <div class="team-card">
         <div class="team-photo"></div>
         <div class="team-body">
           <span class="team-badge">Lider praktyki</span>
-          <p class="team-name">Aleksandra Rutkowska</p>
-          <p class="team-role">Partner · Radca prawny</p>
+          <p class="team-name">Tomasz Nowicki</p>
+          <p class="team-role">Partner</p>
+          <p style="font-size:.8rem;color:#666;line-height:1.6;margin-top:.55rem">Telekomunikacja, ochrona danych osobowych, regulacje medialne, AI Act.</p>
           <a href="#" class="btn-row-link" style="font-size:.8rem;gap:.4rem;margin-top:.85rem">Profil <span class="btn-c btn-c-sm"><span class="arr"></span></span></a>
         </div>
       </div>
@@ -606,67 +545,25 @@ footer{background:#0f1628;padding:5rem 0 0}
       <div class="team-card">
         <div class="team-photo"></div>
         <div class="team-body">
-          <span class="team-badge" style="opacity:0">—</span>
-          <p class="team-name">Aleksander Brzozowski</p>
+          <span class="team-badge">Digital</span>
+          <p class="team-name">Piotr Zając</p>
           <p class="team-role">Counsel</p>
+          <p style="font-size:.8rem;color:#666;line-height:1.6;margin-top:.55rem">E-commerce, nadawcy i spółki IT, kontrakty technologiczne, RODO.</p>
           <a href="#" class="btn-row-link" style="font-size:.8rem;gap:.4rem;margin-top:.85rem">Profil <span class="btn-c btn-c-sm"><span class="arr"></span></span></a>
         </div>
       </div>
 
     </div>
   </div>
-</div>
-
-<div class="cs-section">
-  <div class="wrap">
-    <div class="row-between" style="margin-bottom:0">
-      <div>
-        <span class="label">Corpo Snap</span>
-        <h2 class="h2-sec">Prawo podatkowe wyjaśnione konkretnie</h2>
-      </div>
-      <a href="wireframe-corpo-snap.html" class="btn-row-link">
-        Wszystkie odcinki
-        <span class="btn-c"><span class="arr"></span></span>
-      </a>
-    </div>
-    <div class="cs-grid">
-      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
-        <div class="cs-thumb"><div class="cs-play"></div></div>
-        <div class="cs-body">
-          <p class="cs-tag">Odcinek 30 · Spory Podatkowe</p>
-          <p class="cs-title">Kontrola podatkowa — jak się przygotować i co robić w jej trakcie</p>
-          <p class="cs-desc">Prawa podatnika, przebieg kontroli, najczęstsze błędy i jak reagować na protokół pokontrolny.</p>
-        </div>
-      </a>
-      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
-        <div class="cs-thumb"><div class="cs-play"></div></div>
-        <div class="cs-body">
-          <p class="cs-tag">Odcinek 27 · Spory Podatkowe</p>
-          <p class="cs-title">NSA vs WSA — różnice i jak skutecznie zaskarżyć decyzję organu</p>
-          <p class="cs-desc">Tryb odwoławczy w sprawach podatkowych: kiedy do WSA, kiedy kasacja do NSA i ile to trwa.</p>
-        </div>
-      </a>
-      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
-        <div class="cs-thumb"><div class="cs-play"></div></div>
-        <div class="cs-body">
-          <p class="cs-tag">Odcinek 21 · Spory Podatkowe</p>
-          <p class="cs-title">Odpowiedzialność karno-skarbowa zarządu — kiedy ryzykujesz prywatnym majątkiem</p>
-          <p class="cs-desc">Art. 116 Ordynacji i KKS — przesłanki odpowiedzialności i jak zarząd może się chronić.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="cta-sec">
+</div><div class="cta-sec">
   <div class="wrap">
     <div class="cta-inner">
       <span class="label">Skontaktuj się z nami</span>
-      <h2 class="kt-h2">Kontrola podatkowa lub spór z organem?</h2>
-      <p class="kt-lead">Im wcześniej wejdziemy do sprawy, tym lepiej. Zadzwoń lub napisz — umawiamy spotkania stacjonarne i online.</p>
+      <h2 class="kt-h2">Pytania o prawo cyfrowe, media lub telekomunikację?</h2>
+      <p class="kt-lead">Rozmawiamy konkretnie i bez zbędnych formalności. Zadzwoń lub napisz – umawiamy spotkania stacjonarne i online.</p>
       <div class="btn-row" style="justify-content:center">
-        <a href="tel:+48224159800" class="btn-p">+48 22 415 98 00</a>
-        <a href="wireframe-kontakt.html" class="btn-s">Formularz kontaktowy</a>
+        <a href="tel:+48223194760" class="btn-p">+48 22 319 47 60</a>
+        <a href="kontakt.html" class="btn-s">Formularz kontaktowy</a>
       </div>
     </div>
   </div>
@@ -675,41 +572,40 @@ footer{background:#0f1628;padding:5rem 0 0}
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo"></div>
-      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto;margin-bottom:1.25rem" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#f6f6f4">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="rgba(246,246,244,0.5)" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
     </div>
     <div class="footer-col">
       <h4>Praktyki</h4>
       <ul>
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kancelaria</h4>
       <ul>
-        <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
-        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-        <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
-        <li><a href="wireframe-faq.html">FAQ</a></li>
-        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+        <li><a href="nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+        <li><a href="aktualnosci.html">Aktualno&#347;ci</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
-        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="tel:+48223194760">+48 22 319 47 60</a></li>
+        <li><a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 BLSK KOZ&#321;OWSKI I WSP&Oacute;LNICY SP. K.</span>
-    <a href="wireframe-polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
+    <span>&copy; 2026 ZAWADZKA MROWIEC &amp; WSP&Oacute;LNICY SP. K.</span>
+    <a href="polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
   </div>
 </footer>
 

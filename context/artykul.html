@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BLSK w rankingu Chambers Europe 2024 — Aktualności — BLSK Legal</title>
+<title>ZMW Legal w rankingu Chambers Europe 2024 – Aktualności – ZMW Legal</title>
 <style>
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Thin.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
@@ -32,14 +32,14 @@ body{
 
 /* === NAV === */
 nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
-.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid #e8e8e8}
-.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-logo-link{text-decoration:none;justify-self:start}
 .nav-logo{width:100px;height:30px;background:#d4d4d4;border-radius:3px}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;justify-content:center}
 .nav-links a{font-size:.875rem;font-weight:500;color:#333;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#111}
 .nav-links a.active{font-weight:700;color:#111}
-.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone{text-align:right;justify-self:end}
 .nav-phone-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;line-height:1;margin-bottom:.2rem}
 .nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
 
@@ -249,7 +249,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 .more-date{font-size:.72rem;color:#bbb}
 
 /* === FOOTER === */
-footer{background:#111;padding:5rem 0 0;border-top:1px solid #333}
+footer{background:var(--navy);padding:5rem 0 0}
 .footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
 .footer-logo{width:90px;height:27px;background:#383838;border-radius:3px;margin-bottom:1.25rem}
 .footer-desc{font-size:.9rem;color:#555;line-height:1.7}
@@ -327,7 +327,7 @@ footer{background:#111;padding:5rem 0 0;border-top:1px solid #333}
 }
 @media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
 
-/* PP Neue Montreal — typografia */
+/* PP Neue Montreal – typografia */
 body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
 .h1-hero{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
 .ph-title{font-weight:500;letter-spacing:-.015em;transform:scaleX(1.04);transform-origin:left center;display:block}
@@ -342,7 +342,7 @@ body{font-family:'PPNeueMontreal',sans-serif;letter-spacing:.03em}
 .btn-c .arr{transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .btn-c:hover .arr{transform:rotate(-45deg)}
 
-/* Design system — kolory */
+/* Design system – kolory */
 :root{--crimson:#8C0002;--navy:#1a2440;--bg:#f6f6f4;--border:rgba(26,36,64,.12)}
 body{background:#f6f6f4;color:var(--navy)}
 .lead,.body-text,.stat-lbl,.prac-desc,.step-desc,.cs-desc,.news-exc,.ph-desc{color:var(--navy)}
@@ -354,16 +354,16 @@ body{background:#f6f6f4;color:var(--navy)}
 .btn-c:hover{background:var(--navy);border-color:var(--navy);color:#fff}
 .btn-row-link{color:var(--navy)}
 
-/* Nav — identyczny z design system */
+/* Nav – identyczny z design system */
 nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#f6f6f4;box-shadow:0 1px 0 rgba(26,36,64,.12)}
-.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:none}
-.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-logo-link{text-decoration:none;justify-self:start}
 .nav-logo{width:100px;height:30px;background:#c8c4bc;border-radius:3px}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;justify-content:center}
 .nav-links a{font-family:'PPNeueMontreal',sans-serif;font-size:1rem;font-weight:500;color:var(--navy);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--crimson)}
 .nav-links a.active{font-weight:500;color:var(--crimson)}
-.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone{text-align:right;justify-self:end}
 .nav-phone-label{display:block;font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.2rem}
 .nav-phone-num{display:block;font-size:2rem;font-weight:500;color:var(--crimson);text-decoration:none}
 .nav-dropdown{position:relative}
@@ -438,7 +438,7 @@ footer{background:#0f1628}
 .sec-navy .btn-c{border-color:rgba(255,255,255,.3);color:#fff}
 .sec-navy .btn-c:hover{background:#fff;color:var(--navy);border-color:#fff}
 
-/* Komponenty — wyrównanie do design system */
+/* Komponenty – wyrównanie do design system */
 .page-header{background:#f6f6f4}
 .page-header-inner{padding-top:10vw;padding-bottom:10vw}
 .ph-back{font-family:'PPNeueMontreal',sans-serif;font-size:1.2rem;font-weight:300;color:var(--navy);letter-spacing:.03em}
@@ -461,7 +461,7 @@ footer{background:#0f1628}
 .team-badge{color:rgba(26,36,64,.6);background:rgba(26,36,64,.05);border:none}
 .team-card:hover{box-shadow:0 12px 40px rgba(26,36,64,.08);transform:none}
 
-/* Komponenty — wyrównanie runda 2 */
+/* Komponenty – wyrównanie runda 2 */
 /* Filter bar (nasz zespol) */
 .filter-lbl{color:rgba(26,36,64,.4)}
 .filter-tab{border:1.5px solid rgba(26,36,64,.2);color:var(--navy);background:#f6f6f4;font-family:'PPNeueMontreal',sans-serif}
@@ -505,7 +505,7 @@ footer{background:#0f1628}
 .ph-meta{color:rgba(26,36,64,.5)}
 .article-meta{color:rgba(26,36,64,.4)}
 
-/* Stopka — identyczna z design system */
+/* Stopka – identyczna z design system */
 footer{background:#0f1628;padding:5rem 0 0}
 .footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
 .footer-logo{width:90px;height:27px;background:#2a3555;border-radius:3px;margin-bottom:1.25rem}
@@ -518,35 +518,105 @@ footer{background:#0f1628;padding:5rem 0 0}
 .footer-bottom a{color:rgba(255,255,255,.25);text-decoration:none}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:3rem;padding-bottom:3rem}}
 @media(max-width:600px){.footer-grid{grid-template-columns:1fr}.footer-bottom,.footer-grid,.nav-inner{padding-left:1.5rem;padding-right:1.5rem}}
+
+/* === ARTYKUŁ — palette + alternating === */
+.art-header{background:#f6f6f4}
+.more-section{background:#f6f6f4}
+.art-meta-lbl{color:rgba(26,36,64,.4)}
+.art-meta-val{color:var(--navy)}
+.art-hero-img{background:rgba(26,36,64,.12)}
+.art-body li{color:var(--navy)}
+.art-body strong{color:var(--navy)}
+.art-body a{color:var(--crimson)}
+.sidebar-cta{background:#f6f6f4;border-color:var(--border)}
+.related-cat,.more-cat{color:rgba(26,36,64,.4)}
+.related-title,.more-title{color:var(--navy)}
+.related-date,.more-date{color:rgba(26,36,64,.35)}
+.share-lbl{color:rgba(26,36,64,.4)}
+.share-btn{border-color:var(--border);color:var(--navy)}
+.share-btn:hover{border-color:var(--navy);color:var(--navy)}
+.person-photo{background:rgba(26,36,64,.12)}
+.person-name{color:var(--navy)}
+.person-role{color:rgba(26,36,64,.5)}
+.more-img{background:rgba(26,36,64,.12)}
+
+/* === ARTYKUŁ — pełne pokrycie kolorów === */
+.art-title{color:var(--navy);font-weight:500}
+.art-body li,.art-body p{color:var(--navy)}
+.art-body strong{color:var(--navy);font-weight:600}
+.art-body a{color:var(--crimson)}
+.art-body blockquote{border-left-color:var(--crimson);color:var(--navy)}
+.share-btn{border-color:var(--border);color:var(--navy)}
+.share-btn:hover{border-color:var(--navy);color:var(--navy)}
+.related-title{font-weight:500}
+.more-title{font-weight:500}
+.kt-lead{color:rgba(26,36,64,.6)}
+
+/* === ARTYKUŁ — kompletne kolory i fonty === */
+/* Header */
+.art-cat-label{color:var(--crimson)}
+.art-title{color:var(--navy);font-weight:300}
+.art-lead{color:var(--navy)}
+/* Body headings */
+.art-body h2{color:var(--navy);font-weight:500}
+.art-body h3{color:var(--navy);font-weight:500}
+.art-body p{color:var(--navy)}
+/* Lead paragraph */
+.art-lead-para{color:var(--navy);border-left-color:rgba(26,36,64,.15)}
+/* Blockquote */
+.art-blockquote{background:#f6f6f4;border-left-color:var(--crimson)}
+.art-blockquote p{color:var(--navy)}
+.art-blockquote cite{color:rgba(26,36,64,.4)}
+/* Images */
+.art-img-block{background:rgba(26,36,64,.12)}
+.art-img-caption{color:rgba(26,36,64,.4)}
+/* Tags */
+.art-tags{border-top-color:var(--border)}
+.art-tag{border-color:var(--border);color:rgba(26,36,64,.5)}
+.art-share{border-top-color:var(--border)}
+/* Sidebar */
+.sidebar-section{border-color:var(--border)}
+.sidebar-section h3{color:rgba(26,36,64,.35)}
+.sidebar-section p{color:var(--navy)!important}
+.sidebar-link{color:var(--navy);font-weight:500}
+.sidebar-link:hover{color:var(--crimson)}
+.related-item{border-bottom-color:var(--border)}
+.person-name{color:var(--navy);font-weight:500}
+.person-role{color:rgba(26,36,64,.5)}
+/* More section cards */
+.more-section h2,.more-section .h2-sec{color:var(--navy)}
+
+/* art-title waga jak inne strony + more-section bialy */
+.art-title{font-weight:500;letter-spacing:-.015em}
+.more-section{background:#fff}
 </style>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html" class="nav-logo-link">
-      <div class="nav-logo"></div>
+    <a href="strona-glowna.html" class="nav-logo-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
     </a>
     <ul class="nav-links">
-      <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+      <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
       <li class="nav-dropdown">
         <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
         <ul class="nav-drop-menu">
-          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
-          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-          <li><a href="wireframe-digital.html">Digital</a></li>
-          <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+          <li><a href="rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+          <li><a href="life-sciences.html">Life Sciences</a></li>
+          <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+          <li><a href="digital.html">Digital</a></li>
+          <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
         </ul>
       </li>
-      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-      <li><a href="wireframe-aktualnosci.html" class="active">Aktualności</a></li>
-      <li><a href="wireframe-faq.html">FAQ</a></li>
-      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+      <li><a href="aktualnosci.html" class="active">Aktualności</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
     <div class="nav-phone">
       <span class="nav-phone-label">Zadzwoń teraz</span>
-      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+      <a href="tel:+48223194760" class="nav-phone-num">+48 22 319 47 60</a>
     </div>
     <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
       <span></span><span></span><span></span>
@@ -555,29 +625,28 @@ footer{background:#0f1628;padding:5rem 0 0}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-top">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html"><div class="mobile-menu-logo"></div></a>
+    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
     <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
   </div>
   <ul class="mobile-nav">
-    <li><a href="wireframe-nasz-zespol.html">Nasz Zespół</a></li>
+    <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
     <li>
       <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
       <ul class="mobile-submenu" id="mobileSubmenu">
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwiązywanie Sporów</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </li>
-    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-    <li><a href="wireframe-aktualnosci.html">Aktualności</a></li>
-    <li><a href="wireframe-faq.html">FAQ</a></li>
-    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    <li><a href="aktualnosci.html">Aktualności</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
   </ul>
   <div class="mobile-menu-phone">
     <span class="label">Zadzwoń teraz</span>
-    <a href="tel:+48224159800">+48 22 415 98 00</a>
+    <a href="tel:+48223194760">+48 22 319 47 60</a>
   </div>
 </div>
 
@@ -585,9 +654,9 @@ footer{background:#0f1628;padding:5rem 0 0}
 <div class="art-header">
   <div class="art-header-inner">
     <div>
-      <a href="wireframe-aktualnosci.html" class="ph-back">‹ Aktualności</a>
+      <a href="aktualnosci.html" class="ph-back">‹ Aktualności</a>
       <span class="art-cat-label">Rankingi · 3 czerwca 2024</span>
-      <h1 class="art-title">BLSK w rankingu Chambers Europe 2024 — Recommended Firm w kategorii Dispute Resolution</h1>
+      <h1 class="art-title">ZMW Legal w rankingu Chambers Europe 2024 – Recommended Firm w kategorii Dispute Resolution</h1>
     </div>
     <div class="art-right">
       <div class="art-meta-list">
@@ -605,10 +674,10 @@ footer{background:#0f1628;padding:5rem 0 0}
         </div>
         <div class="art-meta-row">
           <span class="art-meta-lbl">Wyróżnieni</span>
-          <span class="art-meta-val">Prof. Katarzyna Bilewska, Wojciech Kozłowski</span>
+          <span class="art-meta-val">Prof. Anna Zawadzka, Piotr Mrowiec</span>
         </div>
       </div>
-      <p class="art-lead">Kancelaria BLSK Legal po raz kolejny znalazła się w prestiżowym rankingu Chambers Europe, uzyskując rekomendację w kluczowej dla nas kategorii Dispute Resolution.</p>
+      <p class="art-lead">Kancelaria ZMW Legal po raz kolejny znalazła się w prestiżowym rankingu Chambers Europe, uzyskując rekomendację w kluczowej dla nas kategorii Dispute Resolution.</p>
     </div>
   </div>
 </div>
@@ -627,33 +696,33 @@ footer{background:#0f1628;padding:5rem 0 0}
           Chambers and Partners to jeden z najbardziej wpływowych rankingów prawniczych na świecie. Rekomendacja w Chambers Europe opiera się na dogłębnej analizie realizowanych spraw, wywiadach z klientami i oceną niezależnych prawników z branży.
         </p>
 
-        <p>Wyróżnienie BLSK Legal w kategorii <strong>Dispute Resolution: Corporate & Commercial</strong> potwierdza pozycję kancelarii jako jednego z wiodących podmiotów w Polsce w zakresie prowadzenia sporów korporacyjnych. W tegorocznym wydaniu rankingu kancelaria awansowała do wyższego bandu, co jest efektem kilkuletniej konsekwentnej pracy zespołu.</p>
+        <p>Wyróżnienie ZMW Legal w kategorii <strong>Dispute Resolution: Corporate & Commercial</strong> potwierdza pozycję kancelarii jako jednego z wiodących podmiotów w Polsce w zakresie prowadzenia sporów korporacyjnych. W tegorocznym wydaniu rankingu kancelaria awansowała do wyższego bandu, co jest efektem kilkuletniej konsekwentnej pracy zespołu.</p>
 
-        <h2>Indywidualne wyróżnienia dla prawników BLSK</h2>
+        <h2>Indywidualne wyróżnienia dla prawników ZMW Legal</h2>
         <p>Chambers Europe wyróżniło indywidualnie dwoje prawników kancelarii:</p>
         <ul>
-          <li><strong>Prof. Katarzyna Bilewska</strong> — utrzymała pozycję w Band 1, z opisem podkreślającym jej „unikalną kombinację wiedzy akademickiej i umiejętności praktycznych w najtrudniejszych sporach korporacyjnych".</li>
-          <li><strong>Wojciech Kozłowski</strong> — awansował do Band 2, doceniony za „wyjątkową efektywność w sprawach dotyczących odpowiedzialności zarządu i sporów między wspólnikami".</li>
+          <li><strong>Prof. Anna Zawadzka</strong> – utrzymała pozycję w Band 1, z opisem podkreślającym jej „unikalną kombinację wiedzy akademickiej i umiejętności praktycznych w najtrudniejszych sporach korporacyjnych".</li>
+          <li><strong>Piotr Mrowiec</strong> – awansował do Band 2, doceniony za „wyjątkową efektywność w sprawach dotyczących odpowiedzialności zarządu i sporów między wspólnikami".</li>
         </ul>
 
         <div class="art-blockquote">
-          <p>„BLSK wyróżnia się zdolnością do prowadzenia niezwykle złożonych sporów korporacyjnych z precyzją i determinacją. Klientów imponuje ich strategiczne podejście już na etapie planowania sporu."</p>
-          <cite>— Chambers and Partners, edycja 2024</cite>
+          <p>„ZMW Legal wyróżnia się zdolnością do prowadzenia niezwykle złożonych sporów korporacyjnych z precyzją i determinacją. Klientów imponuje ich strategiczne podejście już na etapie planowania sporu."</p>
+          <cite>– Chambers and Partners, edycja 2024</cite>
         </div>
 
         <h2>Metodologia rankingu</h2>
         <p>Ranking Chambers Europe budowany jest na podstawie ankiet rozesłanych do kilku tysięcy prawników i ich klientów w całej Europie. Ocenie podlegają m.in. jakość świadczonych usług, podejście do klienta, innowacyjność, a przede wszystkim rzeczywiste wyniki osiągane w sprawach.</p>
-        <p>Kancelarie są oceniane niezależnie przez ekspertów Chambers i przyporządkowywane do czterech bandów (Band 1 to najwyższy) lub kategorii „Recognised Practitioner". BLSK Legal jest wymieniona w rankingu nieprzerwanie od kilku lat.</p>
+        <p>Kancelarie są oceniane niezależnie przez ekspertów Chambers i przyporządkowywane do czterech bandów (Band 1 to najwyższy) lub kategorii „Recognised Practitioner". ZMW Legal jest wymieniona w rankingu nieprzerwanie od kilku lat.</p>
 
         <div class="art-img-block"></div>
-        <p class="art-img-caption">Ceremonia Chambers Europe Awards — Warszawa, czerwiec 2024</p>
+        <p class="art-img-caption">Ceremonia Chambers Europe Awards – Warszawa, czerwiec 2024</p>
 
         <h2>Kontekst i znaczenie wyróżnienia</h2>
-        <p>Wyróżnienie zbiega się z kolejnym rekordowym rokiem dla praktyki Rozwiązywania Sporów w BLSK. W 2023–2024 kancelaria prowadziła kilkanaście spraw o wartości powyżej 50 mln zł każda, z których większość zakończyła się sukcesem dla klienta na etapie pierwszej instancji.</p>
+        <p>Wyróżnienie zbiega się z kolejnym rekordowym rokiem dla praktyki Rozwiązywania Sporów w ZMW Legal. W 2023–2024 kancelaria prowadziła kilkanaście spraw o wartości powyżej 50 mln zł każda, z których większość zakończyła się sukcesem dla klienta na etapie pierwszej instancji.</p>
         <p>Wśród spraw wyróżnionych przez Chambers znalazły się procesy z zakresu odpowiedzialności zarządu w spółkach publicznych, spory między wspólnikami o wyłączenie ze spółki oraz postępowania zabezpieczające o bezprecedensowym zakresie.</p>
 
         <h2>Komentarz kancelarii</h2>
-        <p>Prof. Katarzyna Bilewska, Managing Partner BLSK Legal: <em>„Wyróżnienie Chambers Europe jest dla nas potwierdzeniem, że obrana strategia — głęboka specjalizacja i bezkompromisowe podejście do każdej sprawy — przynosi efekty nie tylko naszym klientom, ale jest też dostrzegane przez rynek. Jesteśmy dumni z całego zespołu."</em></p>
+        <p>Prof. Anna Zawadzka, Managing Partner ZMW Legal: <em>„Wyróżnienie Chambers Europe jest dla nas potwierdzeniem, że obrana strategia – głęboka specjalizacja i bezkompromisowe podejście do każdej sprawy – przynosi efekty nie tylko naszym klientom, ale jest też dostrzegane przez rynek. Jesteśmy dumni z całego zespołu."</em></p>
 
         <div class="art-tags">
           <span class="art-tag">Chambers Europe</span>
@@ -675,8 +744,8 @@ footer{background:#0f1628;padding:5rem 0 0}
         <div class="sidebar-section sidebar-cta">
           <h3>Skontaktuj się</h3>
           <p style="font-size:.875rem;color:#666;line-height:1.6;margin-bottom:1.25rem">Potrzebujesz wsparcia prawnego? Nasi eksperci są do Twojej dyspozycji.</p>
-          <a href="tel:+48224159800" class="btn-p" style="width:100%;justify-content:center;font-size:.875rem;margin-bottom:.75rem">Zadzwoń: +48 22 415 98 00</a>
-          <a href="wireframe-kontakt.html" class="btn-s" style="width:100%;justify-content:center;font-size:.875rem">Napisz do nas</a>
+          <a href="tel:+48223194760" class="btn-p" style="width:100%;justify-content:center;font-size:.875rem;margin-bottom:.75rem">Zadzwoń: +48 22 319 47 60</a>
+          <a href="kontakt.html" class="btn-s" style="width:100%;justify-content:center;font-size:.875rem">Napisz do nas</a>
         </div>
 
         <div class="sidebar-section">
@@ -684,18 +753,18 @@ footer{background:#0f1628;padding:5rem 0 0}
           <div class="sidebar-person">
             <div class="person-photo"></div>
             <div>
-              <p class="person-name">Prof. Katarzyna Bilewska</p>
+              <p class="person-name">Prof. Anna Zawadzka</p>
               <p class="person-role">Managing Partner · Band 1</p>
             </div>
           </div>
-          <a href="wireframe-profesor-bilewska.html" class="sidebar-link">
+          <a href="profil-zawadzka.html" class="sidebar-link">
             Zobacz profil <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
           </a>
           <hr style="border:none;border-top:1px solid #f0f0f0;margin:1.25rem 0">
           <div class="sidebar-person">
             <div class="person-photo"></div>
             <div>
-              <p class="person-name">Wojciech Kozłowski</p>
+              <p class="person-name">Piotr Mrowiec</p>
               <p class="person-role">Partner · Band 2</p>
             </div>
           </div>
@@ -706,7 +775,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 
         <div class="sidebar-section">
           <h3>Praktyka</h3>
-          <p style="font-size:.875rem;color:#666;line-height:1.65;margin-bottom:1rem">Rozwiązywanie Sporów — spory korporacyjne, arbitraż i postępowania przed sądami powszechnymi i administracyjnymi.</p>
+          <p style="font-size:.875rem;color:#666;line-height:1.65;margin-bottom:1rem">Rozwiązywanie Sporów – spory korporacyjne, arbitraż i postępowania przed sądami powszechnymi i administracyjnymi.</p>
           <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
             Dowiedz się więcej <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
           </a>
@@ -715,23 +784,23 @@ footer{background:#0f1628;padding:5rem 0 0}
         <div class="sidebar-section">
           <h3>Pozostałe aktualności</h3>
           <div class="related-list">
-            <a href="wireframe-artykul.html" class="related-item">
+            <a href="artykul.html" class="related-item">
               <span class="related-cat">Wyróżnienia</span>
-              <span class="related-title">Prof. Bilewska z nagrodą Business Centre Club za wkład w prawo korporacyjne</span>
+              <span class="related-title">Prof. Zawadzka z nagrodą Business Centre Club za wkład w prawo korporacyjne</span>
               <span class="related-date">18 maja 2024</span>
             </a>
-            <a href="wireframe-artykul.html" class="related-item">
+            <a href="artykul.html" class="related-item">
               <span class="related-cat">Rankingi</span>
-              <span class="related-title">BLSK Legal nominowany do FT Innovative Lawyers 2024</span>
+              <span class="related-title">ZMW Legal nominowany do FT Innovative Lawyers 2024</span>
               <span class="related-date">22 kwietnia 2024</span>
             </a>
-            <a href="wireframe-artykul.html" class="related-item">
+            <a href="artykul.html" class="related-item">
               <span class="related-cat">Rankingi</span>
               <span class="related-title">Legal 500 EMEA 2024: Band 1 w Dispute Resolution</span>
               <span class="related-date">15 lutego 2024</span>
             </a>
           </div>
-          <a href="wireframe-aktualnosci.html" class="btn-row-link" style="font-size:.85rem;margin-top:1.5rem;gap:.5rem">
+          <a href="aktualnosci.html" class="btn-row-link" style="font-size:.85rem;margin-top:1.5rem;gap:.5rem">
             Wszystkie aktualności <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
           </a>
         </div>
@@ -749,45 +818,45 @@ footer{background:#0f1628;padding:5rem 0 0}
         <span class="label">Aktualności</span>
         <h2 class="h2-sec">Więcej z kancelarii</h2>
       </div>
-      <a href="wireframe-aktualnosci.html" class="btn-row-link">
+      <a href="aktualnosci.html" class="btn-row-link">
         Wszystkie aktualności
         <span class="btn-c"><span class="arr"></span></span>
       </a>
     </div>
     <div class="more-grid">
-      <a href="wireframe-artykul.html" class="more-card">
+      <a href="artykul.html" class="more-card">
         <div class="more-img"></div>
         <span class="more-cat">Wyróżnienia</span>
-        <p class="more-title">Prof. Bilewska wyróżniona nagrodą Business Centre Club</p>
+        <p class="more-title">Prof. Zawadzka wyróżniona nagrodą Business Centre Club</p>
         <span class="more-date">18 maja 2024</span>
       </a>
-      <a href="wireframe-artykul.html" class="more-card">
+      <a href="artykul.html" class="more-card">
         <div class="more-img"></div>
         <span class="more-cat">Rankingi</span>
-        <p class="more-title">BLSK Legal nominowany do FT Innovative Lawyers 2024</p>
+        <p class="more-title">ZMW Legal nominowany do FT Innovative Lawyers 2024</p>
         <span class="more-date">22 kwietnia 2024</span>
       </a>
-      <a href="wireframe-artykul.html" class="more-card">
+      <a href="artykul.html" class="more-card">
         <div class="more-img"></div>
         <span class="more-cat">Zespół</span>
-        <p class="more-title">Dr Michał Turczyk i Aleksandra Rutkowska dołączają do BLSK jako Partnerzy</p>
+        <p class="more-title">Dr Jakub Stelmach i Marta Kowalczyk dołączają do ZMW Legal jako Partnerzy</p>
         <span class="more-date">1 marca 2024</span>
       </a>
     </div>
   </div>
 </div>
 
-<!-- CTA przed stopką — K3 -->
-<section style="background:#111;padding:5rem 0">
+<!-- CTA przed stopką – K3 -->
+<section style="background:var(--navy);padding:5rem 0">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap">
     <div>
-      <span class="label" style="color:#555">Masz sprawę prawną?</span>
-      <h2 style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:300;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem">Porozmawiajmy o Twojej sytuacji.</h2>
-      <p style="font-size:1rem;color:#666;line-height:1.7">Umawiamy spotkania stacjonarne i online. Najszybszy kontakt: telefon.</p>
+      <span class="label" style="color:rgba(255,255,255,.5)">Masz sprawę prawną?</span>
+      <h2 style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:500;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem">Porozmawiajmy o Twojej sytuacji.</h2>
+      <p style="font-size:1rem;color:rgba(255,255,255,.6);line-height:1.7">Umawiamy spotkania stacjonarne i online. Najszybszy kontakt: telefon.</p>
     </div>
     <div class="art-cta-btns" style="display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0">
-      <a href="tel:+48224159800" class="btn-p">Zadzwoń: +48 22 415 98 00</a>
-      <a href="wireframe-kontakt.html" class="btn-s" style="color:#aaa;border-color:#333">Napisz do nas</a>
+      <a href="tel:+48223194760" class="btn-p">Zadzwoń: +48 22 319 47 60</a>
+      <a href="kontakt.html" class="btn-s" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.25);background:transparent">Napisz do nas</a>
     </div>
   </div>
 </section>
@@ -796,41 +865,40 @@ footer{background:#0f1628;padding:5rem 0 0}
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo"></div>
-      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto;margin-bottom:1.25rem" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#f6f6f4">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="rgba(246,246,244,0.5)" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
     </div>
     <div class="footer-col">
       <h4>Praktyki</h4>
       <ul>
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kancelaria</h4>
       <ul>
-        <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
-        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-        <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
-        <li><a href="wireframe-faq.html">FAQ</a></li>
-        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+        <li><a href="nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+        <li><a href="aktualnosci.html">Aktualno&#347;ci</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
-        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="tel:+48223194760">+48 22 319 47 60</a></li>
+        <li><a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 BLSK KOZ&#321;OWSKI I WSP&Oacute;LNICY SP. K.</span>
-    <a href="wireframe-polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
+    <span>&copy; 2026 ZAWADZKA MROWIEC &amp; WSP&Oacute;LNICY SP. K.</span>
+    <a href="polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
   </div>
 </footer>
 

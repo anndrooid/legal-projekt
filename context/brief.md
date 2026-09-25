@@ -1,4 +1,4 @@
-# Brief — BLSK Legal
+# Brief — ZMW Legal
 
 ## Po co jest ta strona
 
@@ -10,13 +10,13 @@ Cytat z FAQ: „Zapraszamy na spotkania stacjonarne lub online – wyłącznie p
 
 ## Dla kogo
 
-Klienci B2B — firmy i przedsiębiorcy, nie klienci indywidualni. Wynika to z zakresu wszystkich 5 praktyk (spory korporacyjne, pharma/żywność, tech/media, dotacje UE, spory podatkowe) — żadna nie adresuje konsumentów.
+Klienci B2B — firmy i przedsiębiorcy, nie klienci indywidualni. Wynika to z zakresu wszystkich 5 praktyk (spory korporacyjne, pharma/żywność, tech/media, fundusze i pomoc publiczna, spory podatkowe) — żadna nie adresuje konsumentów.
 
 Cytat klienta: „chcemy pozostać dostępni dla wszystkich klientów."
 
 ## Cele
 
-Kontakt przez telefon (+48 22 415 98 00) lub formularz (imię, email, treść wiadomości). Telefon jest priorytetem — numer eksponowany w nagłówku i stopce każdej podstrony.
+Kontakt przez telefon (+48 22 319 47 60) lub formularz (imię, email, treść wiadomości). Telefon jest priorytetem — numer eksponowany w nagłówku i stopce każdej podstrony.
 
 ## Główna akcja
 
@@ -30,8 +30,6 @@ Telefon do kancelarii. Formularz kontaktowy jako alternatywa.
 - Strona inicjuje kontakt, nie zastępuje procesu umawiania spotkań
 
 ## Punkty odniesienia
-
-**Obecna strona:** https://blsklegal.com/
 
 **Inspiracje — każda pełni inną rolę:**
 
@@ -50,11 +48,11 @@ Telefon do kancelarii. Formularz kontaktowy jako alternatywa.
 
 **Ton ogólny:** „designersko nie przesadzona, z dobrym wyczuciem i elegancją", „nowocześnie i z klasą (nie przesadnie premium)."
 
-**Identyfikacja wizualna:** zachowujemy obecną (kolory, czcionki z blsklegal.com).
+**Identyfikacja wizualna:** logo SVG wariant C (stos ZMW / LEGAL), paleta — crimson #8C0002, navy #1a2440, bg #f6f6f4, czcionka PP Neue Montreal (self-hosted).
 
 ## Zakres i struktura
 
-**Projekt:** BLSK Legal — BLSK KOZŁOWSKI I WSPÓLNICY SP. K.
+**Projekt:** ZMW Legal — ZAWADZKA MROWIEC & WSPÓLNICY SP. K.
 **Wersje językowe:** PL + ENG — wersja angielska musi w pełni pokrywać się z polską (wszystkie strony, artykuły, blogi, profile)
 **Widoki:** Desktop, Tablet, Mobile
 **Tech stack:** Claude Code (etap 1), docelowo Astro + Keystatic CMS (etap 2, bezpłatne)
@@ -65,51 +63,43 @@ Telefon do kancelarii. Formularz kontaktowy jako alternatywa.
 ### Podstrony
 
 #### 1. Strona główna
-Minimum 4 sekcje: O prawniku, Działy, Kontakt, Corpo Snap.
-Na obecnej stronie: 6 kafelków usług, Aktualności, Kontakt.
+Minimum 4 sekcje: O kancelarii, Działy, Kontakt, Corpo Snap.
 
 #### 2. Nasz Zespół
-Siatka 29 osób. Każda osoba ma osobną podstronę z profilem.
+Siatka 22 osób. Każda osoba ma osobną podstronę z profilem.
 
-**Struktura profilu (na podstawie profilu Prof. Bilewskiej):**
+**Struktura profilu (na podstawie profilu Prof. Zawadzkiej):**
 - Zdjęcie po lewej, bio po prawej w rozwijanej harmonijce
 - 6 sekcji akordeonowych: intro bio, Doświadczenie (lista spraw), Wyróżnienia (rankingi), Pozostała działalność, Wykształcenie, Języki
 - Sekcja: Najnowsze Publikacje (okładki, tytuły, wydawnictwa)
 - Na dole profilu: siatka pozostałych prawników + link do Corpo Snap danej osoby
 
-**29 osób:**
+**22 osoby:**
 
 | Imię i Nazwisko | Stanowisko |
 |---|---|
-| Prof. Katarzyna Bilewska | Managing Partner |
-| Wojciech Kozłowski | Partner |
-| Maria Samolińska | Partner |
-| Dr Michał Turczyk | Partner |
-| Stanisław Dąbek | Partner |
-| Aleksandra Rutkowska | Partner |
-| Paweł Lewandowski | Partner |
-| Grzegorz Kukowka | Managing Counsel |
-| Małgorzata Dębicka | Counsel |
-| Konrad Pęski | Counsel |
-| Aleksander Brzozowski | Counsel |
-| Mateusz Węklar | Counsel |
-| Antoni Żukowski | Counsel |
-| Dariusz Dąbek | Counsel |
-| Dariusz Rosolski | Senior Associate |
-| Radosław Żygadło | Senior Associate |
-| Aleksandra Jurga-Więckowska | Associate |
-| Konrad Siezieniewski | Associate |
-| Aleksandra Pieńkawa | Junior Associate |
-| Przemysław Bednarski | Junior Associate |
-| Przemysław Kolanek | Junior Associate |
-| Łukasz Figacz | Project Manager |
-| Julita Loreth | Paralegal |
-| Martyna Madej | Paralegal |
-| Weronika Kogut | Consultant |
-| Hanna Gągała | Office Manager |
-| Katarzyna Smolińska | Head of Office |
-| Ewa Skowronek | Office & Finance Specialist |
-| Natalia Klepacka | Junior Assistant |
+| Prof. Anna Zawadzka | Managing Partner |
+| Piotr Mrowiec | Partner |
+| Katarzyna Wierzbicka | Partner |
+| Dr Marcin Sikorski | Partner |
+| Joanna Dąbrowska | Partner |
+| Rafał Nowak | Managing Counsel |
+| Agnieszka Kowalska | Counsel |
+| Tomasz Zając | Counsel |
+| Marta Wiśniewska | Counsel |
+| Bartosz Ostrowski | Counsel |
+| Klaudia Jankowska | Senior Associate |
+| Michał Kowalczyk | Senior Associate |
+| Weronika Pawlak | Associate |
+| Łukasz Adamczyk | Associate |
+| Natalia Szymańska | Junior Associate |
+| Jakub Wojciechowski | Junior Associate |
+| Dorota Krawczyk | Project Manager |
+| Maja Lewandowska | Paralegal |
+| Szymon Grabowski | Paralegal |
+| Ewa Malinowska | Office Manager |
+| Karolina Wróbel | Head of Office |
+| Paweł Czajkowski | Office & Finance Specialist |
 
 #### 3. Praktyki (5 podstron)
 
@@ -117,7 +107,7 @@ Siatka 29 osób. Każda osoba ma osobną podstronę z profilem.
 
 **Life Sciences** — pharma i żywność. Usługi: doradztwo strategiczne, analizy prawne, rejestracja produktów, audyty, postępowania sądowe, suplementy diety.
 
-**Dotacje, Granty i Zachęty Rozwojowe** — 22+ lat, 6 mld zł dotacji, 5 mld zł ulg. Model LEGAL-TECH-FIN HYBRID (nominacja FT Innovative Lawyers 2019). Usługi: granty/dotacje/pożyczki, ulgi podatkowe, wejścia kapitałowe, kontrole, postępowania sporne.
+**Fundusze i Pomoc Publiczna** — 20+ lat, 6 mld zł funduszy, 5 mld zł ulg. Model LEGAL-TECH-FIN HYBRID (nominacja FT Innovative Lawyers 2019). Usługi: granty/dotacje/pożyczki, ulgi podatkowe, wejścia kapitałowe, kontrole, postępowania sporne.
 
 **Digital** — telekomunikacja, ochrona danych, media, e-commerce, AI. Usługi: sektor medialny, telekomunikacja i tech, e-commerce, nadawcy i spółki IT.
 
@@ -133,16 +123,16 @@ Cykl krótkich filmików z opisem o tematyce korporacyjnej (prawo spółek), pie
 8 pytań — istnieje w PL i EN.
 
 #### 7. Kontakt
-Tel: +48 22 415 98 00 | Email: biuro@blsklegal.com
-Adres: ul. Mazowiecka 9 (IV p.), 00-052 Warszawa | Godziny: 9:30–17:30
+Tel: +48 22 319 47 60 | Email: biuro@zmwlegal.pl
+Adres: ul. Wspólna 47A (III p.), 00-684 Warszawa | Godziny: Pon.–Pt. 9:30–17:30
 Formularz: imię, email, treść + captcha matematyczna | LinkedIn
 
 ## Ograniczenia
 
 - Termin: nieustalony
 - Budżet: nieustalony
-- Zdjęcia prawników: istnieją (29 portretów na obecnej stronie)
-- Logo i identyfikacja: istnieje, przenosimy z obecnej strony
+- Zdjęcia prawników: do przygotowania (22 portrety)
+- Logo i identyfikacja: SVG inline, wariant C — gotowe
 - Tech stack: bezpłatny (Claude Code → Astro + Keystatic)
 
 ---
@@ -173,10 +163,10 @@ Brak — brief zamknięty.
 „Subtelny ruch, technologiczny sznyt" (Ligit) bezpośrednio konkuruje z „ogromnym naciskiem na Core Web Vitals." Wymaga świadomego kompromisu na etapie projektowania.
 
 **2. Migracja ~100 podstron**
-29 profili prawników (każdy z 6 sekcjami i publikacjami) + ~48 aktualności + 14+ Corpo Snap + 5 praktyk + pozostałe. Treści profili ładują się przez JavaScript — mogą wymagać ręcznej migracji lub dostępu do bazy danych obecnego CMS.
+22 profile prawników (każdy z 6 sekcjami i publikacjami) + ~48 aktualności + 14+ Corpo Snap + 5 praktyk + pozostałe.
 
 **3. Tworzenie treści EN od zera**
-Wersja angielska musi pokrywać się z polską w 100%. Do stworzenia: strona Spory Podatkowe EN, ~48 artykułów Aktualności EN, ~14 Corpo Snap EN, profile 29 prawników EN. To znacząca praca redakcyjna lub tłumaczeniowa poza zakresem deweloperskim.
+Wersja angielska musi pokrywać się z polską w 100%. Do stworzenia: strona Spory Podatkowe EN, ~48 artykułów Aktualności EN, ~14 Corpo Snap EN, profile 22 prawników EN. To znacząca praca redakcyjna lub tłumaczeniowa poza zakresem deweloperskim.
 
-**5. Synteza czterech różnych estetyk**
+**4. Synteza czterech różnych estetyk**
 Każdy serwis inspiracyjny ma odrębny język wizualny. Jeden dominujący kierunek + akcenty z pozostałych to bezpieczniejsze podejście niż równorzędna synteza wszystkich czterech.

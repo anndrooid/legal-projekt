@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kierunek 6-2 — Home — BLSK Legal (PP Neue Montreal)</title>
+<title>Strona główna – ZMW Legal</title>
 <style>
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Thin.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:'PPNeueMontreal';src:url('fonts/PPNeueMontreal-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
@@ -32,7 +32,7 @@ body{font-family:'PPNeueMontreal',sans-serif;background:#f6f6f4;color:var(--navy
 .stat-num{font-family:'PPNeueMontreal',sans-serif;font-size:clamp(3.5rem,7vw,7.5rem);font-weight:400;color:var(--navy);letter-spacing:-.015em;line-height:1}
 .label{font-family:'PPNeueMontreal',sans-serif;font-size:1.2rem;font-weight:300;letter-spacing:.14em;color:var(--crimson);display:block;margin-bottom:.75rem}
 
-/* Ciemne sekcje — overrides */
+/* Ciemne sekcje – overrides */
 .sec-navy .h2-sec,.sec-navy .kt-h2{color:#fff}
 .sec-navy .label{color:rgba(255,255,255,.55)}
 .sec-navy .lead,.sec-navy .body-text{color:rgba(255,255,255,.8)}
@@ -49,16 +49,16 @@ body{font-family:'PPNeueMontreal',sans-serif;background:#f6f6f4;color:var(--navy
 /* NAV */
 nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:transparent;box-shadow:none;transition:background .35s ease,box-shadow .35s ease}
 nav.topnav.nav-solid{background:#f6f6f4}
-.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.nav-logo-link{flex-shrink:0;text-decoration:none}
+.nav-inner{max-width:1600px;margin:0 auto;padding:2rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-logo-link{text-decoration:none;justify-self:start}
 .nav-logo{width:100px;height:30px;background:rgba(255,255,255,.2);border-radius:3px;transition:background .35s ease}
 nav.topnav.nav-solid .nav-logo{background:#c8c4bc}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;justify-content:center}
 .nav-links a{font-family:'PPNeueMontreal',sans-serif;font-size:1rem;font-weight:500;color:rgba(255,255,255,.9);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#fff}
 nav.topnav.nav-solid .nav-links a{color:var(--navy)}
 nav.topnav.nav-solid .nav-links a:hover{color:var(--crimson)}
-.nav-phone{flex-shrink:0;text-align:right}
+.nav-phone{text-align:right;justify-self:end}
 .nav-phone-label{display:block;font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1;margin-bottom:.2rem;transition:color .35s}
 nav.topnav.nav-solid .nav-phone-label{color:var(--navy)}
 .nav-phone-num{display:block;font-size:2rem;font-weight:500;color:#fff;text-decoration:none;transition:color .35s}
@@ -166,7 +166,9 @@ nav.topnav.nav-solid .nav-hamburger span{background:var(--navy)}
 .rankings-inner{max-width:1600px;margin:0 auto;padding:0 3rem;display:flex;align-items:center;gap:3rem;flex-wrap:wrap}
 .rank-lbl{font-size:.63rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);flex-shrink:0;white-space:nowrap}
 .rank-logos{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
-.rank-logo{width:110px;height:48px;background:rgba(26,36,64,.1);border-radius:6px;flex-shrink:0}
+.rank-logo{width:110px;height:48px;background:rgba(26,36,64,.08);border-radius:6px;flex-shrink:0}
+.rank-logo-txt{display:flex;align-items:center;justify-content:center;padding:0 .75rem}
+.rank-pub-name{font-family:'PPNeueMontreal',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);line-height:1.3;text-align:center}
 
 /* KONTAKT */
 .kt-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:start}
@@ -205,7 +207,7 @@ nav.topnav.nav-solid .nav-hamburger span{background:var(--navy)}
 .mobile-menu-phone a{font-family:'PPNeueMontreal',sans-serif;font-size:1.75rem;font-weight:600;color:var(--crimson);text-decoration:none}
 
 /* FOOTER */
-footer{background:#0f1628;padding:5rem 0 0}
+footer{background:#1a2440;padding:5rem 0 0}
 .footer-grid{max-width:1600px;margin:0 auto;padding:0 3rem 4rem;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:4rem}
 .footer-logo{width:90px;height:27px;background:#2a3555;border-radius:3px;margin-bottom:1.25rem}
 .footer-desc{font-size:.9rem;color:rgba(255,255,255,.35);line-height:1.7}
@@ -260,27 +262,26 @@ footer{background:#0f1628;padding:5rem 0 0}
 <!-- NAV -->
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html" class="nav-logo-link"><div class="nav-logo"></div></a>
+    <a href="strona-glowna.html" class="nav-logo-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
     <ul class="nav-links">
-      <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+      <li><a href="nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
       <li class="nav-dropdown">
         <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
         <ul class="nav-drop-menu">
-          <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
-          <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-          <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-          <li><a href="wireframe-digital.html">Digital</a></li>
-          <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+          <li><a href="rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+          <li><a href="life-sciences.html">Life Sciences</a></li>
+          <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+          <li><a href="digital.html">Digital</a></li>
+          <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
         </ul>
       </li>
-      <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-      <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
-      <li><a href="wireframe-faq.html">FAQ</a></li>
-      <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+      <li><a href="aktualnosci.html">Aktualno&#347;ci</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
     <div class="nav-phone">
       <span class="nav-phone-label">Zadzwo&#324; teraz</span>
-      <a href="tel:+48224159800" class="nav-phone-num">+48 22 415 98 00</a>
+      <a href="tel:+48223194760" class="nav-phone-num">+48 22 319 47 60</a>
     </div>
     <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otw&oacute;rz menu">
       <span></span><span></span><span></span>
@@ -291,29 +292,28 @@ footer{background:#0f1628;padding:5rem 0 0}
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-top">
-    <a href="wireframe-kierunek-nr6-2-home-neue-montreal.html"><div class="mobile-menu-logo"></div></a>
+    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
     <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">&#x2715;</button>
   </div>
   <ul class="mobile-nav">
-    <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+    <li><a href="nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
     <li>
       <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
       <ul class="mobile-submenu" id="mobileSubmenu">
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </li>
-    <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-    <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
-    <li><a href="wireframe-faq.html">FAQ</a></li>
-    <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+    <li><a href="aktualnosci.html">Aktualno&#347;ci</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
   </ul>
   <div class="mobile-menu-phone">
     <span class="label">Zadzwo&#324; teraz</span>
-    <a href="tel:+48224159800">+48 22 415 98 00</a>
+    <a href="tel:+48223194760">+48 22 319 47 60</a>
   </div>
 </div>
 
@@ -335,9 +335,9 @@ footer{background:#0f1628;padding:5rem 0 0}
         <h1 class="h1-hero">Wygrywamy trudne sprawy</h1>
       </div>
       <div style="padding-top:1rem">
-        <p class="lead" style="max-width:580px;margin-bottom:2.5rem">Wspieramy firmy i przedsi&#281;biorc&oacute;w indywidualnie i konkretnie &mdash; jeste&#347;my gotowi w najbardziej wymagaj&#261;cych sprawach, niezale&#380;nie od ich skali i z&#322;o&#380;ono&#347;ci.</p>
+        <p class="lead" style="max-width:580px;margin-bottom:2.5rem">Wspieramy firmy i przedsi&#281;biorc&oacute;w indywidualnie i konkretnie &ndash; jeste&#347;my gotowi w najbardziej wymagaj&#261;cych sprawach, niezale&#380;nie od ich skali i z&#322;o&#380;ono&#347;ci.</p>
         <div class="btn-row">
-          <a href="tel:+48224159800" class="btn-p">Zadzwo&#324;: +48 22 415 98 00</a>
+          <a href="tel:+48223194760" class="btn-p">Zadzwo&#324;: +48 22 319 47 60</a>
           <a href="#kontakt" class="btn-row-link">
             Napisz do nas
             <span class="btn-c"><span class="arr"></span></span>
@@ -353,10 +353,10 @@ footer{background:#0f1628;padding:5rem 0 0}
   <div class="rankings-inner">
     <span class="rank-lbl">Wyr&oacute;&#380;nienia i rankingi</span>
     <div class="rank-logos">
-      <div class="rank-logo"></div>
-      <div class="rank-logo"></div>
-      <div class="rank-logo"></div>
-      <div class="rank-logo"></div>
+      <div class="rank-logo rank-logo-txt"><span class="rank-pub-name">Chambers<br>Europe</span></div>
+      <div class="rank-logo rank-logo-txt"><span class="rank-pub-name">Legal 500<br>EMEA</span></div>
+      <div class="rank-logo rank-logo-txt"><span class="rank-pub-name">FT Innovative<br>Lawyers</span></div>
+      <div class="rank-logo rank-logo-txt"><span class="rank-pub-name">Who's Who<br>Legal</span></div>
     </div>
   </div>
 </div>
@@ -366,19 +366,19 @@ footer{background:#0f1628;padding:5rem 0 0}
   <div class="stats-inner">
     <div class="stat-cell">
       <div class="stat-num">29</div>
-      <div class="stat-lbl">specjalist&oacute;w &mdash; partnerzy, counselowie, associates i eksperci bran&#380;owi</div>
+      <div class="stat-lbl">specjalist&oacute;w &ndash; partnerzy, counselowie, associates i eksperci bran&#380;owi</div>
     </div>
     <div class="stat-cell">
       <div class="stat-num">5</div>
-      <div class="stat-lbl">obszar&oacute;w specjalizacji &mdash; spory, Life Sciences, dotacje, digital, podatki</div>
+      <div class="stat-lbl">obszar&oacute;w specjalizacji &ndash; spory, Life Sciences, fundusze, digital, podatki</div>
     </div>
     <div class="stat-cell">
       <div class="stat-num">20+</div>
-      <div class="stat-lbl">lat do&#347;wiadczenia lider&oacute;w praktyk &mdash; partnerzy z kancelarii mi&#281;dzynarodowych</div>
+      <div class="stat-lbl">lat do&#347;wiadczenia lider&oacute;w praktyk &ndash; partnerzy z kancelarii mi&#281;dzynarodowych</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-num">6 mld</div>
-      <div class="stat-lbl">z&#322;otych dotacji i ulg pozyskanych przez praktyk&#281; Dotacji, Grant&oacute;w i Zach&#281;t</div>
+      <div class="stat-num">4 mld</div>
+      <div class="stat-lbl">z&#322;otych dotacji i ulg pozyskanych przez praktyk&#281; Funduszy i Pomocy Publicznej</div>
     </div>
   </div>
 </div>
@@ -391,7 +391,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         <span class="label">Nasze praktyki</span>
         <h2 class="h2-sec">Pi&#281;&#263; obszar&oacute;w specjalizacji.<br>Jedno podej&#347;cie.</h2>
       </div>
-      <a href="wireframe-faq.html" class="btn-row-link">
+      <a href="faq.html" class="btn-row-link">
         Jak pracujemy? Sprawd&#378; FAQ
         <span class="btn-c"><span class="arr"></span></span>
       </a>
@@ -401,7 +401,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="21"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="7" x2="1" y2="13"/><line x1="4" y1="7" x2="7" y2="13"/><path d="M1 13Q4 17 7 13"/><line x1="20" y1="7" x2="17" y2="13"/><line x1="20" y1="7" x2="23" y2="13"/><path d="M17 13Q20 17 23 13"/></svg></div>
         <p class="prac-name">Rozwi&#261;zywanie Spor&oacute;w</p>
         <p class="prac-desc">Spory korporacyjne, arbitra&#380; i post&#281;powania s&#261;dowe. Reprezentacja przed s&#261;dami, trybuna&#322;ami i organami administracji.</p>
-        <a href="wireframe-rozwiazywanie-sporow.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+        <a href="rozwiazywanie-sporow.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
           Dowiedz si&#281; wi&#281;cej
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
@@ -409,17 +409,17 @@ footer{background:#0f1628;padding:5rem 0 0}
       <div class="prac-card">
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v5L5 17a1 1 0 00.9 1.5h12.2a1 1 0 00.9-1.5L14 8V3"/><path d="M6.5 15h11"/></svg></div>
         <p class="prac-name">Life Sciences</p>
-        <p class="prac-desc">Prawo farmaceutyczne i &#380;ywno&#347;ciowe &mdash; doradztwo regulacyjne, rejestracja produkt&oacute;w, audyty i post&#281;powania.</p>
-        <a href="wireframe-life-sciences.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+        <p class="prac-desc">Prawo farmaceutyczne i &#380;ywno&#347;ciowe &ndash; doradztwo regulacyjne, rejestracja produkt&oacute;w, audyty i post&#281;powania.</p>
+        <a href="life-sciences.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
           Dowiedz si&#281; wi&#281;cej
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
       </div>
       <div class="prac-card">
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <p class="prac-name">Dotacje, Granty i Zach&#281;ty</p>
-        <p class="prac-desc">Ponad 6 mld z&#322; pozyskanych dotacji i ulg podatkowych. Obs&#322;uga kontroli i post&#281;powa&#324; spornych ze &#347;rodk&oacute;w publicznych.</p>
-        <a href="wireframe-dotacje-granty.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+        <p class="prac-name">Fundusze i Pomoc Publiczna</p>
+        <p class="prac-desc">Ponad 4 mld z&#322; pozyskanych dotacji i ulg podatkowych. Obs&#322;uga kontroli i post&#281;powa&#324; spornych ze &#347;rodk&oacute;w publicznych.</p>
+        <a href="fundusze-pomoc-publiczna.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
           Dowiedz si&#281; wi&#281;cej
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
@@ -428,7 +428,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <p class="prac-name">Digital</p>
         <p class="prac-desc">Telekomunikacja, ochrona danych, AI i e-commerce. Wsparcie prawne dla sektora technologicznego, medi&oacute;w i nadawc&oacute;w.</p>
-        <a href="wireframe-digital.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+        <a href="digital.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
           Dowiedz si&#281; wi&#281;cej
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
@@ -437,7 +437,7 @@ footer{background:#0f1628;padding:5rem 0 0}
         <div class="prac-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="13" y2="13"/><line x1="8" y1="16" x2="11" y2="16"/><circle cx="15.5" cy="16.5" r="2.5"/><line x1="19" y1="20" x2="17.27" y2="18.27"/></svg></div>
         <p class="prac-name">Spory Podatkowe</p>
         <p class="prac-desc">Post&#281;powania przed KAS, s&#261;dami administracyjnymi i TSUE. Strategia sporu, kontrole, odpowiedzialno&#347;&#263; zarz&#261;du.</p>
-        <a href="wireframe-spory-podatkowe.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
+        <a href="spory-podatkowe.html" class="btn-row-link" style="margin-top:auto;font-size:.85rem;gap:.55rem">
           Dowiedz si&#281; wi&#281;cej
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
@@ -457,12 +457,12 @@ footer{background:#0f1628;padding:5rem 0 0}
       <div>
         <p class="step-num">Krok 01</p>
         <p class="step-title">Rozumiemy spraw&#281;</p>
-        <p class="step-desc">Ka&#380;de post&#281;powanie zaczyna si&#281; od dok&#322;adnego zapoznania si&#281; z sytuacj&#261; klienta &mdash; faktami, celami i ryzykiem. Nie zak&#322;adamy niczego z g&oacute;ry.</p>
+        <p class="step-desc">Ka&#380;de post&#281;powanie zaczyna si&#281; od dok&#322;adnego zapoznania si&#281; z sytuacj&#261; klienta &ndash; faktami, celami i ryzykiem. Nie zak&#322;adamy niczego z g&oacute;ry.</p>
       </div>
       <div>
         <p class="step-num">Krok 02</p>
         <p class="step-title">Budujemy strategi&#281;</p>
-        <p class="step-desc">Proponujemy podej&#347;cie skrojone do konkretnej sprawy. Uwzgl&#281;dniamy ca&#322;o&#347;&#263; &mdash; prawn&#261;, biznesow&#261; i ludzk&#261; perspektyw&#281;.</p>
+        <p class="step-desc">Proponujemy podej&#347;cie skrojone do konkretnej sprawy. Uwzgl&#281;dniamy ca&#322;o&#347;&#263; &ndash; prawn&#261;, biznesow&#261; i ludzk&#261; perspektyw&#281;.</p>
       </div>
       <div>
         <p class="step-num">Krok 03</p>
@@ -476,7 +476,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
     </div>
     <div class="btn-row" style="margin-top:4.5rem">
-      <a href="tel:+48224159800" class="btn-p">Zadzwo&#324;: +48 22 415 98 00</a>
+      <a href="tel:+48223194760" class="btn-p">Zadzwo&#324;: +48 22 319 47 60</a>
       <a href="#kontakt" class="btn-row-link">
         Napisz do nas
         <span class="btn-c"><span class="arr"></span></span>
@@ -498,9 +498,9 @@ footer{background:#0f1628;padding:5rem 0 0}
       <div class="team-card">
         <div class="team-photo"></div>
         <div class="team-body">
-          <p class="team-name">Prof. Katarzyna Bilewska</p>
+          <p class="team-name">Prof. Anna Zawadzka</p>
           <p class="team-role">Managing Partner</p>
-          <a href="profil-bilewska.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem">
+          <a href="profil-zawadzka.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem">
             Zobacz profil
             <span class="btn-c btn-c-sm"><span class="arr"></span></span>
           </a>
@@ -509,7 +509,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       <div class="team-card">
         <div class="team-photo"></div>
         <div class="team-body">
-          <p class="team-name">Wojciech Koz&#322;owski</p>
+          <p class="team-name">Piotr Mrowiec</p>
           <p class="team-role">Partner</p>
           <a href="#" class="btn-row-link" style="font-size:.875rem;gap:.55rem">
             Zobacz profil
@@ -520,7 +520,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       <div class="team-card">
         <div class="team-photo"></div>
         <div class="team-body">
-          <p class="team-name">Maria Samoli&#324;ska</p>
+          <p class="team-name">Karolina Rychlewska</p>
           <p class="team-role">Partner</p>
           <a href="#" class="btn-row-link" style="font-size:.875rem;gap:.55rem">
             Zobacz profil
@@ -531,7 +531,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       <div class="team-card">
         <div class="team-photo"></div>
         <div class="team-body">
-          <p class="team-name">Dr Micha&#322; Turczyk</p>
+          <p class="team-name">Dr Jakub Stelmach</p>
           <p class="team-role">Partner</p>
           <a href="#" class="btn-row-link" style="font-size:.875rem;gap:.55rem">
             Zobacz profil
@@ -541,8 +541,8 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
     </div>
     <div class="team-count-bar">
-      <p>Poznaj <strong>wszystkich 29 prawnik&oacute;w i specjalist&oacute;w</strong> kancelarii &mdash; partner&oacute;w, counsel&oacute;w, associates i ekspert&oacute;w bran&#380;owych.</p>
-      <a href="wireframe-nasz-zespol.html" class="btn-row-link" style="flex-shrink:0;gap:.75rem">
+      <p>Poznaj <strong>wszystkich 29 prawnik&oacute;w i specjalist&oacute;w</strong> kancelarii &ndash; partner&oacute;w, counsel&oacute;w, associates i ekspert&oacute;w bran&#380;owych.</p>
+      <a href="nasz-zespol.html" class="btn-row-link" style="flex-shrink:0;gap:.75rem">
         Nasz Zesp&oacute;&#322;
         <span class="btn-c"><span class="arr"></span></span>
       </a>
@@ -550,49 +550,16 @@ footer{background:#0f1628;padding:5rem 0 0}
   </div>
 </section>
 
-<!-- CORPO SNAP -->
-<section class="sec sec-white">
-  <div class="wrap">
-    <div class="row-between">
-      <div>
-        <span class="label">Corpo Snap</span>
-        <h2 class="h2-sec">Prawo korporacyjne<br>wyja&#347;nione konkretnie.</h2>
-      </div>
-      <a href="wireframe-corpo-snap.html" class="btn-row-link">
-        Wszystkie odcinki
-        <span class="btn-c"><span class="arr"></span></span>
-      </a>
-    </div>
-    <div class="cs-grid">
-      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
-        <div class="cs-thumb"></div>
-        <div class="cs-body">
-          <span class="cs-tag">Corpo Snap &middot; Prawo sp&oacute;&#322;ek</span>
-          <p class="cs-title">Kiedy zarz&#261;d odpowiada maj&#261;tkiem w&#322;asnym za d&#322;ugi sp&oacute;&#322;ki?</p>
-          <p class="cs-desc">Art. 299 KSH &mdash; warunki odpowiedzialno&#347;ci, przes&#322;anki wy&#322;&#261;czenia i konsekwencje dla decyzji zarz&#261;dczych.</p>
-        </div>
-      </a>
-      <a href="wireframe-corpo-snap-odcinek.html" class="cs-card">
-        <div class="cs-thumb"></div>
-        <div class="cs-body">
-          <span class="cs-tag">Corpo Snap &middot; Prawo sp&oacute;&#322;ek</span>
-          <p class="cs-title">Zaskar&#380;anie uchwa&#322; zgromadzenia wsp&oacute;lnik&oacute;w &mdash; co warto wiedzie&#263;?</p>
-          <p class="cs-desc">Uchylenie a stwierdzenie niewa&#380;no&#347;ci uchwa&#322;y &mdash; r&oacute;&#380;nice, terminy i konsekwencje dla sp&oacute;&#322;ki.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- AKTUALNOŚCI -->
-<section class="sec sec-warm">
+<section class="sec sec-white">
   <div class="wrap">
     <div class="row-between">
       <div>
         <span class="label">Aktualno&#347;ci</span>
         <h2 class="h2-sec">Co s&#322;ycha&#263; w kancelarii.</h2>
       </div>
-      <a href="wireframe-aktualnosci.html" class="btn-row-link">
+      <a href="aktualnosci.html" class="btn-row-link">
         Wszystkie aktualno&#347;ci
         <span class="btn-c"><span class="arr"></span></span>
       </a>
@@ -600,27 +567,27 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div class="news-grid">
       <div class="news-card">
         <p class="news-date">Stycze&#324; 2025</p>
-        <p class="news-title">BLSK Legal wyr&oacute;&#380;nione w rankingu Chambers Europe</p>
+        <p class="news-title">ZMW Legal wyr&oacute;&#380;nione w rankingu Chambers Europe</p>
         <p class="news-exc">Kancelaria ponownie rekomendowana w kategorii Dispute Resolution.</p>
-        <a href="wireframe-artykul.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">
+        <a href="artykul.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">
           Czytaj wi&#281;cej
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
       </div>
       <div class="news-card">
         <p class="news-date">Grudzie&#324; 2024</p>
-        <p class="news-title">Do zespo&#322;u do&#322;&#261;cza nowy counsel &mdash; specjalista od post&#281;powa&#324; podatkowych</p>
+        <p class="news-title">Do zespo&#322;u do&#322;&#261;cza nowy counsel &ndash; specjalista od post&#281;powa&#324; podatkowych</p>
         <p class="news-exc">Rozwijamy praktyk&#281; Spor&oacute;w Podatkowych.</p>
-        <a href="wireframe-artykul.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">
+        <a href="artykul.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">
           Czytaj wi&#281;cej
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
       </div>
       <div class="news-card">
         <p class="news-date">Pa&#378;dziernik 2024</p>
-        <p class="news-title">BLSK Legal partnerem konferencji prawa sp&oacute;&#322;ek handlowych</p>
+        <p class="news-title">ZMW Legal partnerem konferencji prawa sp&oacute;&#322;ek handlowych</p>
         <p class="news-exc">Obj&#281;li&#347;my patronat merytoryczny nad konferencj&#261; po&#347;wi&#281;con&#261; odpowiedzialno&#347;ci organ&oacute;w sp&oacute;&#322;ek.</p>
-        <a href="wireframe-artykul.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">
+        <a href="artykul.html" class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">
           Czytaj wi&#281;cej
           <span class="btn-c btn-c-sm"><span class="arr"></span></span>
         </a>
@@ -636,11 +603,11 @@ footer{background:#0f1628;padding:5rem 0 0}
       <div>
         <span class="label">Kontakt</span>
         <h2 class="kt-h2">Porozmawiajmy<br>o Twojej sprawie.</h2>
-        <p class="kt-lead">Zapraszamy na spotkania stacjonarne lub online &mdash; wy&#322;&#261;cznie po wcze&#347;niejszym um&oacute;wieniu terminu. Najszybszy kontakt: telefon.</p>
+        <p class="kt-lead">Zapraszamy na spotkania stacjonarne lub online &ndash; wy&#322;&#261;cznie po wcze&#347;niejszym um&oacute;wieniu terminu. Najszybszy kontakt: telefon.</p>
         <div class="kt-rows">
-          <div><span class="kt-lbl">Telefon</span><a href="tel:+48224159800" class="kt-val">+48 22 415 98 00</a></div>
-          <div><span class="kt-lbl">E-mail</span><a href="mailto:biuro@blsklegal.com" class="kt-val">biuro@blsklegal.com</a></div>
-          <div><span class="kt-lbl">Adres</span><span class="kt-val">ul. Mazowiecka 9 (IV p.), 00-052 Warszawa</span></div>
+          <div><span class="kt-lbl">Telefon</span><a href="tel:+48223194760" class="kt-val">+48 22 319 47 60</a></div>
+          <div><span class="kt-lbl">E-mail</span><a href="mailto:biuro@zmwlegal.pl" class="kt-val">biuro@zmwlegal.pl</a></div>
+          <div><span class="kt-lbl">Adres</span><span class="kt-val">ul. Wspólna 47A (III p.), 00-684 Warszawa</span></div>
           <div><span class="kt-lbl">Godziny pracy</span><span class="kt-val">poniedzia&#322;ek &ndash; pi&#261;tek, 9:30&ndash;17:30</span></div>
         </div>
       </div>
@@ -661,7 +628,7 @@ footer{background:#0f1628;padding:5rem 0 0}
           <label for="a-wiad">Tre&#347;&#263; wiadomo&#347;ci</label>
           <textarea id="a-wiad" placeholder="Opisz kr&oacute;tko spraw&#281; lub pytanie&hellip;"></textarea>
         </div>
-        <p class="form-note">Przesy&#322;aj&#261;c formularz, wyra&#380;asz zgod&#281; na przetwarzanie danych osobowych przez BLSK KOZŁOWSKI I WSP&Oacute;LNICY SP. K. w celu odpowiedzi na wiadomo&#347;&#263;.</p>
+        <p class="form-note">Przesy&#322;aj&#261;c formularz, wyra&#380;asz zgod&#281; na przetwarzanie danych osobowych przez ZAWADZKA MROWIEC &amp; WSP&Oacute;LNICY SP. K. w celu odpowiedzi na wiadomo&#347;&#263;.</p>
         <button type="submit" class="btn-p" style="align-self:flex-start">Wy&#347;lij wiadomo&#347;&#263;</button>
       </form>
     </div>
@@ -671,41 +638,40 @@ footer{background:#0f1628;padding:5rem 0 0}
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo"></div>
-      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Mazowiecka 9 (IV p.)<br>00-052 Warszawa</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto;margin-bottom:1.25rem" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#f6f6f4">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="rgba(246,246,244,0.5)" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
     </div>
     <div class="footer-col">
       <h4>Praktyki</h4>
       <ul>
-        <li><a href="wireframe-rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
-        <li><a href="wireframe-life-sciences.html">Life Sciences</a></li>
-        <li><a href="wireframe-dotacje-granty.html">Dotacje i Granty</a></li>
-        <li><a href="wireframe-digital.html">Digital</a></li>
-        <li><a href="wireframe-spory-podatkowe.html">Spory Podatkowe</a></li>
+        <li><a href="rozwiazywanie-sporow.html">Rozwi&#261;zywanie Spor&oacute;w</a></li>
+        <li><a href="life-sciences.html">Life Sciences</a></li>
+        <li><a href="fundusze-pomoc-publiczna.html">Fundusze i Pomoc Publiczna</a></li>
+        <li><a href="digital.html">Digital</a></li>
+        <li><a href="spory-podatkowe.html">Spory Podatkowe</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kancelaria</h4>
       <ul>
-        <li><a href="wireframe-nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
-        <li><a href="wireframe-corpo-snap.html">Corpo Snap</a></li>
-        <li><a href="wireframe-aktualnosci.html">Aktualno&#347;ci</a></li>
-        <li><a href="wireframe-faq.html">FAQ</a></li>
-        <li><a href="wireframe-kontakt.html">Kontakt</a></li>
+        <li><a href="nasz-zespol.html">Nasz Zesp&oacute;&#322;</a></li>
+        <li><a href="aktualnosci.html">Aktualno&#347;ci</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="tel:+48224159800">+48 22 415 98 00</a></li>
-        <li><a href="mailto:biuro@blsklegal.com">biuro@blsklegal.com</a></li>
+        <li><a href="tel:+48223194760">+48 22 319 47 60</a></li>
+        <li><a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 BLSK KOZŁOWSKI I WSP&Oacute;LNICY SP. K.</span>
-    <a href="wireframe-polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
+    <span>&copy; 2026 ZAWADZKA MROWIEC &amp; WSP&Oacute;LNICY SP. K.</span>
+    <a href="polityka-prywatnosci.html">Polityka prywatno&#347;ci</a>
   </div>
 </footer>
 

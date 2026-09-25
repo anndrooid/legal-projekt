@@ -1,4 +1,4 @@
-# DESIGN SYSTEM — BLSK Legal
+# DESIGN SYSTEM — ZMW Legal
 
 ## 1. Filozofia
 

@@ -4,9 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Co to jest ten projekt
 
-Repozytorium planistyczne dla nowej strony internetowej kancelarii **BLSK Legal** (BLSK KOZŁOWSKI I WSPÓLNICY SP. K.). Nie ma tu jeszcze kodu — są dokumenty projektowe, które definiują zakres i kierunek budowy strony.
-
-Obecna strona klienta: https://blsklegal.com/
+Repozytorium planistyczne dla przykładowej strony internetowej kancelarii **ZMW Legal** (ZAWADZKA MROWIEC & WSPÓLNICY SP. K.) — fikcyjna kancelaria na potrzeby kursu.
 
 ## Pliki projektowe
 
@@ -16,7 +14,7 @@ Obecna strona klienta: https://blsklegal.com/
 
 ## Zakres strony
 
-29 profili prawników (każdy z rozbudowaną strukturą: akordeony, doświadczenie, wyróżnienia, publikacje), 5 podstron praktyk, ~48 artykułów Aktualności, ~14 odcinków Corpo Snap, FAQ, Kontakt. Łącznie ~100 podstron × 2 języki.
+22 profile prawników (każdy z rozbudowaną strukturą: akordeony, doświadczenie, wyróżnienia, publikacje), 5 podstron praktyk, ~48 artykułów Aktualności, ~14 odcinków Corpo Snap, FAQ, Kontakt. Łącznie ~100 podstron × 2 języki.
 
 Szczegółowy zakres i struktura każdej podstrony: `context/brief.md`.
 
