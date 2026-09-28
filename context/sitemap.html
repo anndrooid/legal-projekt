@@ -280,6 +280,14 @@ body {
 }
 </style>
 <script>document.documentElement.classList.add('js-ready')</script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var lenis=new Lenis();
+  function raf(time){lenis.raf(time);requestAnimationFrame(raf);}
+  requestAnimationFrame(raf);
+})();
+</script>
 </head>
 <body>
 <div class="page">

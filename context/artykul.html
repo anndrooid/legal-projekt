@@ -45,7 +45,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 
 /* === ARTICLE HEADER === */
 .art-header{
-  margin-top:90px;
+  margin-top:118px;
   background:#fff;
 }
 .art-header-inner{
@@ -84,7 +84,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 /* === ARTICLE HERO IMAGE === */
 .art-hero-img{
   width:100%;aspect-ratio:16/6;
-  background:#c8c8c8;
+  background:#c8c8c8 url('../assets/images/articles/zmw-legal-ranking-chambers-europe-2024.webp') center/cover no-repeat;
   overflow:hidden;
 }
 
@@ -138,12 +138,12 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
   font-weight:600;letter-spacing:.05em;text-transform:uppercase;
 }
 .art-img-block{
-  width:100%;aspect-ratio:16/9;background:#d4d4d4;
-  border-radius:10px;margin:2.5rem 0;
+  width:100%;aspect-ratio:16/9;background:#d4d4d4 url('../assets/images/articles/zmw-legal-praktyka-rozwiazywania-sporow.webp') center/cover no-repeat;
+  border-radius:10px;margin:2.5rem 0 .5rem;
 }
 .art-img-caption{
   font-size:.78rem;color:#aaa;
-  text-align:center;margin-top:.65rem;
+  text-align:left;margin-top:.3rem;
   margin-bottom:2rem;
 }
 .art-tags{
@@ -274,7 +274,7 @@ footer{background:var(--navy);padding:5rem 0 0}
 .nav-drop-menu a:hover,.nav-drop-menu a.active{background:#f5f5f5;color:#111}
 .nav-drop-menu a.active{font-weight:700}
 /* === HAMBURGER === */
-.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;grid-column:3;justify-self:end}
 .nav-hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
 /* === MOBILE MENU === */
 .mobile-menu{position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto;padding:0 1.5rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
@@ -324,6 +324,7 @@ footer{background:var(--navy);padding:5rem 0 0}
   .art-cta-btns{flex-direction:column}
   .art-cta-btns .btn-p{white-space:nowrap}
   .art-cta-btns .btn-p,.art-cta-btns .btn-s{width:100%;justify-content:center}
+  .row-between{flex-direction:column;align-items:flex-start;gap:1.25rem}
 }
 @media(min-width:1024px){h1.ph-title{font-size:5.5rem}.ph-back{font-size:1.2rem}}
 
@@ -376,7 +377,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#f6f6f4;bo
 .nav-dropdown:hover .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto}
 .nav-drop-menu a{display:block;padding:.65rem 1.25rem;font-family:'PPNeueMontreal',sans-serif;font-size:1rem;font-weight:500;color:var(--navy);text-decoration:none;transition:background .15s}
 .nav-drop-menu a:hover{background:rgba(26,36,64,.06);color:var(--crimson)}
-.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;grid-column:3;justify-self:end}
 .nav-hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px}
 @media(max-width:1200px){.nav-links{display:none!important}.nav-hamburger{display:flex!important}.nav-phone{display:none!important}}
 
@@ -524,7 +525,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 .more-section{background:#f6f6f4}
 .art-meta-lbl{color:rgba(26,36,64,.4)}
 .art-meta-val{color:var(--navy)}
-.art-hero-img{background:rgba(26,36,64,.12)}
+.art-hero-img{background-color:rgba(26,36,64,.12)}
 .art-body li{color:var(--navy)}
 .art-body strong{color:var(--navy)}
 .art-body a{color:var(--crimson)}
@@ -568,7 +569,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 .art-blockquote p{color:var(--navy)}
 .art-blockquote cite{color:rgba(26,36,64,.4)}
 /* Images */
-.art-img-block{background:rgba(26,36,64,.12)}
+.art-img-block{background-color:rgba(26,36,64,.12)}
 .art-img-caption{color:rgba(26,36,64,.4)}
 /* Tags */
 .art-tags{border-top-color:var(--border)}
@@ -599,15 +600,47 @@ footer{background:#0f1628;padding:5rem 0 0}
   .line-inner{display:block;transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
   .line-inner.visible{transform:translateY(0)}
 }
+
+/* Wysuwane menu mobilne - ujednolicone jak na stronie glownej */
+.mobile-menu{position:fixed;inset:0;z-index:500;background:#f6f6f4;overflow-y:auto;padding:0 3rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-bottom:1px solid var(--border)}
+.mobile-menu-logo{width:90px;height:27px;background:rgba(26,36,64,.15);border-radius:3px}
+.mobile-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--navy);line-height:1;padding:.25rem}
+.mobile-nav{list-style:none}
+.mobile-nav>li{border-bottom:1px solid var(--border)}
+.mobile-nav>li:last-child{border-bottom:none}
+.mobile-nav>li>a,.mobile-nav>li>button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.15rem 0;font-family:'PPNeueMontreal',sans-serif;font-size:1.125rem;font-weight:500;color:var(--navy);text-decoration:none;background:none;border:none;cursor:pointer;text-align:left}
+.mobile-submenu{list-style:none;padding-bottom:.75rem;display:none}
+.mobile-submenu.open{display:block}
+.mobile-submenu a{display:block;padding:.55rem .75rem;font-size:1rem;color:var(--navy);text-decoration:none}
+.m-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.mobile-nav button.open .m-chevron{transform:rotate(180deg)}
+.mobile-menu-phone{padding-top:2rem;border-top:1px solid var(--border)}
+.mobile-menu-phone .label{margin-bottom:.35rem;color:var(--navy)}
+.mobile-menu-phone a{font-family:'PPNeueMontreal',sans-serif;font-size:1.75rem;font-weight:600;color:var(--crimson);text-decoration:none}
+@media(max-width:600px){.mobile-menu{padding-left:1.5rem;padding-right:1.5rem}}
+
+/* Telefon/e-mail zawsze w jednej linii; stopka - link polityki pod copyrightem na mobile */
+@media(max-width:420px){.mobile-menu-phone a{font-size:1.4rem}}
+@media(max-width:767px){.footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}}
 </style>
 <script>document.documentElement.classList.add('js-ready')</script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var lenis=new Lenis();
+  function raf(time){lenis.raf(time);requestAnimationFrame(raf);}
+  requestAnimationFrame(raf);
+})();
+</script>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
     <a href="strona-glowna.html" class="nav-logo-link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style="display:block;width:175px;height:auto" aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="600" font-size="36" letter-spacing="1" fill="#1a2440">LEGAL</text></svg>
     </a>
     <ul class="nav-links">
       <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
@@ -627,7 +660,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </ul>
     <div class="nav-phone">
       <span class="nav-phone-label">Zadzwoń teraz</span>
-      <a href="tel:+48223194760" class="nav-phone-num">+48 22 319 47 60</a>
+      <a href="tel:+48223194760" class="nav-phone-num" style="white-space:nowrap">+48 22 319 47 60</a>
     </div>
     <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
       <span></span><span></span><span></span>
@@ -636,7 +669,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-top">
-    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
+    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style="display:block;width:175px;height:auto" aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="600" font-size="36" letter-spacing="1" fill="#1a2440">LEGAL</text></svg></a>
     <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
   </div>
   <ul class="mobile-nav">
@@ -657,7 +690,7 @@ footer{background:#0f1628;padding:5rem 0 0}
   </ul>
   <div class="mobile-menu-phone">
     <span class="label">Zadzwoń teraz</span>
-    <a href="tel:+48223194760">+48 22 319 47 60</a>
+    <a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a>
   </div>
 </div>
 
@@ -667,7 +700,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div>
       <a href="aktualnosci.html" class="ph-back reveal">‹ Aktualności</a>
       <span class="art-cat-label reveal reveal-d1">Rankingi · 3 czerwca 2024</span>
-      <h1 class="art-title">ZMW Legal w rankingu Chambers Europe 2024 –<br>Recommended Firm w kategorii Dispute Resolution</h1>
+      <h1 class="art-title">ZMW Legal w rankingu Chambers Europe 2024.<br>Recommended Firm w kategorii Dispute Resolution</h1>
     </div>
     <div class="art-right">
       <div class="art-meta-list">
@@ -726,7 +759,6 @@ footer{background:#0f1628;padding:5rem 0 0}
         <p class="reveal">Kancelarie są oceniane niezależnie przez ekspertów Chambers i przyporządkowywane do czterech bandów (Band 1 to najwyższy) lub kategorii „Recognised Practitioner". ZMW Legal jest wymieniana w rankingu nieprzerwanie od kilku lat.</p>
 
         <div class="art-img-block reveal"></div>
-        <p class="art-img-caption reveal">Ceremonia Chambers Europe Awards – Warszawa, czerwiec 2024</p>
 
         <h2 class="reveal">Kontekst i znaczenie wyróżnienia</h2>
         <p class="reveal">Wyróżnienie zbiega się z kolejnym rekordowym rokiem dla praktyki Rozwiązywania Sporów w ZMW Legal. W 2023–2024 kancelaria prowadziła kilkanaście spraw o wartości powyżej 50 mln zł każda, z których większość zakończyła się sukcesem dla klienta na etapie pierwszej instancji.</p>
@@ -755,14 +787,14 @@ footer{background:#0f1628;padding:5rem 0 0}
         <div class="sidebar-section sidebar-cta reveal">
           <h3>Skontaktuj się</h3>
           <p style="font-size:.875rem;color:#666;line-height:1.6;margin-bottom:1.25rem">Potrzebujesz wsparcia prawnego? Nasi eksperci są do Twojej dyspozycji.</p>
-          <a href="tel:+48223194760" class="btn-p" style="width:100%;justify-content:center;font-size:.875rem;margin-bottom:.75rem">Zadzwoń: +48 22 319 47 60</a>
+          <a href="tel:+48223194760" class="btn-p" style="white-space:nowrap;width:100%;justify-content:center;font-size:.875rem;margin-bottom:.75rem">Zadzwoń: +48 22 319 47 60</a>
           <a href="kontakt.html" class="btn-s" style="width:100%;justify-content:center;font-size:.875rem">Napisz do nas</a>
         </div>
 
         <div class="sidebar-section reveal reveal-d1">
           <h3>Wyróżnieni prawnicy</h3>
           <div class="sidebar-person">
-            <div class="person-photo"></div>
+            <div class="person-photo"><img src="../assets/images/team/anna-zawadzka.webp" alt="Prof. Anna Zawadzka" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block;border-radius:inherit"></div>
             <div>
               <p class="person-name">Prof. Anna Zawadzka</p>
               <p class="person-role">Managing Partner · Band 1</p>
@@ -773,7 +805,7 @@ footer{background:#0f1628;padding:5rem 0 0}
           </a>
           <hr style="border:none;border-top:1px solid #f0f0f0;margin:1.25rem 0">
           <div class="sidebar-person">
-            <div class="person-photo"></div>
+            <div class="person-photo"><img src="../assets/images/team/piotr-mrowiec.webp" alt="Piotr Mrowiec" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border-radius:inherit"></div>
             <div>
               <p class="person-name">Piotr Mrowiec</p>
               <p class="person-role">Partner · Band 2</p>
@@ -827,7 +859,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div class="row-between">
       <div>
         <span class="label">Aktualności</span>
-        <h2 class="h2-sec">Więcej z kancelarii</h2>
+        <h2 class="h2-sec">Więcej<br>z kancelarii</h2>
       </div>
       <a href="aktualnosci.html" class="btn-row-link">
         Wszystkie aktualności
@@ -836,19 +868,19 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
     <div class="more-grid">
       <a href="artykul.html" class="more-card reveal">
-        <div class="more-img"></div>
+        <div class="more-img" style="background-image:url('../assets/images/articles/karolina-rychlewska-nagroda-business-centre-club.webp');background-size:cover;background-position:center"></div>
         <span class="more-cat">Wyróżnienia</span>
-        <p class="more-title">Prof. Zawadzka wyróżniona nagrodą Business Centre Club</p>
+        <p class="more-title">Karolina Rychlewska wyróżniona nagrodą Business Centre Club</p>
         <span class="more-date">18 maja 2024</span>
       </a>
       <a href="artykul.html" class="more-card reveal reveal-d1">
-        <div class="more-img"></div>
+        <div class="more-img" style="background-image:url('../assets/images/articles/zmw-legal-ranking-warszawskie-city-2024.webp');background-size:cover;background-position:center"></div>
         <span class="more-cat">Rankingi</span>
-        <p class="more-title">ZMW Legal nominowany do FT Innovative Lawyers 2024</p>
+        <p class="more-title">ZMW Legal w rankingu najlepszych kancelarii warszawskiego City 2024</p>
         <span class="more-date">22 kwietnia 2024</span>
       </a>
       <a href="artykul.html" class="more-card reveal reveal-d2">
-        <div class="more-img"></div>
+        <div class="more-img" style="background-image:url('../assets/images/articles/jakub-stelmach-marta-kowalczyk-nowi-partnerzy.webp');background-size:cover;background-position:center top"></div>
         <span class="more-cat">Zespół</span>
         <p class="more-title">Dr Jakub Stelmach i Marta Kowalczyk dołączają do ZMW Legal jako Partnerzy</p>
         <span class="more-date">1 marca 2024</span>
@@ -866,7 +898,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       <p class="reveal reveal-d2" style="font-size:1rem;color:rgba(255,255,255,.6);line-height:1.7">Umawiamy spotkania stacjonarne i online. Najszybszy kontakt: telefon.</p>
     </div>
     <div class="art-cta-btns reveal reveal-d2" style="display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0">
-      <a href="tel:+48223194760" class="btn-p">Zadzwoń: +48 22 319 47 60</a>
+      <a href="tel:+48223194760" class="btn-p" style="white-space:nowrap">Zadzwoń: +48 22 319 47 60</a>
       <a href="kontakt.html" class="btn-s" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.25);background:transparent">Napisz do nas</a>
     </div>
   </div>
@@ -876,7 +908,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 <footer>
   <div class="footer-grid">
     <div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto;margin-bottom:1.25rem" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#f6f6f4">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="rgba(246,246,244,0.5)" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style="display:block;width:175px;height:auto;margin-bottom:1.25rem" aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="600" font-size="36" letter-spacing="1" fill="#f6f6f4">LEGAL</text></svg>
       <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
     </div>
     <div class="footer-col">
@@ -901,8 +933,8 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="tel:+48223194760">+48 22 319 47 60</a></li>
-        <li><a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
+        <li><a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a></li>
+        <li><a href="mailto:biuro@zmwlegal.pl" style="white-space:nowrap">biuro@zmwlegal.pl</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
     </div>
@@ -931,9 +963,19 @@ footer{background:#0f1628;padding:5rem 0 0}
         }
       });
     },{threshold:0,rootMargin:'0px 0px -25% 0px'});
-    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title,.art-title').forEach(function(el){
-      var parts=el.innerHTML.split(/<br\s*\/?>/i);
-      el.innerHTML=parts.map(function(p){return '<span class="line-clip"><span class="line-inner">'+p.trim()+'</span></span>';}).join('');
+    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title,.art-title,.rankings-title,.stats-header-title,.forums-title').forEach(function(el){
+      var _segs=el.innerHTML.split(/<br\s*\/?>/i).map(function(s){return s.trim();});
+      var _markup=_segs.map(function(seg){return seg.split(/\s+/).filter(Boolean).map(function(w){return '<span class="_word">'+w+'</span>';}).join(' ');}).join('<br>');
+      el.innerHTML=_markup;
+      var _lines=[],_curTop=null,_curWords=[];
+      el.querySelectorAll('._word').forEach(function(w){
+        var top=w.offsetTop;
+        if(_curTop===null){_curTop=top;}
+        if(Math.abs(top-_curTop)>2){_lines.push(_curWords.join(' '));_curWords=[];_curTop=top;}
+        _curWords.push(w.textContent);
+      });
+      if(_curWords.length)_lines.push(_curWords.join(' '));
+      el.innerHTML=_lines.map(function(l){return '<span class="line-clip"><span class="line-inner">'+l+'</span></span>';}).join('');
       el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
       hio.observe(el);
     });

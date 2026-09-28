@@ -52,7 +52,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
    - brak labela/tagu
    ===================================================== */
 .page-header{
-  margin-top:90px;
+  margin-top:118px;
   background:#fff;
 }
 .page-header-inner{
@@ -117,6 +117,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 .team-section{padding:0rem 0 8rem}
 .team-tier-header{grid-column:1/-1;display:flex;align-items:baseline;gap:1rem;padding:2.5rem 0 .75rem;border-top:1px solid #e8e8e8;margin-top:.5rem}
 .team-tier-header:first-child{border-top:none;margin-top:0;padding-top:.5rem}
+.team-grid.show-all .team-tier-header{display:none}
 .team-tier-label{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#aaa}
 .team-tier-count{font-size:.8rem;color:#ccc}
 .team-grid{
@@ -197,7 +198,7 @@ footer{background:#111;padding:5rem 0 0}
 .nav-drop-menu a:hover,.nav-drop-menu a.active{background:#f5f5f5;color:#111}
 .nav-drop-menu a.active{font-weight:700}
 /* === HAMBURGER === */
-.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;grid-column:3;justify-self:end}
 .nav-hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
 /* === MOBILE MENU === */
 .mobile-menu{position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto;padding:0 1.5rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
@@ -295,7 +296,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#f6f6f4;bo
 .nav-dropdown:hover .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto}
 .nav-drop-menu a{display:block;padding:.65rem 1.25rem;font-family:'PPNeueMontreal',sans-serif;font-size:1rem;font-weight:500;color:var(--navy);text-decoration:none;transition:background .15s}
 .nav-drop-menu a:hover{background:rgba(26,36,64,.06);color:var(--crimson)}
-.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;grid-column:3;justify-self:end}
 .nav-hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px}
 @media(max-width:1200px){.nav-links{display:none!important}.nav-hamburger{display:flex!important}.nav-phone{display:none!important}}
 
@@ -384,14 +385,14 @@ footer{background:#0f1628}
 /* Filter bar (nasz zespol) */
 .filter-lbl{color:rgba(26,36,64,.4)}
 .filter-tab{border:1.5px solid rgba(26,36,64,.2);color:var(--navy);background:#f6f6f4;font-family:'PPNeueMontreal',sans-serif}
-.filter-tab:hover{border-color:var(--crimson);color:var(--crimson)}
-.filter-tab.active{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.filter-tab:hover{border-color:var(--navy);color:var(--navy)}
+.filter-tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
 /* Team tier headers */
 .team-tier-label{color:rgba(26,36,64,.35)}
 .team-tier-count{color:rgba(26,36,64,.25)}
 .team-tier-header{border-top-color:rgba(26,36,64,.1)}
 /* Team card */
-.team-name{color:var(--navy);font-weight:500}
+.team-name{color:var(--navy);font-size:1.3rem;font-weight:600}
 .team-role{color:var(--crimson)}
 .team-spec{color:rgba(26,36,64,.5)}
 /* Secondary button */
@@ -451,15 +452,47 @@ footer{background:#0f1628;padding:5rem 0 0}
   .js-ready .team-card{transition:opacity .95s cubic-bezier(.25,.46,.45,.94),transform .95s cubic-bezier(.25,.46,.45,.94)}
   .js-ready .team-card:not(.tc-vis){opacity:0;transform:translateX(-24px)}
 }
+
+/* Wysuwane menu mobilne - ujednolicone jak na stronie glownej */
+.mobile-menu{position:fixed;inset:0;z-index:500;background:#f6f6f4;overflow-y:auto;padding:0 3rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-bottom:1px solid var(--border)}
+.mobile-menu-logo{width:90px;height:27px;background:rgba(26,36,64,.15);border-radius:3px}
+.mobile-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--navy);line-height:1;padding:.25rem}
+.mobile-nav{list-style:none}
+.mobile-nav>li{border-bottom:1px solid var(--border)}
+.mobile-nav>li:last-child{border-bottom:none}
+.mobile-nav>li>a,.mobile-nav>li>button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.15rem 0;font-family:'PPNeueMontreal',sans-serif;font-size:1.125rem;font-weight:500;color:var(--navy);text-decoration:none;background:none;border:none;cursor:pointer;text-align:left}
+.mobile-submenu{list-style:none;padding-bottom:.75rem;display:none}
+.mobile-submenu.open{display:block}
+.mobile-submenu a{display:block;padding:.55rem .75rem;font-size:1rem;color:var(--navy);text-decoration:none}
+.m-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.mobile-nav button.open .m-chevron{transform:rotate(180deg)}
+.mobile-menu-phone{padding-top:2rem;border-top:1px solid var(--border)}
+.mobile-menu-phone .label{margin-bottom:.35rem;color:var(--navy)}
+.mobile-menu-phone a{font-family:'PPNeueMontreal',sans-serif;font-size:1.75rem;font-weight:600;color:var(--crimson);text-decoration:none}
+@media(max-width:600px){.mobile-menu{padding-left:1.5rem;padding-right:1.5rem}}
+
+/* Telefon/e-mail zawsze w jednej linii; stopka - link polityki pod copyrightem na mobile */
+@media(max-width:420px){.mobile-menu-phone a{font-size:1.4rem}}
+@media(max-width:767px){.footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}}
 </style>
 <script>document.documentElement.classList.add('js-ready')</script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var lenis=new Lenis();
+  function raf(time){lenis.raf(time);requestAnimationFrame(raf);}
+  requestAnimationFrame(raf);
+})();
+</script>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
     <a href="strona-glowna.html" class="nav-logo-link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style="display:block;width:175px;height:auto" aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="600" font-size="36" letter-spacing="1" fill="#1a2440">LEGAL</text></svg>
     </a>
     <ul class="nav-links">
       <li><a href="nasz-zespol.html" class="active">Nasz Zespół</a></li>
@@ -479,7 +512,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </ul>
     <div class="nav-phone">
       <span class="nav-phone-label">Zadzwoń teraz</span>
-      <a href="tel:+48223194760" class="nav-phone-num">+48 22 319 47 60</a>
+      <a href="tel:+48223194760" class="nav-phone-num" style="white-space:nowrap">+48 22 319 47 60</a>
     </div>
     <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
       <span></span><span></span><span></span>
@@ -488,7 +521,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-top">
-    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
+    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style="display:block;width:175px;height:auto" aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="600" font-size="36" letter-spacing="1" fill="#1a2440">LEGAL</text></svg></a>
     <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
   </div>
   <ul class="mobile-nav">
@@ -509,7 +542,7 @@ footer{background:#0f1628;padding:5rem 0 0}
   </ul>
   <div class="mobile-menu-phone">
     <span class="label">Zadzwoń teraz</span>
-    <a href="tel:+48223194760">+48 22 319 47 60</a>
+    <a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a>
   </div>
 </div>
 
@@ -540,7 +573,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 <div class="filter-wrap reveal">
   <div class="filter-inner">
     <span class="filter-lbl">Filtruj:</span>
-    <button class="filter-tab active" onclick="filterTeam('all',this)">Wszyscy (29)</button>
+    <button class="filter-tab active" onclick="filterTeam('all',this)">Wszyscy (8)</button>
     <button class="filter-tab" onclick="filterTeam('partner',this)">Partnerzy</button>
     <button class="filter-tab" onclick="filterTeam('counsel',this)">Counsel</button>
     <button class="filter-tab" onclick="filterTeam('associate',this)">Associates</button>
@@ -548,17 +581,17 @@ footer{background:#0f1628;padding:5rem 0 0}
   </div>
 </div>
 
-<!-- TEAM GRID – wszyscy 29 jednakowi -->
+<!-- TEAM GRID -->
 <div class="team-section">
-  <div class="team-grid" id="teamGrid">
+  <div class="team-grid show-all" id="teamGrid">
 
     <!-- PARTNERZY -->
     <div class="team-tier-header reveal" data-tier-header="partner">
       <span class="team-tier-label">Partnerzy</span>
-      <span class="team-tier-count">8 osób</span>
+      <span class="team-tier-count">3 osoby</span>
     </div>
     <div class="team-card" data-tier="partner">
-      <div class="team-photo"></div>
+      <div class="team-photo"><img src="../assets/images/team/anna-zawadzka.webp" alt="Prof. Anna Zawadzka" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block;border-radius:inherit"></div>
       <div class="team-body">
         <p class="team-name">Prof. Anna Zawadzka</p>
         <p class="team-role">Managing Partner</p>
@@ -570,7 +603,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
 
     <div class="team-card" data-tier="partner">
-      <div class="team-photo"></div>
+      <div class="team-photo"><img src="../assets/images/team/piotr-mrowiec.webp" alt="Piotr Mrowiec" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border-radius:inherit"></div>
       <div class="team-body">
         <p class="team-name">Piotr Mrowiec</p>
         <p class="team-role">Partner</p>
@@ -582,7 +615,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
 
     <div class="team-card" data-tier="partner">
-      <div class="team-photo"></div>
+      <div class="team-photo"><img src="../assets/images/team/karolina-rychlewska.webp" alt="Karolina Rychlewska" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:55% 20%;display:block;border-radius:inherit"></div>
       <div class="team-body">
         <p class="team-name">Karolina Rychlewska</p>
         <p class="team-role">Partner</p>
@@ -593,97 +626,13 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
     </div>
 
-    <div class="team-card" data-tier="partner">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Dr Jakub Stelmach</p>
-        <p class="team-role">Partner</p>
-        <p class="team-spec">Spory Podatkowe · Postępowania KAS</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="partner">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Tomasz Nowicki</p>
-        <p class="team-role">Partner</p>
-        <p class="team-spec">Fundusze i Pomoc Publiczna · Rozwiązywanie Sporów</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="partner">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Marta Kowalczyk</p>
-        <p class="team-role">Partner</p>
-        <p class="team-spec">Digital · Ochrona danych · Telekomunikacja</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="partner">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Rafał Wiśniewski</p>
-        <p class="team-role">Partner</p>
-        <p class="team-spec">Rozwiązywanie Sporów · Arbitraż</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="partner">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Agnieszka Maj</p>
-        <p class="team-role">Partner</p>
-        <p class="team-spec">Life Sciences · Pharma · Żywność</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
     <!-- COUNSEL -->
     <div class="team-tier-header reveal" data-tier-header="counsel">
       <span class="team-tier-label">Counsel</span>
-      <span class="team-tier-count">7 osób</span>
+      <span class="team-tier-count">2 osoby</span>
     </div>
     <div class="team-card" data-tier="counsel">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Bartosz Kwiatkowski</p>
-        <p class="team-role">Managing Counsel</p>
-        <p class="team-spec">Fundusze i Pomoc Publiczna · Zachęty Rozwojowe</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="counsel">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Elżbieta Pawlak</p>
-        <p class="team-role">Counsel</p>
-        <p class="team-spec">Life Sciences · Rejestracja produktów</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="counsel">
-      <div class="team-photo"></div>
+      <div class="team-photo"><img src="../assets/images/team/michal-zaremba.webp" alt="Michał Zaremba" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border-radius:inherit"></div>
       <div class="team-body">
         <p class="team-name">Michał Zaremba</p>
         <p class="team-role">Counsel</p>
@@ -695,19 +644,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
 
     <div class="team-card" data-tier="counsel">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Marek Krawczyk</p>
-        <p class="team-role">Counsel</p>
-        <p class="team-spec">Rozwiązywanie Sporów · Arbitraż</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="counsel">
-      <div class="team-photo"></div>
+      <div class="team-photo"><img src="../assets/images/team/lukasz-baran.webp" alt="Łukasz Baran" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border-radius:inherit"></div>
       <div class="team-body">
         <p class="team-name">Łukasz Baran</p>
         <p class="team-role">Counsel</p>
@@ -718,37 +655,13 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
     </div>
 
-    <div class="team-card" data-tier="counsel">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Michał Lis</p>
-        <p class="team-role">Counsel</p>
-        <p class="team-spec">Spory Podatkowe · KAS · TSUE</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="counsel">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Piotr Zając</p>
-        <p class="team-role">Counsel</p>
-        <p class="team-spec">Fundusze i Pomoc Publiczna · Kontrole</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
     <!-- ASSOCIATES -->
     <div class="team-tier-header reveal" data-tier-header="associate">
       <span class="team-tier-label">Associates</span>
-      <span class="team-tier-count">7 osób</span>
+      <span class="team-tier-count">2 osoby</span>
     </div>
     <div class="team-card" data-tier="associate">
-      <div class="team-photo"></div>
+      <div class="team-photo"><img src="../assets/images/team/krzysztof-kowal.webp" alt="Krzysztof Kowal" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border-radius:inherit"></div>
       <div class="team-body">
         <p class="team-name">Krzysztof Kowal</p>
         <p class="team-role">Senior Associate</p>
@@ -760,19 +673,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </div>
 
     <div class="team-card" data-tier="associate">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Andrzej Nowak</p>
-        <p class="team-role">Senior Associate</p>
-        <p class="team-spec">Spory Podatkowe</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="associate">
-      <div class="team-photo"></div>
+      <div class="team-photo"><img src="../assets/images/team/joanna-stachowiak.webp" alt="Joanna Stachowiak" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border-radius:inherit"></div>
       <div class="team-body">
         <p class="team-name">Joanna Stachowiak</p>
         <p class="team-role">Associate</p>
@@ -783,148 +684,16 @@ footer{background:#0f1628;padding:5rem 0 0}
       </div>
     </div>
 
-    <div class="team-card" data-tier="associate">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Tomasz Wierzbicki</p>
-        <p class="team-role">Associate</p>
-        <p class="team-spec">Digital · Telekomunikacja</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="associate">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Beata Kowalska</p>
-        <p class="team-role">Junior Associate</p>
-        <p class="team-spec">Rozwiązywanie Sporów</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="associate">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Robert Czarnecki</p>
-        <p class="team-role">Junior Associate</p>
-        <p class="team-spec">Fundusze i Pomoc Publiczna</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="associate">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Michał Broda</p>
-        <p class="team-role">Junior Associate</p>
-        <p class="team-spec">Spory Podatkowe</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
     <!-- SUPPORT -->
     <div class="team-tier-header reveal" data-tier-header="support">
       <span class="team-tier-label">Pozostały zespół</span>
-      <span class="team-tier-count">8 osób</span>
+      <span class="team-tier-count">1 osoba</span>
     </div>
     <div class="team-card" data-tier="support">
-      <div class="team-photo"></div>
+      <div class="team-photo"><img src="../assets/images/team/marek-debowski.webp" alt="Marek Dębowski" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border-radius:inherit"></div>
       <div class="team-body">
         <p class="team-name">Marek Dębowski</p>
         <p class="team-role">Project Manager</p>
-        <p class="team-spec">&nbsp;</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="support">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Patrycja Wolska</p>
-        <p class="team-role">Paralegal</p>
-        <p class="team-spec">&nbsp;</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="support">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Paulina Szymańska</p>
-        <p class="team-role">Paralegal</p>
-        <p class="team-spec">&nbsp;</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="support">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Natalia Wi&#347;niewska</p>
-        <p class="team-role">Consultant</p>
-        <p class="team-spec">&nbsp;</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="support">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Katarzyna Zielińska</p>
-        <p class="team-role">Office Manager</p>
-        <p class="team-spec">&nbsp;</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="support">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Dorota Kamińska</p>
-        <p class="team-role">Head of Office</p>
-        <p class="team-spec">&nbsp;</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="support">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Monika B&#322;aszczyk</p>
-        <p class="team-role">Office &amp; Finance Specialist</p>
-        <p class="team-spec">&nbsp;</p>
-        <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
-          Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="team-card" data-tier="support">
-      <div class="team-photo"></div>
-      <div class="team-body">
-        <p class="team-name">Izabela Wr&oacute;bel</p>
-        <p class="team-role">Junior Assistant</p>
         <p class="team-spec">&nbsp;</p>
         <a href="#" class="btn-row-link" style="font-size:.85rem;gap:.5rem">
           Zobacz profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
@@ -943,7 +712,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       <h2 class="kt-h2">Porozmawiajmy<br>o Twojej sprawie.</h2>
       <p class="kt-lead reveal reveal-d1">Najszybszy kontakt: telefon. Zapraszamy na spotkania stacjonarne lub online – wyłącznie po wcześniejszym umówieniu terminu.</p>
       <div class="btn-row reveal reveal-d2" style="justify-content:center">
-        <a href="tel:+48223194760" class="btn-p">Zadzwoń: +48 22 319 47 60</a>
+        <a href="tel:+48223194760" class="btn-p" style="white-space:nowrap">Zadzwoń: +48 22 319 47 60</a>
         <a href="strona-glowna.html#kontakt" class="btn-s">Formularz kontaktowy</a>
       </div>
     </div>
@@ -953,7 +722,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 <footer>
   <div class="footer-grid">
     <div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto;margin-bottom:1.25rem" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#f6f6f4">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="rgba(246,246,244,0.5)" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style="display:block;width:175px;height:auto;margin-bottom:1.25rem" aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="600" font-size="36" letter-spacing="1" fill="#f6f6f4">LEGAL</text></svg>
       <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
     </div>
     <div class="footer-col">
@@ -978,8 +747,8 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="tel:+48223194760">+48 22 319 47 60</a></li>
-        <li><a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
+        <li><a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a></li>
+        <li><a href="mailto:biuro@zmwlegal.pl" style="white-space:nowrap">biuro@zmwlegal.pl</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
     </div>
@@ -1000,6 +769,7 @@ function filterTeam(tier, btn) {
     card.style.display = show ? '' : 'none';
   });
 
+  document.getElementById('teamGrid').classList.toggle('show-all', tier === 'all');
   document.querySelectorAll('.team-tier-header').forEach(function(hdr) {
     var show = tier === 'all' || hdr.dataset.tierHeader === tier;
     hdr.style.display = show ? '' : 'none';
@@ -1029,11 +799,19 @@ function filterTeam(tier, btn) {
         }
       });
     },{threshold:0,rootMargin:'0px 0px -25% 0px'});
-    document.querySelectorAll('.ph-title,.kt-h2').forEach(function(el){
-      var parts=el.innerHTML.split(/<br\s*\/?>/i);
-      el.innerHTML=parts.map(function(p){
-        return '<span class="line-clip"><span class="line-inner">'+p.trim()+'</span></span>';
-      }).join('');
+    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title,.art-title,.rankings-title,.stats-header-title,.forums-title').forEach(function(el){
+      var _segs=el.innerHTML.split(/<br\s*\/?>/i).map(function(s){return s.trim();});
+      var _markup=_segs.map(function(seg){return seg.split(/\s+/).filter(Boolean).map(function(w){return '<span class="_word">'+w+'</span>';}).join(' ');}).join('<br>');
+      el.innerHTML=_markup;
+      var _lines=[],_curTop=null,_curWords=[];
+      el.querySelectorAll('._word').forEach(function(w){
+        var top=w.offsetTop;
+        if(_curTop===null){_curTop=top;}
+        if(Math.abs(top-_curTop)>2){_lines.push(_curWords.join(' '));_curWords=[];_curTop=top;}
+        _curWords.push(w.textContent);
+      });
+      if(_curWords.length)_lines.push(_curWords.join(' '));
+      el.innerHTML=_lines.map(function(l){return '<span class="line-clip"><span class="line-inner">'+l+'</span></span>';}).join('');
       el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
       hio.observe(el);
     });

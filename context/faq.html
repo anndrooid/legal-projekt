@@ -44,7 +44,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff}
 .nav-phone-num{display:block;font-size:1.1rem;font-weight:700;color:#111;text-decoration:none}
 
 /* === PAGE HEADER === */
-.page-header{margin-top:90px;background:#fff}
+.page-header{margin-top:118px;background:#fff}
 .page-header-inner{
   max-width:1600px;margin:0 auto;padding:7rem 3rem 6rem;
   display:grid;grid-template-columns:1fr 2fr;gap:8rem;align-items:start;
@@ -163,7 +163,7 @@ footer{background:#111;padding:5rem 0 0}
 .nav-drop-menu a:hover,.nav-drop-menu a.active{background:#f5f5f5;color:#111}
 .nav-drop-menu a.active{font-weight:700}
 /* === HAMBURGER === */
-.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;grid-column:3;justify-self:end}
 .nav-hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
 /* === MOBILE MENU === */
 .mobile-menu{position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto;padding:0 1.5rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
@@ -251,7 +251,7 @@ nav.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:#f6f6f4;bo
 .nav-dropdown:hover .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto}
 .nav-drop-menu a{display:block;padding:.65rem 1.25rem;font-family:'PPNeueMontreal',sans-serif;font-size:1rem;font-weight:500;color:var(--navy);text-decoration:none;transition:background .15s}
 .nav-drop-menu a:hover{background:rgba(26,36,64,.06);color:var(--crimson)}
-.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;grid-column:3;justify-self:end}
 .nav-hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px}
 @media(max-width:1200px){.nav-links{display:none!important}.nav-hamburger{display:flex!important}.nav-phone{display:none!important}}
 
@@ -434,15 +434,47 @@ footer{background:#0f1628;padding:5rem 0 0}
   .line-inner{display:block;transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
   .line-inner.visible{transform:translateY(0)}
 }
+
+/* Wysuwane menu mobilne - ujednolicone jak na stronie glownej */
+.mobile-menu{position:fixed;inset:0;z-index:500;background:#f6f6f4;overflow-y:auto;padding:0 3rem 3rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-bottom:1px solid var(--border)}
+.mobile-menu-logo{width:90px;height:27px;background:rgba(26,36,64,.15);border-radius:3px}
+.mobile-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--navy);line-height:1;padding:.25rem}
+.mobile-nav{list-style:none}
+.mobile-nav>li{border-bottom:1px solid var(--border)}
+.mobile-nav>li:last-child{border-bottom:none}
+.mobile-nav>li>a,.mobile-nav>li>button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.15rem 0;font-family:'PPNeueMontreal',sans-serif;font-size:1.125rem;font-weight:500;color:var(--navy);text-decoration:none;background:none;border:none;cursor:pointer;text-align:left}
+.mobile-submenu{list-style:none;padding-bottom:.75rem;display:none}
+.mobile-submenu.open{display:block}
+.mobile-submenu a{display:block;padding:.55rem .75rem;font-size:1rem;color:var(--navy);text-decoration:none}
+.m-chevron{width:10px;height:6px;flex-shrink:0;transition:transform .25s ease}
+.mobile-nav button.open .m-chevron{transform:rotate(180deg)}
+.mobile-menu-phone{padding-top:2rem;border-top:1px solid var(--border)}
+.mobile-menu-phone .label{margin-bottom:.35rem;color:var(--navy)}
+.mobile-menu-phone a{font-family:'PPNeueMontreal',sans-serif;font-size:1.75rem;font-weight:600;color:var(--crimson);text-decoration:none}
+@media(max-width:600px){.mobile-menu{padding-left:1.5rem;padding-right:1.5rem}}
+
+/* Telefon/e-mail zawsze w jednej linii; stopka - link polityki pod copyrightem na mobile */
+@media(max-width:420px){.mobile-menu-phone a{font-size:1.4rem}}
+@media(max-width:767px){.footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}}
 </style>
 <script>document.documentElement.classList.add('js-ready')</script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var lenis=new Lenis();
+  function raf(time){lenis.raf(time);requestAnimationFrame(raf);}
+  requestAnimationFrame(raf);
+})();
+</script>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
     <a href="strona-glowna.html" class="nav-logo-link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style="display:block;width:175px;height:auto" aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="600" font-size="36" letter-spacing="1" fill="#1a2440">LEGAL</text></svg>
     </a>
     <ul class="nav-links">
       <li><a href="nasz-zespol.html">Nasz Zespół</a></li>
@@ -462,7 +494,7 @@ footer{background:#0f1628;padding:5rem 0 0}
     </ul>
     <div class="nav-phone">
       <span class="nav-phone-label">Zadzwoń teraz</span>
-      <a href="tel:+48223194760" class="nav-phone-num">+48 22 319 47 60</a>
+      <a href="tel:+48223194760" class="nav-phone-num" style="white-space:nowrap">+48 22 319 47 60</a>
     </div>
     <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
       <span></span><span></span><span></span>
@@ -471,7 +503,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-top">
-    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#1a2440">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="#1a2440" textLength="58" lengthAdjust="spacing">LEGAL</text></svg></a>
+    <a href="strona-glowna.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style="display:block;width:175px;height:auto" aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="600" font-size="36" letter-spacing="1" fill="#1a2440">LEGAL</text></svg></a>
     <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
   </div>
   <ul class="mobile-nav">
@@ -492,7 +524,7 @@ footer{background:#0f1628;padding:5rem 0 0}
   </ul>
   <div class="mobile-menu-phone">
     <span class="label">Zadzwoń teraz</span>
-    <a href="tel:+48223194760">+48 22 319 47 60</a>
+    <a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a>
   </div>
 </div>
 
@@ -538,7 +570,7 @@ footer{background:#0f1628;padding:5rem 0 0}
             <span class="acc-icon"><span class="acc-arr"></span></span>
           </button>
           <div class="acc-body open">
-            <p>Zapraszamy na spotkania stacjonarne lub online – wyłącznie po wcześniejszym umówieniu terminu. Najszybszy kontakt: telefon <strong><a href="tel:+48223194760">+48 22 319 47 60</a></strong> (dostępny w godzinach 9:30–17:30) lub wiadomość przez formularz kontaktowy na stronie.</p>
+            <p>Zapraszamy na spotkania stacjonarne lub online – wyłącznie po wcześniejszym umówieniu terminu. Najszybszy kontakt: telefon <strong><a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a></strong> (dostępny w godzinach 9:30–17:30) lub wiadomość przez formularz kontaktowy na stronie.</p>
             <p>Po otrzymaniu wiadomości nasz zespół skontaktuje się z Tobą, aby ustalić termin, formę spotkania i właściwego eksperta.</p>
           </div>
         </div>
@@ -582,7 +614,7 @@ footer{background:#0f1628;padding:5rem 0 0}
           </button>
           <div class="acc-body">
             <p>Staramy się odpowiadać na wiadomości tego samego dnia roboczego. Wiadomości wysłane po godzinach pracy lub w weekend – następnego dnia roboczego.</p>
-            <p>Jeśli sprawa jest pilna, zadzwoń: <strong><a href="tel:+48223194760">+48 22 319 47 60</a></strong>, dostępny od 9:30 do 17:30.</p>
+            <p>Jeśli sprawa jest pilna, zadzwoń: <strong><a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a></strong>, dostępny od 9:30 do 17:30.</p>
           </div>
         </div>
 
@@ -632,7 +664,7 @@ footer{background:#0f1628;padding:5rem 0 0}
       <h2 class="kt-h2">Nie znalazłeś odpowiedzi<br>na swoje pytanie?</h2>
       <p class="kt-lead reveal reveal-d1">Zadzwoń lub napisz – odpowiemy konkretnie i bez zbędnych formalności.</p>
       <div class="btn-row reveal reveal-d2" style="justify-content:center">
-        <a href="tel:+48223194760" class="btn-p">+48 22 319 47 60</a>
+        <a href="tel:+48223194760" class="btn-p" style="white-space:nowrap">+48 22 319 47 60</a>
         <a href="kontakt.html" class="btn-s">Formularz kontaktowy</a>
       </div>
     </div>
@@ -643,7 +675,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 <footer>
   <div class="footer-grid">
     <div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 40" style="display:block;width:80px;height:auto;margin-bottom:1.25rem" aria-label="ZMW Legal"><text x="33" y="22" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="26" letter-spacing="-0.5"><tspan fill="#8C0002">Z</tspan><tspan fill="#f6f6f4">MW</tspan></text><text x="33" y="36" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="10" fill="rgba(246,246,244,0.5)" textLength="58" lengthAdjust="spacing">LEGAL</text></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style="display:block;width:175px;height:auto;margin-bottom:1.25rem" aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="600" font-size="36" letter-spacing="1" fill="#f6f6f4">LEGAL</text></svg>
       <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsi&#281;biorc&oacute;w w z&#322;o&#380;onych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
     </div>
     <div class="footer-col">
@@ -668,8 +700,8 @@ footer{background:#0f1628;padding:5rem 0 0}
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="tel:+48223194760">+48 22 319 47 60</a></li>
-        <li><a href="mailto:biuro@zmwlegal.pl">biuro@zmwlegal.pl</a></li>
+        <li><a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a></li>
+        <li><a href="mailto:biuro@zmwlegal.pl" style="white-space:nowrap">biuro@zmwlegal.pl</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
     </div>
@@ -706,9 +738,19 @@ function toggleAcc(btn){
         }
       });
     },{threshold:0,rootMargin:'0px 0px -25% 0px'});
-    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title').forEach(function(el){
-      var parts=el.innerHTML.split(/<br\s*\/?>/i);
-      el.innerHTML=parts.map(function(p){return '<span class="line-clip"><span class="line-inner">'+p.trim()+'</span></span>';}).join('');
+    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title,.art-title,.rankings-title,.stats-header-title,.forums-title').forEach(function(el){
+      var _segs=el.innerHTML.split(/<br\s*\/?>/i).map(function(s){return s.trim();});
+      var _markup=_segs.map(function(seg){return seg.split(/\s+/).filter(Boolean).map(function(w){return '<span class="_word">'+w+'</span>';}).join(' ');}).join('<br>');
+      el.innerHTML=_markup;
+      var _lines=[],_curTop=null,_curWords=[];
+      el.querySelectorAll('._word').forEach(function(w){
+        var top=w.offsetTop;
+        if(_curTop===null){_curTop=top;}
+        if(Math.abs(top-_curTop)>2){_lines.push(_curWords.join(' '));_curWords=[];_curTop=top;}
+        _curWords.push(w.textContent);
+      });
+      if(_curWords.length)_lines.push(_curWords.join(' '));
+      el.innerHTML=_lines.map(function(l){return '<span class="line-clip"><span class="line-inner">'+l+'</span></span>';}).join('');
       el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
       hio.observe(el);
     });
