@@ -1,16 +1,11 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {defineDocuments, defineLocations, presentationTool} from 'sanity/presentation'
 import {DocumentTextIcon, UsersIcon} from '@sanity/icons'
 import {schemaTypes} from './src/schemaTypes'
 
-// Environment variables for project configuration
-const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
+// Identyfikator projektu nie jest tajny — domyślne wartości pozwalają działać bez pliku .env
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'oxgkyhdv'
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
-
-// Presentation Preview URL
-const previewUrl = process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:4321'
 
 export default defineConfig({
   name: 'zmw-legal',
@@ -41,48 +36,6 @@ export default defineConfig({
               ),
           ]),
     }),
-    presentationTool({
-      previewUrl,
-      resolve: {
-        // Adres w podglądzie -> dokument w Studio
-        mainDocuments: defineDocuments([
-          {
-            route: '/zespol/:slug',
-            filter: ({params}) => `_type == "person" && slug.current == "${params.slug}"`,
-          },
-          {
-            route: '/aktualnosci/:slug',
-            filter: ({params}) => `_type == "article" && slug.current == "${params.slug}"`,
-          },
-        ]),
-        // Dokument w Studio -> adres podglądu
-        locations: {
-          person: defineLocations({
-            select: {title: 'name', slug: 'slug.current'},
-            resolve: (doc) => ({
-              locations: doc?.slug
-                ? [
-                    {title: doc.title || 'Profil', href: `/zespol/${doc.slug}`},
-                    {title: 'Nasz Zespół', href: '/nasz-zespol'},
-                  ]
-                : [],
-            }),
-          }),
-          article: defineLocations({
-            select: {title: 'title', slug: 'slug.current'},
-            resolve: (doc) => ({
-              locations: doc?.slug
-                ? [
-                    {title: doc.title || 'Artykuł', href: `/aktualnosci/${doc.slug}`},
-                    {title: 'Aktualności', href: '/aktualnosci'},
-                  ]
-                : [],
-            }),
-          }),
-        },
-      },
-    }),
-    visionTool(),
   ],
   schema: {types: schemaTypes},
 })

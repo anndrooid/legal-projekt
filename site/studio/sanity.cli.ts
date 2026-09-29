@@ -1,13 +1,12 @@
 /**
  * Sanity CLI Configuration
- * This file configures the Sanity CLI tool with project-specific settings
- * and customizes the Vite bundler configuration.
  * Learn more: https://www.sanity.io/docs/cli
  */
 
 import {defineCliConfig} from 'sanity/cli'
 
-const projectId = process.env.SANITY_STUDIO_PROJECT_ID || '<your project ID>'
+// Identyfikator projektu nie jest tajny — domyślne wartości pozwalają działać bez pliku .env
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'oxgkyhdv'
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 
 export default defineCliConfig({
@@ -16,7 +15,9 @@ export default defineCliConfig({
     dataset,
   },
   deployment: {
+    appId: 'a48nqlcuqdu4bezdkbva0k9s',
     autoUpdates: true,
   },
-  studioHost: process.env.SANITY_STUDIO_STUDIO_HOST || '', // Visit https://www.sanity.io/docs/environment-variables to learn more about using environment variables for local & production.
+  // Adres opublikowanego panelu: https://zmw-legal.sanity.studio
+  studioHost: process.env.SANITY_STUDIO_STUDIO_HOST || 'zmw-legal',
 })
