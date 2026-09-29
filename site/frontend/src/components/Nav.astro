@@ -1,0 +1,56 @@
+---
+import Logo from "./Logo.astro";
+import { pagesAfterPractices, phone, practices, team } from "../data/site";
+
+interface Props {
+  /** Ścieżka aktywnej pozycji menu, np. "/faq" */
+  active?: string;
+}
+const { active } = Astro.props;
+const practiceActive = practices.some((p) => p.href === active);
+const cls = (href: string) => (href === active ? "active" : undefined);
+---
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo-link"><Logo /></a>
+    <ul class="nav-links">
+      <li><a href={team.href} class={cls(team.href)}>{team.label}</a></li>
+      <li class:list={["nav-dropdown", { "nav-dropdown-active": practiceActive }]}>
+        <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="nav-drop-menu">
+          {practices.map((p) => <li><a href={p.href} class={cls(p.href)}>{p.label}</a></li>)}
+        </ul>
+      </li>
+      {pagesAfterPractices.map((p) => <li><a href={p.href} class={cls(p.href)}>{p.label}</a></li>)}
+    </ul>
+    <div class="nav-phone">
+      <span class="nav-phone-label">Zadzwoń teraz</span>
+      <a href={phone.href} class="nav-phone-num" style="white-space:nowrap">{phone.display}</a>
+    </div>
+    <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="/"><Logo /></a>
+    <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href={team.href}>{team.label}</a></li>
+    <li>
+      <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <ul class="mobile-submenu" id="mobileSubmenu">
+        {practices.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+      </ul>
+    </li>
+    {pagesAfterPractices.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+  </ul>
+  <div class="mobile-menu-phone">
+    <span class="label">Zadzwoń teraz</span>
+    <a href={phone.href} style="white-space:nowrap">{phone.display}</a>
+  </div>
+</div>

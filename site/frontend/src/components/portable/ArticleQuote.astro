@@ -1,0 +1,11 @@
+---
+import type { TypedObject } from "@portabletext/types";
+
+type Props = { node: TypedObject & { text?: string; cite?: string } };
+const { node } = Astro.props;
+---
+
+<div class="art-blockquote reveal">
+  <p>{node.text}</p>
+  {node.cite && <cite>{node.cite}</cite>}
+</div>

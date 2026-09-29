@@ -1,0 +1,12 @@
+---
+// Akapity i śródtytuły artykułu — klasy jak w makiecie artykul.html
+import type { Block } from "astro-portabletext/types";
+
+type Props = { node: Block };
+const { node } = Astro.props;
+
+const Tag = node.style === "h2" ? "h2" : "p";
+const cls = node.style === "lead" ? "art-lead-para reveal" : "reveal";
+---
+
+<Tag class={cls}><slot /></Tag>

@@ -1,0 +1,206 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/pages/faq.css";
+---
+
+<BaseLayout title="FAQ – ZMW Legal" active="/faq">
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="ph-left">
+      <a href="/" class="ph-back reveal">‹ Strona główna</a>
+      <h1 class="ph-title">FAQ</h1>
+    </div>
+    <div class="ph-right">
+      <p class="ph-desc reveal reveal-d1">Najczęstsze pytania o współpracę z kancelarią – jak umówić spotkanie, jakie sprawy prowadzimy, jak ustalamy wynagrodzenie.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="wrap">
+    <div class="faq-layout">
+
+      <!-- SIDEBAR NAV -->
+      <nav class="faq-nav">
+        <p class="faq-nav-label">Pytania</p>
+        <ul class="faq-nav-list">
+          <li class="faq-nav-item active"><a href="#q1">Jak umówić się na spotkanie?</a></li>
+          <li class="faq-nav-item"><a href="#q2">Czy obsługujecie osoby prywatne?</a></li>
+          <li class="faq-nav-item"><a href="#q3">Jakie języki obsługi oferujecie?</a></li>
+          <li class="faq-nav-item"><a href="#q4">Czy spotkania mogą odbyć się online?</a></li>
+          <li class="faq-nav-item"><a href="#q5">Jak szybko odpowiadacie na wiadomości?</a></li>
+          <li class="faq-nav-item"><a href="#q6">Jak wygląda pierwsza konsultacja?</a></li>
+          <li class="faq-nav-item"><a href="#q7">Czy obsługujecie klientów spoza Warszawy?</a></li>
+          <li class="faq-nav-item"><a href="#q8">Jak ustalane są wynagrodzenia?</a></li>
+        </ul>
+      </nav>
+
+      <!-- ACCORDION -->
+      <div class="accordion">
+
+        <div class="acc-item reveal" id="q1">
+          <button class="acc-trigger open" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Jak umówić się na spotkanie z prawnikiem kancelarii?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body open">
+            <p>Zapraszamy na spotkania stacjonarne lub online – wyłącznie po wcześniejszym umówieniu terminu. Najszybszy kontakt: telefon <strong><a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a></strong> (dostępny w godzinach 9:30–17:30) lub wiadomość przez formularz kontaktowy na stronie.</p>
+            <p>Po otrzymaniu wiadomości nasz zespół skontaktuje się z Tobą, aby ustalić termin, formę spotkania i właściwego eksperta.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d1" id="q2">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Czy obsługujecie klientów indywidualnych – osoby prywatne?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>ZMW Legal specjalizuje się przede wszystkim w obsłudze firm i przedsiębiorców – nasze praktyki obejmują spory korporacyjne, prawo farmaceutyczne, fundusze i pomoc publiczna, prawo mediów i technologii oraz spory podatkowe.</p>
+            <p>Chcemy pozostać dostępni dla wszystkich klientów, dlatego zapraszamy do kontaktu – ocenimy, czy Twoja sprawa leży w obszarze naszej specjalizacji i czy możemy Ci pomóc.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d2" id="q3">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">W jakich językach mogę uzyskać pomoc prawną?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>Kancelaria oferuje obsługę w języku <strong>polskim i angielskim</strong>. Wybrani prawnicy posługują się również językiem niemieckim i rosyjskim – poinformuj nas o Twoich preferencjach językowych podczas umawiania spotkania.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d3" id="q4">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Czy spotkania mogą odbyć się online?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>Tak. Prowadzimy spotkania zarówno stacjonarne w siedzibie kancelarii (ul. Wspólna 47A, III piętro, Warszawa), jak i online – Microsoft Teams, Zoom lub Google Meet.</p>
+            <p>Formę spotkania ustalamy indywidualnie przy potwierdzaniu terminu.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal" id="q5">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Jak szybko mogę liczyć na odpowiedź po wysłaniu wiadomości?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>Staramy się odpowiadać na wiadomości tego samego dnia roboczego. Wiadomości wysłane po godzinach pracy lub w weekend – następnego dnia roboczego.</p>
+            <p>Jeśli sprawa jest pilna, zadzwoń: <strong><a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a></strong>, dostępny od 9:30 do 17:30.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d1" id="q6">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Jak wygląda pierwsza konsultacja z prawnikiem?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>Pierwsze spotkanie to rozmowa, podczas której poznajemy Twoją sytuację i potrzeby. Na jej podstawie oceniamy, jakie działania prawne są możliwe, i proponujemy konkretne podejście do sprawy.</p>
+            <p>Przed spotkaniem warto przygotować podstawowe dokumenty związane ze sprawą – pozwoli to na efektywniejszą rozmowę i zaproponowanie realnych rozwiązań.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d2" id="q7">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Czy obsługujecie klientów spoza Warszawy i z zagranicy?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>Tak. Siedziba kancelarii znajduje się w Warszawie, ale regularnie obsługujemy klientów z całej Polski oraz z zagranicy – w szczególności firmy działające na rynku polskim lub prowadzące spory z polskimi podmiotami.</p>
+            <p>Spotkania z klientami spoza Warszawy odbywają się zazwyczaj online lub w uzgodnionym miejscu.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d3" id="q8">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Jak ustalane są wynagrodzenia i warunki współpracy?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>Warunki wynagrodzenia ustalamy indywidualnie, w zależności od rodzaju i złożoności sprawy. Stosujemy różne modele rozliczeń: ryczałt za projekt, stawkę godzinową lub – w wybranych sprawach – wynagrodzenie uzależnione od wyniku.</p>
+            <p>Warunki finansowe omawiamy transparentnie na etapie pierwszej rozmowy, przed podjęciem jakichkolwiek działań.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="label">Skontaktuj się z nami</span>
+      <h2 class="kt-h2">Nie znalazłeś odpowiedzi<br>na swoje pytanie?</h2>
+      <p class="kt-lead reveal reveal-d1">Zadzwoń lub napisz – odpowiemy konkretnie i bez zbędnych formalności.</p>
+      <div class="btn-row reveal reveal-d2" style="justify-content:center">
+        <a href="tel:+48223194760" class="btn-p" style="white-space:nowrap">+48 22 319 47 60</a>
+        <a href="/kontakt" class="btn-s">Formularz kontaktowy</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+  <Fragment slot="scripts">
+<script is:inline>
+function toggleAcc(btn){
+  const body=btn.nextElementSibling;
+  const isOpen=btn.classList.contains('open');
+  btn.classList.toggle('open',!isOpen);
+  body.classList.toggle('open',!isOpen);
+}
+</script>
+<script is:inline>
+(function(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+  document.documentElement.classList.add('js-ready');
+  var noMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(window.IntersectionObserver&&!noMotion){
+    var hio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.line-inner').forEach(function(li,idx){setTimeout(function(){li.classList.add('visible');},idx*110);});
+          hio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -25% 0px'});
+    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title,.art-title,.rankings-title,.stats-header-title,.forums-title').forEach(function(el){
+      var _segs=el.innerHTML.split(/<br\s*\/?>/i).map(function(s){return s.trim();});
+      var _markup=_segs.map(function(seg){return seg.split(/\s+/).filter(Boolean).map(function(w){return '<span class="_word">'+w+'</span>';}).join(' ');}).join('<br>');
+      el.innerHTML=_markup;
+      var _lines=[],_curTop=null,_curWords=[];
+      el.querySelectorAll('._word').forEach(function(w){
+        var top=w.offsetTop;
+        if(_curTop===null){_curTop=top;}
+        if(Math.abs(top-_curTop)>2){_lines.push(_curWords.join(' '));_curWords=[];_curTop=top;}
+        _curWords.push(w.textContent);
+      });
+      if(_curWords.length)_lines.push(_curWords.join(' '));
+      el.innerHTML=_lines.map(function(l){return '<span class="line-clip"><span class="line-inner">'+l+'</span></span>';}).join('');
+      el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
+      hio.observe(el);
+    });
+  }
+  if(window.IntersectionObserver){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -18% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+  }
+})();
+</script>
+  </Fragment>
+</BaseLayout>

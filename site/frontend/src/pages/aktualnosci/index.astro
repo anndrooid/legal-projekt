@@ -1,0 +1,164 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/pages/aktualnosci.css";
+import SiteScripts from "../../components/SiteScripts.astro";
+import { formatDate } from "../../utils";
+import { bgStyle } from "../../utils/image";
+import { getArticles } from "../../utils/sanity";
+
+const CATEGORIES = ["Wyróżnienia", "Rankingi", "Zespół", "Publikacje", "Media", "Partnerstwa", "Transakcje"];
+
+const articles = await getArticles();
+const featured = articles.find((a) => a.featured) ?? articles[0];
+const rest = articles.filter((a) => a !== featured);
+// Zakładki tylko dla kategorii, w których są artykuły (kolejność jak w Sanity)
+const categories = CATEGORIES.filter((c) => articles.some((a) => a.category === c));
+const delay = (idx: number) => ["", "reveal-d1", "reveal-d2", "reveal-d3"][idx % 4];
+---
+
+<BaseLayout title="Aktualności – ZMW Legal" active="/aktualnosci">
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="ph-left">
+      <a href="/" class="ph-back reveal">‹ Strona główna</a>
+      <h1 class="ph-title">Aktualności</h1>
+    </div>
+    <div class="ph-right">
+      <p class="ph-desc reveal reveal-d1">Nagrody i rankingi, nowi prawnicy w zespole, partnerstwa akademickie i komentarze eksperckie. Śledź, co dzieje się w ZMW Legal.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE – najnowszy artykuł oznaczony w Sanity jako „Wyróżniony” -->
+<div class="featured-section">
+  <!-- FILTER BAR -->
+  <div class="filter-wrap">
+    <div class="filter-inner">
+      <div class="filter-left">
+        <span class="filter-lbl">Kategoria:</span>
+        <button class="filter-tab active" data-filter="Wszystkie">Wszystkie</button>
+        {categories.map((c) => <button class="filter-tab" data-filter={c}>{c}</button>)}
+      </div>
+    </div>
+  </div>
+  {featured && (
+    <div class="wrap">
+      <a href={`/aktualnosci/${featured.slug.current}`} class="featured-card" data-cat={featured.category}>
+        <div class="featured-img" style={featured.cover?.asset ? bgStyle(featured.cover, 1200) : "background-image:none"}>
+          <span class="featured-badge">Wyróżniony</span>
+        </div>
+        <div class="featured-body">
+          <p class="featured-cat">{featured.category}</p>
+          <h2 class="featured-title">{featured.title}</h2>
+          <p class="featured-exc">{featured.excerpt}</p>
+          <div class="featured-meta">
+            <span class="featured-date">{formatDate(featured.publishedAt)}</span>
+            {featured.source && <Fragment><span class="featured-sep"></span><span>{featured.source}</span></Fragment>}
+          </div>
+        </div>
+      </a>
+    </div>
+  )}
+</div>
+
+<!-- ARTICLES GRID -->
+<div class="articles-section">
+  <div class="wrap">
+    <div class="articles-grid">
+      {rest.map((a, idx) => (
+        <a
+          href={`/aktualnosci/${a.slug.current}`}
+          class:list={["article-card reveal", { "no-img": !a.cover?.asset }, delay(idx)]}
+          data-cat={a.category}
+        >
+          {a.cover?.asset && <div class="article-img" style={bgStyle(a.cover, 800)}></div>}
+          <p class="article-cat">{a.category}</p>
+          <h3 class="article-title">{a.title}</h3>
+          <p class="article-exc">{a.excerpt}</p>
+          <div class="article-meta">
+            <span class="article-date">{formatDate(a.publishedAt)}</span>
+            <span class="article-sep"></span>
+            <span>{a.category}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- PAGINATION – budowana przez skrypt, gdy artykułów jest więcej niż PER_PAGE -->
+    <div class="pagination" id="pagination"></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="label">Skontaktuj się z nami</span>
+      <h2 class="kt-h2">Jesteś zainteresowany<br>współpracą?</h2>
+      <p class="kt-lead reveal reveal-d1">Rozmawiamy konkretnie. Zadzwoń lub napisz – umawiamy spotkania stacjonarne i online.</p>
+      <div class="btn-row reveal reveal-d2" style="justify-content:center">
+        <a href="tel:+48223194760" class="btn-p" style="white-space:nowrap">+48 22 319 47 60</a>
+        <a href="/#kontakt" class="btn-s">Formularz kontaktowy</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+  <Fragment slot="scripts">
+<script is:inline>
+// Filtr kategorii + paginacja po stronie przeglądarki (9 artykułów na stronę)
+(function(){
+  var PER_PAGE=9;
+  var tabs=document.querySelectorAll('.filter-tab');
+  var cards=[].slice.call(document.querySelectorAll('.article-card'));
+  var featuredSection=document.querySelector('.featured-section .wrap');
+  var featuredCard=document.querySelector('.featured-card');
+  var pag=document.getElementById('pagination');
+  var cat='Wszystkie',page=1;
+  function matches(el){return cat==='Wszystkie'||el.dataset.cat===cat;}
+  function render(){
+    var visible=cards.filter(matches);
+    var pages=Math.max(1,Math.ceil(visible.length/PER_PAGE));
+    if(page>pages)page=pages;
+    cards.forEach(function(c){c.style.display='none';});
+    visible.slice((page-1)*PER_PAGE,page*PER_PAGE).forEach(function(c){c.style.display='';c.classList.add('visible');});
+    if(featuredSection&&featuredCard){featuredSection.style.display=matches(featuredCard)&&page===1?'':'none';}
+    pag.innerHTML='';
+    pag.style.display=pages>1?'':'none';
+    for(var i=1;i<=pages;i++){
+      var b=document.createElement('button');
+      b.className='page-btn'+(i===page?' active':'');
+      b.textContent=i;
+      b.dataset.page=i;
+      pag.appendChild(b);
+    }
+    if(page<pages){
+      var n=document.createElement('button');
+      n.className='page-btn wide';
+      n.textContent='Starsze →';
+      n.dataset.page=page+1;
+      pag.appendChild(n);
+    }
+  }
+  pag.addEventListener('click',function(e){
+    var p=e.target.dataset&&e.target.dataset.page;
+    if(!p)return;
+    page=+p;render();
+    document.querySelector('.featured-section').scrollIntoView({behavior:'smooth'});
+  });
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){
+      tabs.forEach(function(t){t.classList.remove('active');});
+      this.classList.add('active');
+      cat=this.dataset.filter;page=1;render();
+    });
+  });
+  render();
+})();
+</script>
+<SiteScripts />
+  </Fragment>
+</BaseLayout>

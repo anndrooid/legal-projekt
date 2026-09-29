@@ -1,0 +1,37 @@
+---
+import Logo from "./Logo.astro";
+import { email, pagesAfterPractices, phone, practices, team } from "../data/site";
+---
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <Logo fill="#f6f6f4" style="display:block;width:175px;height:auto;margin-bottom:1.25rem" />
+      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsiębiorców w złożonych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
+    </div>
+    <div class="footer-col">
+      <h4>Praktyki</h4>
+      <ul>
+        {practices.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kancelaria</h4>
+      <ul>
+        {[team, ...pagesAfterPractices].map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href={phone.href} style="white-space:nowrap">{phone.display}</a></li>
+        <li><a href={`mailto:${email}`} style="white-space:nowrap">{email}</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 ZAWADZKA MROWIEC &amp; WSPÓLNICY SP. K.</span>
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
+  </div>
+</footer>

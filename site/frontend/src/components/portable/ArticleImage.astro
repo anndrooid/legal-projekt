@@ -1,0 +1,16 @@
+---
+import { bgStyle } from "../../utils/image";
+import type { SanityImage } from "../../utils/sanity";
+
+type Props = { node: SanityImage & { _key: string } };
+const { node } = Astro.props;
+---
+
+{
+  node.asset && (
+    <Fragment>
+      <div class="art-img-block reveal" style={bgStyle(node, 1200)} role="img" aria-label={node.alt || ""}></div>
+      {node.caption && <p class="art-img-caption">{node.caption}</p>}
+    </Fragment>
+  )
+}

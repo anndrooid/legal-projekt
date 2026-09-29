@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/pages/kontakt.css";
+---
+
+<BaseLayout title="Nie znaleziono strony – ZMW Legal">
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="ph-left">
+      <a href="/" class="ph-back">‹ Strona główna</a>
+      <h1 class="ph-title">Nie znaleziono strony</h1>
+    </div>
+    <div class="ph-right">
+      <p class="ph-desc">Strona, której szukasz, nie istnieje lub została przeniesiona. Wróć na stronę główną albo zadzwoń: +48 22 319 47 60.</p>
+    </div>
+  </div>
+</div>
+
+  <Fragment slot="scripts">
+<script is:inline>
+(function(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+})();
+</script>
+  </Fragment>
+</BaseLayout>

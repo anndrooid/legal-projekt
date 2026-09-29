@@ -1,0 +1,9 @@
+---
+interface Props {
+  fill?: string;
+  style?: string;
+}
+const { fill = "#1a2440", style = "display:block;width:175px;height:auto" } = Astro.props;
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" style={style} aria-label="LEGAL"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="36" letter-spacing="1" fill={fill}>LEGAL</text></svg>

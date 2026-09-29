@@ -11,6 +11,8 @@ Repozytorium planistyczne dla przykładowej strony internetowej kancelarii **ZMW
 - `context/brief.md` — kompletny brief projektu: cele, zakres, struktura podstron, inspiracje, ryzyka. Czytaj go jako pierwsze źródło prawdy o projekcie.
 - `context/brand.md` — fundament marki: misja, wizja, positioning, archetyp, osobowość (MBTI + 12 osi), głos i ton, słowa zakazane, kierunek wizualny.
 - `assets/` — tu trafią materiały graficzne (logo, zdjęcia).
+- `context/*.html` — makiety etapu 1 (wzorzec wyglądu).
+- `site/` — właściwa strona: Astro (`site/frontend`) + Sanity Studio (`site/studio`). Start: `cd site && npm run dev` (strona :4321, Studio :3333). Szczegóły: `site/README.md`.
 
 ## Zakres strony
 

@@ -1,0 +1,54 @@
+---
+import { VisualEditing } from "@sanity/astro/visual-editing";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  /** Ścieżka aktywnej pozycji w nawigacji, np. "/faq" */
+  active?: string;
+}
+
+const { title, description, image, active } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+const visualEditingEnabled =
+  import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED === "true";
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/PPNeueMontreal-Book.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/fonts/PPNeueMontreal-Medium.otf" as="font" type="font/otf" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    {image && <meta property="og:image" content={image} />}
+  </head>
+  <body>
+    <script is:inline>document.documentElement.classList.add('js-ready')</script>
+    <Nav active={active} />
+    <slot />
+    <Footer />
+    <script>
+      import Lenis from "lenis";
+      const lenis = new Lenis();
+      function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
+    <slot name="scripts" />
+    <VisualEditing enabled={visualEditingEnabled} />
+  </body>
+</html>
