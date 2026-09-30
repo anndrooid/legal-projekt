@@ -1,34 +1,49 @@
 ---
 import Logo from "./Logo.astro";
-import { pagesAfterPractices, phone, practices, team } from "../data/site";
+import { cleanPath, nav, path, phone, practices, type Lang } from "../data/site";
 
 interface Props {
+  lang: Lang;
   /** Ścieżka aktywnej pozycji menu, np. "/faq" */
   active?: string;
+  /** Adres tej samej strony w drugim języku (przełącznik PL / EN) */
+  alternate: string;
 }
-const { active } = Astro.props;
-const practiceActive = practices.some((p) => p.href === active);
+const { lang, active, alternate } = Astro.props;
+const items = nav(lang);
+const practiceList = practices(lang);
+const practiceActive = practiceList.some((p) => p.href === active);
 const cls = (href: string) => (href === active ? "active" : undefined);
+const t =
+  lang === "en"
+    ? { call: "Call now", open: "Open menu", close: "Close menu", switchTo: "Polska wersja strony", lang: "Language" }
+    : { call: "Zadzwoń teraz", open: "Otwórz menu", close: "Zamknij menu", switchTo: "English version", lang: "Język" };
+const other: Lang = lang === "en" ? "pl" : "en";
+const home = path("home", lang);
 ---
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo-link"><Logo /></a>
+    <a href={home} class="nav-logo-link"><Logo /></a>
     <ul class="nav-links">
-      <li><a href={team.href} class={cls(team.href)}>{team.label}</a></li>
+      <li><a href={items.team.href} class={cls(items.team.href)}>{items.team.label}</a></li>
       <li class:list={["nav-dropdown", { "nav-dropdown-active": practiceActive }]}>
-        <button class="nav-drop-trigger" type="button">Praktyki <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <button class="nav-drop-trigger" type="button">{items.practicesLabel} <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
         <ul class="nav-drop-menu">
-          {practices.map((p) => <li><a href={p.href} class={cls(p.href)}>{p.label}</a></li>)}
+          {practiceList.map((p) => <li><a href={p.href} class={cls(p.href)}>{p.label}</a></li>)}
         </ul>
       </li>
-      {pagesAfterPractices.map((p) => <li><a href={p.href} class={cls(p.href)}>{p.label}</a></li>)}
+      {items.after.map((p) => <li><a href={p.href} class={cls(p.href)}>{p.label}</a></li>)}
+      <li class="nav-lang" aria-label={t.lang}>
+        <a href={cleanPath(Astro.url.pathname)} class="nav-lang-current" aria-current="page">{lang.toUpperCase()}</a>
+        <a href={alternate} hreflang={other} lang={other} title={t.switchTo}>{other.toUpperCase()}</a>
+      </li>
     </ul>
     <div class="nav-phone">
-      <span class="nav-phone-label">Zadzwoń teraz</span>
+      <span class="nav-phone-label">{t.call}</span>
       <a href={phone.href} class="nav-phone-num" style="white-space:nowrap">{phone.display}</a>
     </div>
-    <button class="nav-hamburger" type="button" id="hamburger" aria-label="Otwórz menu">
+    <button class="nav-hamburger" type="button" id="hamburger" aria-label={t.open}>
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -36,21 +51,38 @@ const cls = (href: string) => (href === active ? "active" : undefined);
 
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-top">
-    <a href="/"><Logo /></a>
-    <button class="mobile-close" type="button" id="mobileClose" aria-label="Zamknij menu">✕</button>
+    <a href={home}><Logo /></a>
+    <button class="mobile-close" type="button" id="mobileClose" aria-label={t.close}>✕</button>
   </div>
   <ul class="mobile-nav">
-    <li><a href={team.href}>{team.label}</a></li>
+    <li><a href={items.team.href}>{items.team.label}</a></li>
     <li>
-      <button type="button" id="mobilePraktyki">Praktyki <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <button type="button" id="mobilePraktyki">{items.practicesLabel} <svg class="m-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
       <ul class="mobile-submenu" id="mobileSubmenu">
-        {practices.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+        {practiceList.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
       </ul>
     </li>
-    {pagesAfterPractices.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+    {items.after.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+    <li class="mobile-lang">
+      <span class="nav-lang-current" aria-current="true">{lang.toUpperCase()}</span>
+      <span class="nav-lang-sep" aria-hidden="true">/</span>
+      <a href={alternate} hreflang={other} lang={other}>{other.toUpperCase()}</a>
+    </li>
   </ul>
   <div class="mobile-menu-phone">
-    <span class="label">Zadzwoń teraz</span>
+    <span class="label">{t.call}</span>
     <a href={phone.href} style="white-space:nowrap">{phone.display}</a>
   </div>
 </div>
+
+<style>
+  /* Przełącznik języka: aktualny język pogrubiony, drugi jako link (kolory dziedziczone z menu) */
+  .nav-lang{display:flex;align-items:center;gap:.4rem;padding-left:1.25rem;border-left:1px solid rgba(127,127,127,.35)}
+  .nav-lang a{opacity:.6}
+  .nav-lang a:hover{opacity:1}
+  .nav-lang a.nav-lang-current{opacity:1;font-weight:600;pointer-events:none}
+  .nav-lang a + a::before{content:'/';margin-right:.4rem;opacity:.5;display:inline-block}
+  .mobile-lang .nav-lang-sep{opacity:.5}
+  .mobile-lang{display:flex;align-items:center;gap:.5rem;padding:1.15rem 0;font-size:1.125rem;font-weight:500;color:var(--navy)}
+  .mobile-lang a{color:var(--crimson);text-decoration:none;font-weight:500}
+</style>

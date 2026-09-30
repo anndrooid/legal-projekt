@@ -1,0 +1,284 @@
+---
+// Artykuł (PL: /aktualnosci/[slug], EN: /en/news/[slug])
+import { PortableText } from "astro-portabletext";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PersonPhoto from "../components/PersonPhoto.astro";
+import SiteScripts from "../components/SiteScripts.astro";
+import ArticleBlock from "../components/portable/ArticleBlock.astro";
+import ArticleList from "../components/portable/ArticleList.astro";
+import ArticleQuote from "../components/portable/ArticleQuote.astro";
+import ArticleImage from "../components/portable/ArticleImage.astro";
+import { articlePath, categoryLabel, cleanPath, path, personPath, phone, practiceBySlug, type Lang } from "../data/site";
+import { formatDate } from "../utils";
+import { bgStyle, urlFor } from "../utils/image";
+import { getArticles, translatedSlug, type Article } from "../utils/sanity";
+import "../styles/pages/artykul.css";
+
+interface Props {
+  lang: Lang;
+  article: Article;
+}
+const { lang, article } = Astro.props;
+const other: Lang = lang === "en" ? "pl" : "en";
+
+const t =
+  lang === "en"
+    ? {
+        section: "News",
+        category: "Category",
+        date: "Date",
+        source: "Source",
+        featuredPeople: "Featured",
+        share: "Share:",
+        copy: "Copy link",
+        copied: "Copied",
+        contact: "Get in touch",
+        contactText: "Need legal support? Our experts are at your disposal.",
+        call: "Call:",
+        write: "Write to us",
+        recognised: "Recognised lawyers",
+        lawyers: "Lawyers",
+        profile: "View profile",
+        practice: "Practice",
+        learnMore: "Learn more",
+        related: "More news",
+        allNews: "All news",
+        more: ["More", "from the firm"],
+        ctaLabel: "Have a legal matter?",
+        ctaTitle: "Let’s talk about your situation.",
+        ctaLead: "We meet in person and online. The quickest way to reach us: by phone.",
+      }
+    : {
+        section: "Aktualności",
+        category: "Kategoria",
+        date: "Data",
+        source: "Źródło",
+        featuredPeople: "Wyróżnieni",
+        share: "Udostępnij:",
+        copy: "Kopiuj link",
+        copied: "Skopiowano",
+        contact: "Skontaktuj się",
+        contactText: "Potrzebujesz wsparcia prawnego? Nasi eksperci są do Twojej dyspozycji.",
+        call: "Zadzwoń:",
+        write: "Napisz do nas",
+        recognised: "Wyróżnieni prawnicy",
+        lawyers: "Prawnicy",
+        profile: "Zobacz profil",
+        practice: "Praktyka",
+        learnMore: "Dowiedz się więcej",
+        related: "Pozostałe aktualności",
+        allNews: "Wszystkie aktualności",
+        more: ["Więcej", "z kancelarii"],
+        ctaLabel: "Masz sprawę prawną?",
+        ctaTitle: "Porozmawiajmy o Twojej sytuacji.",
+        ctaLead: "Umawiamy spotkania stacjonarne i online. Najszybszy kontakt: telefon.",
+      };
+
+const others = (await getArticles(lang)).filter((a) => a._id !== article._id);
+const more = others.slice(0, 3);
+const related = (others.length > 3 ? others.slice(3, 6) : others).slice(0, 3);
+const otherSlug = translatedSlug(article, other);
+const alternate = otherSlug ? articlePath(otherSlug, other) : path("news", other);
+
+const date = formatDate(article.publishedAt, lang);
+const category = categoryLabel(article.category, lang);
+const people = (article.people ?? []).filter((p) => p.person);
+const practice = practiceBySlug(article.practice, lang);
+const newsPath = path("news", lang);
+
+const seoTitle = article.seo?.metaTitle || `${article.title} – ${t.section} – ZMW Legal`;
+const seoDescription = article.seo?.metaDescription || article.excerpt;
+const ogSource = article.seo?.ogImage ?? article.cover;
+const ogImage = ogSource?.asset ? urlFor(ogSource).width(1200).height(630).fit("crop").url() : undefined;
+
+const components = {
+  block: ArticleBlock,
+  list: ArticleList,
+  type: { quote: ArticleQuote, image: ArticleImage },
+};
+---
+
+<BaseLayout title={seoTitle} description={seoDescription} image={ogImage} active={newsPath} lang={lang} alternate={alternate}>
+<!-- ARTICLE HEADER -->
+<div class="art-header">
+  <div class="art-header-inner">
+    <div>
+      <a href={newsPath} class="ph-back reveal">‹ {t.section}</a>
+      <span class="art-cat-label reveal reveal-d1">{category} · {date}</span>
+      <h1 class="art-title">{article.title}</h1>
+    </div>
+    <div class="art-right">
+      <div class="art-meta-list">
+        <div class="art-meta-row">
+          <span class="art-meta-lbl">{t.category}</span>
+          <span class="art-meta-val">{category}</span>
+        </div>
+        <div class="art-meta-row">
+          <span class="art-meta-lbl">{t.date}</span>
+          <span class="art-meta-val">{date}</span>
+        </div>
+        {article.source && (
+          <div class="art-meta-row">
+            <span class="art-meta-lbl">{t.source}</span>
+            <span class="art-meta-val">{article.source}</span>
+          </div>
+        )}
+        {people.length > 0 && (
+          <div class="art-meta-row">
+            <span class="art-meta-lbl">{t.featuredPeople}</span>
+            <span class="art-meta-val">{people.map((p) => p.person!.name).join(", ")}</span>
+          </div>
+        )}
+      </div>
+      <p class="art-lead reveal reveal-d2">{article.excerpt}</p>
+    </div>
+  </div>
+</div>
+
+{article.cover?.asset && (
+  <!-- HERO IMAGE -->
+  <div class="art-hero-img reveal" style={bgStyle(article.cover, 1920)} role="img" aria-label={article.cover.alt || ""}></div>
+)}
+
+<!-- ARTICLE CONTENT -->
+<div class="art-content">
+  <div class="wrap">
+    <div class="art-layout">
+
+      <!-- MAIN ARTICLE -->
+      <article class="art-body">
+        {article.body?.length ? <PortableText value={article.body} components={components} /> : null}
+
+        {article.tags?.length ? (
+          <div class="art-tags reveal">
+            {article.tags.map((tag) => <span class="art-tag">{tag}</span>)}
+          </div>
+        ) : null}
+
+        <div class="art-share reveal">
+          <span class="share-lbl">{t.share}</span>
+          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(new URL(cleanPath(Astro.url.pathname), Astro.site ?? Astro.url).href)}`} class="share-btn" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" class="share-btn" data-copy-link data-copied={t.copied}>{t.copy}</a>
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="art-sidebar">
+
+        <div class="sidebar-section sidebar-cta reveal">
+          <h3>{t.contact}</h3>
+          <p style="font-size:.875rem;color:#666;line-height:1.6;margin-bottom:1.25rem">{t.contactText}</p>
+          <a href={phone.href} class="btn-p" style="white-space:nowrap;width:100%;justify-content:center;font-size:.875rem;margin-bottom:.75rem">{t.call} {phone.display}</a>
+          <a href={path("contact", lang)} class="btn-s" style="width:100%;justify-content:center;font-size:.875rem">{t.write}</a>
+        </div>
+
+        {people.length > 0 && (
+          <div class="sidebar-section reveal reveal-d1">
+            <h3>{article.category === "Wyróżnienia" || article.category === "Rankingi" ? t.recognised : t.lawyers}</h3>
+            {people.map(({ person, note }, idx) => (
+              <Fragment>
+                {idx > 0 && <hr style="border:none;border-top:1px solid #f0f0f0;margin:1.25rem 0" />}
+                <div class="sidebar-person">
+                  <div class="person-photo"><PersonPhoto image={person!.photo} alt={person!.name} sizes="80px" /></div>
+                  <div>
+                    <p class="person-name">{person!.name}</p>
+                    <p class="person-role">{note ? `${person!.role} · ${note}` : person!.role}</p>
+                  </div>
+                </div>
+                <a href={personPath(person!.slug.current, lang)} class="sidebar-link">
+                  {t.profile} <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
+                </a>
+              </Fragment>
+            ))}
+          </div>
+        )}
+
+        {practice && (
+          <div class="sidebar-section reveal reveal-d2">
+            <h3>{t.practice}</h3>
+            <p style="font-size:.875rem;color:#666;line-height:1.65;margin-bottom:1rem">{practice.desc}</p>
+            <a href={practice.href} class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+              {t.learnMore} <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
+            </a>
+          </div>
+        )}
+
+        {related.length > 0 && (
+          <div class="sidebar-section reveal reveal-d3">
+            <h3>{t.related}</h3>
+            <div class="related-list">
+              {related.map((r) => (
+                <a href={articlePath(r.slug.current, lang)} class="related-item">
+                  <span class="related-cat">{categoryLabel(r.category, lang)}</span>
+                  <span class="related-title">{r.title}</span>
+                  <span class="related-date">{formatDate(r.publishedAt, lang)}</span>
+                </a>
+              ))}
+            </div>
+            <a href={newsPath} class="btn-row-link" style="font-size:.85rem;margin-top:1.5rem;gap:.5rem">
+              {t.allNews} <span class="btn-c btn-c-sm" style="display:inline-flex"><span class="arr"></span></span>
+            </a>
+          </div>
+        )}
+
+      </aside>
+    </div>
+  </div>
+</div>
+
+{more.length > 0 && (
+  <!-- MORE ARTICLES -->
+  <div class="more-section">
+    <div class="wrap">
+      <div class="row-between">
+        <div>
+          <span class="label">{t.section}</span>
+          <h2 class="h2-sec">{t.more[0]}<br>{t.more[1]}</h2>
+        </div>
+        <a href={newsPath} class="btn-row-link">
+          {t.allNews}
+          <span class="btn-c"><span class="arr"></span></span>
+        </a>
+      </div>
+      <div class="more-grid">
+        {more.map((m, idx) => (
+          <a href={articlePath(m.slug.current, lang)} class:list={["more-card reveal", idx === 1 && "reveal-d1", idx === 2 && "reveal-d2"]}>
+            {m.cover?.asset && <div class="more-img" style={bgStyle(m.cover, 800)}></div>}
+            <span class="more-cat">{categoryLabel(m.category, lang)}</span>
+            <p class="more-title">{m.title}</p>
+            <span class="more-date">{formatDate(m.publishedAt, lang)}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
+<!-- CTA przed stopką -->
+<section style="background:var(--navy);padding:5rem 0">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap">
+    <div>
+      <span class="label reveal" style="color:rgba(255,255,255,.5)">{t.ctaLabel}</span>
+      <h2 class="reveal reveal-d1" style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:500;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem">{t.ctaTitle}</h2>
+      <p class="reveal reveal-d2" style="font-size:1rem;color:rgba(255,255,255,.6);line-height:1.7">{t.ctaLead}</p>
+    </div>
+    <div class="art-cta-btns reveal reveal-d2" style="display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0">
+      <a href={phone.href} class="btn-p" style="white-space:nowrap">{t.call} {phone.display}</a>
+      <a href={path("contact", lang)} class="btn-s" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.25);background:transparent">{t.write}</a>
+    </div>
+  </div>
+</section>
+
+  <Fragment slot="scripts">
+<script is:inline>
+document.querySelectorAll('[data-copy-link]').forEach(function(el){
+  el.addEventListener('click',function(e){
+    e.preventDefault();
+    var label=el.textContent;
+    if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(function(){el.textContent=el.dataset.copied;setTimeout(function(){el.textContent=label;},2000);});}
+  });
+});
+</script>
+<SiteScripts />
+  </Fragment>
+</BaseLayout>

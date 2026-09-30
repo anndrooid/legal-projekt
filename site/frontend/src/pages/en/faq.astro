@@ -1,0 +1,206 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/pages/faq.css";
+---
+
+<BaseLayout title="FAQ – ZMW Legal" active="/en/faq" lang="en" alternate="/faq">
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="ph-left">
+      <a href="/en" class="ph-back reveal">‹ Home</a>
+      <h1 class="ph-title">FAQ</h1>
+    </div>
+    <div class="ph-right">
+      <p class="ph-desc reveal reveal-d1">The most common questions about working with us – how to arrange a meeting, which cases we handle and how we agree our fees.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="wrap">
+    <div class="faq-layout">
+
+      <!-- SIDEBAR NAV -->
+      <nav class="faq-nav">
+        <p class="faq-nav-label">Questions</p>
+        <ul class="faq-nav-list">
+          <li class="faq-nav-item active"><a href="#q1">How do I arrange a meeting?</a></li>
+          <li class="faq-nav-item"><a href="#q2">Do you advise private individuals?</a></li>
+          <li class="faq-nav-item"><a href="#q3">Which languages do you work in?</a></li>
+          <li class="faq-nav-item"><a href="#q4">Can meetings take place online?</a></li>
+          <li class="faq-nav-item"><a href="#q5">How quickly do you reply?</a></li>
+          <li class="faq-nav-item"><a href="#q6">What does the first consultation look like?</a></li>
+          <li class="faq-nav-item"><a href="#q7">Do you work with clients outside Warsaw?</a></li>
+          <li class="faq-nav-item"><a href="#q8">How are fees agreed?</a></li>
+        </ul>
+      </nav>
+
+      <!-- ACCORDION -->
+      <div class="accordion">
+
+        <div class="acc-item reveal" id="q1">
+          <button class="acc-trigger open" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">How do I arrange a meeting with one of your lawyers?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body open">
+            <p>We meet in person or online – by prior appointment only. The quickest way to reach us is by phone <strong><a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a></strong> (available 9:30–17:30) or via the contact form on this website.</p>
+            <p>Once we receive your message, our team will get in touch to agree the date, format of the meeting and the right expert.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d1" id="q2">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Do you advise individual clients – private persons?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>ZMW Legal works primarily with companies and entrepreneurs – our practices cover corporate disputes, pharmaceutical law, funds and state aid, media and technology law, and tax disputes.</p>
+            <p>We want to remain accessible to all clients, so please get in touch – we will assess whether your case falls within our expertise and whether we can help.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d2" id="q3">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">In which languages can I receive legal assistance?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>We work in <strong>Polish and English</strong>. Some of our lawyers also speak German and Russian – let us know your language preferences when arranging a meeting.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d3" id="q4">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Can meetings take place online?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>Yes. We hold meetings both in person at our office (ul. Wspólna 47A, 3rd floor, Warsaw) and online – via Microsoft Teams, Zoom or Google Meet.</p>
+            <p>We agree the format individually when confirming the date.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal" id="q5">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">How soon can I expect a reply after sending a message?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>We aim to reply on the same working day. Messages sent after hours or at the weekend are answered on the next working day.</p>
+            <p>If your matter is urgent, call: <strong><a href="tel:+48223194760" style="white-space:nowrap">+48 22 319 47 60</a></strong>, available from 9:30 to 17:30.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d1" id="q6">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">What does the first consultation with a lawyer look like?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>The first meeting is a conversation in which we get to know your situation and needs. Based on it, we assess which legal steps are possible and propose a concrete approach to the case.</p>
+            <p>It is worth preparing the key documents relating to the case beforehand – this makes the conversation more productive and lets us propose realistic solutions.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d2" id="q7">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">Do you work with clients from outside Warsaw and from abroad?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>Yes. Our office is in Warsaw, but we regularly work with clients from across Poland and abroad – in particular companies operating in the Polish market or in disputes with Polish entities.</p>
+            <p>Meetings with clients from outside Warsaw usually take place online or at an agreed location.</p>
+          </div>
+        </div>
+
+        <div class="acc-item reveal reveal-d3" id="q8">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span class="acc-trigger-title">How are fees and terms of engagement agreed?</span>
+            <span class="acc-icon"><span class="acc-arr"></span></span>
+          </button>
+          <div class="acc-body">
+            <p>We agree fees individually, depending on the type and complexity of the case. We use different billing models: a fixed project fee, an hourly rate or – in selected cases – a success fee.</p>
+            <p>We discuss the financial terms openly at the first conversation, before taking any action.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="label">Contact us</span>
+      <h2 class="kt-h2">Didn’t find the answer<br>to your question?</h2>
+      <p class="kt-lead reveal reveal-d1">Call or write – we will answer to the point, without unnecessary formalities.</p>
+      <div class="btn-row reveal reveal-d2" style="justify-content:center">
+        <a href="tel:+48223194760" class="btn-p" style="white-space:nowrap">+48 22 319 47 60</a>
+        <a href="/en/contact" class="btn-s">Contact form</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+  <Fragment slot="scripts">
+<script is:inline>
+function toggleAcc(btn){
+  const body=btn.nextElementSibling;
+  const isOpen=btn.classList.contains('open');
+  btn.classList.toggle('open',!isOpen);
+  body.classList.toggle('open',!isOpen);
+}
+</script>
+<script is:inline>
+(function(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+  document.documentElement.classList.add('js-ready');
+  var noMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(window.IntersectionObserver&&!noMotion){
+    var hio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.line-inner').forEach(function(li,idx){setTimeout(function(){li.classList.add('visible');},idx*110);});
+          hio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -25% 0px'});
+    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title,.art-title,.rankings-title,.stats-header-title,.forums-title').forEach(function(el){
+      var _segs=el.innerHTML.split(/<br\s*\/?>/i).map(function(s){return s.trim();});
+      var _markup=_segs.map(function(seg){return seg.split(/\s+/).filter(Boolean).map(function(w){return '<span class="_word">'+w+'</span>';}).join(' ');}).join('<br>');
+      el.innerHTML=_markup;
+      var _lines=[],_curTop=null,_curWords=[];
+      el.querySelectorAll('._word').forEach(function(w){
+        var top=w.offsetTop;
+        if(_curTop===null){_curTop=top;}
+        if(Math.abs(top-_curTop)>2){_lines.push(_curWords.join(' '));_curWords=[];_curTop=top;}
+        _curWords.push(w.textContent);
+      });
+      if(_curWords.length)_lines.push(_curWords.join(' '));
+      el.innerHTML=_lines.map(function(l){return '<span class="line-clip"><span class="line-inner">'+l+'</span></span>';}).join('');
+      el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
+      hio.observe(el);
+    });
+  }
+  if(window.IntersectionObserver){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -18% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+  }
+})();
+</script>
+  </Fragment>
+</BaseLayout>

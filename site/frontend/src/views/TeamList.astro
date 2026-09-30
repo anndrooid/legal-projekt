@@ -1,0 +1,209 @@
+---
+// Strona „Nasz Zespół” / „Our Team” — siatka zespołu z Sanity z filtrem grup.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PersonPhoto from "../components/PersonPhoto.astro";
+import { getPeople } from "../utils/sanity";
+import { path, personCount, personPath, phone, tiers, type Lang } from "../data/site";
+import "../styles/pages/nasz-zespol.css";
+import "../styles/team.css";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const other: Lang = lang === "en" ? "pl" : "en";
+
+const t =
+  lang === "en"
+    ? {
+        title: "Our Team – ZMW Legal",
+        back: "Back to home",
+        heading: "Our Team",
+        desc: "29 lawyers – partners with experience from international law firms, counsel and associates with narrow specialisations. Every client works with a lawyer who knows their industry and understands what is at stake.",
+        filter: "Filter:",
+        all: "Everyone",
+        profile: "View profile",
+        ctaLabel: "Contact",
+        cta: ["Let’s talk", "about your case."],
+        ctaLead: "The quickest way to reach us: by phone. We meet in person or online – by prior appointment only.",
+        call: "Call:",
+        form: "Contact form",
+      }
+    : {
+        title: "Nasz Zespół – ZMW Legal",
+        back: "Powrót do strony głównej",
+        heading: "Nasz Zespół",
+        desc: "29 prawników – partnerzy z doświadczeniem z kancelarii międzynarodowych, counselowie i associates o wąskich specjalizacjach. Każdy klient jest obsługiwany przez prawnika, który zna jego branżę i rozumie stawkę.",
+        filter: "Filtruj:",
+        all: "Wszyscy",
+        profile: "Zobacz profil",
+        ctaLabel: "Kontakt",
+        cta: ["Porozmawiajmy", "o Twojej sprawie."],
+        ctaLead: "Najszybszy kontakt: telefon. Zapraszamy na spotkania stacjonarne lub online – wyłącznie po wcześniejszym umówieniu terminu.",
+        call: "Zadzwoń:",
+        form: "Formularz kontaktowy",
+      };
+
+const people = await getPeople(lang);
+const groups = tiers(lang)
+  .map((g) => ({ ...g, people: people.filter((p) => p.tier === g.value) }))
+  .filter((g) => g.people.length > 0);
+---
+
+<BaseLayout title={t.title} active={path("team", lang)} lang={lang} alternate={path("team", other)}>
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="ph-left">
+      <a href={path("home", lang)} class="ph-back reveal">
+        <span class="ph-back-arrow">‹</span>
+        {t.back}
+      </a>
+      <h1 class="ph-title">{t.heading}</h1>
+    </div>
+    <div class="ph-right">
+      <p class="ph-desc reveal reveal-d1">{t.desc}</p>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-wrap reveal">
+  <div class="filter-inner">
+    <span class="filter-lbl">{t.filter}</span>
+    <button class="filter-tab active" onclick="filterTeam('all',this)">{t.all} ({people.length})</button>
+    {groups.map((g) => <button class="filter-tab" onclick={`filterTeam('${g.value}',this)`}>{g.label}</button>)}
+  </div>
+</div>
+
+<!-- TEAM GRID -->
+<div class="team-section">
+  <div class="team-grid show-all" id="teamGrid">
+    {groups.map((g) => (
+      <Fragment>
+        <div class="team-tier-header reveal" data-tier-header={g.value}>
+          <span class="team-tier-label">{g.label}</span>
+          <span class="team-tier-count">{personCount(g.people.length, lang)}</span>
+        </div>
+        {g.people.map((p) => (
+          <div class="team-card" data-tier={g.value}>
+            <div class="team-photo"><PersonPhoto image={p.photo} alt={p.name} /></div>
+            <div class="team-body">
+              <p class="team-name">{p.name}</p>
+              <p class="team-role">{p.role}</p>
+              <p class="team-spec">{p.specialization || " "}</p>
+              <a href={personPath(p.slug.current, lang)} class="btn-row-link" style="font-size:.85rem;gap:.5rem">
+                {t.profile} <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </Fragment>
+    ))}
+  </div><!-- /team-grid -->
+</div><!-- /team-section -->
+
+<!-- CTA KONTAKT -->
+<div class="cta-sec">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="label reveal" style="text-align:center">{t.ctaLabel}</span>
+      <h2 class="kt-h2">{t.cta[0]}<br>{t.cta[1]}</h2>
+      <p class="kt-lead reveal reveal-d1">{t.ctaLead}</p>
+      <div class="btn-row reveal reveal-d2" style="justify-content:center">
+        <a href={phone.href} class="btn-p" style="white-space:nowrap">{t.call} {phone.display}</a>
+        <a href={`${path("home", lang)}#kontakt`} class="btn-s">{t.form}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <Fragment slot="scripts">
+<script is:inline>
+function filterTeam(tier, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.querySelectorAll('.team-card').forEach(function(card) {
+    var show = tier === 'all' || card.dataset.tier === tier;
+    card.style.display = show ? '' : 'none';
+  });
+
+  document.getElementById('teamGrid').classList.toggle('show-all', tier === 'all');
+  document.querySelectorAll('.team-tier-header').forEach(function(hdr) {
+    var show = tier === 'all' || hdr.dataset.tierHeader === tier;
+    hdr.style.display = show ? '' : 'none';
+  });
+}
+</script>
+<script is:inline>
+(function(){
+  document.documentElement.classList.add('js-ready');
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose'),pt=document.getElementById('mobilePraktyki'),ps=document.getElementById('mobileSubmenu');
+  if(h&&m){h.addEventListener('click',function(){m.classList.add('open');document.body.style.overflow='hidden';});}
+  if(c&&m){c.addEventListener('click',function(){m.classList.remove('open');document.body.style.overflow='';});}
+  if(pt&&ps){pt.addEventListener('click',function(){ps.classList.toggle('open');this.classList.toggle('open');});}
+
+  var noMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // Line-by-line heading reveal
+  if(window.IntersectionObserver&&!noMotion){
+    var hio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.line-inner').forEach(function(li,idx){
+            setTimeout(function(){li.classList.add('visible');},idx*110);
+          });
+          hio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -25% 0px'});
+    document.querySelectorAll('.h2-sec,.kt-h2,.ph-title,.art-title,.rankings-title,.stats-header-title,.forums-title').forEach(function(el){
+      var _segs=el.innerHTML.split(/<br\s*\/?>/i).map(function(s){return s.trim();});
+      var _markup=_segs.map(function(seg){return seg.split(/\s+/).filter(Boolean).map(function(w){return '<span class="_word">'+w+'</span>';}).join(' ');}).join('<br>');
+      el.innerHTML=_markup;
+      var _lines=[],_curTop=null,_curWords=[];
+      el.querySelectorAll('._word').forEach(function(w){
+        var top=w.offsetTop;
+        if(_curTop===null){_curTop=top;}
+        if(Math.abs(top-_curTop)>2){_lines.push(_curWords.join(' '));_curWords=[];_curTop=top;}
+        _curWords.push(w.textContent);
+      });
+      if(_curWords.length)_lines.push(_curWords.join(' '));
+      el.innerHTML=_lines.map(function(l){return '<span class="line-clip"><span class="line-inner">'+l+'</span></span>';}).join('');
+      el.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3');
+      hio.observe(el);
+    });
+  }
+
+  // Scroll reveal (static .reveal elements)
+  if(window.IntersectionObserver){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -18% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+  }
+
+  // Team cards — stagger per row, inline styles to avoid flash
+  if(window.IntersectionObserver&&!noMotion){
+    var tio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('tc-vis');
+          e.target.addEventListener('transitionend',function(){this.style.transitionDelay='';},{once:true});
+          tio.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.team-card').forEach(function(card){
+      var leftFrac=Math.max(0,card.getBoundingClientRect().left)/window.innerWidth;
+      card.style.transitionDelay=(leftFrac*0.25).toFixed(2)+'s';
+      tio.observe(card);
+    });
+  }
+})();
+</script>
+  </Fragment>
+</BaseLayout>

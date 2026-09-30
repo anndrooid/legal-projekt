@@ -5,37 +5,70 @@
 // - skrypty oznaczone <script type="text/plain" data-cookie-category="analytics|marketing">
 //   uruchamiają się dopiero po zgodzie na daną kategorię
 // - link z atrybutem data-cookie-settings (np. w stopce) ponownie otwiera ustawienia
+import { path, type Lang } from "../data/site";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t =
+  lang === "en"
+    ? {
+        title: "We respect your privacy",
+        desc: "We use cookies that are necessary for the website to work. With your consent, we may also use analytics and marketing cookies. Details in our",
+        policy: "privacy policy",
+        necessary: ["Necessary", "Remembering your cookie choice. Always active."],
+        analytics: ["Analytics", "Anonymous visit statistics that help us improve the website."],
+        marketing: ["Marketing", "Tailoring content and messages to your interests."],
+        accept: "Accept all",
+        reject: "Reject",
+        settings: "Settings",
+        hide: "Hide settings",
+        save: "Save choice",
+      }
+    : {
+        title: "Szanujemy Twoją prywatność",
+        desc: "Używamy plików cookie niezbędnych do działania strony. Za Twoją zgodą możemy też używać cookies analitycznych i marketingowych. Szczegóły w",
+        policy: "polityce prywatności",
+        necessary: ["Niezbędne", "Zapamiętanie Twojego wyboru dotyczącego cookies. Zawsze aktywne."],
+        analytics: ["Analityczne", "Anonimowe statystyki odwiedzin, które pomagają nam ulepszać stronę."],
+        marketing: ["Marketingowe", "Dopasowanie treści i komunikatów do Twoich zainteresowań."],
+        accept: "Akceptuj wszystkie",
+        reject: "Odrzuć",
+        settings: "Ustawienia",
+        hide: "Ukryj ustawienia",
+        save: "Zapisz wybór",
+      };
 ---
 
-<div class="cc" id="cookieConsent" role="dialog" aria-modal="false" aria-labelledby="ccTitle" aria-describedby="ccDesc" hidden>
+<div class="cc" id="cookieConsent" data-label-settings={t.settings} data-label-hide={t.hide} role="dialog" aria-modal="false" aria-labelledby="ccTitle" aria-describedby="ccDesc" hidden>
   <div class="cc-main">
-    <p class="cc-title" id="ccTitle">Szanujemy Twoją prywatność</p>
+    <p class="cc-title" id="ccTitle">{t.title}</p>
     <p class="cc-desc" id="ccDesc">
-      Używamy plików cookie niezbędnych do działania strony. Za Twoją zgodą możemy też używać cookies
-      analitycznych i marketingowych. Szczegóły w <a href="/polityka-prywatnosci#s7">polityce prywatności</a>.
+      {t.desc} <a href={`${path("privacy", lang)}#s7`}>{t.policy}</a>.
     </p>
 
     <div class="cc-settings" id="ccSettings" hidden>
       <label class="cc-cat">
         <span class="cc-cat-text">
-          <span class="cc-cat-name">Niezbędne</span>
-          <span class="cc-cat-desc">Zapamiętanie Twojego wyboru dotyczącego cookies. Zawsze aktywne.</span>
+          <span class="cc-cat-name">{t.necessary[0]}</span>
+          <span class="cc-cat-desc">{t.necessary[1]}</span>
         </span>
         <input type="checkbox" checked disabled />
         <span class="cc-switch" aria-hidden="true"></span>
       </label>
       <label class="cc-cat">
         <span class="cc-cat-text">
-          <span class="cc-cat-name">Analityczne</span>
-          <span class="cc-cat-desc">Anonimowe statystyki odwiedzin, które pomagają nam ulepszać stronę.</span>
+          <span class="cc-cat-name">{t.analytics[0]}</span>
+          <span class="cc-cat-desc">{t.analytics[1]}</span>
         </span>
         <input type="checkbox" data-cc-category="analytics" />
         <span class="cc-switch" aria-hidden="true"></span>
       </label>
       <label class="cc-cat">
         <span class="cc-cat-text">
-          <span class="cc-cat-name">Marketingowe</span>
-          <span class="cc-cat-desc">Dopasowanie treści i komunikatów do Twoich zainteresowań.</span>
+          <span class="cc-cat-name">{t.marketing[0]}</span>
+          <span class="cc-cat-desc">{t.marketing[1]}</span>
         </span>
         <input type="checkbox" data-cc-category="marketing" />
         <span class="cc-switch" aria-hidden="true"></span>
@@ -43,10 +76,10 @@
     </div>
 
     <div class="cc-actions">
-      <button type="button" class="cc-btn cc-btn-primary" data-cc="accept">Akceptuj wszystkie</button>
-      <button type="button" class="cc-btn" data-cc="reject">Odrzuć</button>
-      <button type="button" class="cc-btn cc-btn-link" data-cc="toggle" aria-expanded="false" aria-controls="ccSettings">Ustawienia</button>
-      <button type="button" class="cc-btn cc-btn-primary" data-cc="save" hidden>Zapisz wybór</button>
+      <button type="button" class="cc-btn cc-btn-primary" data-cc="accept">{t.accept}</button>
+      <button type="button" class="cc-btn" data-cc="reject">{t.reject}</button>
+      <button type="button" class="cc-btn cc-btn-link" data-cc="toggle" aria-expanded="false" aria-controls="ccSettings">{t.settings}</button>
+      <button type="button" class="cc-btn cc-btn-primary" data-cc="save" hidden>{t.save}</button>
     </div>
   </div>
 </div>
@@ -94,7 +127,7 @@
   function setSettings(on){
     settings.hidden=!on;
     btn('toggle').setAttribute('aria-expanded',on);
-    btn('toggle').textContent=on?'Ukryj ustawienia':'Ustawienia';
+    btn('toggle').textContent=on?box.dataset.labelHide:box.dataset.labelSettings;
     btn('save').hidden=!on;
     btn('accept').hidden=on;
   }

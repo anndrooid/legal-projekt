@@ -17,6 +17,13 @@ export default defineType({
   ],
   fields: [
     defineField({
+      // Ustawiane automatycznie przez wtyczkę tłumaczeń (pl / en)
+      name: 'language',
+      type: 'string',
+      readOnly: true,
+      hidden: true,
+    }),
+    defineField({
       name: 'title',
       title: 'Tytuł',
       type: 'string',

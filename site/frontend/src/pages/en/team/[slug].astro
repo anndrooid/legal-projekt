@@ -1,0 +1,14 @@
+---
+import PersonPage from "../../../views/PersonPage.astro";
+import { getPeople, getPerson } from "../../../utils/sanity";
+
+export async function getStaticPaths() {
+  const people = await getPeople("en");
+  return people.map((p) => ({ params: { slug: p.slug.current } }));
+}
+
+const person = await getPerson(Astro.params.slug!, "en");
+if (!person) return Astro.redirect("/404");
+---
+
+<PersonPage lang="en" person={person} />

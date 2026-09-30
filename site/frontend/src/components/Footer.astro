@@ -1,28 +1,54 @@
 ---
 import Logo from "./Logo.astro";
-import { email, pagesAfterPractices, phone, practices, team } from "../data/site";
+import { email, nav, path, phone, practices, type Lang } from "../data/site";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const items = nav(lang);
+const t =
+  lang === "en"
+    ? {
+        desc: "A boutique law firm for companies and entrepreneurs in complex disputes, regulatory and tax matters.",
+        address: ["ul. Wspólna 47A (3rd floor)", "00-684 Warsaw, Poland"],
+        practices: "Practices",
+        firm: "The firm",
+        contact: "Contact",
+        privacy: "Privacy policy",
+        cookies: "Cookie settings",
+      }
+    : {
+        desc: "Butikowa kancelaria prawna dla firm i przedsiębiorców w złożonych sporach, sprawach regulacyjnych i podatkowych.",
+        address: ["ul. Wspólna 47A (III p.)", "00-684 Warszawa"],
+        practices: "Praktyki",
+        firm: "Kancelaria",
+        contact: "Kontakt",
+        privacy: "Polityka prywatności",
+        cookies: "Ustawienia cookies",
+      };
 ---
 
 <footer>
   <div class="footer-grid">
     <div>
       <Logo fill="#f6f6f4" style="display:block;width:175px;height:auto;margin-bottom:1.25rem" />
-      <p class="footer-desc">Butikowa kancelaria prawna dla firm i przedsiębiorców w złożonych sporach, sprawach regulacyjnych i podatkowych.<br><br>ul. Wspólna 47A (III p.)<br>00-684 Warszawa</p>
+      <p class="footer-desc">{t.desc}<br><br>{t.address[0]}<br>{t.address[1]}</p>
     </div>
     <div class="footer-col">
-      <h4>Praktyki</h4>
+      <h4>{t.practices}</h4>
       <ul>
-        {practices.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+        {practices(lang).map((p) => <li><a href={p.href}>{p.label}</a></li>)}
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Kancelaria</h4>
+      <h4>{t.firm}</h4>
       <ul>
-        {[team, ...pagesAfterPractices].map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+        {[items.team, ...items.after].map((p) => <li><a href={p.href}>{p.label}</a></li>)}
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Kontakt</h4>
+      <h4>{t.contact}</h4>
       <ul>
         <li><a href={phone.href} style="white-space:nowrap">{phone.display}</a></li>
         <li><a href={`mailto:${email}`} style="white-space:nowrap">{email}</a></li>
@@ -33,8 +59,8 @@ import { email, pagesAfterPractices, phone, practices, team } from "../data/site
   <div class="footer-bottom">
     <span>&copy; 2026 ZAWADZKA MROWIEC &amp; WSPÓLNICY SP. K.</span>
     <span class="footer-legal">
-      <a href="/polityka-prywatnosci">Polityka prywatności</a>
-      <a href="#" data-cookie-settings>Ustawienia cookies</a>
+      <a href={path("privacy", lang)}>{t.privacy}</a>
+      <a href="#" data-cookie-settings>{t.cookies}</a>
     </span>
   </div>
 </footer>

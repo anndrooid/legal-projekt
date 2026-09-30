@@ -1,0 +1,345 @@
+---
+// Profil prawnika (PL: /zespol/[slug], EN: /en/team/[slug])
+import { PortableText } from "astro-portabletext";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PersonPhoto from "../components/PersonPhoto.astro";
+import SiteScripts from "../components/SiteScripts.astro";
+import { path, personPath, phone, type Lang } from "../data/site";
+import { bgStyle, urlFor } from "../utils/image";
+import { getPeople, translatedSlug, type Person } from "../utils/sanity";
+import "../styles/pages/profil.css";
+import "../styles/team.css";
+
+interface Props {
+  lang: Lang;
+  person: Person;
+}
+const { lang, person } = Astro.props;
+const other: Lang = lang === "en" ? "pl" : "en";
+
+const t =
+  lang === "en"
+    ? {
+        back: "Our Team",
+        position: "Position",
+        phone: "Phone",
+        languages: "Languages",
+        call: "Call:",
+        write: "Send a message",
+        about: "About",
+        experience: "Professional experience",
+        awards: "Awards and rankings",
+        other: "Other activities",
+        education: "Education",
+        pubsLabel: "Publications",
+        pubs: ["Latest", "Publications"],
+        teamLabel: "Our Team",
+        others: ["Meet the other", "lawyers at the firm."],
+        wholeTeam: "Whole team",
+        profile: "View profile",
+      }
+    : {
+        back: "Nasz Zespół",
+        position: "Stanowisko",
+        phone: "Telefon",
+        languages: "Języki",
+        call: "Zadzwoń:",
+        write: "Napisz wiadomość",
+        about: "O mnie",
+        experience: "Doświadczenie zawodowe",
+        awards: "Wyróżnienia i rankingi",
+        other: "Pozostała działalność",
+        education: "Wykształcenie",
+        pubsLabel: "Dorobek naukowy",
+        pubs: ["Najnowsze", "Publikacje"],
+        teamLabel: "Nasz Zespół",
+        others: ["Poznaj pozostałych", "prawników kancelarii."],
+        wholeTeam: "Cały zespół",
+        profile: "Zobacz profil",
+      };
+
+const others = (await getPeople(lang)).filter((p) => p._id !== person._id).slice(0, 4);
+const otherSlug = translatedSlug(person, other);
+const alternate = otherSlug ? personPath(otherSlug, other) : path("team", other);
+
+// "Prof. Anna Zawadzka" -> "Prof. Anna" + "Zawadzka" (nagłówek w dwóch liniach jak w makiecie)
+const nameParts = person.name.split(" ");
+const lastName = nameParts.pop();
+const firstLine = nameParts.join(" ");
+
+const phoneHref = person.phone ? `tel:${person.phone.replace(/\s/g, "")}` : phone.href;
+const phoneDisplay = person.phone || phone.display;
+const languagesSummary = person.languages?.map((l) => l.name).join(" · ");
+const description = person.lead || `${person.name} – ${person.role}, ZMW Legal`;
+
+// Pierwsze dwie sekcje akordeonu są domyślnie otwarte (jak w makiecie)
+const sections = [
+  person.bio?.length && "bio",
+  person.experience?.length && "experience",
+  person.awards?.length && "awards",
+  person.otherActivities?.length && "other",
+  person.education?.length && "education",
+  person.languages?.length && "languages",
+].filter(Boolean);
+const isOpen = (s: string) => sections.indexOf(s) > -1 && sections.indexOf(s) < 2;
+---
+
+<BaseLayout
+  title={`${person.name} – ZMW Legal`}
+  description={description}
+  image={person.photo?.asset ? urlFor(person.photo).width(1200).height(630).fit("crop").url() : undefined}
+  active={path("team", lang)}
+  lang={lang}
+  alternate={alternate}
+>
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+
+    <div class="ph-left">
+      <a href={path("team", lang)} class="ph-back reveal">
+        <span class="ph-back-arrow">‹</span>
+        {t.back}
+      </a>
+      <h1 class="ph-title">{firstLine && <Fragment>{firstLine}<br /></Fragment>}{lastName}</h1>
+    </div>
+
+    <div class="ph-right">
+      {person.lead && <p class="ph-desc reveal reveal-d1">{person.lead}</p>}
+      {person.tags?.length ? (
+        <div class="ph-tags reveal reveal-d2">
+          {person.tags.map((tag) => <span class="ph-tag">{tag}</span>)}
+        </div>
+      ) : null}
+    </div>
+
+  </div>
+</div>
+
+<!-- PROFILE BODY -->
+<div class="profile-body">
+  <div class="wrap">
+    <div class="profile-layout">
+
+      <!-- LEWA KOLUMNA: przyklejona przy scrollu -->
+      <div class="profile-sticky-col">
+        <div class="profile-photo"><PersonPhoto image={person.photo} alt={person.name} sizes="(max-width: 767px) 100vw, 400px" priority /></div>
+
+        <div class="profile-contact">
+          <div>
+            <span class="contact-item-label">{t.position}</span>
+            <span class="contact-item-val">{person.role}</span>
+          </div>
+          {person.email && (
+            <div>
+              <span class="contact-item-label">E-mail</span>
+              <a href={`mailto:${person.email}`} class="contact-item-val" style="white-space:nowrap">{person.email}</a>
+            </div>
+          )}
+          <div>
+            <span class="contact-item-label">{t.phone}</span>
+            <a href={phoneHref} class="contact-item-val" style="white-space:nowrap">{phoneDisplay}</a>
+          </div>
+          {languagesSummary && (
+            <div>
+              <span class="contact-item-label">{t.languages}</span>
+              <span class="contact-item-val">{languagesSummary}</span>
+            </div>
+          )}
+        </div>
+
+        <a href={phoneHref} class="btn-p" style="white-space:nowrap;display:flex;width:100%;justify-content:center;margin-top:1.5rem;font-size:.9rem">{t.call} {phoneDisplay}</a>
+        <a href={path("contact", lang)} class="btn-s" style="display:flex;width:100%;justify-content:center;margin-top:.65rem;font-size:.9rem">{t.write}</a>
+
+        {person.linkedin && (
+          <a href={person.linkedin} class="profile-linkedin" style="margin-top:1.5rem" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57A1.46 1.46 0 0 1 14.38 12.11A1.46 1.46 0 0 1 15.84 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg>
+            LinkedIn
+          </a>
+        )}
+      </div>
+
+      <!-- PRAWA KOLUMNA: akordeon -->
+      <div>
+        <div class="accordion">
+
+          {person.bio?.length ? (
+            <div class="acc-item">
+              <button class:list={["acc-trigger", { open: isOpen("bio") }]} onclick="toggleAcc(this)">
+                <span class="acc-trigger-title">{person.bioHeading || t.about}</span>
+                <span class="acc-icon"><span class="acc-arr"></span></span>
+              </button>
+              <div class:list={["acc-body", { open: isOpen("bio") }]}>
+                <PortableText value={person.bio} />
+              </div>
+            </div>
+          ) : null}
+
+          {person.experience?.length ? (
+            <div class="acc-item">
+              <button class:list={["acc-trigger", { open: isOpen("experience") }]} onclick="toggleAcc(this)">
+                <span class="acc-trigger-title">{t.experience}</span>
+                <span class="acc-icon"><span class="acc-arr"></span></span>
+              </button>
+              <div class:list={["acc-body", { open: isOpen("experience") }]}>
+                <ul class="exp-list">
+                  {person.experience.map((e) => <li>{e}</li>)}
+                </ul>
+              </div>
+            </div>
+          ) : null}
+
+          {person.awards?.length ? (
+            <div class="acc-item">
+              <button class:list={["acc-trigger", { open: isOpen("awards") }]} onclick="toggleAcc(this)">
+                <span class="acc-trigger-title">{t.awards}</span>
+                <span class="acc-icon"><span class="acc-arr"></span></span>
+              </button>
+              <div class:list={["acc-body", { open: isOpen("awards") }]}>
+                <ul class="award-list">
+                  {person.awards.map((a) => (
+                    <li class="award-item">
+                      <div class="award-dot"></div>
+                      <div class="award-text">{a.text}{a.years && <span class="award-year">{a.years}</span>}</div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : null}
+
+          {person.otherActivities?.length ? (
+            <div class="acc-item">
+              <button class:list={["acc-trigger", { open: isOpen("other") }]} onclick="toggleAcc(this)">
+                <span class="acc-trigger-title">{t.other}</span>
+                <span class="acc-icon"><span class="acc-arr"></span></span>
+              </button>
+              <div class:list={["acc-body", { open: isOpen("other") }]}>
+                <ul class="exp-list">
+                  {person.otherActivities.map((o) => <li>{o}</li>)}
+                </ul>
+              </div>
+            </div>
+          ) : null}
+
+          {person.education?.length ? (
+            <div class="acc-item">
+              <button class:list={["acc-trigger", { open: isOpen("education") }]} onclick="toggleAcc(this)">
+                <span class="acc-trigger-title">{t.education}</span>
+                <span class="acc-icon"><span class="acc-arr"></span></span>
+              </button>
+              <div class:list={["acc-body", { open: isOpen("education") }]}>
+                <div class="edu-list">
+                  {person.education.map((e) => (
+                    <div class="edu-item">
+                      <p class="edu-degree">{e.degree}</p>
+                      <p class="edu-where">{e.institution}{e.note && <Fragment><br /><span style="font-size:.82rem;color:#aaa">{e.note}</span></Fragment>}</p>
+                      <p class="edu-year">{e.year}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : null}
+
+          {person.languages?.length ? (
+            <div class="acc-item">
+              <button class:list={["acc-trigger", { open: isOpen("languages") }]} onclick="toggleAcc(this)">
+                <span class="acc-trigger-title">{t.languages}</span>
+                <span class="acc-icon"><span class="acc-arr"></span></span>
+              </button>
+              <div class:list={["acc-body", { open: isOpen("languages") }]}>
+                <div class="lang-list">
+                  {person.languages.map((l) => (
+                    <div class="lang-item">
+                      <span class="lang-name">{l.name}</span>
+                      <div style="display:flex;align-items:center;gap:1rem">
+                        <span class="lang-level">{l.level}</span>
+                        <div class="lang-dots">
+                          {[1, 2, 3, 4, 5].map((n) => <div class:list={["dot", { filled: n <= (l.dots ?? 0) }]}></div>)}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : null}
+
+        </div><!-- /accordion -->
+      </div>
+
+    </div><!-- /profile-layout -->
+  </div>
+</div>
+
+{person.publications?.length ? (
+  <!-- PUBLIKACJE -->
+  <div class="pubs-sec">
+    <div class="wrap">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;gap:2rem;flex-wrap:wrap">
+        <div>
+          <span class="label">{t.pubsLabel}</span>
+          <h2 class="h2-sec">{t.pubs[0]}<br>{t.pubs[1]}</h2>
+        </div>
+      </div>
+      <div class="pubs-grid">
+        {person.publications.map((pub, idx) => (
+          <div class:list={["pub-card reveal", idx % 3 === 1 && "reveal-d1", idx % 3 === 2 && "reveal-d2"]}>
+            <div class="pub-cover" style={pub.cover?.asset ? bgStyle(pub.cover, 600) : undefined}></div>
+            <div class="pub-body">
+              {pub.tag && <p class="pub-tag">{pub.tag}</p>}
+              <p class="pub-title">{pub.title}</p>
+              {pub.meta && <p class="pub-meta">{pub.meta}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+) : null}
+
+<!-- POZOSTALI PRAWNICY -->
+<div class="other-lawyers-sec">
+  <div class="wrap">
+    <div class="row-between">
+      <div>
+        <span class="label">{t.teamLabel}</span>
+        <h2 class="h2-sec">{t.others[0]}<br>{t.others[1]}</h2>
+      </div>
+      <a href={path("team", lang)} class="btn-row-link" style="flex-shrink:0;gap:.75rem">
+        {t.wholeTeam}
+        <span class="btn-c"><span class="arr"></span></span>
+      </a>
+    </div>
+    <div class="team-grid">
+      {others.map((p) => (
+        <div class="team-card">
+          <div class="team-photo-sm"><PersonPhoto image={p.photo} alt={p.name} /></div>
+          <div class="team-body">
+            <p class="team-name">{p.name}</p>
+            <p class="team-role">{p.role}</p>
+            <p class="team-spec">{p.specialization || " "}</p>
+            <a href={personPath(p.slug.current, lang)} class="btn-row-link" style="font-size:.875rem;gap:.55rem">
+              {t.profile}
+              <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+  <Fragment slot="scripts">
+<script is:inline>
+function toggleAcc(btn) {
+  var body = btn.nextElementSibling;
+  var isOpen = btn.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+</script>
+<SiteScripts />
+  </Fragment>
+</BaseLayout>

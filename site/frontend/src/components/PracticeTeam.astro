@@ -3,15 +3,18 @@
 // Liderzy praktyki (pole „Lider praktyki”) są pierwsi i mają znaczek.
 import PersonPhoto from "./PersonPhoto.astro";
 import { getPeople } from "../utils/sanity";
+import { personPath, type Lang } from "../data/site";
 import "../styles/team.css";
 
 interface Props {
   /** identyfikator praktyki z Sanity, np. "life-sciences" */
   practice: string;
+  lang?: Lang;
 }
-const { practice } = Astro.props;
+const { practice, lang = "pl" } = Astro.props;
+const t = lang === "en" ? { lead: "Practice head", profile: "Profile" } : { lead: "Lider praktyki", profile: "Profil" };
 
-const people = (await getPeople()).filter((p) => p.practices?.includes(practice));
+const people = (await getPeople(lang)).filter((p) => p.practices?.includes(practice));
 const isLead = (p: (typeof people)[number]) => !!p.leadsPractices?.includes(practice);
 const sorted = [...people.filter(isLead), ...people.filter((p) => !isLead(p))];
 const delay = (idx: number) => ["", "reveal-d1", "reveal-d2", "reveal-d3", "reveal-d4"][idx % 5];
@@ -21,12 +24,12 @@ const delay = (idx: number) => ["", "reveal-d1", "reveal-d2", "reveal-d3", "reve
   <div class={`team-card reveal ${delay(idx)}`}>
     <div class="team-photo"><PersonPhoto image={p.photo} alt={p.name} sizes="(max-width: 767px) 100vw, 20vw" /></div>
     <div class="team-body">
-      {isLead(p) ? <span class="team-badge">Lider praktyki</span> : <span class="team-badge" style="opacity:0">–</span>}
+      {isLead(p) ? <span class="team-badge">{t.lead}</span> : <span class="team-badge" style="opacity:0">–</span>}
       <p class="team-name">{p.name}</p>
       <p class="team-role">{p.role}</p>
       {p.specialization && <p class="team-spec" style="margin-top:.35rem">{p.specialization}</p>}
-      <a href={`/zespol/${p.slug.current}`} class="btn-row-link" style="font-size:.8rem;gap:.4rem;margin-top:.85rem">
-        Profil <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+      <a href={personPath(p.slug.current, lang)} class="btn-row-link" style="font-size:.8rem;gap:.4rem;margin-top:.85rem">
+        {t.profile} <span class="btn-c btn-c-sm"><span class="arr"></span></span>
       </a>
     </div>
   </div>

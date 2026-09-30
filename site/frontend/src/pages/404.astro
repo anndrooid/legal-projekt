@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/pages/kontakt.css";
 ---
 
-<BaseLayout title="Nie znaleziono strony – ZMW Legal">
+<BaseLayout title="Nie znaleziono strony / Page not found – ZMW Legal" alternate="/en">
 <div class="page-header">
   <div class="page-header-inner">
     <div class="ph-left">
@@ -12,6 +12,7 @@ import "../styles/pages/kontakt.css";
     </div>
     <div class="ph-right">
       <p class="ph-desc">Strona, której szukasz, nie istnieje lub została przeniesiona. Wróć na stronę główną albo zadzwoń: +48 22 319 47 60.</p>
+      <p class="ph-desc" lang="en" style="margin-top:1rem">Page not found. The page you are looking for does not exist or has been moved. <a href="/en" style="color:var(--crimson)">Go to the English home page</a>.</p>
     </div>
   </div>
 </div>

@@ -22,6 +22,7 @@ export default defineConfig({
   // Strona generowana statycznie w czasie builda (najlepsze Core Web Vitals).
   // Po publikacji treści w Sanity trzeba przebudować stronę (webhook przy wdrożeniu).
   output: "static",
+  site: "https://legal-projekt.vercel.app",
   trailingSlash: "never",
   build: { format: "file" },
   integrations: [

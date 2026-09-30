@@ -1,0 +1,14 @@
+---
+import ArticlePage from "../../../views/ArticlePage.astro";
+import { getArticle, getArticles } from "../../../utils/sanity";
+
+export async function getStaticPaths() {
+  const articles = await getArticles("en");
+  return articles.map((a) => ({ params: { slug: a.slug.current } }));
+}
+
+const article = await getArticle(Astro.params.slug!, "en");
+if (!article) return Astro.redirect("/404");
+---
+
+<ArticlePage lang="en" article={article} />

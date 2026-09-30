@@ -1,5 +1,10 @@
 // Wartości wspólne dla schematów i frontendu (lista praktyk musi odpowiadać podstronom).
 
+export const LANGUAGES = [
+  {id: 'pl', title: 'Polski'},
+  {id: 'en', title: 'English'},
+]
+
 export const PRACTICES = [
   {title: 'Rozwiązywanie Sporów', value: 'rozwiazywanie-sporow'},
   {title: 'Life Sciences', value: 'life-sciences'},
@@ -15,6 +20,7 @@ export const TIERS = [
   {title: 'Pozostały zespół', value: 'support'},
 ]
 
+// Kategorie są wspólne dla obu języków (wartość po polsku), na stronie EN wyświetlane są tłumaczenia
 export const ARTICLE_CATEGORIES = [
   'Wyróżnienia',
   'Rankingi',
