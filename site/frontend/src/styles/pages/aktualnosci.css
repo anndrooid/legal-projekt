@@ -544,3 +544,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 /* Telefon/e-mail zawsze w jednej linii; stopka - link polityki pod copyrightem na mobile */
 @media(max-width:420px){.mobile-menu-phone a{font-size:1.4rem}}
 @media(max-width:767px){.footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}}
+
+/* Wyróżniony artykuł bez zdjęcia — karta na całą szerokość, znaczek nad kategorią */
+.featured-card.no-img{grid-template-columns:1fr}
+.featured-card.no-img .featured-badge{position:static;align-self:flex-start;margin-bottom:1.25rem}

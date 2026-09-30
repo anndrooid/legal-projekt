@@ -44,11 +44,14 @@ const delay = (idx: number) => ["", "reveal-d1", "reveal-d2", "reveal-d3"][idx %
   </div>
   {featured && (
     <div class="wrap">
-      <a href={`/aktualnosci/${featured.slug.current}`} class="featured-card" data-cat={featured.category}>
-        <div class="featured-img" style={featured.cover?.asset ? bgStyle(featured.cover, 1200) : "background-image:none"}>
-          <span class="featured-badge">Wyróżniony</span>
-        </div>
+      <a href={`/aktualnosci/${featured.slug.current}`} class:list={["featured-card", { "no-img": !featured.cover?.asset }]} data-cat={featured.category}>
+        {featured.cover?.asset && (
+          <div class="featured-img" style={bgStyle(featured.cover, 1200)}>
+            <span class="featured-badge">Wyróżniony</span>
+          </div>
+        )}
         <div class="featured-body">
+          {!featured.cover?.asset && <span class="featured-badge">Wyróżniony</span>}
           <p class="featured-cat">{featured.category}</p>
           <h2 class="featured-title">{featured.title}</h2>
           <p class="featured-exc">{featured.excerpt}</p>
