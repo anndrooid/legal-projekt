@@ -3,7 +3,7 @@ import { PortableText } from "astro-portabletext";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PersonPhoto from "../../components/PersonPhoto.astro";
 import SiteScripts from "../../components/SiteScripts.astro";
-import { phone, practiceBySlug } from "../../data/site";
+import { phone } from "../../data/site";
 import { bgStyle, urlFor } from "../../utils/image";
 import { getPeople, getPerson } from "../../utils/sanity";
 import "../../styles/pages/profil.css";
@@ -268,22 +268,20 @@ const isOpen = (s: string) => sections.indexOf(s) > -1 && sections.indexOf(s) < 
       </a>
     </div>
     <div class="team-grid">
-      {others.map((p) => {
-        const practice = practiceBySlug(p.practices?.[0])?.label;
-        return (
-          <div class="team-card">
-            <div class="team-photo-sm"><PersonPhoto image={p.photo} alt={p.name} /></div>
-            <div class="team-body">
-              <p class="team-name">{p.name}</p>
-              <p class="team-role">{practice ? `${p.role} · ${practice}` : p.role}</p>
-              <a href={`/zespol/${p.slug.current}`} class="btn-row-link" style="font-size:.875rem;gap:.55rem">
-                Zobacz profil
-                <span class="btn-c btn-c-sm"><span class="arr"></span></span>
-              </a>
-            </div>
+      {others.map((p) => (
+        <div class="team-card">
+          <div class="team-photo-sm"><PersonPhoto image={p.photo} alt={p.name} /></div>
+          <div class="team-body">
+            <p class="team-name">{p.name}</p>
+            <p class="team-role">{p.role}</p>
+            <p class="team-spec">{p.specialization || " "}</p>
+            <a href={`/zespol/${p.slug.current}`} class="btn-row-link" style="font-size:.875rem;gap:.55rem">
+              Zobacz profil
+              <span class="btn-c btn-c-sm"><span class="arr"></span></span>
+            </a>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   </div>
 </div>

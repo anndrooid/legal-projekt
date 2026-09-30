@@ -593,3 +593,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 /* Telefon/e-mail zawsze w jednej linii; stopka - link polityki pod copyrightem na mobile */
 @media(max-width:420px){.mobile-menu-phone a{font-size:1.4rem}}
 @media(max-width:767px){.footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}}
+
+/* Karty „Poznaj pozostałych prawników” — stanowisko + szara specjalizacja, jak na stronie Nasz Zespół */
+.other-lawyers-sec .team-role{margin-bottom:.45rem}
+.other-lawyers-sec .team-spec{font-size:.73rem;line-height:1.4;margin-bottom:1.1rem}
