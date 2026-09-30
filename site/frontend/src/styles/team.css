@@ -1,0 +1,5 @@
+/* Wspólny wygląd opisu osoby na kartach zespołu (wszystkie strony):
+   stanowisko — czerwone wersaliki, specjalizacja — szara linia pod spodem.
+   Rozmiary kart i siatki pozostają w stylach poszczególnych stron. */
+.team-card .team-role{color:var(--crimson);text-transform:uppercase;letter-spacing:.08em;font-weight:400}
+.team-card .team-spec{color:rgba(26,36,64,.5);font-size:.73rem;line-height:1.4}

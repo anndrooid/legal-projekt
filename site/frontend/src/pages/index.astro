@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/pages/home.css";
+import "../styles/team.css";
 import PersonPhoto from "../components/PersonPhoto.astro";
-import { formatMonth } from "../utils";
+import { formatDate } from "../utils";
 import { getArticles, getPeople } from "../utils/sanity";
 
 const team = (await getPeople()).slice(0, 4);
@@ -198,6 +199,7 @@ const delay = (idx: number) => ["", "reveal-d1", "reveal-d2", "reveal-d3"][idx %
           <div class="team-body">
             <p class="team-name">{p.name}</p>
             <p class="team-role">{p.role}</p>
+            <p class="team-spec">{p.specialization || " "}</p>
             <a href={`/zespol/${p.slug.current}`} class="btn-row-link" style="font-size:.875rem;gap:.55rem">
               Zobacz profil
               <span class="btn-c btn-c-sm"><span class="arr"></span></span>
@@ -232,7 +234,7 @@ const delay = (idx: number) => ["", "reveal-d1", "reveal-d2", "reveal-d3"][idx %
     <div class="news-grid">
       {news.map((a, idx) => (
         <div class={`news-card reveal ${delay(idx)}`}>
-          <p class="news-date">{formatMonth(a.publishedAt)}</p>
+          <p class="news-date">{formatDate(a.publishedAt)}</p>
           <p class="news-title">{a.title}</p>
           <p class="news-exc">{a.excerpt}</p>
           <a href={`/aktualnosci/${a.slug.current}`} class="btn-row-link" style="font-size:.875rem;gap:.55rem;margin-top:auto">

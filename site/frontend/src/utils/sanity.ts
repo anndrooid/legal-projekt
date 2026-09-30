@@ -25,7 +25,7 @@ const imageProjection = `{
 }`;
 
 const personCard = `
-  _id, name, slug, role, tier, specialization, practices,
+  _id, name, slug, role, tier, specialization, practices, leadsPractices,
   photo ${imageProjection}
 `;
 
@@ -104,6 +104,7 @@ export interface PersonCard {
   tier: Tier;
   specialization?: string;
   practices?: string[];
+  leadsPractices?: string[];
   photo?: SanityImage;
 }
 

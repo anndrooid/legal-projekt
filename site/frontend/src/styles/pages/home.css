@@ -279,3 +279,7 @@ footer{background:#0f1628;padding:5rem 0 0}
 /* Telefon/e-mail zawsze w jednej linii; stopka - link polityki pod copyrightem na mobile */
 @media(max-width:420px){.mobile-menu-phone a{font-size:1.4rem}}
 @media(max-width:767px){.footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}}
+
+/* Karta zespołu: stanowisko + specjalizacja (jak na stronie Nasz Zespół) */
+.team-card .team-role{margin-bottom:.45rem}
+.team-card .team-spec{margin-bottom:1.1rem}

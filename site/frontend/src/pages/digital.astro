@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PracticeTeam from "../components/PracticeTeam.astro";
 import "../styles/pages/digital.css";
 ---
 
@@ -120,27 +121,7 @@ import "../styles/pages/digital.css";
 
     <div class="team-grid-2p">
 
-      <div class="team-card reveal">
-        <div class="team-photo"><img src="/images/team/lukasz-baran.webp" alt="Łukasz Baran" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border-radius:inherit"></div>
-        <div class="team-body">
-          <span class="team-badge">Lider praktyki</span>
-          <p class="team-name">Łukasz Baran</p>
-          <p class="team-role">Counsel</p>
-          <p style="font-size:.8rem;color:#666;line-height:1.6;margin-top:.55rem">Telekomunikacja, ochrona danych osobowych, regulacje medialne, AI Act.</p>
-          <a href="/zespol/lukasz-baran" class="btn-row-link" style="font-size:.8rem;gap:.4rem;margin-top:.85rem">Profil <span class="btn-c btn-c-sm"><span class="arr"></span></span></a>
-        </div>
-      </div>
-
-      <div class="team-card reveal reveal-d1">
-        <div class="team-photo"><img src="/images/team/michal-zaremba.webp" alt="Michał Zaremba" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border-radius:inherit"></div>
-        <div class="team-body">
-          <span class="team-badge" style="opacity:0">–</span>
-          <p class="team-name">Michał Zaremba</p>
-          <p class="team-role">Counsel</p>
-          <p style="font-size:.8rem;color:#666;line-height:1.6;margin-top:.55rem">E-commerce, nadawcy i spółki IT, kontrakty technologiczne, RODO.</p>
-          <a href="/zespol/michal-zaremba" class="btn-row-link" style="font-size:.8rem;gap:.4rem;margin-top:.85rem">Profil <span class="btn-c btn-c-sm"><span class="arr"></span></span></a>
-        </div>
-      </div>
+      <PracticeTeam practice="digital" />
 
     </div>
   </div>
