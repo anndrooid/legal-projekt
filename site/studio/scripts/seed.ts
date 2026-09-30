@@ -30,7 +30,8 @@ async function image(rel: string, hotspot?: {x: number; y: number}, extra: Recor
   return {
     _type: 'image',
     asset: {_type: 'reference', _ref: assetId},
-    ...(hotspot ? {hotspot: {...hotspot, width: 1, height: 1}} : {}),
+    // Mały obszar hotspota — przy width/height = 1 kółka w edytorze Sanity nie da się przesunąć
+    ...(hotspot ? {hotspot: {_type: 'sanity.imageHotspot', ...hotspot, width: 0.3, height: 0.3}} : {}),
     ...extra,
   }
 }
