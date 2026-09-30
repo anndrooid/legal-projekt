@@ -32,10 +32,16 @@ Pozostałe podstrony (praktyki, FAQ, kontakt, polityka prywatności) są statycz
 - `src/styles/pages/*.css` — style przeniesione 1:1 z makiet (`../context/*.html`), jeden plik na stronę
 - `src/utils/sanity.ts` — zapytania GROQ i typy
 
+## Adresy produkcyjne
+
+- strona: https://legal-projekt.vercel.app (Vercel, Root Directory `site/frontend`, build przy każdym pushu na `master`)
+- panel: https://zmw-legal.sanity.studio (wdrożenie: `cd studio && npx sanity deploy`)
+
 ## Publikacja zmian
 
-Strona jest statyczna: po opublikowaniu zmian w Studio trzeba ją przebudować (`npm run build --workspace=frontend`).
-Przy wdrożeniu ustawimy webhook Sanity → automatyczny build na hostingu.
+Strona jest statyczna. Publikacja dokumentu `person` lub `article` w Studio uruchamia webhook Sanity
+„Vercel – przebudowa strony” (Sanity → API → Webhooks), który wywołuje Deploy Hook Vercela
+(Settings → Git → Deploy Hooks). Nowa wersja jest online po ok. 1–2 min.
 
 ## Ponowny import treści z makiet
 
