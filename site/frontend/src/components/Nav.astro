@@ -20,6 +20,8 @@ const t =
     : { call: "Zadzwoń teraz", open: "Otwórz menu", close: "Zamknij menu", switchTo: "English version", lang: "Język" };
 const other: Lang = lang === "en" ? "pl" : "en";
 const home = path("home", lang);
+// Na stronie głównej menu jest przezroczyste nad zdjęciem (białe napisy do czasu przewinięcia)
+const isHome = cleanPath(Astro.url.pathname) === home;
 ---
 
 <nav class="topnav">
@@ -43,9 +45,16 @@ const home = path("home", lang);
       <span class="nav-phone-label">{t.call}</span>
       <a href={phone.href} class="nav-phone-num" style="white-space:nowrap">{phone.display}</a>
     </div>
-    <button class="nav-hamburger" type="button" id="hamburger" aria-label={t.open}>
-      <span></span><span></span><span></span>
-    </button>
+    <!-- Telefon i tablet: przełącznik języka stale widoczny obok hamburgera -->
+    <div class:list={["nav-actions", { "over-hero": isHome }]}>
+      <div class="nav-lang-m" aria-label={t.lang}>
+        <a href={cleanPath(Astro.url.pathname)} class="nav-lang-current" aria-current="page">{lang.toUpperCase()}</a>
+        <a href={alternate} hreflang={other} lang={other} title={t.switchTo}>{other.toUpperCase()}</a>
+      </div>
+      <button class="nav-hamburger" type="button" id="hamburger" aria-label={t.open}>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -83,6 +92,17 @@ const home = path("home", lang);
   .nav-lang a.nav-lang-current{opacity:1;font-weight:600;pointer-events:none}
   .nav-lang a + a::before{content:'/';margin-right:.4rem;opacity:.5;display:inline-block}
   .mobile-lang .nav-lang-sep{opacity:.5}
+
+  /* Pasek menu na telefonie i tablecie (≤1200px, gdy linki są schowane w hamburgerze) */
+  .nav-actions{display:none;grid-column:3;justify-self:end;align-items:center;gap:1.25rem}
+  .nav-actions .nav-hamburger{grid-column:auto}
+  .nav-lang-m{display:flex;align-items:center;gap:.4rem;font-family:'PPNeueMontreal',sans-serif;font-size:1rem;font-weight:500;letter-spacing:.04em}
+  .nav-lang-m a{color:var(--navy);text-decoration:none;opacity:.55;padding:.5rem .1rem;transition:opacity .2s,color .35s}
+  .nav-lang-m a:hover{opacity:1}
+  .nav-lang-m a.nav-lang-current{opacity:1;font-weight:600;pointer-events:none}
+  .nav-lang-m a + a::before{content:'/';margin-right:.4rem;opacity:.5;display:inline-block}
+  :global(nav.topnav:not(.nav-solid)) .over-hero .nav-lang-m a{color:#fff}
+  @media(max-width:1200px){.nav-actions{display:flex}}
   .mobile-lang{display:flex;align-items:center;gap:.5rem;padding:1.15rem 0;font-size:1.125rem;font-weight:500;color:var(--navy)}
   .mobile-lang a{color:var(--crimson);text-decoration:none;font-weight:500}
 </style>
