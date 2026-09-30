@@ -2,6 +2,7 @@
 import { VisualEditing } from "@sanity/astro/visual-editing";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 
 interface Props {
   title: string;
@@ -39,6 +40,7 @@ const visualEditingEnabled =
     <Nav active={active} />
     <slot />
     <Footer />
+    <CookieConsent />
     <script>
       import Lenis from "lenis";
       const lenis = new Lenis();
