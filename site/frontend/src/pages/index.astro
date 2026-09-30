@@ -4,6 +4,7 @@ import "../styles/pages/home.css";
 import "../styles/team.css";
 import PersonPhoto from "../components/PersonPhoto.astro";
 import { formatDate } from "../utils";
+import { bgStyle } from "../utils/image";
 import { getArticles, getPeople } from "../utils/sanity";
 
 const team = (await getPeople()).slice(0, 4);
@@ -234,6 +235,9 @@ const delay = (idx: number) => ["", "reveal-d1", "reveal-d2", "reveal-d3"][idx %
     <div class="news-grid">
       {news.map((a, idx) => (
         <div class={`news-card reveal ${delay(idx)}`}>
+          {a.cover?.asset && (
+            <a href={`/aktualnosci/${a.slug.current}`} class="news-img" style={bgStyle(a.cover, 800)} role="img" aria-label={a.cover.alt || a.title}></a>
+          )}
           <p class="news-date">{formatDate(a.publishedAt)}</p>
           <p class="news-title">{a.title}</p>
           <p class="news-exc">{a.excerpt}</p>

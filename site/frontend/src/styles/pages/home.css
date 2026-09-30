@@ -283,3 +283,9 @@ footer{background:#0f1628;padding:5rem 0 0}
 /* Karta zespołu: stanowisko + specjalizacja (jak na stronie Nasz Zespół) */
 .team-card .team-role{margin-bottom:.45rem}
 .team-card .team-spec{margin-bottom:1.1rem}
+
+/* Aktualności na stronie głównej — zdjęcie na całą szerokość karty (jak na liście Aktualności) */
+.news-card{overflow:hidden}
+.news-img{display:block;margin:-2rem -2rem 1.25rem;aspect-ratio:16/9;background-color:rgba(26,36,64,.12);transition:opacity .25s}
+.news-img:hover{opacity:.88}
+@media(min-width:768px) and (max-width:1200px){.news-card:last-child .news-img{aspect-ratio:auto;height:260px}}
