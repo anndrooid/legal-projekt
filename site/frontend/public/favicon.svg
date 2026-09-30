@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- ZMW Legal: białe „Z” na kolorze akcentu marki (crimson #8C0002) -->
-  <rect width="64" height="64" rx="12" fill="#8C0002"/>
-  <path d="M17 15h30v7.5L28.5 41.5H47V49H17v-7.5L35.5 22.5H17z" fill="#fff"/>
+  <!-- ZMW Legal: białe „L” (jak w logo LEGAL) na granacie marki, z kwadratem w kolorze akcentu (crimson) -->
+  <rect width="64" height="64" rx="12" fill="#1a2440"/>
+  <path d="M19 14h9v27h17v8H19z" fill="#fff"/>
+  <rect x="38" y="30" width="8" height="8" fill="#C4161C"/>
 </svg>
