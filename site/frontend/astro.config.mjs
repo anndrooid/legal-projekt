@@ -16,6 +16,7 @@ const studioUrl = PUBLIC_SANITY_STUDIO_URL || "http://localhost:3333";
 
 import sanity from "@sanity/astro";
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,6 +37,8 @@ export default defineConfig({
       },
     }),
     react(), // Wymagane przez komponent VisualEditing
+    // Mapa strony dla wyszukiwarek (sitemap-index.xml), bez strony 404
+    sitemap({ filter: (page) => !page.includes("/404") }),
   ],
   vite: {
     optimizeDeps: {

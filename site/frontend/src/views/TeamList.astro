@@ -16,7 +16,8 @@ const other: Lang = lang === "en" ? "pl" : "en";
 const t =
   lang === "en"
     ? {
-        title: "Our Team – ZMW Legal",
+        title: "Our team – ZMW Legal lawyers",
+        metaDesc: "Partners, counsel and associates at ZMW Legal – lawyers with international law firm experience, specialising in disputes, tax and regulation.",
         back: "Back to home",
         heading: "Our Team",
         desc: "29 lawyers – partners with experience from international law firms, counsel and associates with narrow specialisations. Every client works with a lawyer who knows their industry and understands what is at stake.",
@@ -30,7 +31,8 @@ const t =
         form: "Contact form",
       }
     : {
-        title: "Nasz Zespół – ZMW Legal",
+        title: "Nasz zespół – prawnicy ZMW Legal",
+        metaDesc: "Partnerzy, counsel i associates ZMW Legal – prawnicy z doświadczeniem z kancelarii międzynarodowych, specjalizujący się w sporach, podatkach i regulacjach.",
         back: "Powrót do strony głównej",
         heading: "Nasz Zespół",
         desc: "29 prawników – partnerzy z doświadczeniem z kancelarii międzynarodowych, counselowie i associates o wąskich specjalizacjach. Każdy klient jest obsługiwany przez prawnika, który zna jego branżę i rozumie stawkę.",
@@ -50,7 +52,7 @@ const groups = tiers(lang)
   .filter((g) => g.people.length > 0);
 ---
 
-<BaseLayout title={t.title} active={path("team", lang)} lang={lang} alternate={path("team", other)}>
+<BaseLayout title={t.title} description={t.metaDesc} active={path("team", lang)} lang={lang} alternate={path("team", other)}>
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">

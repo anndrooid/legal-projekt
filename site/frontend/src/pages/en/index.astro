@@ -1,4 +1,5 @@
 ---
+import { organizationLd } from "../../data/seo";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/pages/home.css";
 import "../../styles/team.css";
@@ -12,7 +13,7 @@ const news = (await getArticles("en")).slice(0, 3);
 const delay = (idx: number) => ["", "reveal-d1", "reveal-d2", "reveal-d3"][idx % 4];
 ---
 
-<BaseLayout title="Home – ZMW Legal" lang="en" alternate="/">
+<BaseLayout jsonLd={organizationLd("en")} title="ZMW Legal – business law firm in Warsaw, Poland" description="A boutique law firm in Warsaw supporting companies in corporate disputes, tax matters, Life Sciences, Digital and EU funding." lang="en" alternate="/">
 <!-- HERO -->
 <a href="/en" class="hero-logo-anim" id="heroLogoAnim" aria-label="LEGAL"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 52" aria-hidden="true"><text x="69" y="40" text-anchor="middle" font-family="PPNeueMontreal,sans-serif" font-weight="500" font-size="36" letter-spacing="1">LEGAL</text></svg></a>
 <div class="hero-pin-wrap" id="heroPinWrap">

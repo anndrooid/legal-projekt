@@ -12,6 +12,7 @@ import { articlePath, categoryLabel, cleanPath, path, personPath, phone, practic
 import { formatDate } from "../utils";
 import { bgStyle, urlFor } from "../utils/image";
 import { getArticles, translatedSlug, type Article } from "../utils/sanity";
+import { articleLd, metaDescription, pageTitle } from "../data/seo";
 import "../styles/pages/artykul.css";
 
 interface Props {
@@ -86,10 +87,20 @@ const people = (article.people ?? []).filter((p) => p.person);
 const practice = practiceBySlug(article.practice, lang);
 const newsPath = path("news", lang);
 
-const seoTitle = article.seo?.metaTitle || `${article.title} – ${t.section} – ZMW Legal`;
-const seoDescription = article.seo?.metaDescription || article.excerpt;
+// Krótki tytuł z pola SEO w Sanity (jeśli jest), inaczej tytuł artykułu
+const seoTitle = pageTitle(article.seo?.metaTitle || article.title);
+const seoDescription = metaDescription(article.seo?.metaDescription || article.excerpt);
 const ogSource = article.seo?.ogImage ?? article.cover;
 const ogImage = ogSource?.asset ? urlFor(ogSource).width(1200).height(630).fit("crop").url() : undefined;
+
+const jsonLd = articleLd({
+  title: article.title,
+  description: seoDescription,
+  url: articlePath(article.slug.current, lang),
+  datePublished: article.publishedAt,
+  image: ogImage,
+  lang,
+});
 
 const components = {
   block: ArticleBlock,
@@ -98,7 +109,7 @@ const components = {
 };
 ---
 
-<BaseLayout title={seoTitle} description={seoDescription} image={ogImage} active={newsPath} lang={lang} alternate={alternate}>
+<BaseLayout title={seoTitle} description={seoDescription} image={ogImage} ogType="article" jsonLd={jsonLd} active={newsPath} lang={lang} alternate={alternate}>
 <!-- ARTICLE HEADER -->
 <div class="art-header">
   <div class="art-header-inner">

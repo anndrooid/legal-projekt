@@ -1,9 +1,10 @@
 ---
+import { organizationLd } from "../../data/seo";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/pages/kontakt.css";
 ---
 
-<BaseLayout title="Contact – ZMW Legal" active="/en/contact" lang="en" alternate="/kontakt">
+<BaseLayout jsonLd={organizationLd("en")} title="Contact – ZMW Legal law firm, Warsaw" description="ul. Wspólna 47A, Warsaw · tel. +48 22 319 47 60 · biuro@zmwlegal.pl. Meetings in person or online, by prior appointment only." active="/en/contact" lang="en" alternate="/kontakt">
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">

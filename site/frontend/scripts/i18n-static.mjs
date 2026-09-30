@@ -34,7 +34,7 @@ const decode = (s) =>
     .replace(/&([a-z]+);/gi, (m, e) => ENTITIES[e] ?? m)
 const norm = (s) => decode(s).replace(/\s+/g, ' ').trim()
 
-const ATTRS = ['alt', 'placeholder', 'aria-label', 'title']
+const ATTRS = ['alt', 'placeholder', 'aria-label', 'title', 'description']
 
 // Dzieli plik na: frontmatter, markup (bez <script>/<style>), wstawki
 function split(src) {
@@ -106,6 +106,8 @@ for (const [name, cfg] of Object.entries(PAGES)) {
     })
     // komponenty wymagające języka
     out = out.replace(/<PracticeTeam /g, '<PracticeTeam lang="en" ')
+    // dane strukturalne kancelarii w wersji EN
+    out = out.replace(/organizationLd\("pl"\)/g, 'organizationLd("en")')
     // przyrostki liczników animowanych skryptem
     out = out.replace(/data-suffix=" mld"/g, 'data-suffix=" bn"')
     // frontmatter: ścieżki o poziom głębiej + język zapytań/formatowania

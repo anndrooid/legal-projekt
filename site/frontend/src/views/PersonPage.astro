@@ -7,6 +7,7 @@ import SiteScripts from "../components/SiteScripts.astro";
 import { path, personPath, phone, type Lang } from "../data/site";
 import { bgStyle, urlFor } from "../utils/image";
 import { getPeople, translatedSlug, type Person } from "../utils/sanity";
+import { metaDescription, personLd } from "../data/seo";
 import "../styles/pages/profil.css";
 import "../styles/team.css";
 
@@ -70,7 +71,19 @@ const firstLine = nameParts.join(" ");
 const phoneHref = person.phone ? `tel:${person.phone.replace(/\s/g, "")}` : phone.href;
 const phoneDisplay = person.phone || phone.display;
 const languagesSummary = person.languages?.map((l) => l.name).join(" · ");
-const description = person.lead || `${person.name} – ${person.role}, ZMW Legal`;
+const description = metaDescription(person.lead) || `${person.name} – ${person.role}, ZMW Legal`;
+// Tytuł różny dla PL i EN (Google traktuje identyczne tytuły jako duplikaty)
+const seoTitle = `${person.name} – ${person.role} | ${lang === "en" ? "ZMW Legal, Warsaw" : "Kancelaria ZMW Legal"}`;
+const ogImage = person.photo?.asset ? urlFor(person.photo).width(1200).height(630).fit("crop").url() : undefined;
+const jsonLd = personLd({
+  name: person.name,
+  role: person.role,
+  url: personPath(person.slug.current, lang),
+  image: person.photo?.asset ? urlFor(person.photo).width(600).url() : undefined,
+  email: person.email,
+  description,
+  languages: person.languages?.map((l) => l.name),
+});
 
 // Pierwsze dwie sekcje akordeonu są domyślnie otwarte (jak w makiecie)
 const sections = [
@@ -85,9 +98,11 @@ const isOpen = (s: string) => sections.indexOf(s) > -1 && sections.indexOf(s) < 
 ---
 
 <BaseLayout
-  title={`${person.name} – ZMW Legal`}
+  title={seoTitle}
   description={description}
-  image={person.photo?.asset ? urlFor(person.photo).width(1200).height(630).fit("crop").url() : undefined}
+  image={ogImage}
+  ogType="profile"
+  jsonLd={jsonLd}
   active={path("team", lang)}
   lang={lang}
   alternate={alternate}
@@ -286,7 +301,7 @@ const isOpen = (s: string) => sections.indexOf(s) > -1 && sections.indexOf(s) < 
       <div class="pubs-grid">
         {person.publications.map((pub, idx) => (
           <div class:list={["pub-card reveal", idx % 3 === 1 && "reveal-d1", idx % 3 === 2 && "reveal-d2"]}>
-            <div class="pub-cover" style={pub.cover?.asset ? bgStyle(pub.cover, 600) : undefined}></div>
+            <div class="pub-cover" style={pub.cover?.asset ? bgStyle(pub.cover, 600) : undefined} role="img" aria-label={pub.title}></div>
             <div class="pub-body">
               {pub.tag && <p class="pub-tag">{pub.tag}</p>}
               <p class="pub-title">{pub.title}</p>

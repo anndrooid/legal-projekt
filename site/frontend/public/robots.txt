@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://legal-projekt.vercel.app/sitemap-index.xml

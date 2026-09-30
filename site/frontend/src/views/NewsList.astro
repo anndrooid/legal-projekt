@@ -17,7 +17,7 @@ const other: Lang = lang === "en" ? "pl" : "en";
 const t =
   lang === "en"
     ? {
-        title: "News – ZMW Legal",
+        title: "News – rankings, awards and commentary | ZMW Legal",
         back: "‹ Home",
         heading: "News",
         desc: "Awards and rankings, new lawyers joining the team, academic partnerships and expert commentary. Follow what is happening at ZMW Legal.",
@@ -31,7 +31,7 @@ const t =
         form: "Contact form",
       }
     : {
-        title: "Aktualności – ZMW Legal",
+        title: "Aktualności – rankingi, nagrody i komentarze | ZMW Legal",
         back: "‹ Strona główna",
         heading: "Aktualności",
         desc: "Nagrody i rankingi, nowi prawnicy w zespole, partnerstwa akademickie i komentarze eksperckie. Śledź, co dzieje się w ZMW Legal.",
@@ -53,7 +53,7 @@ const categories = ARTICLE_CATEGORIES.filter((c) => articles.some((a) => a.categ
 const delay = (idx: number) => ["", "reveal-d1", "reveal-d2", "reveal-d3"][idx % 4];
 ---
 
-<BaseLayout title={t.title} active={path("news", lang)} lang={lang} alternate={path("news", other)}>
+<BaseLayout title={t.title} description={t.desc} active={path("news", lang)} lang={lang} alternate={path("news", other)}>
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
